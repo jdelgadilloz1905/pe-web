@@ -1,7 +1,12 @@
 /** @format */
 
 import React from 'react'
-import { BrowserRouter as Router, Switch, Route, useLocation } from 'react-router-dom'
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route,
+	useLocation,
+} from 'react-router-dom'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
 import Layout from './components/Layout'
@@ -33,6 +38,26 @@ import WizardStepSixteen from '../pages/wizard/pages/section-four/step-sixteen'
 import WizardStepSeventeen from '../pages/wizard/pages/section-five/step-seventen'
 import WizardStepEighteen from '../pages/wizard/pages/section-five/step-eighteen'
 import WizardStepNineteen from '../pages/wizard/pages/section-five/step-nineteen'
+
+import ClientStepOne from '../pages/wizard/pages-clients/section-one/step-one'
+import ClientStepTwo from '../pages/wizard/pages-clients/section-one/step-two'
+import ClientStepThree from '../pages/wizard/pages-clients/section-two/step-three'
+import ClientStepFour from '../pages/wizard/pages-clients/section-two/step-four'
+import ClientStepFive from '../pages/wizard/pages-clients/section-two/step-five'
+import ClientStepSix from '../pages/wizard/pages-clients/section-two/step-six'
+import ClientStepSeven from '../pages/wizard/pages-clients/section-two/step-seven'
+import ClientStepEight from '../pages/wizard/pages-clients/section-two/step-eight'
+import ClientStepNine from '../pages/wizard/pages-clients/section-three/step-nine'
+import ClientStepTen from '../pages/wizard/pages-clients/section-three/step-ten'
+import ClientStepEleven from '../pages/wizard/pages-clients/section-three/step-eleven'
+import ClientStepTwelve from '../pages/wizard/pages-clients/section-three/step-twelve'
+import ClientStepThirteen from '../pages/wizard/pages-clients/section-four/step-thirteen'
+import ClientStepFourteen from '../pages/wizard/pages-clients/section-four/step-fourteen'
+import ClientStepFifteen from '../pages/wizard/pages-clients/section-four/step-fifteen'
+import ClientStepSixteen from '../pages/wizard/pages-clients/section-four/step-sixteen'
+import ClientStepSeventeen from '../pages/wizard/pages-clients/section-five/step-seventen'
+import ClientStepEighteen from '../pages/wizard/pages-clients/section-five/step-eighteen'
+import ClientStepNineteen from '../pages/wizard/pages-clients/section-five/step-nineteen'
 
 import NotFound from '../pages/not-found'
 
@@ -76,15 +101,107 @@ function InnerRoutes() {
 					<Route exact path='/wizard/step-eight' component={WizardStepEight} />
 					<Route exact path='/wizard/step-nine' component={WizardStepNine} />
 					<Route exact path='/wizard/step-ten' component={WizardStepTen} />
-					<Route exact path='/wizard/step-eleven' component={WizardStepEleven} />
-					<Route exact path='/wizard/step-twelve' component={WizardStepTwelve} />
-					<Route exact path='/wizard/step-thirteen' component={WizardStepThirteen} />
-					<Route exact path='/wizard/step-fourteen' component={WizardStepFourteen} />
-					<Route exact path='/wizard/step-fifteen' component={WizardStepFifteen} />
-					<Route exact path='/wizard/step-sixteen' component={WizardStepSixteen} />
-					<Route exact path='/wizard/step-seventeen' component={WizardStepSeventeen} />
-					<Route exact path='/wizard/step-eighteen' component={WizardStepEighteen} />
-					<Route exact path='/wizard/step-nineteen' component={WizardStepNineteen} />
+					<Route
+						exact
+						path='/wizard/step-eleven'
+						component={WizardStepEleven}
+					/>
+					<Route
+						exact
+						path='/wizard/step-twelve'
+						component={WizardStepTwelve}
+					/>
+					<Route
+						exact
+						path='/wizard/step-thirteen'
+						component={WizardStepThirteen}
+					/>
+					<Route
+						exact
+						path='/wizard/step-fourteen'
+						component={WizardStepFourteen}
+					/>
+					<Route
+						exact
+						path='/wizard/step-fifteen'
+						component={WizardStepFifteen}
+					/>
+					<Route
+						exact
+						path='/wizard/step-sixteen'
+						component={WizardStepSixteen}
+					/>
+					<Route
+						exact
+						path='/wizard/step-seventeen'
+						component={WizardStepSeventeen}
+					/>
+					<Route
+						exact
+						path='/wizard/step-eighteen'
+						component={WizardStepEighteen}
+					/>
+					<Route
+						exact
+						path='/wizard/step-nineteen'
+						component={WizardStepNineteen}
+					/>
+
+					<Route exact path='/client/step-one' component={ClientStepOne} />
+					<Route exact path='/client/step-two' component={ClientStepTwo} />
+					<Route exact path='/client/step-three' component={ClientStepThree} />
+					<Route exact path='/client/step-four' component={ClientStepFour} />
+					<Route exact path='/client/step-five' component={ClientStepFive} />
+					<Route exact path='/client/step-six' component={ClientStepSix} />
+					<Route exact path='/client/step-seven' component={ClientStepSeven} />
+					<Route exact path='/client/step-eight' component={ClientStepEight} />
+					<Route exact path='/client/step-nine' component={ClientStepNine} />
+					<Route exact path='/client/step-ten' component={ClientStepTen} />
+					<Route
+						exact
+						path='/client/step-eleven'
+						component={ClientStepEleven}
+					/>
+					<Route
+						exact
+						path='/client/step-twelve'
+						component={ClientStepTwelve}
+					/>
+					<Route
+						exact
+						path='/client/step-thirteen'
+						component={ClientStepThirteen}
+					/>
+					<Route
+						exact
+						path='/client/step-fourteen'
+						component={ClientStepFourteen}
+					/>
+					<Route
+						exact
+						path='/client/step-fifteen'
+						component={ClientStepFifteen}
+					/>
+					<Route
+						exact
+						path='/client/step-sixteen'
+						component={ClientStepSixteen}
+					/>
+					<Route
+						exact
+						path='/client/step-seventeen'
+						component={ClientStepSeventeen}
+					/>
+					<Route
+						exact
+						path='/client/step-eighteen'
+						component={ClientStepEighteen}
+					/>
+					<Route
+						exact
+						path='/client/step-nineteen'
+						component={ClientStepNineteen}
+					/>
 					<Route path='*' component={NotFound} />
 				</Switch>
 			</CSSTransition>

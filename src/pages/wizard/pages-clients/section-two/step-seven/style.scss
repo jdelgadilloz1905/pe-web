@@ -1,0 +1,129 @@
+/** @format */
+
+.cw-wizard-stsseven-global-container {
+	background-image: url(../../../../../assets/images/bg/wizard-section-two-bg.png);
+	width: 100%;
+	min-height: calc(100vh);
+	background-position-y: center;
+	background-size: cover;
+	overflow: hidden;
+}
+.cw-wizard-stsseven-main-container {
+	min-height: calc(100vh);
+}
+.cw-wizard-stsseven-form-global-container {
+	background-color: rgba(17, 28, 74, 0.72);
+	height: 100%;
+	padding: 60px 100px;
+}
+.cw-wizard-stsseven-form-main-title-container {
+	width: 100%;
+	max-width: 500px;
+}
+.cw-wizard-stsseven-form-container {
+	width: 100%;
+	max-width: 500px;
+}
+.cw-wizard-stsseven-form-title-container {
+	width: 100%;
+	max-width: 400px;
+	padding-bottom: 20px;
+}
+.cw-wizard-stsseven-form-title {
+	color: white;
+	margin-bottom: 0;
+	padding-top: 10px;
+}
+.cw-wizard-stsseven-form-rate {
+	color: white;
+	margin-bottom: 0;
+	width: 40%;
+	font-size: 15px;
+	font-weight: bold;
+	padding-top: 30px;
+	text-align: center;
+}
+.cw-wizard-stsseven-form-option-container {
+	width: 100%;
+	max-width: 350px;
+	padding: 30px 0 0;
+}
+.cw-wizard-stsseven-form-option-container .ant-slider-rail {
+	background-color: #d8d8d8;
+	height: 10px;
+	border-radius: 10px;
+	width: 102%;
+}
+.cw-wizard-stsseven-form-option-container .ant-slider-track {
+	height: 10px;
+	background-color: #49d6d6;
+	border-radius: 10px;
+	left: -2% !important;
+}
+.cw-wizard-stsseven-form-option-container .ant-slider:hover .ant-slider-track {
+	background-color: #49d6d6;
+}
+.cw-wizard-stsseven-form-option-container .ant-slider-dot {
+	display: none;
+}
+.cw-wizard-stsseven-form-option-container .ant-slider-dot-active {
+	border-color: #49d6d6;
+	background-color: #49d6d6;
+}
+.cw-wizard-stsseven-form-option-container .ant-slider-handle {
+	width: 25px;
+	height: 25px;
+	margin-top: -8px;
+	background-color: #49d6d6;
+	border: solid 4px #7cffff;
+}
+.cw-wizard-stsseven-form-option-container .ant-slider-handle:focus {
+	border-color: white;
+}
+.cw-wizard-stsseven-form-option-container .ant-slider-handle.ant-tooltip-open {
+	border-color: white !important;
+}
+.cw-wizard-stsseven-form-option-container
+	.ant-slider:hover
+	.ant-slider-handle:not(.ant-tooltip-open) {
+	border-color: white !important;
+}
+.cw-wizard-stsseven-form-option-container .ant-slider-mark {
+	top: unset;
+	bottom: 50px;
+}
+.cw-wizard-stsseven-form-option-container .ant-slider-mark-text-active {
+	color: #49d6d6 !important;
+	font-weight: 600 !important;
+}
+.cw-wizard-stsseven-form-option-container .ant-slider-mark-text {
+	color: white;
+	font-size: 15px;
+	font-weight: 500;
+}
+.cw-wizard-stsseven-form-option-container .ant-slider-with-marks {
+	margin-bottom: 15px !important;
+}
+.cw-wizard-stsseven-form-option-subtitle-container {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+.cw-wizard-stsseven-form-option-subtitle {
+	color: white;
+	font-size: 13px;
+	margin-bottom: 0;
+	font-weight: 600;
+}
+.cw-wizard-stsseven-form-option-container-rate {
+	width: 100%;
+	max-width: 350px;
+}
+.cw-wizard-stsseven-form-buttons-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	max-width: 150px;
+	padding: 30px 0;
+}
