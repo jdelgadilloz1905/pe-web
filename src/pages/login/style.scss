@@ -1,0 +1,112 @@
+/** @format */
+
+.cv-login-global-background {
+	background-image: url(../../assets/images/bg/login-bg.png);
+	background-size: cover;
+	width: 100%;
+	background-attachment: fixed;
+	min-height: calc(100vh - 20px);
+	margin-top: -50px;
+	position: relative;
+	z-index: 1;
+}
+
+.cv-login-global-background::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.4);
+	z-index: 0;
+}
+
+.cv-login-section-1-main-container {
+	padding-top: 50px;
+	text-align: center;
+	position: relative;
+	z-index: 2;
+	min-height: calc(100vh - 20px);
+}
+
+.cv-login-section-1-inner-container {
+	padding: 10px;
+	width: 100%;
+	max-width: 1145px;
+	margin: auto;
+}
+
+.cv-login-section-1-container {
+	margin-top: 70px;
+}
+
+.cv-login-section-1-img {
+	width: 100%;
+	max-width: 250px;
+}
+
+.cv-login-section-1-main-title {
+	color: #ffffff;
+	padding: 5px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	font-size: 17px;
+	font-weight: 700;
+}
+
+.cv-login-input {
+	background-color: rgba(255, 255, 255, 0.3) !important;
+	border: 1px solid #ffffff !important;
+	border-radius: 10px !important;
+	padding: 10px 15px !important;
+	font-size: 15px !important;
+	color: white !important;
+	opacity: 0.8;
+	width: 100%;
+	max-width: 300px;
+}
+.cv-login-input::placeholder {
+	color: white !important;
+	font-weight: 500 !important;
+	text-align: center;
+}
+
+.cv-login-input:hover,
+.cv-login-input:focus,
+.cv-login-input:active {
+	border: 1px solid #ffffff !important;
+}
+
+.cv-login-main-button {
+	transition: 0.3s ease !important;
+	border: 1px solid #ffffff !important;
+	box-shadow: 5.66px 5.66px 15px -1px rgb(17 28 74 / 68%) !important;
+	background: rgba(34, 57, 131, 0.4) !important;
+	font-size: 18px !important;
+	color: white !important;
+	padding: 10px !important;
+	border-radius: 40px !important;
+	height: unset !important;
+	width: 100% !important;
+	max-width: 260px !important;
+	margin: 0 20px;
+	margin-top: 10px;
+}
+
+.cv-login-main-button:hover,
+.cv-login-main-button:focus,
+.cv-login-main-button:active {
+	transition: 0.3s ease !important;
+	background-color: #008843 !important;
+}
+
+.cv-login-lost-password-title {
+	font-size: 14px;
+	color: #ffffff;
+	font-weight: 600;
+}
+.cv-login-lost-password-subtitle {
+	text-decoration: underline;
+	cursor: pointer;
+}

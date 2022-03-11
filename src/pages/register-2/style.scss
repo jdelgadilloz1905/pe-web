@@ -1,0 +1,130 @@
+/** @format */
+
+.cw-register-two-global-container {
+	background-image: url(../../assets/images/bg/login-bg.png);
+	background-size: cover;
+	width: 100%;
+	background-attachment: fixed;
+	min-height: calc(100vh - 20px);
+	margin-top: -50px;
+	position: relative;
+	z-index: 1;
+}
+
+.cw-register-two-global-container::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.4);
+	z-index: 0;
+}
+
+.cw-register-two-main-container {
+	min-height: calc(100vh - 20px);
+	position: relative;
+	z-index: 1;
+	padding-top: 50px;
+}
+
+.cw-register-two-col-container {
+	display: flex !important;
+	justify-content: center;
+	align-items: center;
+}
+
+.cw-register-two-form-global-container {
+	width: 100%;
+	max-width: 520px;
+	margin: 70px 25px;
+}
+
+.cw-register-two-logo-container {
+	width: 100%;
+	max-width: 215px;
+	margin: 15px auto;
+}
+
+.cw-register-two-logo-img {
+	width: 100%;
+}
+
+.cw-register-two-main-title {
+	color: white;
+	font-size: 30px;
+	margin-bottom: 0;
+	padding-bottom: 25px;
+	font-weight: 600;
+	text-align: center;
+}
+
+.cw-register-two-main-subtitle {
+	color: white;
+	font-size: 16px;
+	margin-bottom: 0;
+	padding-bottom: 20px;
+	font-weight: 100;
+}
+.cw-register-two-main-underlined {
+	color: white;
+	text-decoration: underline;
+}
+
+.cw-register-two-form-main-container {
+	width: 100%;
+	margin: 20px auto 0;
+}
+
+.cw-register-two-input {
+	background-color: rgba(255, 255, 255, 0.3) !important;
+	border-color: rgba(255, 255, 255, 0.5);
+	border-radius: 10px !important;
+	padding: 10px 15px !important;
+	font-size: 14px !important;
+	opacity: 0.8;
+	width: 100%;
+	color: white !important;
+}
+
+.cw-register-two-input::placeholder {
+	color: white !important;
+	font-weight: 500 !important;
+}
+
+.cw-register-two-input:hover,
+.cw-register-two-input:active {
+	border-color: rgba(255, 255, 255, 1) !important;
+}
+
+.cw-register-two-input:focus {
+	background-color: rgba(26, 45, 243, 0.05) !important;
+	border-color: rgba(255, 255, 255, 1) !important;
+}
+
+.cw-register-two-main-button-container {
+	display: flex !important;
+	justify-content: center !important;
+}
+
+.cw-register-two-main-button {
+	transition: 0.3s ease !important;
+	background-color: rgba(255, 255, 255, 0.3) !important;
+	border: 1px solid rgba(255, 255, 255, 0.5) !important;
+	border-radius: 40px !important;
+	font-size: 16px !important;
+	color: white !important;
+	padding: 5px 30px !important;
+	height: 40px !important;
+	width: 100% !important;
+	max-width: 200px !important;
+}
+
+.cw-register-two-main-button:hover,
+.cw-register-two-main-button:focus,
+.cw-register-two-main-button:active {
+	transition: 0.3s ease !important;
+	background-color: rgba(186, 218, 85, 1) !important;
+	color: black !important;
+}

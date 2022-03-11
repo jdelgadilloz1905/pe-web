@@ -1,0 +1,44 @@
+{
+	"name": "canada-wix",
+	"version": "0.1.0",
+	"private": true,
+	"dependencies": {
+		"@testing-library/jest-dom": "^5.16.1",
+		"@testing-library/react": "^12.1.2",
+		"@testing-library/user-event": "^13.5.0",
+		"animate.css": "^4.1.1",
+		"antd": "^4.18.5",
+		"axios": "^0.25.0",
+		"dotenv": "^15.0.0",
+		"express": "^4.17.2",
+		"react": "^17.0.2",
+		"react-animate-on-scroll": "^2.1.5",
+		"react-dom": "^17.0.2",
+		"react-helmet": "^6.1.0",
+		"react-parallax": "^3.3.0",
+		"react-router-dom": "^5.3.0",
+		"react-scripts": "^4.0.3",
+		"react-transition-group": "^4.4.2",
+		"reactn": "^2.2.7",
+		"sass": "^1.49.4",
+		"web-vitals": "^2.1.4"
+	},
+	"scripts": {
+		"start": "node server.js",
+		"start:dev": "set PORT=8081 && react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject"
+	},
+	"eslintConfig": {
+		"extends": "react-app"
+	},
+	"browserslist": [
+		">0.2%",
+		"not dead",
+		"not op_mini all"
+	],
+	"devDependencies": {
+		"react-error-overlay": "^6.0.9"
+	}
+}

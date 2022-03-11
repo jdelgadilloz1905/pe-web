@@ -1,0 +1,64 @@
+/** @format */
+
+.cw-contact-global-container {
+	background-image: url(../../assets/images/bg/contact-bg.png);
+	background-size: cover;
+	background-position: center;
+	width: 100%;
+	min-height: calc(100vh - 20px);
+	margin-top: -50px;
+	position: relative;
+	z-index: 1;
+}
+
+.cw-contact-global-container::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.4);
+	z-index: 0;
+}
+
+.cw-contact-main-container {
+	min-height: calc(100vh - 20px);
+	position: relative;
+	z-index: 1;
+	padding-top: 50px;
+}
+
+.cw-contact-col-container {
+	display: flex !important;
+	justify-content: center;
+	align-items: center;
+}
+
+.cw-contact-form-global-container {
+	width: 100%;
+	max-width: 600px;
+	margin: 70px 20px;
+}
+
+.cw-contact-global-title {
+	color: white;
+	font-size: 35px;
+	margin-bottom: 0;
+	padding-bottom: 20px;
+	font-weight: 600;
+}
+
+.cw-contact-main-title {
+	color: white;
+	font-size: 16px;
+	margin-bottom: 0;
+	font-weight: 600;
+}
+
+.cw-contact-main-subtitle {
+	color: white;
+	font-size: 15px;
+	margin-bottom: 0;
+	padding-bottom: 20px;
+}
