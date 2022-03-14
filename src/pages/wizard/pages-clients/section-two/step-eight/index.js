@@ -81,7 +81,7 @@ export default function StepEight() {
 											{ indicator: true },
 										]}
 										section={'Section 2 of 5'}
-										title={'Advisor speciality or skill'}
+										title={'Your speciality or skill'}
 										subtitle={'Question 6 of 6'}
 									/>
 								</div>
@@ -93,7 +93,7 @@ export default function StepEight() {
 										<div className='cw-wizard-stseight-form-title-container'>
 											<h2 className='cw-wizard-stseight-form-title'>
 												Is there anything else you would like to know about an
-												advisor?
+												client?
 											</h2>
 										</div>
 										<div className='cw-wizard-stseight-form-option-container'>
@@ -133,8 +133,8 @@ export default function StepEight() {
 									animateOnce={true}>
 									<div className='cw-wizard-stseight-form-buttons-container'>
 										<Buttons
-											previous={'/wizard/step-seven'}
-											next={'/wizard/step-nine'}
+											previous={'/client/step-seven'}
+											next={'/client/step-nine'}
 										/>
 									</div>
 								</ScrollAnimation>

@@ -76,10 +76,11 @@ export default function StepThirteen() {
 											{ indicator: false },
 											{ indicator: false },
 											{ indicator: false },
+											{ indicator: false },
 										]}
 										section={'Section 4 of 5'}
 										title={'Personal Information'}
-										subtitle={'Question 1 of 4'}
+										subtitle={'Question 1 of 5'}
 									/>
 								</div>
 								<div className='cw-wizard-sfsthirteen-form-container'>
@@ -89,7 +90,7 @@ export default function StepThirteen() {
 										animateOnce={true}>
 										<div className='cw-wizard-sfsthirteen-form-title-container'>
 											<h2 className='cw-wizard-sfsthirteen-form-title'>
-												Do you own your own home?
+												Do you prefer a client own their own home?
 											</h2>
 										</div>
 										<div className='cw-wizard-sfsthirteen-form-option-container'>
@@ -134,8 +135,8 @@ export default function StepThirteen() {
 									animateOnce={true}>
 									<div className='cw-wizard-sfsthirteen-form-buttons-container'>
 										<Buttons
-											previous={'/wizard/step-twelve'}
-											next={'/wizard/step-fourteen'}
+											previous={'/client/step-twelve'}
+											next={'/client/step-fourteen'}
 										/>
 									</div>
 								</ScrollAnimation>

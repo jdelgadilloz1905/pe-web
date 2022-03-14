@@ -91,8 +91,7 @@ export default function StepFive() {
 										animateOnce={true}>
 										<div className='cw-wizard-stsfive-form-title-container'>
 											<h2 className='cw-wizard-stsfive-form-title'>
-												Which area of experience is most important for your
-												financial advisor to have?
+												What services do you offer?
 											</h2>
 										</div>
 										<div className='cw-wizard-stsfive-form-option-container'>
@@ -169,8 +168,8 @@ export default function StepFive() {
 									animateOnce={true}>
 									<div className='cw-wizard-stsfive-form-buttons-container'>
 										<Buttons
-											previous={'/wizard/step-four'}
-											next={'/wizard/step-six'}
+											previous={'/client/step-four'}
+											next={'/client/step-six'}
 										/>
 									</div>
 								</ScrollAnimation>

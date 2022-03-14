@@ -141,8 +141,8 @@ export default function StepSeventeen() {
 									animateOnce={true}>
 									<div className='cw-wizard-sfsseventeen-form-buttons-container'>
 										<Buttons
-											previous={'/wizard/step-sixteen'}
-											next={'/wizard/step-eighteen'}
+											previous={'/client/step-sixteen'}
+											next={'/client/step-eighteen'}
 										/>
 									</div>
 								</ScrollAnimation>

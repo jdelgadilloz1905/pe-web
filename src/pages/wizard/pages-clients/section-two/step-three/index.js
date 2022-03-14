@@ -143,8 +143,8 @@ export default function StepThree() {
 									animateOnce={true}>
 									<div className='cw-wizard-ststhree-form-buttons-container'>
 										<Buttons
-											previous={'/wizard/step-two'}
-											next={'/wizard/step-four'}
+											previous={'/client/step-two'}
+											next={'/client/step-four'}
 										/>
 									</div>
 								</ScrollAnimation>

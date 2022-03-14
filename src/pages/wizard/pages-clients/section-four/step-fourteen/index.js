@@ -17,7 +17,7 @@ import servicesAdvisor from '../../services'
 
 import './style.scss'
 
-export default function StepFourteen() {
+export default function StepFifteen() {
 	const [isRateOne, setRateOne] = useState(0)
 	const [isSection] = useState('section_four')
 	const [isStep] = useState('step_fourteen')
@@ -52,12 +52,12 @@ export default function StepFourteen() {
 	return (
 		<>
 			<MetaDescription
-				title={'Personal Information-2 | PE.com'}
+				title={'Personal Information-3 | PE.com'}
 				name={'description'}
-				content={'Personal Information-2 | PE.com...'}
+				content={'Personal Information-3 | PE.com...'}
 			/>
-			<div className='cw-wizard-sfsfourteen-global-container'>
-				<Row className='cw-wizard-sfsfourteen-main-container'>
+			<div className='cw-wizard-sfsfifteen-global-container'>
+				<Row className='cw-wizard-sfsfifteen-main-container'>
 					<Col span={10}>
 						<Sidebar />
 					</Col>
@@ -68,8 +68,8 @@ export default function StepFourteen() {
 							delay={300}
 							duration={2}
 							animateOnce={true}>
-							<div className='cw-wizard-sfsfourteen-form-global-container'>
-								<div className='cw-wizard-sfsfourteen-form-main-title-container'>
+							<div className='cw-wizard-sfsfifteen-form-global-container'>
+								<div className='cw-wizard-sfsfifteen-form-main-title-container'>
 									<MainTitle
 										indicators={[
 											{ indicator: true },
@@ -79,47 +79,59 @@ export default function StepFourteen() {
 										]}
 										section={'Section 4 of 5'}
 										title={'Personal Information'}
-										subtitle={'Question 2 of 4'}
+										subtitle={'Question 2 of 6'}
 									/>
 								</div>
-								<div className='cw-wizard-sfsfourteen-form-container'>
+								<div className='cw-wizard-sfsfifteen-form-container'>
 									<ScrollAnimation
 										animateIn='animate__fadeInUp'
 										delay={3000}
 										animateOnce={true}>
-										<div className='cw-wizard-sfsfourteen-form-title-container'>
-											<h2 className='cw-wizard-sfsfourteen-form-title'>
-												Are you currently working with a financial advisor?
+										<div className='cw-wizard-sfsfifteen-form-title-container'>
+											<h2 className='cw-wizard-sfsfifteen-form-title'>
+												How much do you personally manage in AUM today?
 											</h2>
 										</div>
-										<div className='cw-wizard-sfsfourteen-form-option-container'>
+										<div className='cw-wizard-sfsfifteen-form-option-container'>
 											<Radio.Group
 												onChange={handleChangeRadio}
 												value={isSelected}>
 												<Row>
 													<Col span={24}>
-														<Radio value='Yes'>Yes</Radio>
+														<Radio value='0-5'>Less than $5M</Radio>
 													</Col>
 													<Col span={24}>
-														<Radio value='No'>No</Radio>
+														<Radio value='5-20'>$5M to $20M</Radio>
+													</Col>
+													<Col span={24}>
+														<Radio value='20-50'>$20M to $50M</Radio>
+													</Col>
+													<Col span={24}>
+														<Radio value='50-100'>$50M – $100M</Radio>
+													</Col>
+													<Col span={24}>
+														<Radio value='100-500'>$100M – $500M</Radio>
+													</Col>
+													<Col span={24}>
+														<Radio value='500+'>$500M and up</Radio>
 													</Col>
 												</Row>
 											</Radio.Group>
 										</div>
 									</ScrollAnimation>
 								</div>
-								<div className='cw-wizard-sfsfourteen-form-option-container'>
+								<div className='cw-wizard-sfsfifteen-form-option-container'>
 									<ScrollAnimation
 										animateIn='animate__fadeInUp'
 										delay={3500}
 										animateOnce={true}>
-										<div className='cw-wizard-sfsfourteen-form-title-container'>
-											<h2 className='cw-wizard-sfsfourteen-form-rate'>
+										<div className='cw-wizard-sfsfifteen-form-title-container'>
+											<h2 className='cw-wizard-sfsfifteen-form-rate'>
 												How important is this question to you?
 											</h2>
 										</div>
 
-										<div className='cw-wizard-sfsfourteen-form-option-container'>
+										<div className='cw-wizard-sfsfifteen-form-option-container'>
 											<NormalRate
 												className={''}
 												onChange={handleChangeRate}
@@ -132,10 +144,10 @@ export default function StepFourteen() {
 									animateIn='animate__fadeInUp'
 									delay={4000}
 									animateOnce={true}>
-									<div className='cw-wizard-sfsfourteen-form-buttons-container'>
+									<div className='cw-wizard-sfsfifteen-form-buttons-container'>
 										<Buttons
-											previous={'/wizard/step-thirteen'}
-											next={'/wizard/step-fifteen'}
+											previous={'/client/step-thirteen'}
+											next={'/client/step-fifteen'}
 										/>
 									</div>
 								</ScrollAnimation>

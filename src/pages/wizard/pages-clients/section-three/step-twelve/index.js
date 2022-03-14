@@ -89,7 +89,7 @@ export default function StepTwelve() {
 										animateOnce={true}>
 										<div className='cw-wizard-ststwelve-form-title-container'>
 											<h2 className='cw-wizard-ststwelve-form-title'>
-												What is your current financial goal?
+												What financial goals do you prefer in a client?
 											</h2>
 										</div>
 										<div className='cw-wizard-ststwelve-form-option-container'>
@@ -157,8 +157,8 @@ export default function StepTwelve() {
 									animateOnce={true}>
 									<div className='cw-wizard-ststwelve-form-buttons-container'>
 										<Buttons
-											previous={'/wizard/step-eleven'}
-											next={'/wizard/step-thirteen'}
+											previous={'/client/step-eleven'}
+											next={'/client/step-thirteen'}
 										/>
 									</div>
 								</ScrollAnimation>

@@ -149,8 +149,8 @@ export default function StepSeven() {
 									animateOnce={true}>
 									<div className='cw-wizard-stsseven-form-buttons-container'>
 										<Buttons
-											previous={'/wizard/step-six'}
-											next={'/wizard/step-eight'}
+											previous={'/client/step-six'}
+											next={'/client/step-eight'}
 										/>
 									</div>
 								</ScrollAnimation>

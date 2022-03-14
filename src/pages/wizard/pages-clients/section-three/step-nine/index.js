@@ -89,7 +89,7 @@ export default function StepNine() {
 										animateOnce={true}>
 										<div className='cw-wizard-stsnine-form-title-container'>
 											<h2 className='cw-wizard-stsnine-form-title'>
-												What is your level of Risk Tolerance for investing?
+												What level of Risk Tolerance do you prefer in a client?
 											</h2>
 										</div>
 										<div className='cw-wizard-stsnine-form-option-container'>
@@ -153,8 +153,8 @@ export default function StepNine() {
 									animateOnce={true}>
 									<div className='cw-wizard-stsnine-form-buttons-container'>
 										<Buttons
-											previous={'/wizard/step-eight'}
-											next={'/wizard/step-ten'}
+											previous={'/client/step-eight'}
+											next={'/client/step-ten'}
 										/>
 									</div>
 								</ScrollAnimation>

@@ -168,8 +168,8 @@ export default function StepSix() {
 									animateOnce={true}>
 									<div className='cw-wizard-stssix-form-buttons-container'>
 										<Buttons
-											previous={'/wizard/step-five'}
-											next={'/wizard/step-seven'}
+											previous={'/client/step-five'}
+											next={'/client/step-seven'}
 										/>
 									</div>
 								</ScrollAnimation>

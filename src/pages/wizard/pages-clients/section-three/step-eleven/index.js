@@ -89,7 +89,8 @@ export default function StepEleven() {
 										animateOnce={true}>
 										<div className='cw-wizard-stseleven-form-title-container'>
 											<h2 className='cw-wizard-stseleven-form-title'>
-												When do you plan to retire?
+												When do pefer to work with someone in the retirement
+												timeline?
 											</h2>
 										</div>
 										<div className='cw-wizard-stseleven-form-option-container'>
@@ -146,8 +147,8 @@ export default function StepEleven() {
 									animateOnce={true}>
 									<div className='cw-wizard-stseleven-form-buttons-container'>
 										<Buttons
-											previous={'/wizard/step-ten'}
-											next={'/wizard/step-twelve'}
+											previous={'/client/step-ten'}
+											next={'/client/step-twelve'}
 										/>
 									</div>
 								</ScrollAnimation>

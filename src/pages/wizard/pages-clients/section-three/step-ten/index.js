@@ -89,7 +89,8 @@ export default function StepTen() {
 										animateOnce={true}>
 										<div className='cw-wizard-ststen-form-title-container'>
 											<h2 className='cw-wizard-ststen-form-title'>
-												What is your level of investment knowledge?
+												What level of investment knowledge do you prefer in a
+												client?
 											</h2>
 										</div>
 										<div className='cw-wizard-ststen-form-option-container'>
@@ -99,21 +100,19 @@ export default function StepTen() {
 												value={isSelected}>
 												<Row>
 													<Col span={24}>
-														<Checkbox value='Low'>
-															I am new to investing
-														</Checkbox>
+														<Checkbox value='Low'>New to investing.</Checkbox>
 													</Col>
 													<Col span={24}>
 														<Checkbox value='Moderate'>
-															Somewhat knowledgeable: I prefer an advisor who
-															will guide and educate my decisions.
+															Somewhat knowledgeable: I prefer a client who
+															needs guidence and education with their decisions.
 														</Checkbox>
 													</Col>
 													<Col span={24}>
 														<Checkbox value='High'>
-															Seasoned investor: I stay up to date and educated
-															with the market and feel confident in my
-															investment decisions.
+															Seasoned investor: I prefer a client who is up
+															date and educated with the market and feels
+															confident in their investment decisions.
 														</Checkbox>
 													</Col>
 												</Row>
@@ -146,8 +145,8 @@ export default function StepTen() {
 									animateOnce={true}>
 									<div className='cw-wizard-ststen-form-buttons-container'>
 										<Buttons
-											previous={'/wizard/step-nine'}
-											next={'/wizard/step-eleven'}
+											previous={'/client/step-nine'}
+											next={'/client/step-eleven'}
 										/>
 									</div>
 								</ScrollAnimation>

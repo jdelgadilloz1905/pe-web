@@ -55,6 +55,7 @@ import ClientStepThirteen from '../pages/wizard/pages-clients/section-four/step-
 import ClientStepFourteen from '../pages/wizard/pages-clients/section-four/step-fourteen'
 import ClientStepFifteen from '../pages/wizard/pages-clients/section-four/step-fifteen'
 import ClientStepSixteen from '../pages/wizard/pages-clients/section-four/step-sixteen'
+import ClientStepSixteen2 from '../pages/wizard/pages-clients/section-four/step-sixteen2'
 import ClientStepSeventeen from '../pages/wizard/pages-clients/section-five/step-seventen'
 import ClientStepEighteen from '../pages/wizard/pages-clients/section-five/step-eighteen'
 import ClientStepNineteen from '../pages/wizard/pages-clients/section-five/step-nineteen'
@@ -186,6 +187,11 @@ function InnerRoutes() {
 						exact
 						path='/client/step-sixteen'
 						component={ClientStepSixteen}
+					/>
+					<Route
+						exact
+						path='/client/step-sixteen2'
+						component={ClientStepSixteen2}
 					/>
 					<Route
 						exact

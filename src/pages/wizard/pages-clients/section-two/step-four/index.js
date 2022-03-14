@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 
 import ScrollAnimation from 'react-animate-on-scroll'
 
-import { Row, Col, Slider } from 'antd'
+import { Row, Col, Radio } from 'antd'
 
 import MetaDescription from '../../../../../components/MetaDescription'
 import NormalRate from '../../../../../components/Rate'
@@ -18,15 +18,6 @@ import servicesAdvisor from '../../services'
 import './style.scss'
 
 export default function StepFour() {
-	const marks = {
-		0: '|',
-		1: '|',
-		2: '|',
-		3: '|',
-		4: '|',
-		5: '|',
-	}
-
 	const [isRateOne, setRateOne] = useState(0)
 	const [isSection] = useState('section_two')
 	const [isStep] = useState('step_four')
@@ -42,7 +33,6 @@ export default function StepFour() {
 	}, [isStep])
 
 	const handleChangeRate = async (value) => {
-		console.log('paso ')
 		setRateOne(value)
 		await servicesAdvisor
 			.PushQuestion(value, isSelected, isSection, isStep)
@@ -51,11 +41,10 @@ export default function StepFour() {
 			})
 	}
 
-	const handleChangeSlider = async (values) => {
-		console.log('paso ')
-		setSelected(values)
+	const handleChangeRadio = async (e) => {
+		setSelected(e.target.value)
 		await servicesAdvisor
-			.PushQuestion(isRateOne, values, isSection, isStep)
+			.PushQuestion(isRateOne, e.target.value, isSection, isStep)
 			.then((response) => {
 				//..
 			})
@@ -91,7 +80,7 @@ export default function StepFour() {
 											{ indicator: false },
 										]}
 										section={'Section 2 of 5'}
-										title={'Advisor speciality or skill'}
+										title={'Your specialty or skill'}
 										subtitle={'Question 2 of 6'}
 									/>
 								</div>
@@ -102,26 +91,22 @@ export default function StepFour() {
 										animateOnce={true}>
 										<div className='cw-wizard-stsfour-form-title-container'>
 											<h2 className='cw-wizard-stsfour-form-title'>
-												How important is it that your advisor is a Fiduciary?
+												Are you a Fiduciary?
 											</h2>
 										</div>
 										<div className='cw-wizard-stsfour-form-option-container'>
-											<Slider
-												marks={marks}
-												step={1}
-												defaultValue={0}
-												max={5}
-												onChange={handleChangeSlider}
-												value={isSelected}
-											/>
-											<div className='cw-wizard-stsfour-form-option-subtitle-container'>
-												<h2 className='cw-wizard-stsfour-form-option-subtitle'>
-													Not Important
-												</h2>
-												<h2 className='cw-wizard-stsfour-form-option-subtitle'>
-													Very Important
-												</h2>
-											</div>
+											<Radio.Group
+												onChange={handleChangeRadio}
+												value={isSelected}>
+												<Row>
+													<Col span={24}>
+														<Radio value='Yes'>Yes</Radio>
+													</Col>
+													<Col span={24}>
+														<Radio value='No'>No</Radio>
+													</Col>
+												</Row>
+											</Radio.Group>
 										</div>
 									</ScrollAnimation>
 								</div>
@@ -150,8 +135,8 @@ export default function StepFour() {
 									animateOnce={true}>
 									<div className='cw-wizard-stsfour-form-buttons-container'>
 										<Buttons
-											previous={'/wizard/step-three'}
-											next={'/wizard/step-five'}
+											previous={'/client/step-three'}
+											next={'/client/step-five'}
 										/>
 									</div>
 								</ScrollAnimation>

@@ -76,10 +76,11 @@ export default function StepFifteen() {
 											{ indicator: true },
 											{ indicator: true },
 											{ indicator: false },
+											{ indicator: false },
 										]}
 										section={'Section 4 of 5'}
 										title={'Personal Information'}
-										subtitle={'Question 3 of 4'}
+										subtitle={'Question 3 of 5'}
 									/>
 								</div>
 								<div className='cw-wizard-sfsfifteen-form-container'>
@@ -89,7 +90,7 @@ export default function StepFifteen() {
 										animateOnce={true}>
 										<div className='cw-wizard-sfsfifteen-form-title-container'>
 											<h2 className='cw-wizard-sfsfifteen-form-title'>
-												What is your current household income?
+												How many clients do you manage today?
 											</h2>
 										</div>
 										<div className='cw-wizard-sfsfifteen-form-option-container'>
@@ -98,30 +99,22 @@ export default function StepFifteen() {
 												value={isSelected}>
 												<Row>
 													<Col span={24}>
-														<Radio value='0-100000'>$0 – $100,000</Radio>
+														<Radio value='0-10'>0 to 10</Radio>
 													</Col>
 													<Col span={24}>
-														<Radio value='100000-250000'>
-															$100,000 – $250,000
-														</Radio>
+														<Radio value='10-20'>10 to 20</Radio>
 													</Col>
 													<Col span={24}>
-														<Radio value='250000-500000'>
-															$250,000 – $500,000
-														</Radio>
+														<Radio value='20-30'>20 to 30</Radio>
 													</Col>
 													<Col span={24}>
-														<Radio value='500000-1000000'>
-															$500,000 – $1,000,000
-														</Radio>
+														<Radio value='30-40'>30 to 40</Radio>
 													</Col>
 													<Col span={24}>
-														<Radio value='1000000-5000000'>
-															$1,000,000 – $5,000,000
-														</Radio>
+														<Radio value='40-50'>40 to 50</Radio>
 													</Col>
 													<Col span={24}>
-														<Radio value='5000000+'>$5,000,000 and up</Radio>
+														<Radio value='50+'>50 and up</Radio>
 													</Col>
 												</Row>
 											</Radio.Group>
@@ -154,8 +147,8 @@ export default function StepFifteen() {
 									animateOnce={true}>
 									<div className='cw-wizard-sfsfifteen-form-buttons-container'>
 										<Buttons
-											previous={'/wizard/step-fourteen'}
-											next={'/wizard/step-sixteen'}
+											previous={'/client/step-fourteen'}
+											next={'/client/step-sixteen'}
 										/>
 									</div>
 								</ScrollAnimation>

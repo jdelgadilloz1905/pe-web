@@ -133,7 +133,7 @@ export default function StepNineteen() {
 									animateOnce={true}>
 									<div className='cw-wizard-sfsnineteen-form-buttons-container'>
 										<Buttons
-											previous={'/wizard/step-eighteen'}
+											previous={'/client/step-eighteen'}
 											next={'/register'}
 										/>
 									</div>

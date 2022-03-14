@@ -150,7 +150,7 @@ export default function StepOne() {
 									delay={4000}
 									animateOnce={true}>
 									<div className='cw-wizard-stsone-form-buttons-container'>
-										<Buttons previous={'/'} next={'/wizard/step-two'} />
+										<Buttons previous={'/'} next={'/client/step-two'} />
 									</div>
 								</ScrollAnimation>
 							</div>

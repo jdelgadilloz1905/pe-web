@@ -130,8 +130,8 @@ export default function StepTwo() {
 									animateOnce={true}>
 									<div className='cw-wizard-ststwo-form-buttons-container'>
 										<Buttons
-											previous={'/wiz-welcome/step-one'}
-											next={'/wizard/step-three'}
+											previous={'/client/step-one'}
+											next={'/client/step-three'}
 										/>
 									</div>
 								</ScrollAnimation>

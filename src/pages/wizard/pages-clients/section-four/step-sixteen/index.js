@@ -76,10 +76,11 @@ export default function StepSixteen() {
 											{ indicator: true },
 											{ indicator: true },
 											{ indicator: true },
+											{ indicator: false },
 										]}
 										section={'Section 4 of 5'}
 										title={'Personal Information'}
-										subtitle={'Question 4 of 4'}
+										subtitle={'Question 4 of 5'}
 									/>
 								</div>
 								<div className='cw-wizard-sfssixteen-form-container'>
@@ -89,7 +90,7 @@ export default function StepSixteen() {
 										animateOnce={true}>
 										<div className='cw-wizard-sfssixteen-form-title-container'>
 											<h2 className='cw-wizard-sfssixteen-form-title'>
-												Please estimate your current investable assets.
+												What household income would you prefer in a Client?
 											</h2>
 										</div>
 										<div className='cw-wizard-sfssixteen-form-option-container'>
@@ -154,8 +155,8 @@ export default function StepSixteen() {
 									animateOnce={true}>
 									<div className='cw-wizard-sfssixteen-form-buttons-container'>
 										<Buttons
-											previous={'/wizard/step-fifteen'}
-											next={'/wizard/step-seventeen'}
+											previous={'/client/step-fifteen'}
+											next={'/client/step-sixteen2'}
 										/>
 									</div>
 								</ScrollAnimation>

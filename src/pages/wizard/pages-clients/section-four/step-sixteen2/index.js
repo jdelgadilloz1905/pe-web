@@ -17,10 +17,10 @@ import servicesAdvisor from '../../services'
 
 import './style.scss'
 
-export default function StepEighteen() {
+export default function StepSixteen() {
 	const [isRateOne, setRateOne] = useState(0)
-	const [isSection] = useState('section_five')
-	const [isStep] = useState('step_eighteen')
+	const [isSection] = useState('section_four')
+	const [isStep] = useState('step_sixteen2')
 	const [isSelected, setSelected] = useState(null)
 
 	useEffect(() => {
@@ -52,12 +52,12 @@ export default function StepEighteen() {
 	return (
 		<>
 			<MetaDescription
-				title={'Organization Preferences-2 | PE.com'}
+				title={'Personal Information-4 | PE.com'}
 				name={'description'}
-				content={'Organization Preferences-2 | PE.com...'}
+				content={'Personal Information-4 | PE.com...'}
 			/>
-			<div className='cw-wizard-sfseighteen-global-container'>
-				<Row className='cw-wizard-sfseighteen-main-container'>
+			<div className='cw-wizard-sfssixteen-global-container'>
+				<Row className='cw-wizard-sfssixteen-main-container'>
 					<Col span={10}>
 						<Sidebar />
 					</Col>
@@ -68,71 +68,85 @@ export default function StepEighteen() {
 							delay={300}
 							duration={2}
 							animateOnce={true}>
-							<div className='cw-wizard-sfseighteen-form-global-container'>
-								<div className='cw-wizard-sfseighteen-form-main-title-container'>
+							<div className='cw-wizard-sfssixteen-form-global-container'>
+								<div className='cw-wizard-sfssixteen-form-main-title-container'>
 									<MainTitle
 										indicators={[
 											{ indicator: true },
 											{ indicator: true },
-											{ indicator: false },
+											{ indicator: true },
+											{ indicator: true },
+											{ indicator: true },
 										]}
-										section={'Section 5 of 5'}
-										title={'Organization Preferences'}
-										subtitle={'Question 2 of 3'}
+										section={'Section 4 of 5'}
+										title={'Personal Information'}
+										subtitle={'Question 5 of 5'}
 									/>
 								</div>
-								<div className='cw-wizard-sfseighteen-form-container'>
+								<div className='cw-wizard-sfssixteen-form-container'>
 									<ScrollAnimation
 										animateIn='animate__fadeInUp'
 										delay={3000}
 										animateOnce={true}>
-										<div className='cw-wizard-sfseighteen-form-title-container'>
-											<h2 className='cw-wizard-sfseighteen-form-title'>
-												What is the size of your of firm?
+										<div className='cw-wizard-sfssixteen-form-title-container'>
+											<h2 className='cw-wizard-sfssixteen-form-title'>
+												What level of Investable Assets would you prefer in a
+												Client?
 											</h2>
 										</div>
-										<div className='cw-wizard-sfseighteen-form-option-container'>
+										<div className='cw-wizard-sfssixteen-form-option-container'>
 											<Radio.Group
 												onChange={handleChangeRadio}
 												value={isSelected}>
 												<Row>
 													<Col span={24}>
-														<Radio value='Personal'>
-															Small firm with a personal feel.
+														<Radio value='0-100000'>$0 – $100,000</Radio>
+													</Col>
+													<Col span={24}>
+														<Radio value='100000-250000'>
+															$100,000 – $250,000
 														</Radio>
 													</Col>
 													<Col span={24}>
-														<Radio value='Recognizable'>
-															Mid size firm with a recognizable name.
+														<Radio value='250000-500000'>
+															$250,000 – $500,000
 														</Radio>
 													</Col>
 													<Col span={24}>
-														<Radio value='Wide'>
-															Large firm with a wide range of services.
+														<Radio value='500000-1000000'>
+															$500,000 – $1,000,000
 														</Radio>
+													</Col>
+													<Col span={24}>
+														<Radio value='1000000-5000000'>
+															$1,000,000 – $5,000,000
+														</Radio>
+													</Col>
+													<Col span={24}>
+														<Radio value='5000000+'>$5,000,000 and up</Radio>
 													</Col>
 												</Row>
 											</Radio.Group>
 										</div>
-										<div className='cw-wizard-sfseighteen-form-option-container'>
-											<ScrollAnimation
-												animateIn='animate__fadeInUp'
-												delay={3500}
-												animateOnce={true}>
-												<div className='cw-wizard-sfseighteen-form-title-container'>
-													<h2 className='cw-wizard-sfseighteen-form-rate'>
-														How important is this question to you?
-													</h2>
-												</div>
+									</ScrollAnimation>
+								</div>
+								<div className='cw-wizard-sfssixteen-form-option-container'>
+									<ScrollAnimation
+										animateIn='animate__fadeInUp'
+										delay={3500}
+										animateOnce={true}>
+										<div className='cw-wizard-sfssixteen-form-title-container'>
+											<h2 className='cw-wizard-sfssixteen-form-rate'>
+												How important is this question to you?
+											</h2>
+										</div>
 
-												<div className='cw-wizard-sfseighteen-form-option-container'>
-													<NormalRate
-														className={''}
-														onChange={handleChangeRate}
-														defaultValue={isRateOne}
-													/>
-												</div>
-											</ScrollAnimation>
+										<div className='cw-wizard-sfssixteen-form-option-container'>
+											<NormalRate
+												className={''}
+												onChange={handleChangeRate}
+												defaultValue={isRateOne}
+											/>
 										</div>
 									</ScrollAnimation>
 								</div>
@@ -140,10 +154,10 @@ export default function StepEighteen() {
 									animateIn='animate__fadeInUp'
 									delay={4000}
 									animateOnce={true}>
-									<div className='cw-wizard-sfseighteen-form-buttons-container'>
+									<div className='cw-wizard-sfssixteen-form-buttons-container'>
 										<Buttons
-											previous={'/client/step-seventeen'}
-											next={'/client/step-nineteen'}
+											previous={'/client/step-sixteen'}
+											next={'/client/step-eighteen'}
 										/>
 									</div>
 								</ScrollAnimation>
