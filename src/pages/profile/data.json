@@ -1,0 +1,96 @@
+{
+	"active_clients": [
+		{
+			"id": 1,
+			"name": "Sally Doe",
+			"date_added": "4/19/2019",
+			"aum": "$ 2,398,381",
+			"wellness_score": "A",
+			"date_action": "9/28/2022",
+			"notes": "OPEN"
+		},
+		{
+			"id": 2,
+			"name": "Jennifer Jane",
+			"date_added": "4/19/2019",
+			"aum": "$ 5,233,120",
+			"wellness_score": "B-",
+			"date_action": "9/28/2022",
+			"notes": "OPEN"
+		},
+		{
+			"id": 3,
+			"name": "Alex Smith",
+			"date_added": "4/09/2020",
+			"aum": "$ 4,124,227",
+			"wellness_score": "B-",
+			"date_action": "10/28/2022",
+			"notes": "OPEN"
+		},
+		{
+			"id": 4,
+			"name": "Alex Smith",
+			"date_added": "4/09/2020",
+			"aum": "$ 4,124,227",
+			"wellness_score": "B-",
+			"date_action": "10/28/2022",
+			"notes": "OPEN"
+		},
+		{
+			"id": 5,
+			"name": "Sam Jones",
+			"date_added": "5/11/2020",
+			"aum": "$ 8,124,227",
+			"wellness_score": "B-",
+			"date_action": "1/15/2022",
+			"notes": "OPEN"
+		}
+	],
+	"prospects": [
+		{
+			"id": 1,
+			"name": "Sally Doe",
+			"date_added": "4/19/2019",
+			"aum": "$ 2,398,381",
+			"wellness_score": "Mutual commitment",
+			"date_action": "Retirement Planning",
+			"notes": "OPEN"
+		},
+		{
+			"id": 2,
+			"name": "Sally Doe",
+			"date_added": "4/19/2019",
+			"aum": "$ 2,398,381",
+			"wellness_score": "Mutual commitment",
+			"date_action": "Retirement Planning",
+			"notes": "OPEN"
+		},
+		{
+			"id": 3,
+			"name": "Sally Doe",
+			"date_added": "4/19/2019",
+			"aum": "$ 2,398,381",
+			"wellness_score": "Mutual commitment",
+			"date_action": "Retirement Planning",
+			"notes": "OPEN"
+		},
+		{
+			"id": 4,
+			"name": "Sally Doe",
+			"date_added": "4/19/2019",
+			"aum": "$ 2,398,381",
+			"wellness_score": "Mutual commitment",
+			"date_action": "Retirement Planning",
+			"notes": "OPEN"
+		},
+		{
+			"id": 4,
+			"name": "Sally Doe",
+			"date_added": "4/19/2019",
+			"aum": "$ 2,398,381",
+			"wellness_score": "Mutual commitment",
+			"date_action": "Retirement Planning",
+			"notes": "OPEN"
+		}
+	]
+}

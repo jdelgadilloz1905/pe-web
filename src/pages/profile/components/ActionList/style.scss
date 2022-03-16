@@ -1,0 +1,43 @@
+/** @format */
+
+.cw-profile-actions-global-container {
+	width: 100%;
+	max-width: 480px;
+	margin: auto;
+	padding: 80px 15px;
+}
+
+.cw-profile-actions-main-title {
+	font-size: 28px;
+	color: #fff;
+	font-weight: 600;
+	margin-bottom: 30px;
+	padding: 0 10px;
+}
+
+.cw-profile-actions-select-list {
+	border: 1px solid #fff;
+	border-radius: 50px;
+	background: rgba(34, 57, 131, 0.6);
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 9px 10px 10px 15px;
+	margin-bottom: 30px;
+}
+
+.cw-profile-actions-select-icon {
+	width: 30px;
+	height: 30px;
+	border: 1px solid #fff;
+	border-radius: 100%;
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
+.cw-profile-actions-select-title {
+	font-size: 20px;
+	color: #fff;
+	font-weight: 400px;
+	margin-left: 14px;
+	margin-bottom: 0;
+}

@@ -1,0 +1,43 @@
+/** @format */
+
+.cv-profile-global-background {
+	background-image: url(../../assets/images/bg/login-bg.png);
+	background-size: cover;
+	width: 100%;
+	background-attachment: fixed;
+	min-height: calc(100vh - 20px);
+	margin-top: -50px;
+	position: relative;
+	z-index: 1;
+}
+
+.cw-profile-navbar-spacer {
+	min-height: 50px;
+	max-height: 50px;
+}
+
+.cv-profile-container-1 {
+	background: linear-gradient(180deg, rgba(168, 184, 233, 0.8415) 0%, rgba(34, 57, 131, 0.85) 100%);
+}
+
+.cv-profile-info-inner-container {
+	border-bottom: 1px solid #fff;
+	background: rgba(255, 255, 255, 0.15);
+}
+
+.cv-profile-list-inner-container {
+	border-bottom: 1px solid #fff;
+	padding-top: 30px;
+	padding-bottom: 50px;
+}
+
+.cv-profile-list-actions-container {
+	border-bottom: 1px solid #fff;
+}
+
+.cv-profile-list-2-inner-container {
+	border-bottom: 1px solid #fff;
+	padding-top: 30px;
+	padding-bottom: 50px;
+	background: linear-gradient(180deg, rgba(168, 184, 233, 0.8415) 0%, rgba(34, 57, 131, 0.85) 100%);
+}

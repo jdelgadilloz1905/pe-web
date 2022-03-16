@@ -1,0 +1,86 @@
+/** @format */
+
+.cw-profile-list-result-main-container {
+	border: 1px solid #fff;
+	border-radius: 50px;
+	background: rgba(34, 57, 131, 1) 100%;
+	margin-bottom: 45px;
+}
+
+.cw-profile-list-result-number-container {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.cw-profile-list-result-number {
+	background-color: #008843;
+	width: 40px;
+	height: 40px;
+	border-radius: 100%;
+	border: 1px solid #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	font-weight: 600;
+	font-size: 30px;
+	margin-right: 15px;
+}
+
+.cw-profile-list-result-number-title {
+	margin-left: -2px;
+}
+
+.cw-profile-list-result-title {
+	font-size: 18px;
+	color: #fff;
+	font-weight: 600;
+	text-align: center;
+	margin-bottom: 0;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.cw-profile-list-result-title-elipsis {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	width: 100%;
+	max-width: 130px;
+}
+
+.cw-profile-list-result-title-alt {
+	font-size: 18px;
+	color: #fff;
+	font-weight: 500;
+	text-align: center;
+	margin-bottom: 0;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.cw-profile-list-result-subtitle-alt {
+	color: #fff;
+	margin-bottom: 0;
+	line-height: 12px;
+	font-style: italic;
+	font-size: 12px;
+	padding: 0 15px;
+	margin-top: 2px;
+}
+
+.cw-profile-list-result-title-alt-2 {
+	font-size: 18px;
+	color: #fff;
+	font-weight: 500;
+	text-align: center;
+	margin-bottom: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
