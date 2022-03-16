@@ -4,9 +4,11 @@ import React from 'react'
 
 import { Row, Col } from 'antd'
 
-import { EditOutlined, NotificationOutlined, CalendarOutlined } from '@ant-design/icons'
+import { EditOutlined, BellFilled } from '@ant-design/icons'
 
 import Image from '../../../../components/Image'
+
+import Calendar from '../../../../assets/images/icons/calendar.png'
 
 import './style.scss'
 
@@ -39,7 +41,8 @@ export default function ProfileInfo() {
 									<div>
 										<h4 className='cw-profile-info-details-title'>Clients</h4>
 										<h2 className='cw-profile-info-details-subtitle'>
-											$51M<span className='cw-profile-info-details-description'>AUM</span>
+											$51M
+											<span className='cw-profile-info-details-description'>AUM</span>
 										</h2>
 									</div>
 								</div>
@@ -49,7 +52,8 @@ export default function ProfileInfo() {
 									<div>
 										<h4 className='cw-profile-info-details-title'>Prospects</h4>
 										<h2 className='cw-profile-info-details-subtitle'>
-											$20M<span className='cw-profile-info-details-description'>AUM</span>
+											$20M
+											<span className='cw-profile-info-details-description'>AUM</span>
 										</h2>
 									</div>
 								</div>
@@ -58,9 +62,9 @@ export default function ProfileInfo() {
 								<div>
 									<div>
 										<h4 className='cw-profile-info-details-title'>Actions</h4>
-										<div>
-											<NotificationOutlined />
-											<h4>Review</h4>
+										<div className='cw-profile-info-user-icon-title-container'>
+											<BellFilled className='cw-profile-info-user-second-icon' />
+											<h4 className='cw-profile-info-action-title'>Review</h4>
 										</div>
 									</div>
 								</div>
@@ -69,7 +73,12 @@ export default function ProfileInfo() {
 								<div>
 									<div>
 										<h4 className='cw-profile-info-details-title'>Calendar</h4>
-										<CalendarOutlined />
+										<Image
+											classImg={'cw-profile-calendar-icon'}
+											image={Calendar}
+											alt={'Calendar Icon'}
+											title={'Calendar Icon'}
+										/>
 									</div>
 								</div>
 							</Col>

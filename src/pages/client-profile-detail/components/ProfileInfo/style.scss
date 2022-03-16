@@ -87,3 +87,23 @@
 	font-weight: 500;
 	margin-bottom: 0;
 }
+
+.cw-profile-info-user-icon-title-container {
+	display: flex;
+	justify-content: flex-start;
+	margin-top: 5px;
+	align-items: center;
+}
+
+.cw-profile-info-action-title {
+	margin-bottom: 0;
+	color: #fff;
+	font-size: 17px;
+	text-decoration: underline;
+}
+
+.cw-profile-info-user-second-icon {
+	color: #fff !important;
+	font-size: 38px;
+	margin-right: 5px;
+}
