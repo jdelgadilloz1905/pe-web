@@ -63,7 +63,12 @@ export default function ProfileInfo() {
 									<div>
 										<h4 className='cw-profile-info-details-title'>Actions</h4>
 										<div className='cw-profile-info-user-icon-title-container'>
-											<BellFilled className='cw-profile-info-user-second-icon' />
+											<div className='cw-bell-icon-container'>
+												<div className='cw-bell-text-title-container'>
+													<h5 className='cw-bell-text-title'>5</h5>
+												</div>
+												<BellFilled className='cw-profile-info-user-bell-icon' />
+											</div>
 											<h4 className='cw-profile-info-action-title'>Review</h4>
 										</div>
 									</div>

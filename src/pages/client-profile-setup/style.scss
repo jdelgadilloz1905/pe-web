@@ -114,6 +114,27 @@
 	padding-left: 10px;
 }
 
+.cw-profile-setup-bell-icon-container {
+	position: relative;
+}
+
+.cw-profile-setup-bell-text-container {
+	position: absolute;
+	right: 1px;
+	top: 4px;
+	border: 2px #fff solid;
+	border-radius: 100%;
+	background-color: red;
+	padding: 0 5px;
+}
+
+.cw-profile-setup-bell-text {
+	color: #fff;
+	font-size: 10px;
+	margin-bottom: 0;
+	font-weight: 600;
+}
+
 .cw-profile-setup-button-container {
 	display: flex !important;
 	color: #ffffff;

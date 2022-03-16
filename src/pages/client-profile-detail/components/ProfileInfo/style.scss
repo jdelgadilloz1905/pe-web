@@ -100,10 +100,36 @@
 	color: #fff;
 	font-size: 17px;
 	text-decoration: underline;
+	margin-left: 5px;
 }
 
-.cw-profile-info-user-second-icon {
+.cw-bell-icon-container {
+	position: relative;
+}
+
+.cw-bell-text-title-container {
+	position: absolute;
+	right: 3px;
+	top: 3px;
+	border: 2px #fff solid;
+	border-radius: 100%;
+	background-color: red;
+	padding: 0 5px;
+}
+
+.cw-bell-text-title {
+	color: #fff;
+	font-size: 10px;
+	margin-bottom: 0;
+	font-weight: 600;
+}
+
+.cw-profile-info-user-bell-icon {
 	color: #fff !important;
 	font-size: 38px;
 	margin-right: 5px;
+}
+
+.cw-profile-calendar-icon {
+	margin-top: 3px;
 }

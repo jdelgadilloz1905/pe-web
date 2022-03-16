@@ -58,6 +58,7 @@ import ClientStepNineteen from '../pages/wizard/pages-clients/section-five/step-
 import ClientProfileDetail from '../pages/client-profile-detail'
 import ClientRegisterCode from '../pages/client-register-code'
 import ClientProfileSetup from '../pages/client-profile-setup'
+import ClientSurveyResults from '../pages/client-survey-results'
 
 import NotFound from '../pages/not-found'
 
@@ -78,7 +79,10 @@ function InnerRoutes() {
 
 	return (
 		<TransitionGroup>
-			<CSSTransition key={location.pathname} classNames={`${location.pathname.match(/wizard/) ? '' : 'fade'}`} timeout={500}>
+			<CSSTransition
+				key={location.pathname}
+				classNames={`${location.pathname.match(/wizard/) ? '' : 'fade'}`}
+				timeout={500}>
 				<Switch>
 					<Route exact path='/' component={Home} />
 					<Route exact path='/process' component={Process} />
@@ -132,6 +136,7 @@ function InnerRoutes() {
 					<Route exact path='/client-profile-detail' component={ClientProfileDetail} />
 					<Route exact path='/client-register-code' component={ClientRegisterCode} />
 					<Route exact path='/client-profile-setup' component={ClientProfileSetup} />
+					<Route exact path='/client-survey-result' component={ClientSurveyResults} />
 
 					<Route path='*' component={NotFound} />
 				</Switch>

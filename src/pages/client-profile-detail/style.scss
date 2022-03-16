@@ -1,7 +1,7 @@
 /** @format */
 
 .cv-profile-global-background {
-	background-image: url(../../assets/images/bg/login-bg.png);
+	background-image: url(../../assets/images/bg/client-profile-setup.PNG);
 	background-size: cover;
 	width: 100%;
 	background-attachment: fixed;
@@ -17,7 +17,11 @@
 }
 
 .cv-profile-container-1 {
-	background: linear-gradient(180deg, rgba(168, 184, 233, 0.8415) 0%, rgba(34, 57, 131, 0.85) 100%);
+	background: linear-gradient(
+		180deg,
+		rgba(168, 184, 233, 0.8415) 0%,
+		rgba(34, 57, 131, 0.85) 100%
+	);
 }
 
 .cv-profile-info-inner-container {
@@ -39,5 +43,9 @@
 	border-bottom: 1px solid #fff;
 	padding-top: 30px;
 	padding-bottom: 50px;
-	background: linear-gradient(180deg, rgba(168, 184, 233, 0.8415) 0%, rgba(34, 57, 131, 0.85) 100%);
+	background: linear-gradient(
+		180deg,
+		rgba(168, 184, 233, 0.8415) 0%,
+		rgba(34, 57, 131, 0.85) 100%
+	);
 }

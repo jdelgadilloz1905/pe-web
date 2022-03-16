@@ -65,7 +65,12 @@ export default function ProfileSetup() {
 									</h4>
 								</Col>
 								<Col span={8} className='cw-profile-setup-col-container'>
-									<BellFilled className='cw-profile-setup-icon' />
+									<div className='cw-profile-setup-bell-icon-container'>
+										<div className='cw-profile-setup-bell-text-container'>
+											<h5 className='cw-profile-setup-bell-text'>0</h5>
+										</div>
+										<BellFilled className='cw-profile-setup-icon' />
+									</div>
 									<h4 className='cw-profile-setup-title'>
 										Setup or change your alert preferences.
 									</h4>
