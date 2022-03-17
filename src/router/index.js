@@ -59,6 +59,7 @@ import ClientProfileDetail from '../pages/client-profile-detail'
 import ClientRegisterCode from '../pages/client-register-code'
 import ClientProfileSetup from '../pages/client-profile-setup'
 import ClientSurveyResults from '../pages/client-survey-results'
+import ClientDashboard from '../pages/client-dashboard'
 
 import NotFound from '../pages/not-found'
 
@@ -137,6 +138,7 @@ function InnerRoutes() {
 					<Route exact path='/client-register-code' component={ClientRegisterCode} />
 					<Route exact path='/client-profile-setup' component={ClientProfileSetup} />
 					<Route exact path='/client-survey-result' component={ClientSurveyResults} />
+					<Route exact path='/client-dashboard' component={ClientDashboard} />
 
 					<Route path='*' component={NotFound} />
 				</Switch>

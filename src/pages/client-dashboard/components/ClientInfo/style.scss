@@ -1,0 +1,139 @@
+/** @format */
+
+.cw-client-global-container {
+	width: 100%;
+	max-width: 1140px;
+	margin: auto;
+	padding: 15px;
+}
+
+.cw-client-info-user-container {
+	min-height: 200px;
+	display: flex;
+	align-items: center;
+}
+
+.cw-client-info-user-inner-container {
+	width: 100%;
+}
+
+.cw-client-info-container {
+	display: flex;
+	align-items: center;
+}
+
+.cw-client-info-image {
+	width: 100%;
+	max-width: 120px;
+	max-height: 120px;
+	min-height: 120px;
+	max-height: 120px;
+	border: 3px solid #fff;
+	border-radius: 100%;
+}
+
+.cw-client-info-user-title-main-container {
+	padding: 0 20px;
+}
+
+.cw-client-info-user-title {
+	color: #fff;
+	margin-bottom: 4px;
+	font-weight: 600;
+	font-size: 27px;
+}
+
+.cw-client-info-user-subtitle-container {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-end;
+}
+
+.cw-client-info-user-profile-icon {
+	color: #fff !important;
+	font-size: 27px;
+	margin-right: 5px;
+}
+
+.cw-client-info-user-subtitle {
+	color: #fff;
+	margin-bottom: 0;
+	font-weight: 500;
+	font-size: 14px;
+}
+
+.cw-client-info-details-container {
+	height: 100%;
+}
+
+.cw-client-info-details-title {
+	font-size: 18px;
+	color: #fff;
+	font-weight: 500;
+	margin-bottom: 0;
+	margin-top: 27px;
+}
+
+.cw-client-info-details-subtitle {
+	font-size: 37px;
+	color: #fff;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.cw-client-info-details-description {
+	font-size: 18px;
+	color: #fff;
+	font-weight: 500;
+	margin-bottom: 0;
+}
+
+.cw-client-info-user-col-container {
+	display: flex !important;
+	align-items: center !important;
+}
+
+.cw-client-info-user-icon-title-container {
+	display: flex;
+	justify-content: flex-start;
+	margin-top: 5px;
+	align-items: center;
+}
+
+.cw-client-info-action-title {
+	margin-bottom: 0;
+	color: #fff;
+	font-size: 16px;
+	margin-left: 5px;
+}
+
+.cw-bell-icon-container {
+	position: relative;
+}
+
+.cw-bell-text-title-container {
+	position: absolute;
+	right: 3px;
+	top: 3px;
+	border: 2px #fff solid;
+	border-radius: 100%;
+	background-color: red;
+	padding: 0 5px;
+}
+
+.cw-bell-text-title {
+	color: #fff;
+	font-size: 10px;
+	margin-bottom: 0;
+	font-weight: 600;
+}
+
+.cw-client-info-user-icon {
+	color: #fff !important;
+	font-size: 38px;
+	margin-right: 5px;
+}
+
+.cw-client-calendar-icon {
+	margin-top: 3px;
+}

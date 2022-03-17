@@ -1,0 +1,178 @@
+/** @format */
+
+.cw-advisors-review-global-container {
+	width: 100%;
+	max-width: 1140px;
+	margin: auto;
+	padding: 15px;
+}
+
+.cw-advisors-review-icon-title-container {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	margin-bottom: 30px;
+}
+
+.cw-advisors-bell-icon-container {
+	position: relative;
+}
+
+.cw-advisors-bell-text-title-container {
+	position: absolute;
+	right: 3px;
+	top: 3px;
+	border: 2px #fff solid;
+	border-radius: 100%;
+	background-color: red;
+	padding: 0 5px;
+}
+
+.cw-advisors-bell-text-title {
+	color: #fff;
+	font-size: 10px;
+	margin-bottom: 0;
+	font-weight: 600;
+}
+
+.cw-advisors-icon {
+	color: #fff !important;
+	font-size: 38px;
+	margin-right: 5px;
+}
+
+.cw-advisors-left-title-container {
+	display: flex !important;
+	justify-content: right !important;
+}
+
+.cw-advisors-left-title {
+	margin-bottom: 0;
+	color: #ffff;
+	font-size: 20px;
+	font-weight: 600;
+	text-align: right;
+	margin-right: 20px;
+	width: 100%;
+	max-width: 160px;
+}
+
+.cw-advisors-icon-title {
+	margin-bottom: 0;
+	color: #fff;
+	font-size: 25px;
+	margin-left: 5px;
+	font-weight: 600;
+}
+
+.cw-advisors-map-container {
+	border-left: 1px solid #ffff;
+}
+
+.cw-advisors-profile-pic-container {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	padding-top: 20px;
+}
+
+.cw-advisors-profile-number-title-container {
+	position: absolute;
+	border: 1px solid #ffff;
+	border-radius: 100%;
+	background-color: #fcaf17;
+	width: 60px;
+	height: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	left: 50px;
+	top: 0;
+}
+
+.cw-advisors-profile-number-title {
+	color: #ffff;
+	margin-bottom: 0;
+	font-size: 30px;
+	font-weight: 600;
+}
+
+.cw-advisors-profile {
+	width: 100%;
+	max-width: 120px;
+	border: 1px solid #ffff;
+}
+
+.cw-advisors-profile-text-container {
+	text-align: center;
+	position: relative;
+	padding-top: 15px;
+	padding-bottom: 20px;
+}
+
+.cw-advisors-profile-name {
+	margin-bottom: 0;
+	color: #ffff;
+	font-size: 20px;
+	font-weight: 600;
+	padding-bottom: 5px;
+}
+
+.cw-advisors-profile-percent {
+	color: #fcaf17;
+	font-size: 25px;
+	font-weight: 100;
+	margin-bottom: 0;
+	position: absolute;
+	right: 15px;
+	top: 10px;
+}
+
+.cw-advisors-profile-position {
+	margin-bottom: 0;
+	color: #ffff;
+	font-size: 17px;
+	font-weight: 100;
+	padding-bottom: 15px;
+}
+
+.cw-advisors-profile-title {
+	margin-bottom: 0;
+	color: #ffff;
+	font-size: 17px;
+	font-weight: 600;
+}
+
+.cw-advisors-profile-state {
+	margin-bottom: 0;
+	color: #ffff;
+	font-size: 17px;
+	font-weight: 100;
+}
+
+.cw-advisors-review-button-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.cw-advisors-review-button {
+	transition: 0.3s ease !important;
+	box-shadow: 5.66px 5.66px 15px -1px rgb(17 28 74 / 68%) !important;
+	background: rgba(0, 30, 148, 0.53) !important;
+	border: 1px solid #ffffff !important;
+	font-size: 14px !important;
+	color: white !important;
+	padding: 3px !important;
+	border-radius: 40px !important;
+	height: unset !important;
+	margin: auto;
+	width: 100% !important;
+	max-width: 130px !important;
+}
+
+.cw-advisors-review-button:hover {
+	transition: 0.3s ease !important;
+	background-color: #fcaf17 !important;
+	font-weight: 600;
+}
