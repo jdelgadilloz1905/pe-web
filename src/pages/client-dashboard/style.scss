@@ -1,0 +1,48 @@
+/** @format */
+
+.cw-client-dashboard-global-background {
+	background-image: url(../../assets/images/bg/client-profile-setup.PNG);
+	background-size: cover;
+	width: 100%;
+	background-attachment: fixed;
+	min-height: calc(100vh - 20px);
+	margin-top: -50px;
+	position: relative;
+	z-index: 1;
+}
+
+.cw-client-dashboard-spacer {
+	min-height: 50px;
+	max-height: 50px;
+}
+
+.cw-client-dashboard-container-1 {
+	background: linear-gradient(
+		180deg,
+		rgba(168, 184, 233, 0.8415) 0%,
+		rgba(34, 57, 131, 0.85) 100%
+	);
+}
+
+.cw-client-dashboard-info-inner-container {
+	border-bottom: 1px solid #fff;
+	background: rgba(255, 255, 255, 0.15);
+}
+
+.cw-client-dashboard-advisor-inner-container {
+	border-bottom: 1px solid #fff;
+	padding-top: 30px;
+	padding-bottom: 50px;
+}
+
+.cw-client-dashboard-actions-items-container {
+	border-bottom: 1px solid #fff;
+	background: #fafafa59;
+}
+
+.cw-client-dashboard-financial-progress-inner-container {
+	border-bottom: 1px solid #fff;
+	padding-top: 30px;
+	padding-bottom: 50px;
+	background: rgba(34, 57, 131, 0.54);
+}

@@ -13,21 +13,21 @@ import './style.scss'
 
 export default function ClientDashboard() {
 	return (
-		<div className='cv-profile-global-background'>
+		<div className='cw-client-dashboard-global-background'>
 			<MetaDescription title={'Wix - Profile'} name={'description'} content={'Wix - Profile'} />
-			<div className='cw-profile-navbar-spacer'></div>
-			<div className='cv-profile-container-1'>
-				<div className='cv-profile-info-inner-container'>
+			<div className='cw-client-dashboard-spacer'></div>
+			<div className='cw-client-dashboard-container-1'>
+				<div className='cw-client-dashboard-info-inner-container'>
 					<ClientInfo />
 				</div>
-				<div className='cv-profile-list-inner-container'>
+				<div className='cw-client-dashboard-advisor-inner-container'>
 					<AdvisorsReview />
 				</div>
 			</div>
-			<div className='cv-profile-list-actions-container'>
+			<div className='cw-client-dashboard-actions-items-container'>
 				<ActionItems />
 			</div>
-			<div className='cv-profile-list-2-inner-container'>
+			<div className='cw-client-dashboard-financial-progress-inner-container'>
 				<FinancialProgress />
 			</div>
 		</div>

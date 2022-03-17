@@ -1,19 +1,166 @@
 /** @format */
 
-.cw-advisors-review-global-container {
+.cw-financial-progress-global-container {
 	width: 100%;
 	max-width: 1140px;
 	margin: auto;
 	padding: 15px;
 }
 
-.cw-advisors-map-container {
-	border-left: 1px solid #ffff;
+.cw-financial-progress-title-icon-container {
+	display: flex;
+	margin-bottom: 20px;
 }
 
-.cw-advisors-profile-text-container {
+.cw-financial-progress-icon {
+	color: #ffff !important;
+	font-size: 40px;
+	margin-right: 10px;
+}
+
+.cw-financial-progress-first-title {
+	color: #ffff;
+	font-size: 25px;
+	margin-bottom: 0;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.cw-financial-progress-second-title-container {
+	border-right: 1px solid #dddd;
+	display: flex;
+	justify-content: right;
+	align-items: center;
+}
+
+.cw-financial-progress-second-title {
+	color: #ffff;
+	font-size: 19px;
 	text-align: center;
-	position: relative;
-	padding-top: 15px;
-	padding-bottom: 20px;
+	margin-bottom: 0;
+	font-weight: 100;
+	padding-right: 20px;
+	width: 100%;
+	max-width: 160px;
+}
+
+.cw-financial-progress-third-title-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.cw-financial-progress-third-title {
+	color: #ffff;
+	font-size: 19px;
+	margin-bottom: 0;
+	font-weight: 100;
+	text-align: center;
+	width: 100%;
+	max-width: 100px;
+}
+
+.cw-financial-progress-container {
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 25px;
+}
+
+.cw-financial-progress-profile-title {
+	color: #ffff;
+	margin-bottom: 0;
+	font-size: 22px;
+	padding-bottom: 10px;
+	font-weight: 100;
+}
+
+.cw-financial-progress-profile-bar {
+	width: 85% !important;
+	font-size: 15px !important;
+}
+
+.cw-financial-progress-profile-bar .ant-progress-bg {
+	height: 27px !important;
+}
+
+.cw-financial-progress-profile-bar .ant-progress-inner {
+	background-color: #223983 !important;
+	border: 1px solid #ffff !important;
+}
+
+.cw-financial-progress-profile-bar .ant-progress-success-bg,
+.ant-progress-bg {
+	background-color: #008843 !important;
+	border-right: 1px solid #ffff !important;
+}
+
+.cw-financial-progress-profile-months-container {
+	width: 100%;
+	max-width: 140px;
+	text-align: center;
+}
+
+.cw-financial-progress-profile-months {
+	color: #ffff;
+	margin-bottom: 0;
+	font-size: 18px;
+	font-weight: 600;
+}
+
+.cw-financial-progress-bar-container {
+	border-right: 1px solid #dddd;
+}
+
+.cw-financial-progress-profile-check-container {
+	display: flex !important;
+	justify-content: center !important;
+	align-items: center !important;
+}
+
+.cw-financial-progress-profile-check-inner-container {
+	padding-top: 10px;
+}
+
+.cw-financial-progress-profile-check-inner-container
+	.ant-checkbox-wrapper:hover
+	.ant-checkbox-inner {
+	background-color: #d1d1d15c !important;
+}
+
+.cw-financial-progress-profile-check-inner-container .ant-checkbox-wrapper span {
+	font-size: 17px;
+	color: white;
+	font-weight: 100;
+}
+
+.cw-financial-progress-profile-check-inner-container .ant-checkbox-group .ant-checkbox-inner {
+	border-radius: 100%;
+	width: 30px;
+	height: 30px;
+	background-color: #ffffff40;
+}
+
+.cw-financial-progress-profile-check-inner-container
+	.ant-checkbox-group
+	.ant-checkbox-wrapper:hover {
+	background-color: transparent;
+}
+
+.cw-financial-progress-profile-check-inner-container
+	.ant-checkbox-wrapper:hover
+	.ant-checkbox-inner {
+	border: 1px solid #d9d9d9;
+}
+
+.cw-financial-progress-profile-check-inner-container .ant-checkbox-checked .ant-checkbox-inner {
+	border-color: #d9d9d9;
+}
+
+.cw-financial-progress-profile-check-inner-container
+	.ant-checkbox-checked
+	.ant-checkbox-inner::after {
+	top: 47%;
+	left: 27.5%;
+	height: 60%;
+	width: 30%;
 }
