@@ -6,7 +6,7 @@ import { Row, Col, Checkbox } from 'antd'
 
 import MetaDescription from '../../components/MetaDescription'
 
-import { StarFilled, StarOutlined } from '@ant-design/icons'
+import { StarFilled } from '@ant-design/icons'
 
 import './style.scss'
 
@@ -42,11 +42,11 @@ export default function SurveyResults() {
 								<Col span={3}>
 									<h3 className='cw-survey-result-subtitle'>Your ranking</h3>
 									<div>
+										<StarFilled className='cw-survey-result-icon-filled' />
+										<StarFilled className='cw-survey-result-icon-filled' />
+										<StarFilled className='cw-survey-result-icon-filled' />
 										<StarFilled className='cw-survey-result-icon' />
 										<StarFilled className='cw-survey-result-icon' />
-										<StarFilled className='cw-survey-result-icon' />
-										<StarOutlined className='cw-survey-result-icon' />
-										<StarOutlined className='cw-survey-result-icon' />
 									</div>
 								</Col>
 							</Row>
@@ -67,11 +67,11 @@ export default function SurveyResults() {
 								<Col span={3}>
 									<h3 className='cw-survey-result-subtitle'>Your ranking</h3>
 									<div>
-										<StarFilled className='cw-survey-result-icon' />
-										<StarFilled className='cw-survey-result-icon' />
-										<StarFilled className='cw-survey-result-icon' />
-										<StarFilled className='cw-survey-result-icon' />
-										<StarFilled className='cw-survey-result-icon' />
+										<StarFilled className='cw-survey-result-icon-filled' />
+										<StarFilled className='cw-survey-result-icon-filled' />
+										<StarFilled className='cw-survey-result-icon-filled' />
+										<StarFilled className='cw-survey-result-icon-filled' />
+										<StarFilled className='cw-survey-result-icon-filled' />
 									</div>
 								</Col>
 							</Row>

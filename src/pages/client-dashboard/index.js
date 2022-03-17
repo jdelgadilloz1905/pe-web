@@ -7,6 +7,7 @@ import MetaDescription from '../../components/MetaDescription'
 import ClientInfo from './components/ClientInfo'
 import AdvisorsReview from './components/AdvisorsReview'
 import ActionItems from './components/ActionItems'
+import FinancialProgress from './components/FinancialProgress'
 
 import './style.scss'
 
@@ -25,6 +26,9 @@ export default function ClientDashboard() {
 			</div>
 			<div className='cv-profile-list-actions-container'>
 				<ActionItems />
+			</div>
+			<div className='cv-profile-list-2-inner-container'>
+				<FinancialProgress />
 			</div>
 		</div>
 	)
