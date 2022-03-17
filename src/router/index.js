@@ -55,6 +55,7 @@ import ClientStepSeventeen from '../pages/wizard/pages-clients/section-five/step
 import ClientStepEighteen from '../pages/wizard/pages-clients/section-five/step-eighteen'
 import ClientStepNineteen from '../pages/wizard/pages-clients/section-five/step-nineteen'
 
+import RestorePassword from '../pages/restore-password'
 import ClientProfileDetail from '../pages/client-profile-detail'
 import ClientRegisterCode from '../pages/client-register-code'
 import ClientProfileSetup from '../pages/client-profile-setup'
@@ -134,6 +135,7 @@ function InnerRoutes() {
 					<Route exact path='/client/step-eighteen' component={ClientStepEighteen} />
 					<Route exact path='/client/step-nineteen' component={ClientStepNineteen} />
 
+					<Route exact path='/restore-password' component={RestorePassword} />
 					<Route exact path='/client-profile-detail' component={ClientProfileDetail} />
 					<Route exact path='/client-register-code' component={ClientRegisterCode} />
 					<Route exact path='/client-profile-setup' component={ClientProfileSetup} />

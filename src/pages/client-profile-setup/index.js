@@ -28,6 +28,7 @@ export default function ProfileSetup() {
 			/>
 			<div className='cw-profile-setup-global-background'>
 				<div className='cw-profile-setup-main-container'>
+					<div className='cw-profile-setup-container'>
 					<Row className='cw-profile-setup-inner-container'>
 						<Col span={8} className='cw-profile-col-container'>
 							<div className='cw-profile-pic-container'>
@@ -95,6 +96,7 @@ export default function ProfileSetup() {
 							</Row>
 						</Col>
 					</Row>
+					</div>
 				</div>
 			</div>
 		</>
