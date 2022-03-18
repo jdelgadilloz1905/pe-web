@@ -4,6 +4,8 @@ import React from 'react'
 
 import { NavLink } from 'react-router-dom'
 
+import DropdownMenu from './DropdownMenu'
+
 import Image from '../Image'
 
 import logoWhite from '../../assets/images/logos/wix-logo-white.png'
@@ -72,6 +74,9 @@ export default function Header() {
 								className='cw-header-menu-text'>
 								Login
 							</NavLink>
+						</div>
+						<div className='cw-header-menu-text-container'>
+							<DropdownMenu />
 						</div>
 					</div>
 				</div>
