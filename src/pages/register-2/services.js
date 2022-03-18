@@ -2,6 +2,8 @@
 
 import axios from 'axios'
 
+import { setGlobal } from 'reactn'
+
 import notification from 'antd/lib/notification'
 
 import { ENV_CORE } from '../../components/Hooks/Variables/Enviroment'
@@ -51,15 +53,28 @@ const servicesUsers = {
 			data: data,
 		})
 			.then((response) => {
-				console.log('response ', response)
 				notification['success']({
 					message: `success:`,
 					description: `${response.data.comment}`,
 				})
+				returnResponse = {
+					name: response.data.result.name,
+					last: response.data.result.last,
+					id: response.data.result.id,
+					modo: response.data.result.modo,
+					email: response.data.result.email,
+					photo: response.data.result.photo,
+					last_login: response.data.result.last_login,
+					profile: response.data.result.profile,
+				}
+				localStorage.setItem('userSession', JSON.stringify(returnResponse))
+				setGlobal(() => ({
+					userEmail: `${returnResponse.name} ${returnResponse.last}`,
+					userData: returnResponse,
+				}))
 				returnResponse = response
 			})
 			.catch((error) => {
-				console.log('error ', error)
 				notification['error']({
 					message: `Error`,
 					description: `${error.response.data.comment}`,

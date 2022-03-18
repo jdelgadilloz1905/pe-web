@@ -1,0 +1,28 @@
+/** @format */
+
+.cw-wizard-sidebar-title-global-container {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.cw-wizard-sidebar-logo-container {
+	width: 100%;
+	max-width: 220px;
+	margin-bottom: 20px;
+}
+
+.cw-wizard-sidebar-logo-img {
+	width: 100%;
+}
+
+.cw-wizard-sidebar-title-inner-container {
+	width: 100%;
+	max-width: 320px;
+	padding: 60px 20px 20px 20px;
+}
+
+.cw-wizard-sidebar-title {
+	font-size: 35px;
+	color: white;
+	font-weight: 600;
+}

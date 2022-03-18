@@ -10,7 +10,7 @@ import MetaDescription from '../../../../../components/MetaDescription'
 import NormalRate from '../../../../../components/Rate'
 
 import MainTitle from '../../../components/MainTitle'
-import Sidebar from '../../../components/Sidebar'
+import Sidebar from '../../../components/Sidebar2'
 import Buttons from '../../../components/Buttons'
 
 import servicesAdvisor from '../../services'

@@ -60,6 +60,9 @@ export default function Register() {
 
 			if (response) {
 				//lo envio a lcuestionario
+				setTimeout(() => {
+					window.location.href = '/client-profile-detail'
+				}, 3000)
 			}
 		})
 	}

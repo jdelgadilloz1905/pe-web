@@ -2,6 +2,8 @@
 
 import axios from 'axios'
 
+import { setGlobal } from 'reactn'
+
 import notification from 'antd/lib/notification'
 
 import { ENV_CORE } from '../../components/Hooks/Variables/Enviroment'
@@ -66,7 +68,7 @@ const servicesUsers = {
 			? localStorage.getItem('step_nineteen')
 			: ''
 
-		let returnResponse
+		let returnResponse, returnResponse2
 		let data = {
 			name: item.first_name,
 			last: item.last_name,
@@ -124,6 +126,7 @@ const servicesUsers = {
 				localStorage.removeItem('step_fourteen')
 				localStorage.removeItem('step_fifteen')
 				localStorage.removeItem('step_sixteen')
+				localStorage.removeItem('step_sixteen2')
 				localStorage.removeItem('step_seventen')
 				localStorage.removeItem('step_eighteen')
 				localStorage.removeItem('step_nineteen')
@@ -152,6 +155,21 @@ const servicesUsers = {
 					message: `success:`,
 					description: `${response.data.comment}`,
 				})
+				returnResponse = {
+					name: response.data.result.name,
+					last: response.data.result.last,
+					id: response.data.result.id,
+					modo: response.data.result.modo,
+					email: response.data.result.email,
+					photo: response.data.result.photo,
+					last_login: response.data.result.last_login,
+					profile: response.data.result.profile,
+				}
+				localStorage.setItem('userSession', JSON.stringify(returnResponse))
+				setGlobal(() => ({
+					userEmail: `${returnResponse.name} ${returnResponse.last}`,
+					userData: returnResponse,
+				}))
 				returnResponse = response
 			})
 			.catch((error) => {
