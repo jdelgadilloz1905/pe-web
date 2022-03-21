@@ -51,7 +51,7 @@ export default function Register() {
 				//lo envio a lcuestionario
 				setTimeout(() => {
 					window.location.href = '/client-profile-setup'
-				}, 3000)
+				}, 1000)
 			}
 		})
 	}

@@ -1,6 +1,6 @@
 /** @format */
 
-import React from 'react'
+import React, { useState } from 'react'
 
 import { Row, Col } from 'antd'
 
@@ -12,7 +12,8 @@ import Calendar from '../../../../assets/images/icons/calendar.png'
 
 import './style.scss'
 
-export default function ProfileInfo() {
+export default function ProfileInfo(props) {
+	const [isDatosUser, setDatosUser] = useState(props.dataUser)
 	return (
 		<div className='cw-profile-global-container'>
 			<div className='cw-profile-info-user-container'>
@@ -26,10 +27,14 @@ export default function ProfileInfo() {
 								title={'profile image'}
 							/>
 							<div className='cw-profile-info-user-title-main-container'>
-								<h3 className='cw-profile-info-user-title'>Hill Bill</h3>
+								<h3 className='cw-profile-info-user-title'>
+									Hill {isDatosUser.name}
+								</h3>
 								<div className='cw-profile-info-user-subtitle-container'>
 									<EditOutlined className='cw-profile-info-user-icon' />
-									<h4 className='cw-profile-info-user-subtitle'>Edit Profile</h4>
+									<h4 className='cw-profile-info-user-subtitle'>
+										Edit Profile
+									</h4>
 								</div>
 							</div>
 						</div>
@@ -42,7 +47,9 @@ export default function ProfileInfo() {
 										<h4 className='cw-profile-info-details-title'>Clients</h4>
 										<h2 className='cw-profile-info-details-subtitle'>
 											$51M
-											<span className='cw-profile-info-details-description'>AUM</span>
+											<span className='cw-profile-info-details-description'>
+												AUM
+											</span>
 										</h2>
 									</div>
 								</div>
@@ -53,7 +60,9 @@ export default function ProfileInfo() {
 										<h4 className='cw-profile-info-details-title'>Prospects</h4>
 										<h2 className='cw-profile-info-details-subtitle'>
 											$20M
-											<span className='cw-profile-info-details-description'>AUM</span>
+											<span className='cw-profile-info-details-description'>
+												AUM
+											</span>
 										</h2>
 									</div>
 								</div>

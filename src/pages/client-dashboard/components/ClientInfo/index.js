@@ -1,16 +1,22 @@
 /** @format */
 
-import React from 'react'
+import React, { useState } from 'react'
 
 import { Row, Col } from 'antd'
 
-import { EditOutlined, BellFilled, RiseOutlined, ThunderboltFilled } from '@ant-design/icons'
+import {
+	EditOutlined,
+	BellFilled,
+	RiseOutlined,
+	ThunderboltFilled,
+} from '@ant-design/icons'
 
 import Image from '../../../../components/Image'
 
 import './style.scss'
 
-export default function ClientInfo() {
+export default function ClientInfo(props) {
+	const [isDatosUser, setDatosUser] = useState(props.dataUser)
 	return (
 		<div className='cw-client-global-container'>
 			<div className='cw-client-info-user-container'>
@@ -24,7 +30,9 @@ export default function ClientInfo() {
 								title={'profile image'}
 							/>
 							<div className='cw-client-info-user-title-main-container'>
-								<h3 className='cw-client-info-user-title'>Hill Bill</h3>
+								<h3 className='cw-client-info-user-title'>
+									Hill {isDatosUser.name}
+								</h3>
 								<div className='cw-client-info-user-subtitle-container'>
 									<EditOutlined className='cw-client-info-user-profile-icon' />
 									<h4 className='cw-client-info-user-subtitle'>Edit Profile</h4>
