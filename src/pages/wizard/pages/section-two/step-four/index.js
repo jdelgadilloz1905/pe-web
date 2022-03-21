@@ -42,7 +42,6 @@ export default function StepFour() {
 	}, [isStep])
 
 	const handleChangeRate = async (value) => {
-		console.log('paso ')
 		setRateOne(value)
 		await servicesAdvisor
 			.PushQuestion(value, isSelected, isSection, isStep)
@@ -52,7 +51,6 @@ export default function StepFour() {
 	}
 
 	const handleChangeSlider = async (values) => {
-		console.log('paso ')
 		setSelected(values)
 		await servicesAdvisor
 			.PushQuestion(isRateOne, values, isSection, isStep)
