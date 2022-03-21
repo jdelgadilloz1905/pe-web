@@ -13,7 +13,7 @@ import Loading from '../../components/Loading'
 
 import data from './data.json'
 
-import servicesProfile from './service'
+import servicesProfile from './services'
 
 import './style.scss'
 
