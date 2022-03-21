@@ -8,16 +8,15 @@ import notification from 'antd/lib/notification'
 
 import { ENV_CORE } from '../../components/Hooks/Variables/Enviroment'
 
-const servicesLogin = {
-	async Login(item) {
+const servicesRestorePass = {
+	async RestorePassword(item) {
 		let returnResponse
 		let data = {
 			email: item.email,
-			password: item.password,
 		}
 		await axios({
 			method: 'POST',
-			url: `${ENV_CORE}/api/users/login`,
+			url: `${ENV_CORE}/api/users/restore-password`,
 			data: data,
 		})
 			.then((response) => {
@@ -49,5 +48,31 @@ const servicesLogin = {
 			})
 		return returnResponse
 	},
+
+	async Recover(item) {
+		let returnResponse
+		let data = {
+			email: item.email,
+		}
+		await axios({
+			method: 'POST',
+			url: `${ENV_CORE}/api/users/restore-password`,
+			data: data,
+		})
+			.then((response) => {
+				notification['success']({
+					message: `success:`,
+					description: `${response.data.comment}`,
+				})
+				returnResponse = response
+			})
+			.catch((error) => {
+				notification['error']({
+					message: `Error`,
+					description: `${error.response.data.comment}`,
+				})
+			})
+		return returnResponse
+	},
 }
-export default servicesLogin
+export default servicesRestorePass

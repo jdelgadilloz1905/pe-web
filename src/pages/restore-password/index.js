@@ -11,6 +11,8 @@ import logoWhite from '../../assets/images/logos/wix-logo-white.png'
 
 import { rulesValidation } from './validators'
 
+import servicesRestorePass from './services'
+
 import './style.scss'
 
 export default function RegisterCode() {
@@ -18,16 +20,22 @@ export default function RegisterCode() {
 	const [isLoading, setLoading] = useState(false)
 
 	const handleSendForm = async (item) => {
-		setLoading(false)
-		console.log('ITEM', item)
+		setLoading(true)
+		await servicesRestorePass.Recover(item).then((response) => {
+			setLoading(false)
+			if (response.data.status === 200) {
+				window.location.href = '/'
+				//console.log('resultado ', response)
+			}
+		})
 	}
 
 	return (
 		<>
 			<MetaDescription
-				title={'Complete Registration | Wix.com'}
+				title={'Complete Registration | PE.com'}
 				name={'description'}
-				content={'Complete Registration | Wix.com...'}
+				content={'Complete Registration | PE.com...'}
 			/>
 			<div className='cw-register-code-global-background'>
 				<div className='cw-register-code-main-container'>
@@ -39,11 +47,17 @@ export default function RegisterCode() {
 								alt={'Main Logo'}
 								title={'Main Logo'}
 							/>
-							<h4 className='cw-register-code-main-title'>Forgot your password?</h4>
+							<h4 className='cw-register-code-main-title'>
+								Forgot your password?
+							</h4>
 
-							<h4 className='cw-register-code-main-subtitle'>Enter your email here:</h4>
+							<h4 className='cw-register-code-main-subtitle'>
+								Enter your email here:
+							</h4>
 							<Form name='cw_form' onFinish={handleSendForm} form={form}>
-								<Form.Item name='first_name' rules={rulesValidation.rulesGeneralRequired}>
+								<Form.Item
+									name='email'
+									rules={rulesValidation.rulesGeneralRequired}>
 									<Input
 										className='cw-register-code-input'
 										size='large'

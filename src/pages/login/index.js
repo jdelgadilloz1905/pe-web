@@ -21,11 +21,22 @@ export default function Login() {
 		setLoading(true)
 		await servicesLogin.Login(item).then((response) => {
 			setLoading(false)
-			if (response) {
-				console.log('resultado ', response)
+			console.log(response)
+
+			if (response.profile === '1') {
+				setTimeout(() => {
+					window.location.href = '/client-profile-detail'
+				}, 1000)
+			} else {
+				setTimeout(() => {
+					window.location.href = '/client-profile-setup'
+				}, 1000)
 			}
 		})
-		console.log('ITEM', item)
+	}
+
+	const handleRecoverPassword = () => {
+		window.location.href = '/restore-password'
 	}
 
 	return (
@@ -92,7 +103,9 @@ export default function Login() {
 							</Form>
 							<h4 className='cv-login-lost-password-title'>
 								If you have forgotten your email or password{' '}
-								<span className='cv-login-lost-password-subtitle'>
+								<span
+									className='cv-login-lost-password-subtitle'
+									onClick={() => handleRecoverPassword()}>
 									click here
 								</span>
 							</h4>
