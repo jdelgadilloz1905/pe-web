@@ -48,7 +48,6 @@ export default function Register() {
 		await servicesUsers.CodeVerify(item.code_verify).then((response) => {
 			setLoading(false)
 			if (response) {
-				//lo envio a lcuestionario
 				setTimeout(() => {
 					window.location.href = '/client-profile-setup'
 				}, 1000)

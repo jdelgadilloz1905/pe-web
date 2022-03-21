@@ -21,7 +21,6 @@ export default function Login() {
 		setLoading(true)
 		await servicesLogin.Login(item).then((response) => {
 			setLoading(false)
-			console.log(response)
 
 			if (response.profile === '1') {
 				setTimeout(() => {
