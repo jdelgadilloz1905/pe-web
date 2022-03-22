@@ -21,15 +21,16 @@ export default function Login() {
 		setLoading(true)
 		await servicesLogin.Login(item).then((response) => {
 			setLoading(false)
-
-			if (response.profile === '1') {
-				setTimeout(() => {
-					window.location.href = '/client-profile-detail'
-				}, 1000)
-			} else {
-				setTimeout(() => {
-					window.location.href = '/client-profile-setup'
-				}, 1000)
+			if (response !== undefined) {
+				if (response.profile === '1') {
+					setTimeout(() => {
+						window.location.href = '/client-profile-detail'
+					}, 1000)
+				} else {
+					setTimeout(() => {
+						window.location.href = '/client-profile-setup'
+					}, 1000)
+				}
 			}
 		})
 	}

@@ -18,7 +18,7 @@ import Loading from '../../components/Loading'
 
 import MetaDescription from '../../components/MetaDescription'
 
-import servicesProfile from './service'
+import servicesProfile from './services'
 
 import './style.scss'
 

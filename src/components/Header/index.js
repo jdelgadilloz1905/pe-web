@@ -67,14 +67,14 @@ export default function Header() {
 								Contact
 							</NavLink>
 						</div>
-						<div className='cw-header-menu-text-container'>
+						{/* <div className='cw-header-menu-text-container'>
 							<NavLink
 								to='/login'
 								activeClassName='cw-header-link-is-active'
 								className='cw-header-menu-text'>
 								Login
 							</NavLink>
-						</div>
+						</div> */}
 						<div className='cw-header-menu-text-container'>
 							<DropdownMenu />
 						</div>

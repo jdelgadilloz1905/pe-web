@@ -68,7 +68,7 @@ const servicesUsers = {
 			? localStorage.getItem('step_nineteen')
 			: ''
 
-		let returnResponse, returnResponse2
+		let returnResponse
 		let data = {
 			name: item.first_name,
 			last: item.last_name,
