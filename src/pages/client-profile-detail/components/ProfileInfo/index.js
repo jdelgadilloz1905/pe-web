@@ -13,7 +13,7 @@ import Calendar from '../../../../assets/images/icons/calendar.png'
 import './style.scss'
 
 export default function ProfileInfo(props) {
-	const [isDatosUser, setDatosUser] = useState(props.dataUser)
+	const [isDatosUser] = useState(props.dataUser)
 	return (
 		<div className='cw-profile-global-container'>
 			<div className='cw-profile-info-user-container'>

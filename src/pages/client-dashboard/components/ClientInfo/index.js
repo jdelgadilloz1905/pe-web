@@ -16,7 +16,7 @@ import Image from '../../../../components/Image'
 import './style.scss'
 
 export default function ClientInfo(props) {
-	const [isDatosUser, setDatosUser] = useState(props.dataUser)
+	const [isDatosUser] = useState(props.dataUser)
 	return (
 		<div className='cw-client-global-container'>
 			<div className='cw-client-info-user-container'>
