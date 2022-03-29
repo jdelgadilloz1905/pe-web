@@ -56,7 +56,7 @@ export default function StepThirteen() {
 				name={'description'}
 				content={'Personal Information-1 | PE.com...'}
 			/>
-			<div className='cw-wizard-sfsthirteen-global-container'>
+			<div className='cw-wizard-sfsthirteen-advisor-global-container'>
 				<Row className='cw-wizard-sfsthirteen-main-container'>
 					<Col span={10}>
 						<Sidebar animation={true} />

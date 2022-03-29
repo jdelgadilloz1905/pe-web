@@ -56,7 +56,7 @@ export default function StepNine() {
 				name={'description'}
 				content={'Personal Preferences-1 | PE.com...'}
 			/>
-			<div className='cw-wizard-stsnine-global-container'>
+			<div className='cw-wizard-stsnine-advisor-global-container'>
 				<Row className='cw-wizard-stsnine-main-container'>
 					<Col span={10}>
 						<Sidebar animation={true} />

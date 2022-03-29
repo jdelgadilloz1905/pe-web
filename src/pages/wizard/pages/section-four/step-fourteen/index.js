@@ -56,7 +56,7 @@ export default function StepFourteen() {
 				name={'description'}
 				content={'Personal Information-2 | PE.com...'}
 			/>
-			<div className='cw-wizard-sfsfourteen-global-container'>
+			<div className='cw-wizard-sfsfourteen-advisor-global-container'>
 				<Row className='cw-wizard-sfsfourteen-main-container'>
 					<Col span={10}>
 						<Sidebar />

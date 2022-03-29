@@ -56,7 +56,7 @@ export default function StepEighteen() {
 				name={'description'}
 				content={'Organization Preferences-2 | PE.com...'}
 			/>
-			<div className='cw-wizard-sfseighteen-global-container'>
+			<div className='cw-wizard-sfseighteen-advisor-global-container'>
 				<Row className='cw-wizard-sfseighteen-main-container'>
 					<Col span={10}>
 						<Sidebar />

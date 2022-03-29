@@ -17,9 +17,17 @@ import './style.scss'
 
 export default function ClientDashboard() {
 	const [isDatosUser, setDatosUser] = useState(null)
+	const [isAdvisor, setAdvisor] = useState(null)
 	useEffect(() => {
 		servicesProfile.GetDatosUser().then((response) => {
 			if (response) {
+				servicesProfile
+					.GetAdvisorPreference(response.id)
+					.then((responseAdvisor) => {
+						if (responseAdvisor) {
+							setAdvisor(responseAdvisor)
+						}
+					})
 				setDatosUser(response)
 			}
 		})
@@ -31,9 +39,9 @@ export default function ClientDashboard() {
 		return (
 			<div className='cw-client-dashboard-global-background'>
 				<MetaDescription
-					title={'Wix - Profile'}
+					title={'PE - Profile'}
 					name={'description'}
-					content={'Wix - Profile'}
+					content={'PE - Profile'}
 				/>
 				<div className='cw-client-dashboard-spacer'></div>
 				<div className='cw-client-dashboard-container-1'>

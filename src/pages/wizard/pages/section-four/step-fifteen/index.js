@@ -56,7 +56,7 @@ export default function StepFifteen() {
 				name={'description'}
 				content={'Personal Information-3 | PE.com...'}
 			/>
-			<div className='cw-wizard-sfsfifteen-global-container'>
+			<div className='cw-wizard-sfsfifteen-advisor-global-container'>
 				<Row className='cw-wizard-sfsfifteen-main-container'>
 					<Col span={10}>
 						<Sidebar />

@@ -56,7 +56,7 @@ export default function StepTwelve() {
 				name={'description'}
 				content={'Personal Preferences-4 | PE.com...'}
 			/>
-			<div className='cw-wizard-ststwelve-global-container'>
+			<div className='cw-wizard-ststwelve-advisor-global-container'>
 				<Row className='cw-wizard-ststwelve-main-container'>
 					<Col span={10}>
 						<Sidebar />

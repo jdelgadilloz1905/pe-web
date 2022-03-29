@@ -1,10 +1,10 @@
 /** @format */
 
-// import axios from 'axios'
+import axios from 'axios'
 
-// import notification from 'antd/lib/notification'
+import notification from 'antd/lib/notification'
 
-// import { ENV_CORE } from '../../components/Hooks/Variables/Enviroment'
+import { ENV_CORE } from '../../components/Hooks/Variables/Enviroment'
 
 const servicesProfile = {
 	async CloseSession() {
@@ -34,6 +34,29 @@ const servicesProfile = {
 	},
 	async GetDatosUser() {
 		return JSON.parse(localStorage.getItem('userSession'))
+	},
+
+	async GetAdvisorPreference(id) {
+		let returnResponse
+		let data = {
+			id,
+		}
+
+		await axios({
+			method: 'POST',
+			url: `${ENV_CORE}/api/advisor/preference-advisor`,
+			data: data,
+		})
+			.then((response) => {
+				returnResponse = response
+			})
+			.catch((error) => {
+				notification['error']({
+					message: `Error`,
+					description: `${error}`,
+				})
+			})
+		return returnResponse
 	},
 }
 

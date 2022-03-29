@@ -56,7 +56,7 @@ export default function StepEleven() {
 				name={'description'}
 				content={'Personal Preferences-3 | PE.com...'}
 			/>
-			<div className='cw-wizard-stseleven-global-container'>
+			<div className='cw-wizard-stseleven-advisor-global-container'>
 				<Row className='cw-wizard-stseleven-main-container'>
 					<Col span={10}>
 						<Sidebar animation={true} />

@@ -22,18 +22,15 @@ export default function StepOne() {
 	const [isSection] = useState('section_one')
 	const [isStep] = useState('step_one')
 	const [isSelected, setSelected] = useState(null)
-	
 
 	useEffect(() => {
-		servicesAdvisor.GetQuestion(isStep).then((response) =>{
-			if(response){
+		servicesAdvisor.GetQuestion(isStep).then((response) => {
+			if (response) {
 				setSelected(response.answers)
 				setRateOne(response.rate)
 			}
-			
 		})
 	}, [isStep])
-
 
 	const handleChangeRate = async (value) => {
 		setRateOne(value)
@@ -59,7 +56,7 @@ export default function StepOne() {
 				name={'description'}
 				content={'Communication-1 | PE.com...'}
 			/>
-			<div className='cw-wizard-stsone-global-container'>
+			<div className='cw-wizard-stsone-advisor-global-container'>
 				<Row className='cw-wizard-stsone-main-container'>
 					<Col span={10}>
 						<Sidebar animation={true} />
@@ -93,7 +90,10 @@ export default function StepOne() {
 										</div>
 
 										<div className='cw-wizard-stsone-form-option-container'>
-											<Checkbox.Group onChange={handleChangeCheckbox} defaultValue={isSelected} value={isSelected}>
+											<Checkbox.Group
+												onChange={handleChangeCheckbox}
+												defaultValue={isSelected}
+												value={isSelected}>
 												<Row>
 													<Col span={12}>
 														<Checkbox value='Phone'>Phone</Checkbox>

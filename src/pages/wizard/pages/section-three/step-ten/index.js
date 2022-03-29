@@ -56,7 +56,7 @@ export default function StepTen() {
 				name={'description'}
 				content={'Personal Preferences-2 | PE.com...'}
 			/>
-			<div className='cw-wizard-ststen-global-container'>
+			<div className='cw-wizard-ststen-advisor-global-container'>
 				<Row className='cw-wizard-ststen-main-container'>
 					<Col span={10}>
 						<Sidebar />

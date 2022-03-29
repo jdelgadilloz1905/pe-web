@@ -56,7 +56,7 @@ export default function StepTwo() {
 				name={'description'}
 				content={'Communication-2 | PE.com...'}
 			/>
-			<div className='cw-wizard-ststwo-global-container'>
+			<div className='cw-wizard-ststwo-advisor-global-container'>
 				<Row className='cw-wizard-ststwo-main-container'>
 					<Col span={10}>
 						<Sidebar animation={true} />
