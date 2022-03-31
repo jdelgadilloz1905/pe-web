@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
 import { Row, Col, Button } from 'antd'
 
@@ -12,24 +12,19 @@ import Loading from '../../../../components/Loading'
 
 import { Advisors } from './data'
 
-import servicesProfile from './../../services'
-
 import './style.scss'
 
 export default function AdvisorsReview(props) {
-	const [isDatosUser] = useState(props.dataUser)
-	const [isAdvisor, setAdvisor] = useState(null)
-	useEffect(() => {
-		servicesProfile
-			.GetAdvisorPreference(isDatosUser.id)
-			.then((responseAdvisor) => {
-				if (responseAdvisor) {
-					setAdvisor(responseAdvisor)
-				}
-			})
-	}, [isDatosUser])
-
-	if (!isAdvisor) {
+	const [isDataAdvisors] = useState(props.dataAdvisors.data.result)
+	console.log('jorge ', props)
+	// useEffect(() => {
+	// 	servicesProfile.GetDatosUser().then((response) => {
+	// 		if (response) {
+	// 			setDatosUser(response)
+	// 		}
+	// 	})
+	// }, [isDatosUser])
+	if (!isDataAdvisors) {
 		return <Loading />
 	} else {
 		return (
@@ -52,13 +47,13 @@ export default function AdvisorsReview(props) {
 							Here are the top 3 advisors that best match your preferences.
 						</h2>
 					</Col>
-					{Advisors.map((item, index) => (
+					{isDataAdvisors.map((item, index) => (
 						<Col span={6} key={index}>
 							<div className='cw-advisors-map-container'>
 								<div className='cw-advisors-profile-pic-container'>
 									<div className='cw-advisors-profile-number-title-container'>
 										<h3 className='cw-advisors-profile-number-title'>
-											{item.number}
+											{index + 1}
 										</h3>
 									</div>
 									<Image
@@ -76,8 +71,8 @@ export default function AdvisorsReview(props) {
 									<h3 className='cw-advisors-profile-position'>
 										{item.position}
 									</h3>
-									<h3 className='cw-advisors-profile-title'>{item.title}</h3>
-									<h3 className='cw-advisors-profile-state'>{item.state}</h3>
+									<h3 className='cw-advisors-profile-title'>{item.company}</h3>
+									<h3 className='cw-advisors-profile-state'>{item.country}</h3>
 								</div>
 
 								<div className='cw-advisors-review-button-container'>

@@ -2,13 +2,14 @@
 
 import React, { useState, useEffect } from 'react'
 
-import { Row, Col, Form, Button } from 'antd'
+import { Row, Col, Form, Button, Select } from 'antd'
 
 import { useGlobal, setGlobal } from 'reactn'
 
 import Input from '../../components/Inputs/Normal'
 import Image from '../../components/Image'
 import MetaDescription from '../../components/MetaDescription'
+import { info } from './data.js'
 import logoWhite from '../../assets/images/logos/wix-logo-white.png'
 
 import servicesUsers from './services'
@@ -21,6 +22,7 @@ export default function Register() {
 	const [isLoading, setLoading] = useState(false)
 	const [isForm] = useGlobal('UserForm')
 	const [isFormCode] = useGlobal('UserCode')
+	const { Option } = Select
 
 	useEffect(() => {
 		setGlobal({
@@ -91,6 +93,8 @@ export default function Register() {
 												email: '',
 												phone: '',
 												zid_code: '',
+												company: '',
+												country: '',
 											}}
 											onFinish={handleLoginUser}>
 											<Form.Item>
@@ -153,6 +157,38 @@ export default function Register() {
 													inputNameRules={'rulesPhoneEN'}
 												/>
 											</Form.Item>
+											<Form.Item>
+												<Input
+													className={'cw-register-input'}
+													inputName={'company'}
+													inputNameLabel={'Company'}
+													inputNameRule={true}
+													inputNameMessage={'Enter your company'}
+													inputNameType={'text'}
+													inputNameIcon={''}
+													inputNameRules={'rulesCompanyEN'}
+												/>
+											</Form.Item>
+											<Form.Item
+												name='country'
+												rules={[
+													{ required: true, message: 'state is required' },
+												]}>
+												<div className='cw-register-input'>
+													<Select
+														placeholder='Select state'
+														size='large'
+														style={{ width: '100%', border: 'none' }}
+														allowClear={true}>
+														{info.map((item, index) => (
+															<Option value={item.name} key={index}>
+																{item.name}
+															</Option>
+														))}
+													</Select>
+												</div>
+											</Form.Item>
+
 											<Form.Item>
 												<div className='cw-register-two-main-button-container'>
 													<Button

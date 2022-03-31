@@ -112,6 +112,16 @@ export const rulesValidation = {
 			message: 'Minimum 3 characters!',
 		},
 	],
+	rulesCompanyEN: [
+		{
+			required: true,
+			message: 'Enter name company',
+		},
+		{
+			min: 5,
+			message: 'Minimum 5 characters!',
+		},
+	],
 
 	rulesLastNameEN: [
 		{

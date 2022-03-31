@@ -120,7 +120,7 @@ export default function ProfileSetup() {
 												Setup or change your communication preferences.
 											</h4>
 										</Col>
-										<Col
+										{/* <Col
 											span={24}
 											className='cw-profile-setup-button-container'>
 											<Button
@@ -129,7 +129,7 @@ export default function ProfileSetup() {
 												onClick={() => handleCloseSesion()}>
 												Finish
 											</Button>
-										</Col>
+										</Col> */}
 									</Row>
 								</Col>
 							</Row>

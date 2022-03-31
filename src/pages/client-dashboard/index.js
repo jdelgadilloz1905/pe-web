@@ -17,14 +17,22 @@ import './style.scss'
 
 export default function ClientDashboard() {
 	const [isDatosUser, setDatosUser] = useState(null)
+	const [isAdvisors, setAdvisors] = useState(null)
 
 	useEffect(() => {
 		servicesProfile.GetDatosUser().then((response) => {
 			if (response) {
 				setDatosUser(response)
+				console.log('resultado2 ', response)
+				servicesProfile.GetAdvisorPreference(response.id).then((response) => {
+					if (response) {
+						console.log('resultado3 ', response)
+						setAdvisors(response)
+					}
+				})
 			}
 		})
-	}, [isDatosUser])
+	}, [])
 
 	if (!isDatosUser) {
 		return <Loading />
@@ -42,7 +50,7 @@ export default function ClientDashboard() {
 						<ClientInfo dataUser={isDatosUser} />
 					</div>
 					<div className='cw-client-dashboard-advisor-inner-container'>
-						<AdvisorsReview dataUser={isDatosUser} />
+						<AdvisorsReview dataAdvisors={isAdvisors} />
 					</div>
 				</div>
 				<div className='cw-client-dashboard-actions-items-container'>

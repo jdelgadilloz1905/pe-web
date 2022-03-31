@@ -75,6 +75,8 @@ const servicesUsers = {
 			email: item.email,
 			zid_code: item.zid_code,
 			phone: item.phone,
+			company: item.company,
+			country: item.country,
 			modo: 'direct',
 			profile: profile,
 			step_one,
