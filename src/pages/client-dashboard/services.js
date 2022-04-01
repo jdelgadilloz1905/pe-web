@@ -36,10 +36,12 @@ const servicesProfile = {
 		return JSON.parse(localStorage.getItem('userSession'))
 	},
 
-	async GetAdvisorPreference(id) {
+	async GetAdvisorPreference() {
+		const datoUsers = await this.GetDatosUser()
+
 		let returnResponse
 		let data = {
-			id,
+			id: datoUsers.id,
 		}
 
 		await axios({

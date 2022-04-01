@@ -2,33 +2,114 @@
 
 import React, { useState } from 'react'
 
-import { Row, Col } from 'antd'
+import { Row, Col, Upload, Progress, Modal } from 'antd'
 
 import {
 	EditOutlined,
 	BellFilled,
 	RiseOutlined,
 	ThunderboltFilled,
+	CameraOutlined,
 } from '@ant-design/icons'
 
-import Image from '../../../../components/Image'
+import serviceImage from './services'
 
 import './style.scss'
 
 export default function ClientInfo(props) {
 	const [isDatosUser] = useState(props.dataUser)
+	const [isPreviewImg, setPreviewImg] = useState(`${props.dataUser.photo}`)
+	const [isFileList, setFileList] = useState([
+		{
+			uid: '-1',
+			name: `${props.dataUser.name}`,
+			status: 'done',
+			url: `${props.dataUser.photo}`,
+		},
+	])
+	const [isProgress, setProgress] = useState(0)
+	const [isPreviewModal, setPreviewModal] = useState(false)
+
+	const handleOnChangeImage = ({ fileList }) => {
+		setFileList(fileList)
+	}
+	const handleImageDelete = async (item) => {
+		//rops.deleteItemImage(item)
+		console.log('successfully removed')
+	}
+
+	const handlePreview = async (item) => {
+		setPreviewModal(true)
+
+		//setPreviewImg(item.thumbUrl)
+	}
+
+	const handleUploadImage = async (options) => {
+		const { onSuccess, onError, file, onProgress } = options
+		const data = new FormData()
+		data.append('imagen[]', file)
+		const config = {
+			headers: { 'Content-Type': 'multipart/form-data' },
+			onUploadProgress: (event) => {
+				const percent = Math.floor((event.loaded / event.total) * 100)
+				setProgress(percent)
+				if (percent === 100) {
+					setTimeout(() => setProgress(0), 1000)
+				}
+				onProgress({ percent: (event.loaded / event.total) * 100 })
+			},
+		}
+		onSuccess('Ok')
+		await serviceImage.uploadImage(data, config).then((response) => {
+			if (response) {
+				setPreviewImg(response)
+				serviceImage.sendImage(isDatosUser.id, response)
+			}
+		})
+	}
+
 	return (
 		<div className='cw-client-global-container'>
 			<div className='cw-client-info-user-container'>
 				<Row className='cw-client-info-user-inner-container'>
 					<Col span={8}>
 						<div className='cw-client-info-container'>
-							<Image
-								classImg={'cw-client-info-image'}
-								image={'https://dummyimage.com/500x500/ddd/fff'}
-								alt={'profile image'}
-								title={'profile image'}
-							/>
+							<Upload
+								accept='image/*'
+								customRequest={handleUploadImage}
+								onChange={handleOnChangeImage}
+								onPreview={handlePreview}
+								onRemove={handleImageDelete}
+								fileList={isFileList}
+								listType='picture-card'
+								className='image-upload-grid'>
+								{isFileList.length >= 1 ? null : (
+									<div className='est-upload-image-camera-text-global-container'>
+										<div className='est-upload-image-camera-icon-container'>
+											<div className='cw-profile-inner-container'>
+												<CameraOutlined className='cw-profile-pic-icon' />
+												<h6 className='cw-profile-pic-title'>Add Photo</h6>
+											</div>
+										</div>
+									</div>
+								)}
+							</Upload>
+							{isProgress > 0 ? <Progress percent={isProgress} /> : null}
+
+							<Modal
+								wrapClassName='est-upload-image-camera-modal-container'
+								visible={isPreviewModal}
+								title='Preview'
+								footer={null}
+								onCancel={() => setPreviewModal(false)}>
+								{isPreviewImg && (
+									<img
+										alt='visionCloud'
+										style={{ width: '100%' }}
+										src={isPreviewImg}
+									/>
+								)}
+							</Modal>
 							<div className='cw-client-info-user-title-main-container'>
 								<h3 className='cw-client-info-user-title'>
 									Hill {isDatosUser.name}

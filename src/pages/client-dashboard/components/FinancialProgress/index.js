@@ -36,9 +36,11 @@ export default function FinancialProgress() {
 				</Col>
 				{info.map((item, index) => (
 					<>
-						<Col span={21} key={index}>
+						<Col span={21} key={item.id}>
 							<div className='cw-financial-progress-bar-container'>
-								<h3 className='cw-financial-progress-profile-title'>{item.title}</h3>
+								<h3 className='cw-financial-progress-profile-title'>
+									{item.title}
+								</h3>
 								<div className='cw-financial-progress-container'>
 									<Progress
 										percent={item.percent}
@@ -53,7 +55,9 @@ export default function FinancialProgress() {
 								</div>
 							</div>
 						</Col>
-						<Col span={3} className='cw-financial-progress-profile-check-container'>
+						<Col
+							span={3}
+							className='cw-financial-progress-profile-check-container'>
 							<div className='cw-financial-progress-profile-check-inner-container'>
 								<Checkbox.Group>
 									<Checkbox></Checkbox>

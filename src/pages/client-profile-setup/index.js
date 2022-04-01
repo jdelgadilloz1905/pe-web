@@ -18,6 +18,8 @@ import Loading from '../../components/Loading'
 
 import MetaDescription from '../../components/MetaDescription'
 
+import Image from '../../components/Image'
+
 import servicesProfile from './services'
 
 import './style.scss'
@@ -57,10 +59,12 @@ export default function ProfileSetup() {
 							<Row className='cw-profile-setup-inner-container'>
 								<Col span={8} className='cw-profile-col-container'>
 									<div className='cw-profile-pic-container'>
-										<div className='cw-profile-inner-container'>
-											<CameraOutlined className='cw-profile-pic-icon' />
-											<h6 className='cw-profile-pic-title'>Add Photo</h6>
-										</div>
+										<Image
+											classImg={'cw-client-info-image'}
+											image={`${isDatosUser.photo}`}
+											alt={'profile image'}
+											title={'profile image'}
+										/>
 									</div>
 									<div className='cw-profile-name-container'>
 										<h6 className='cw-profile-name-title'>

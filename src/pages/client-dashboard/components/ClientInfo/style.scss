@@ -23,13 +23,14 @@
 }
 
 .cw-client-info-image {
-	width: 100%;
+	width: 111%;
 	max-width: 120px;
 	max-height: 120px;
 	min-height: 120px;
 	max-height: 120px;
 	border: 3px solid #fff;
 	border-radius: 100%;
+	cursor: pointer;
 }
 
 .cw-client-info-user-title-main-container {
@@ -136,4 +137,19 @@
 
 .cw-client-calendar-icon {
 	margin-top: 3px;
+}
+.est-upload-image-camera-modal-container {
+	display: flex;
+	text-align: center !important;
+	border-radius: 10px 10px 0 0;
+	border-bottom: 0;
+	font-size: 20px;
+	color: #336722;
+	font-weight: 600;
+}
+
+.est-upload-image-camera-text-global-container {
+	display: flex;
+	align-items: center;
+	padding: 0 10px;
 }

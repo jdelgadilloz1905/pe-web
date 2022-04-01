@@ -10,20 +10,10 @@ import Image from '../../../../components/Image'
 import Spacer from '../../../../components/Spacer'
 import Loading from '../../../../components/Loading'
 
-import { Advisors } from './data'
-
 import './style.scss'
 
 export default function AdvisorsReview(props) {
 	const [isDataAdvisors] = useState(props.dataAdvisors.data.result)
-	console.log('jorge ', props)
-	// useEffect(() => {
-	// 	servicesProfile.GetDatosUser().then((response) => {
-	// 		if (response) {
-	// 			setDatosUser(response)
-	// 		}
-	// 	})
-	// }, [isDatosUser])
 	if (!isDataAdvisors) {
 		return <Loading />
 	} else {

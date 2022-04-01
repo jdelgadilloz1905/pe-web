@@ -23,13 +23,11 @@ export default function ClientDashboard() {
 		servicesProfile.GetDatosUser().then((response) => {
 			if (response) {
 				setDatosUser(response)
-				console.log('resultado2 ', response)
-				servicesProfile.GetAdvisorPreference(response.id).then((response) => {
-					if (response) {
-						console.log('resultado3 ', response)
-						setAdvisors(response)
-					}
-				})
+			}
+		})
+		servicesProfile.GetAdvisorPreference().then((response) => {
+			if (response) {
+				setAdvisors(response)
 			}
 		})
 	}, [])
@@ -49,9 +47,11 @@ export default function ClientDashboard() {
 					<div className='cw-client-dashboard-info-inner-container'>
 						<ClientInfo dataUser={isDatosUser} />
 					</div>
-					<div className='cw-client-dashboard-advisor-inner-container'>
-						<AdvisorsReview dataAdvisors={isAdvisors} />
-					</div>
+					{isAdvisors && (
+						<div className='cw-client-dashboard-advisor-inner-container'>
+							<AdvisorsReview dataAdvisors={isAdvisors} />
+						</div>
+					)}
 				</div>
 				<div className='cw-client-dashboard-actions-items-container'>
 					<ActionItems />
