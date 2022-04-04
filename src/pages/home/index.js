@@ -27,7 +27,7 @@ export default function Home() {
 				name={'description'}
 				content={'Home | PE.com...'}
 			/>
-			<video
+			{/* <video
 				autoPlay
 				loop
 				muted
@@ -42,7 +42,16 @@ export default function Home() {
 					zIndex: '-1',
 				}}>
 				<source src={PowerSlap} type='video/mp4' />
-			</video>
+			</video> */}
+			{/* <iframe
+				className='cw-home-banner-global-video-container'
+				width='1280'
+				height='720'
+				src='https://www.youtube.com/embed/0ucO9frQFmo?mute=1&autoplay=1&modestbranding=1&loop=1&rel=0&amp;controls=0&amp;showinfo=0&playlist=0ucO9frQFmo'
+				title='YouTube EP'
+				frameBorder='0'
+				allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+				allowFullScreen></iframe> */}
 
 			<MetaDescription
 				title={'Home | PE.com'}
