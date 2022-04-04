@@ -166,6 +166,8 @@ const servicesUsers = {
 					photo: response.data.result.photo,
 					last_login: response.data.result.last_login,
 					profile: response.data.result.profile,
+					company: response.data.result.company,
+					country: response.data.result.country,
 				}
 				localStorage.setItem('userSession', JSON.stringify(returnResponse))
 				setGlobal(() => ({

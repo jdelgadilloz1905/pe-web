@@ -93,8 +93,6 @@ export default function Register() {
 												email: '',
 												phone: '',
 												zid_code: '',
-												company: '',
-												country: '',
 											}}
 											onFinish={handleLoginUser}>
 											<Form.Item>
