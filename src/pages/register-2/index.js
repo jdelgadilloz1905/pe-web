@@ -96,9 +96,9 @@ export default function Register() {
 										By professionals, for professionals.
 									</h3>
 									<h3 className='cw-register-two-main-subtitle'>
-										People are looking for advisors that match their preferences
-										and you are looking for clients that fit your expertise. We
-										can help you connect with them so let's get started!
+										People are looking for advisors that match their preferences and you
+										are looking for clients that fit your expertise. We can help you
+										connect with them so let's get started!
 									</h3>
 
 									<div className='cw-register-two-form-main-container'>
@@ -189,11 +189,10 @@ export default function Register() {
 											</Form.Item>
 											<Form.Item
 												name='country'
-												rules={[
-													{ required: true, message: 'state is required' },
-												]}>
+												rules={[{ required: true, message: 'state is required' }]}>
 												<div className='cw-register-input'>
 													<Select
+														className='cw-register-two-select-container'
 														placeholder='Select state'
 														size='large'
 														style={{ width: '100%', border: 'none' }}
@@ -224,8 +223,8 @@ export default function Register() {
 								<>
 									<h3 className='cw-register-two-main-title'>Thank you.</h3>
 									<h3 className='cw-register-two-main-subtitle'>
-										Once approved, your registration code and the link to create
-										your sign-in will be sent to the email you provided.
+										Once approved, your registration code and the link to create your
+										sign-in will be sent to the email you provided.
 									</h3>
 
 									<h4 className='cw-register-two-main-underlined'>
@@ -246,12 +245,8 @@ export default function Register() {
 							)}
 							{isFormCode && (
 								<>
-									<h3 className='cw-register-two-main-title'>
-										Complete Registration
-									</h3>
-									<h3 className='cw-register-two-main-subtitle'>
-										Registration Code
-									</h3>
+									<h3 className='cw-register-two-main-title'>Complete Registration</h3>
+									<h3 className='cw-register-two-main-subtitle'>Registration Code</h3>
 
 									<div className='cw-register-two-form-main-container'>
 										<Form

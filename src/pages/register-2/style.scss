@@ -128,3 +128,29 @@
 	background-color: rgba(186, 218, 85, 1) !important;
 	color: black !important;
 }
+
+.cw-register-two-select-container .ant-select-selector {
+	height: 20px !important;
+	background-color: transparent !important;
+	border: 0 !important;
+	border-radius: 0 !important;
+	padding: 0 !important;
+}
+
+.cw-register-two-select-container .ant-select-selection-placeholder {
+	line-height: 20px !important;
+	text-align: left;
+	color: white !important;
+	font-size: 14px !important;
+}
+
+.cw-register-two-select-container .ant-select-arrow {
+	color: white;
+}
+
+.cw-register-two-select-container .ant-select-selection-item {
+	line-height: 20px !important;
+	text-align: left;
+	color: white !important;
+	font-size: 14px !important;
+}
