@@ -13,6 +13,7 @@ import Image from '../../components/Image'
 import SectionOne from './components/SectionOne'
 import SectionTwo from './components/SectionTwo'
 import SectionThree from './components/SectionThree'
+import PowerSlap from '../../components/Video/AdobeStockp.mov'
 
 import logoColor from '../../assets/images/logos/wix-logo-color.png'
 
@@ -22,10 +23,26 @@ export default function Home() {
 	return (
 		<>
 			<MetaDescription
-				title={'Home | Wix.com'}
+				title={'Home | PE.com'}
 				name={'description'}
-				content={'Home | Wix.com...'}
+				content={'Home | PE.com...'}
 			/>
+			<video
+				autoPlay
+				loop
+				muted
+				style={{
+					position: 'absolute',
+					width: '100%',
+					left: '50%',
+					top: '50%',
+					height: '100%',
+					objectFit: 'cover',
+					transform: 'translate(-50%, -50%)',
+					zIndex: '-1',
+				}}>
+				<source src={PowerSlap} type='video/mp4' />
+			</video>
 			<div className='cw-home-banner-global-container'>
 				<div className='cw-home-banner-main-container'>
 					<div className='cw-home-banner-logo-container'>
