@@ -33,10 +33,9 @@
 	color: white;
 	margin-bottom: 0;
 	padding-top: 10px;
+	font-size: 22px;
 }
-.cw-wizard-stsnine-form-option-container
-	.ant-checkbox-wrapper:hover
-	.ant-checkbox-inner {
+.cw-wizard-stsnine-form-option-container .ant-checkbox-wrapper:hover .ant-checkbox-inner {
 	background-color: transparent !important;
 }
 .cw-wizard-stsnine-form-option-container .ant-checkbox-wrapper span {
@@ -44,37 +43,25 @@
 	color: white;
 	font-weight: 100;
 }
-.cw-wizard-stsnine-form-option-container
-	.ant-checkbox-group
-	.ant-checkbox-inner {
+.cw-wizard-stsnine-form-option-container .ant-checkbox-group .ant-checkbox-inner {
 	border-radius: 100%;
 	width: 20px;
 	height: 20px;
 	background-color: rgba(255, 255, 255, 0.2);
 }
-.cw-wizard-stsnine-form-option-container
-	.ant-checkbox-group
-	.ant-checkbox-wrapper {
+.cw-wizard-stsnine-form-option-container .ant-checkbox-group .ant-checkbox-wrapper {
 	padding-bottom: 10px;
 }
-.cw-wizard-stsnine-form-option-container
-	.ant-checkbox-group
-	.ant-checkbox-wrapper:hover {
+.cw-wizard-stsnine-form-option-container .ant-checkbox-group .ant-checkbox-wrapper:hover {
 	background-color: transparent;
 }
-.cw-wizard-stsnine-form-option-container
-	.ant-checkbox-wrapper:hover
-	.ant-checkbox-inner {
+.cw-wizard-stsnine-form-option-container .ant-checkbox-wrapper:hover .ant-checkbox-inner {
 	border: 1px solid #d9d9d9;
 }
-.cw-wizard-stsnine-form-option-container
-	.ant-checkbox-checked
-	.ant-checkbox-inner {
+.cw-wizard-stsnine-form-option-container .ant-checkbox-checked .ant-checkbox-inner {
 	border-color: #d9d9d9;
 }
-.cw-wizard-stsnine-form-option-container
-	.ant-checkbox-checked
-	.ant-checkbox-inner::after {
+.cw-wizard-stsnine-form-option-container .ant-checkbox-checked .ant-checkbox-inner::after {
 	top: 45%;
 	left: 30.5%;
 }
