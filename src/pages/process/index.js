@@ -8,15 +8,19 @@ import { Row, Col } from 'antd'
 
 import MetaDescription from '../../components/MetaDescription'
 
+import backgroundImgLeft from '../../assets/images/bg/AdobeStock_98992939_Preview.jpeg'
+import backgroundImgRight from '../../assets/images/bg/AdobeStock_252882777_Preview-RT4.jpeg'
+import backgroundImgCenter from '../../assets/images/bg/AdobeStock_297432545_Preview-RT.jpg'
+
 import './style.scss'
 
 export default function Proccess() {
 	return (
 		<>
 			<MetaDescription
-				title={'Process | Wix.com'}
+				title={'Process | PE.com'}
 				name={'description'}
-				content={'Process | Wix.com...'}
+				content={'Process | PE.com...'}
 			/>
 			<div className='cv-process-global-background'>
 				<Row className='cv-process-section-1-main-container'>
@@ -35,10 +39,11 @@ export default function Proccess() {
 									There are no direct fees for you.
 								</h4>
 								<p className='cv-process-section-1-main-description'>
-									We believe you should have access to qualified vetted professionals to
-									help drive life’s most important decisions. Professional Exchange does
-									not charge you a fee, instead, we focus on delivering the highest quality
-									professionals that best align with your needs.
+									We believe you should have access to qualified vetted
+									professionals to help drive life’s most important decisions.
+									Professional Exchange does not charge you a fee, instead, we
+									focus on delivering the highest quality professionals that
+									best align with your needs.
 								</p>
 							</div>
 						</div>
@@ -47,9 +52,7 @@ export default function Proccess() {
 				<Row className='cv-process-section-2-main-container'>
 					<Col span={7}>
 						<div className='cv-process-section-2-parallax-container'>
-							<Parallax
-								strength={400}
-								bgImage={'https://i.ibb.co/rb4J5R8/parallax-test.jpg'}></Parallax>
+							<Parallax strength={700} bgImage={backgroundImgLeft}></Parallax>
 						</div>
 					</Col>
 					<Col span={10}>
@@ -63,24 +66,22 @@ export default function Proccess() {
 									Share what makes you comfortable.
 								</h4>
 								<p className='cv-process-section-2-main-description'>
-									Our simple profile questionare allows you to quickly answer the questions
-									that that will determine the qualities you desire in an advisor. You are
-									unique and our aim is to match you with an advisor that is tailor made
-									just for you.
+									Our simple profile questionare allows you to quickly answer
+									the questions that that will determine the qualities you
+									desire in an advisor. You are unique and our aim is to match
+									you with an advisor that is tailor made just for you.
 								</p>
 							</div>
 						</div>
 					</Col>
 					<Col span={7}>
 						<div className='cv-process-section-2-parallax-container'>
-							<Parallax
-								strength={400}
-								bgImage={'https://i.ibb.co/rb4J5R8/parallax-test.jpg'}></Parallax>
+							<Parallax strength={700} bgImage={backgroundImgRight}></Parallax>
 						</div>
 					</Col>
 				</Row>
 				<Row className='cv-process-section-3-main-container'>
-					<Parallax strength={500} bgImage={'https://i.ibb.co/cw2B3pN/procces-three.jpg'}>
+					<Parallax strength={500} bgImage={backgroundImgCenter}>
 						<Col span={15}>
 							<div className='cv-process-section-3-inner-container'>
 								<div className='cv-process-section-3-inner-indicator-container'>
@@ -93,9 +94,9 @@ export default function Proccess() {
 										professionals.
 									</h3>
 									<p className='cv-process-section-3-main-description'>
-										Our transparent matching approach creates an immediate connection
-										between professional and client. Let us do the research and vetting so
-										you don’t have to.
+										Our transparent matching approach creates an immediate
+										connection between professional and client. Let us do the
+										research and vetting so you don’t have to.
 									</p>
 								</div>
 							</div>
