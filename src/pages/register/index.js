@@ -32,6 +32,7 @@ export default function Register() {
 	}, [])
 
 	const handleLoginUser = async (item) => {
+		console.log(item)
 		setLoading(true)
 		await servicesUsers.Register(item, 0).then((response) => {
 			setLoading(false)
@@ -78,7 +79,9 @@ export default function Register() {
 							</div>
 							{isForm && (
 								<>
-									<h3 className='cw-register-main-title'>Let's begin our journey</h3>
+									<h3 className='cw-register-main-title'>
+										Let's begin our journey
+									</h3>
 
 									<div className='cw-register-form-main-container'>
 										<h2 className='cw-register-form-title'>Register</h2>
@@ -91,6 +94,8 @@ export default function Register() {
 												email: '',
 												phone: '',
 												zid_code: '',
+												company: '',
+												country: '',
 											}}
 											onFinish={handleLoginUser}>
 											<Form.Item>
@@ -167,7 +172,9 @@ export default function Register() {
 											</Form.Item>
 											<Form.Item
 												name='country'
-												rules={[{ required: true, message: 'state is required' }]}>
+												rules={[
+													{ required: true, message: 'state is required' },
+												]}>
 												<div className='cw-register-input'>
 													<Select
 														className='cw-register-select-container'
@@ -196,8 +203,9 @@ export default function Register() {
 											</Form.Item>
 
 											<h3 className='cw-register-two-main-subtitle'>
-												Once submitted, you're registration code and the link to create
-												your sign-in will be emailed to the address you provided.
+												Once submitted, you're registration code and the link to
+												create your sign-in will be emailed to the address you
+												provided.
 											</h3>
 										</Form>
 									</div>
@@ -205,8 +213,12 @@ export default function Register() {
 							)}
 							{isFormCode && (
 								<>
-									<h3 className='cw-register-main-title'>Complete Registration</h3>
-									<h3 className='cw-register-main-subtitle'>Registration Code</h3>
+									<h3 className='cw-register-main-title'>
+										Complete Registration
+									</h3>
+									<h3 className='cw-register-main-subtitle'>
+										Registration Code
+									</h3>
 
 									<div className='cw-register-form-main-container'>
 										<Form

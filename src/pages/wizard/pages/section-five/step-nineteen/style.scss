@@ -1,7 +1,7 @@
 /** @format */
 
 .cw-wizard-sfsnineteen-advisor-global-container {
-	background-image: url(../../../../../assets/images/bg/wizard-section-five-bg.jpg);
+	background-image: url(../../../../../assets/images/bg/wizard-section-five-bg.jpeg);
 	width: 100%;
 	min-height: calc(100vh);
 	background-position-y: center;
@@ -35,7 +35,9 @@
 	padding-top: 10px;
 	font-size: 22px;
 }
-.cw-wizard-sfsnineteen-form-option-container .ant-radio-wrapper:hover .ant-radio-inner {
+.cw-wizard-sfsnineteen-form-option-container
+	.ant-radio-wrapper:hover
+	.ant-radio-inner {
 	background-color: transparent !important;
 }
 .cw-wizard-sfsnineteen-form-option-container .ant-radio-wrapper span {
@@ -50,19 +52,29 @@
 	background-color: rgba(255, 255, 255, 0.2);
 }
 
-.cw-wizard-sfsnineteen-form-option-container .ant-radio-group .ant-radio-wrapper {
+.cw-wizard-sfsnineteen-form-option-container
+	.ant-radio-group
+	.ant-radio-wrapper {
 	padding-bottom: 10px;
 }
-.cw-wizard-sfsnineteen-form-option-container .ant-radio-group .ant-radio-wrapper:hover {
+.cw-wizard-sfsnineteen-form-option-container
+	.ant-radio-group
+	.ant-radio-wrapper:hover {
 	background-color: transparent;
 }
-.cw-wizard-sfsnineteen-form-option-container .ant-radio-wrapper:hover .ant-radio-inner {
+.cw-wizard-sfsnineteen-form-option-container
+	.ant-radio-wrapper:hover
+	.ant-radio-inner {
 	border: 1px solid #d9d9d9;
 }
-.cw-wizard-sfsnineteen-form-option-container .ant-radio-checked .ant-radio-inner {
+.cw-wizard-sfsnineteen-form-option-container
+	.ant-radio-checked
+	.ant-radio-inner {
 	border-color: #d9d9d9;
 }
-.cw-wizard-sfsnineteen-form-option-container .ant-radio-checked .ant-radio-inner::after {
+.cw-wizard-sfsnineteen-form-option-container
+	.ant-radio-checked
+	.ant-radio-inner::after {
 	top: 45%;
 	left: 30.5%;
 	width: 20px;

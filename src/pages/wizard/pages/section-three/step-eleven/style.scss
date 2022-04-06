@@ -1,7 +1,7 @@
 /** @format */
 
 .cw-wizard-stseleven-advisor-global-container {
-	background-image: url(../../../../../assets/images/bg/wizard-section-three-bg.png);
+	background-image: url(../../../../../assets/images/bg/wizard-section-three-bg.jpeg);
 	width: 100%;
 	min-height: calc(100vh - 20px);
 	background-position-y: center;
@@ -35,7 +35,9 @@
 	padding-top: 10px;
 	font-size: 22px;
 }
-.cw-wizard-stseleven-form-option-container .ant-radio-wrapper:hover .ant-radio-inner {
+.cw-wizard-stseleven-form-option-container
+	.ant-radio-wrapper:hover
+	.ant-radio-inner {
 	background-color: transparent !important;
 }
 .cw-wizard-stseleven-form-option-container .ant-radio-wrapper span {
@@ -52,16 +54,22 @@
 .cw-wizard-stseleven-form-option-container .ant-radio-group .ant-radio-wrapper {
 	padding-bottom: 10px;
 }
-.cw-wizard-stseleven-form-option-container .ant-radio-group .ant-radio-wrapper:hover {
+.cw-wizard-stseleven-form-option-container
+	.ant-radio-group
+	.ant-radio-wrapper:hover {
 	background-color: transparent;
 }
-.cw-wizard-stseleven-form-option-container .ant-radio-wrapper:hover .ant-radio-inner {
+.cw-wizard-stseleven-form-option-container
+	.ant-radio-wrapper:hover
+	.ant-radio-inner {
 	border: 1px solid #d9d9d9;
 }
 .cw-wizard-stseleven-form-option-container .ant-radio-checked .ant-radio-inner {
 	border-color: #d9d9d9;
 }
-.cw-wizard-stseleven-form-option-container .ant-radio-checked .ant-radio-inner::after {
+.cw-wizard-stseleven-form-option-container
+	.ant-radio-checked
+	.ant-radio-inner::after {
 	top: 45%;
 	left: 30.5%;
 	width: 20px;

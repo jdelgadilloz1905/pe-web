@@ -8,7 +8,7 @@ import ScrollAnimation from 'react-animate-on-scroll'
 
 import { Row, Col } from 'antd'
 
-import backgroundImg from '../../../../assets/images/bg/home-section-2.png'
+import backgroundImg from '../../../../assets/images/bg/home-section-2.jpeg'
 
 import './style.sass'
 
@@ -24,16 +24,19 @@ export default function SectionTwo() {
 								animateIn='animate__fadeInRight'
 								delay={300}
 								animateOnce={true}>
-								<h2 className='cw-section-two-title'>Why Professional Exchange?</h2>
+								<h2 className='cw-section-two-title'>
+									Why Professional Exchange?
+								</h2>
 							</ScrollAnimation>
 							<ScrollAnimation
 								animateIn='animate__fadeInRight'
 								delay={500}
 								animateOnce={true}>
 								<h4 className='cw-section-two-subtitle'>
-									Professional Exchange was born out of a simple idea – everyone should
-									have access to qualified, vetted financial professionals to help with
-									life’s most important financial decisions.
+									Professional Exchange was born out of a simple idea – everyone
+									should have access to qualified, vetted financial
+									professionals to help with life’s most important financial
+									decisions.
 								</h4>
 							</ScrollAnimation>
 							<ScrollAnimation
@@ -41,9 +44,10 @@ export default function SectionTwo() {
 								delay={700}
 								animateOnce={true}>
 								<h4 className='cw-section-two-subtitle'>
-									Using analysis of proven industry measurements, consumer testimonials,
-									and your answers to our survey, we match you with a professional who is
-									the right fit for you and your financial goals.
+									Using analysis of proven industry measurements, consumer
+									testimonials, and your answers to our survey, we match you
+									with a professional who is the right fit for you and your
+									financial goals.
 								</h4>
 							</ScrollAnimation>
 							<ScrollAnimation
@@ -51,7 +55,9 @@ export default function SectionTwo() {
 								delay={900}
 								animateOnce={true}>
 								<div className='cw-section-two-button-container'>
-									<Link to={'/wizard/step-one'} className='cw-section-two-button'>
+									<Link
+										to={'/wizard/step-one'}
+										className='cw-section-two-button'>
 										Connect with a professional
 									</Link>
 								</div>
