@@ -1,7 +1,7 @@
 /** @format */
 
 .cw-register-two-global-container {
-	background-image: url(../../assets/images/bg/register-client.jpg);
+	background-image: url(../../assets/images/bg/register-client.jpeg);
 	background-size: cover;
 	width: 100%;
 	background-attachment: fixed;
@@ -101,6 +101,60 @@
 .cw-register-two-input:focus {
 	background-color: rgba(26, 45, 243, 0.05) !important;
 	border-color: rgba(255, 255, 255, 1) !important;
+}
+
+.cw-register-input-select {
+	background-color: rgba(255, 255, 255, 0.3) !important;
+	border: 1px solid rgba(255, 255, 255, 0.5) !important;
+	border-radius: 10px !important;
+	padding: 10px 15px !important;
+	font-size: 14px !important;
+	opacity: 0.8;
+	width: 100%;
+	color: white !important;
+}
+
+.cw-register-input-select::placeholder {
+	color: white !important;
+	font-weight: 500 !important;
+}
+
+.cw-register-input-select:hover,
+.cw-register-input-select:active {
+	border-color: rgba(255, 255, 255, 1) !important;
+}
+
+.cw-register-input-select:focus {
+	background-color: rgba(26, 45, 243, 0.05) !important;
+	border-color: rgba(255, 255, 255, 1) !important;
+}
+
+.cw-register-input-select {
+	padding: 2px 0 !important;
+}
+
+.cw-register-input-select.ant-select:not(.ant-select-customize-input)
+	.ant-select-selector {
+	background-color: transparent !important;
+	border: none !important;
+	padding: 0 !important;
+}
+
+.cw-register-input-select .ant-select-arrow {
+	color: #ffffff !important;
+}
+
+.cw-register-input-select::placeholder {
+	color: white !important;
+}
+
+.cw-register-input-select .ant-select-selection-item::placeholder {
+	color: white !important;
+}
+
+.cw-register-input-select .ant-select-selection-item {
+	text-align: left !important;
+	padding: 0 10px !important;
 }
 
 .cw-register-two-main-button-container {

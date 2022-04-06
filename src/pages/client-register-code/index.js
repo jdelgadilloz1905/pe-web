@@ -25,9 +25,9 @@ export default function RegisterCode() {
 	return (
 		<>
 			<MetaDescription
-				title={'Complete Registration | Wix.com'}
+				title={'Complete Registration | PE.com'}
 				name={'description'}
-				content={'Complete Registration | Wix.com...'}
+				content={'Complete Registration | PE.com...'}
 			/>
 			<div className='cw-register-code-global-background'>
 				<div className='cw-register-code-main-container'>
@@ -39,11 +39,17 @@ export default function RegisterCode() {
 								alt={'Main Logo'}
 								title={'Main Logo'}
 							/>
-							<h4 className='cw-register-code-main-title'>Complete Registration</h4>
+							<h4 className='cw-register-code-main-title'>
+								Complete Registration
+							</h4>
 
-							<h4 className='cw-register-code-main-subtitle'>Registration Code</h4>
+							<h4 className='cw-register-code-main-subtitle'>
+								Registration Code
+							</h4>
 							<Form name='cw_form' onFinish={handleSendForm} form={form}>
-								<Form.Item name='first_name' rules={rulesValidation.rulesGeneralRequired}>
+								<Form.Item
+									name='first_name'
+									rules={rulesValidation.rulesGeneralRequired}>
 									<Input
 										className='cw-register-code-input'
 										size='large'

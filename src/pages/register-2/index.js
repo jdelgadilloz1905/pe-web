@@ -13,6 +13,9 @@ import { info } from './data.js'
 import logoWhite from '../../assets/images/logos/wix-logo-white.png'
 
 import servicesUsers from './services'
+
+import { rulesValidation } from '../../components/Inputs/Normal/rules'
+
 import './style.scss'
 
 export default function Register() {
@@ -96,9 +99,9 @@ export default function Register() {
 										By professionals, for professionals.
 									</h3>
 									<h3 className='cw-register-two-main-subtitle'>
-										People are looking for advisors that match their preferences and you
-										are looking for clients that fit your expertise. We can help you
-										connect with them so let's get started!
+										People are looking for advisors that match their preferences
+										and you are looking for clients that fit your expertise. We
+										can help you connect with them so let's get started!
 									</h3>
 
 									<div className='cw-register-two-form-main-container'>
@@ -112,7 +115,6 @@ export default function Register() {
 												phone: '',
 												zid_code: '',
 												company: '',
-												country: '',
 											}}
 											onFinish={handleLoginUser}>
 											<Form.Item>
@@ -188,22 +190,25 @@ export default function Register() {
 												/>
 											</Form.Item>
 											<Form.Item
+												className='cw-register-input-select-container'
 												name='country'
-												rules={[{ required: true, message: 'state is required' }]}>
-												<div className='cw-register-input'>
-													<Select
-														className='cw-register-two-select-container'
-														placeholder='Select state'
-														size='large'
-														style={{ width: '100%', border: 'none' }}
-														allowClear={true}>
-														{info.map((item, index) => (
-															<Option value={item.name} key={index}>
-																{item.name}
-															</Option>
-														))}
-													</Select>
-												</div>
+												rules={rulesValidation.rulesRequiredEN}>
+												<Select
+													className='cw-register-input-select'
+													placeholder='Select state'
+													size='large'
+													style={{
+														width: '100%',
+														border: 'none',
+														color: '#fff',
+													}}
+													allowClear={true}>
+													{info.map((item, index) => (
+														<Option value={item.name} key={index}>
+															{item.name}
+														</Option>
+													))}
+												</Select>
 											</Form.Item>
 											<Form.Item>
 												<div className='cw-register-two-main-button-container'>
@@ -223,8 +228,8 @@ export default function Register() {
 								<>
 									<h3 className='cw-register-two-main-title'>Thank you.</h3>
 									<h3 className='cw-register-two-main-subtitle'>
-										Once approved, your registration code and the link to create your
-										sign-in will be sent to the email you provided.
+										Once approved, your registration code and the link to create
+										your sign-in will be sent to the email you provided.
 									</h3>
 
 									<h4 className='cw-register-two-main-underlined'>
@@ -245,8 +250,12 @@ export default function Register() {
 							)}
 							{isFormCode && (
 								<>
-									<h3 className='cw-register-two-main-title'>Complete Registration</h3>
-									<h3 className='cw-register-two-main-subtitle'>Registration Code</h3>
+									<h3 className='cw-register-two-main-title'>
+										Complete Registration
+									</h3>
+									<h3 className='cw-register-two-main-subtitle'>
+										Registration Code
+									</h3>
 
 									<div className='cw-register-two-form-main-container'>
 										<Form

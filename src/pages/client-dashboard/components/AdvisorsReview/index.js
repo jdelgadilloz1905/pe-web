@@ -17,6 +17,7 @@ export default function AdvisorsReview(props) {
 	if (!isDataAdvisors) {
 		return <Loading />
 	} else {
+		console.log('resultado ', isDataAdvisors)
 		return (
 			<div className='cw-advisors-review-global-container'>
 				<Row>
@@ -48,7 +49,11 @@ export default function AdvisorsReview(props) {
 									</div>
 									<Image
 										classImg={'cw-advisors-profile'}
-										image={'https://dummyimage.com/500x500/ddd/fff'}
+										image={
+											item.photo === ''
+												? 'https://dummyimage.com/500x500/ddd/fff'
+												: item.photo
+										}
 										alt={'Profile Picture'}
 										title={'Profile Picture'}
 									/>

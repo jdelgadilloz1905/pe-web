@@ -41,14 +41,15 @@ const serviceImage = {
 	},
 	async sendImage(id, image) {
 		let returnResponse
-		let data = {
+		let dato = {
 			id,
 			image,
 		}
+		console.log(dato)
 		await axios({
 			method: 'POST',
 			url: `${ENV_CORE}/api/users/update-image`,
-			data: data,
+			data: dato,
 		})
 			.then((response) => {
 				notification['success']({
@@ -56,9 +57,10 @@ const serviceImage = {
 					description: `${response.data.comment}`,
 				})
 				const itemStr = JSON.parse(localStorage.getItem('userSession'))
+
 				itemStr.photo = response.data.result.photo
 				const newItemStr = JSON.stringify(itemStr)
-				console.log('total ', newItemStr)
+
 				localStorage.setItem('userSession', newItemStr)
 				returnResponse = response
 			})
