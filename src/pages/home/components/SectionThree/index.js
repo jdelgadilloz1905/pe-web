@@ -12,7 +12,7 @@ import Image from '../../../../components/Image'
 
 import logoWhite from '../../../../assets/images/logos/wix-logo-white.png'
 
-import backgroundImgLeft from '../../../../assets/images/bg/home-section-3-left.png'
+import backgroundImgLeft from '../../../../assets/images/bg/home-section-3-left.jpeg'
 import backgroundImgRight from '../../../../assets/images/bg/home-section-3-right.jpeg'
 
 import './style.sass'
