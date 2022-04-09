@@ -26,7 +26,7 @@ export default function Sidebar(props) {
 								/>
 							</div>
 							<h2 className='cw-wizard-sidebar-title'>
-								Let's match you with the perfect advisor
+								Let's match<br></br> you with the perfect advisor
 							</h2>
 						</div>
 					</div>
@@ -43,7 +43,7 @@ export default function Sidebar(props) {
 							/>
 						</div>
 						<h2 className='cw-wizard-sidebar-title'>
-							Let's match you with the perfect advisor
+							Let's match<br></br> you with the perfect advisor
 						</h2>
 					</div>
 				</div>

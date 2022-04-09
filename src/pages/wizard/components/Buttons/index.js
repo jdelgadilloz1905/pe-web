@@ -13,7 +13,9 @@ export default function Buttons(props) {
 			<Link to={props.previous} className='cw-wizard-button'>
 				Back
 			</Link>
-			<img src={animationGif} alt='PE gif' width='100%' />
+			<div className='cw-wizard-button-icon-container'>
+				<img className='cw-wizard-button-icon' src={animationGif} alt='PE gif' />
+			</div>
 			<Link to={props.next} className='cw-wizard-button'>
 				Next
 			</Link>

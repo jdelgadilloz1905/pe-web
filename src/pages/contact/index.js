@@ -18,8 +18,8 @@ export default function Contact() {
 			/>
 			<div className='cw-contact-global-container'>
 				<Row className='cw-contact-main-container'>
-					<Col span={9}></Col>
-					<Col span={15} className='cw-contact-col-container'>
+					<Col xs={12} md={13} lg={13} xl={13}></Col>
+					<Col xs={12} md={11} lg={11} xl={11} className='cw-contact-col-container'>
 						<div className='cw-contact-form-global-container'>
 							<h3 className='cw-contact-global-title'>Hello.</h3>
 

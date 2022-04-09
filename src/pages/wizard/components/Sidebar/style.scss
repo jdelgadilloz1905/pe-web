@@ -8,7 +8,7 @@
 .cw-wizard-sidebar-logo-container {
 	width: 100%;
 	max-width: 220px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
 
 .cw-wizard-sidebar-logo-img {
@@ -17,8 +17,8 @@
 
 .cw-wizard-sidebar-title-inner-container {
 	width: 100%;
-	max-width: 370px;
-	padding: 60px 50px 20px 20px;
+	max-width: 355px;
+	padding: 50px 50px 20px 20px;
 }
 
 .cw-wizard-sidebar-title {
@@ -26,4 +26,6 @@
 	color: white;
 	font-weight: 600;
 	line-height: 50px;
+	text-shadow: rgb(0 0 0 / 40%) 0px 4px 5px;
+	font-family: AvenirHeavy, sans-serif !important;
 }

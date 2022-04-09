@@ -34,20 +34,16 @@ export default function StepOne() {
 
 	const handleChangeRate = async (value) => {
 		setRateOne(value)
-		await servicesAdvisor
-			.PushQuestion(value, isSelected, isSection, isStep)
-			.then((response) => {
-				//..
-			})
+		await servicesAdvisor.PushQuestion(value, isSelected, isSection, isStep).then((response) => {
+			//..
+		})
 	}
 
 	const handleChangeCheckbox = async (values) => {
 		setSelected(values)
-		await servicesAdvisor
-			.PushQuestion(isRateOne, values, isSection, isStep)
-			.then((response) => {
-				//..
-			})
+		await servicesAdvisor.PushQuestion(isRateOne, values, isSection, isStep).then((response) => {
+			//..
+		})
 	}
 	return (
 		<>
@@ -99,9 +95,7 @@ export default function StepOne() {
 														<Checkbox value='Phone'>Phone</Checkbox>
 													</Col>
 													<Col span={12}>
-														<Checkbox value='Their Office'>
-															Their Office
-														</Checkbox>
+														<Checkbox value='Their Office'>Their Office</Checkbox>
 													</Col>
 													<Col span={12}>
 														<Checkbox value='Email'>Email</Checkbox>
@@ -114,7 +108,7 @@ export default function StepOne() {
 													</Col>
 													<Col span={12}>
 														<Checkbox value='Any or all'>
-															Any or all of the above
+															Any or all of the previous options
 														</Checkbox>
 													</Col>
 													<Col span={12}>
@@ -125,18 +119,18 @@ export default function StepOne() {
 										</div>
 									</ScrollAnimation>
 								</div>
-								<div className='cw-wizard-stsone-form-container'>
+								<div className='cw-wizard-stsone-value-container'>
 									<ScrollAnimation
 										animateIn='animate__fadeInUp'
 										delay={3500}
 										animateOnce={true}>
-										<div className='cw-wizard-stsone-form-title-container'>
-											<h2 className='cw-wizard-stsone-form-rate'>
+										<div className='cw-wizard-stsone-value-title-container'>
+											<h2 className='cw-wizard-stsone-value-rate-title'>
 												How important is this question to you?
 											</h2>
 										</div>
 
-										<div className='cw-wizard-stsone-form-option-container'>
+										<div className='cw-wizard-stsone-value-option-container'>
 											<NormalRate
 												className={''}
 												onChange={handleChangeRate}
