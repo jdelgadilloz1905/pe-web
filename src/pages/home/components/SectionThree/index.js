@@ -21,8 +21,8 @@ export default function SectionThree() {
 	return (
 		<Row className='cw-section-three-global-container'>
 			<Col span={7}>
-				<div className='cv-advisors-section-3-parallax-container'>
-					<Parallax strength={200} bgImage={backgroundImgLeft}></Parallax>
+				<div className='cw-section-three-parallax-left-container'>
+					<Parallax strength={500} bgImage={backgroundImgLeft}></Parallax>
 				</div>
 			</Col>
 			<Col span={10} className='cw-section-three-main-container'>
@@ -56,8 +56,8 @@ export default function SectionThree() {
 				</div>
 			</Col>
 			<Col span={7}>
-				<div className='cv-advisors-section-3-parallax-container'>
-					<Parallax strength={200} bgImage={backgroundImgRight}></Parallax>
+				<div className='cw-section-three-parallax-container'>
+					<Parallax strength={600} bgImage={backgroundImgRight}></Parallax>
 				</div>
 			</Col>
 		</Row>

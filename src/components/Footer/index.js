@@ -1,6 +1,7 @@
 /** @format */
 
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 import { Link } from 'react-router-dom'
 
@@ -11,29 +12,29 @@ export default function Footer() {
 		<div className='cw-footer-global-container'>
 			<div className='cw-footer-main-container'>
 				<div className='cw-footer-menu-global-container'>
-					<Link to='/' className='cw-footer-menu-text'>
+					<NavLink to='/' activeClassName='cw-header-link-is-active' className='cw-footer-menu-text'>
 						Home
-					</Link>
+					</NavLink>
 
-					<Link to='/process' className='cw-footer-menu-text'>
+					<NavLink to='/process' activeClassName='cw-header-link-is-active' className='cw-footer-menu-text'>
 						Process
-					</Link>
+					</NavLink>
 
-					<Link to='/advisors' className='cw-footer-menu-text'>
+					<NavLink to='/advisors' activeClassName='cw-header-link-is-active' className='cw-footer-menu-text'>
 						Advisors
-					</Link>
+					</NavLink>
 
-					<Link to='/about' className='cw-footer-menu-text'>
+					<NavLink to='/about' activeClassName='cw-header-link-is-active' className='cw-footer-menu-text'>
 						About Us
-					</Link>
+					</NavLink>
 
-					<Link to='/contact' className='cw-footer-menu-text'>
+					<NavLink to='/contact' activeClassName='cw-header-link-is-active' className='cw-footer-menu-text'>
 						Contact
-					</Link>
+					</NavLink>
 
-					<Link to='/login' className='cw-footer-menu-text'>
+					<NavLink to='/login' activeClassName='cw-header-link-is-active' className='cw-footer-menu-text'>
 						Login
-					</Link>
+					</NavLink>
 				</div>
 
 				<hr className='cw-footer-spacer'></hr>

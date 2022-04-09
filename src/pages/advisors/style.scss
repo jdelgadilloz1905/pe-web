@@ -14,9 +14,9 @@
 }
 
 .cv-advisors-section-1-inner-container {
-	background-color: rgba(17, 28, 74, 0.72);
-	padding-top: 50px;
-	padding-left: 100px;
+	background-color: rgba(17, 28, 74, 0.6);
+	padding-top: 80px;
+	padding-left: 120px;
 	padding-bottom: 100px;
 	display: flex;
 	justify-content: flex-start;
@@ -36,7 +36,7 @@
 	text-align: center;
 	font-size: 40px;
 	padding: 12px;
-	margin-top: 165px;
+	margin-top: 135px;
 	margin-right: 40px;
 }
 
@@ -46,16 +46,18 @@
 	margin: auto;
 	height: 400px;
 	position: absolute;
-	left: 145px;
+	left: 164px;
 }
 
 .cv-advisors-section-1-main-title {
 	color: #ffffff;
-	font-size: 30px;
+	font-size: 28px;
 	font-weight: 700;
 	width: 100%;
-	max-width: 550px;
+	max-width: 500px;
 	margin-bottom: 50px;
+	line-height: 35px;
+	font-family: AvenirBlack, sans-serif !important;
 }
 
 .cv-advisors-section-1-main-subtitle {
@@ -63,14 +65,16 @@
 	font-size: 28px;
 	font-weight: 700;
 	width: 100%;
+	font-family: AvenirBlack, sans-serif !important;
+	margin-bottom: 30px;
 }
 
 .cv-advisors-section-1-main-description {
 	color: #fff;
-	font-size: 18px;
+	font-size: 19px;
 	font-weight: 300;
 	width: 100%;
-	max-width: 500px;
+	max-width: 400px;
 }
 
 .cv-advisors-section-2-main-container {
@@ -78,9 +82,9 @@
 }
 
 .cv-advisors-section-2-inner-container {
-	background-color: rgba(252, 175, 23, 0.75);
-	padding-top: 90px;
-	padding-bottom: 100px;
+	background-color: rgba(252, 175, 23, 0.7);
+	padding-top: 80px;
+	padding-bottom: 80px;
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;
@@ -103,7 +107,7 @@
 	text-align: center;
 	font-size: 40px;
 	padding: 12px;
-	margin-top: 0;
+	margin-top: 17px;
 	margin-right: 40px;
 }
 
@@ -111,7 +115,7 @@
 	border-left: 1px solid #ffffff;
 	text-align: center;
 	margin: auto;
-	height: 400px;
+	height: 500px;
 	position: absolute;
 	left: 43px;
 }
@@ -122,6 +126,8 @@
 	font-size: 28px;
 	font-weight: 700;
 	width: 100%;
+	margin-bottom: 25px;
+	font-family: AvenirBlack, sans-serif !important;
 }
 
 .cv-advisors-section-2-main-description {
@@ -130,6 +136,7 @@
 	font-weight: 300;
 	width: 100%;
 	max-width: 300px;
+	line-height: 32px;
 }
 
 .cv-advisors-section-2-parallax-container {
@@ -140,6 +147,12 @@
 	height: 100%;
 }
 
+.cv-advisors-section-2-parallax-container .react-parallax-bgimage {
+	height: auto !important;
+	width: 150% !important;
+	margin-top: -100px;
+}
+
 .cv-advisors-section-3-parallax-container {
 	height: 100%;
 }
@@ -148,17 +161,90 @@
 	height: 100%;
 }
 
+.cv-advisors-section-3-parallax-container .react-parallax-bgimage {
+	height: auto !important;
+	width: 150% !important;
+	top: -100px;
+}
+
 .cv-advisors-section-3-main-container {
 	padding-top: 0;
 }
 
 .cv-advisors-section-3-inner-container {
 	background-color: rgba(17, 28, 74, 0.72);
-	padding-top: 90px;
-	padding-bottom: 100px;
+	padding-top: 80px;
+	padding-bottom: 80px;
 	display: flex;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: flex-start;
 	overflow: hidden;
 	position: relative;
+	padding-left: 90px;
+}
+
+.cv-advisors-section-3-main-subtitle {
+	margin-top: 25px;
+	color: #fff;
+	font-size: 28px;
+	font-weight: 700;
+	width: 100%;
+	margin-bottom: 25px;
+	max-width: 250px;
+	line-height: 38px;
+	font-family: AvenirBlack, sans-serif !important;
+}
+
+.cv-advisors-section-3-main-description {
+	color: #fff;
+	font-size: 18px;
+	font-weight: 300;
+	width: 100%;
+	max-width: 330px;
+	line-height: 32px;
+}
+
+@media (max-width: 1700px) {
+	.cv-advisors-section-2-parallax-container .react-parallax-bgimage {
+		height: auto !important;
+		width: 200% !important;
+		margin-top: -40px;
+	}
+	.cv-advisors-section-3-parallax-container .react-parallax-bgimage {
+		height: auto !important;
+		width: 150% !important;
+		top: -30px;
+	}
+}
+
+@media (max-width: 1600px) {
+	.cv-advisors-section-3-parallax-container .react-parallax-bgimage {
+		height: auto !important;
+		width: 200% !important;
+		top: -30px;
+		left: 30% !important;
+	}
+}
+
+@media (max-width: 1250px) {
+	.cv-advisors-section-2-parallax-container .react-parallax-bgimage {
+		height: auto !important;
+		width: 230% !important;
+		margin-top: 50px;
+	}
+	.cv-advisors-section-3-parallax-container .react-parallax-bgimage {
+		height: auto !important;
+		width: 220% !important;
+		top: 0;
+		left: 30% !important;
+	}
+}
+
+@media (max-width: 1100px) {
+	.cv-advisors-section-3-parallax-container .react-parallax-bgimage {
+		height: auto !important;
+		width: 250% !important;
+		top: 0;
+		left: 30% !important;
+	}
 }

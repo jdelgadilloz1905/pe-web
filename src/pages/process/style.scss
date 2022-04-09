@@ -2,10 +2,10 @@
 
 .cv-process-global-background {
 	background-image: url(../../assets/images/bg/AdobeStock_229018430_PreviewRT.jpeg);
-	background-size: contain;
+	background-size: cover;
 	width: 100%;
+	background-position: 50% 70%;
 	background-attachment: fixed;
-	min-height: 100vh;
 	margin-top: -50px;
 }
 
@@ -15,9 +15,9 @@
 
 .cv-process-section-1-inner-container {
 	background-color: rgba(17, 28, 74, 0.72);
-	padding-top: 90px;
+	padding-top: 100px;
 	padding-left: 100px;
-	padding-bottom: 100px;
+	padding-bottom: 140px;
 	display: flex;
 	justify-content: flex-start;
 	align-items: flex-start;
@@ -32,11 +32,11 @@
 	height: 88px;
 	display: block;
 	border-radius: 100%;
-	background-color: rgba(221, 221, 221, 0.5);
+	background-color: rgba(221, 221, 221, 0.4);
 	text-align: center;
 	font-size: 40px;
 	padding: 12px;
-	margin-top: 120px;
+	margin-top: 145px;
 	margin-right: 40px;
 }
 
@@ -54,23 +54,28 @@
 	font-size: 30px;
 	font-weight: 700;
 	width: 100%;
-	max-width: 550px;
+	max-width: 375px;
 	margin-bottom: 50px;
+	line-height: 37px;
+	font-family: AvenirBlack, sans-serif !important;
 }
 
 .cv-process-section-1-main-subtitle {
 	color: #fff;
-	font-size: 28px;
+	font-size: 29px;
 	font-weight: 700;
 	width: 100%;
+	margin-bottom: 25px;
+	font-family: AvenirBlack, sans-serif !important;
 }
 
 .cv-process-section-1-main-description {
 	color: #fff;
-	font-size: 18px;
+	font-size: 19px;
 	font-weight: 300;
 	width: 100%;
-	max-width: 450px;
+	line-height: 31px;
+	max-width: 410px;
 }
 
 .cv-process-section-2-main-container {
@@ -78,9 +83,9 @@
 }
 
 .cv-process-section-2-inner-container {
-	background-color: rgba(5, 131, 66, 0.73);
-	padding-top: 150px;
-	padding-bottom: 150px;
+	background-color: rgba(5, 131, 66, 1);
+	padding-top: 100px;
+	padding-bottom: 120px;
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;
@@ -99,11 +104,11 @@
 	height: 88px;
 	display: block;
 	border-radius: 100%;
-	background-color: rgba(221, 221, 221, 0.5);
+	background-color: rgba(221, 221, 221, 0.4);
 	text-align: center;
 	font-size: 40px;
 	padding: 12px;
-	margin-top: 0;
+	margin-top: 12px;
 	margin-right: 40px;
 }
 
@@ -118,26 +123,53 @@
 
 .cv-process-section-2-main-subtitle {
 	margin-top: 25px;
+	margin-bottom: 30px;
 	color: #fff;
-	font-size: 28px;
+	font-size: 29px;
 	font-weight: 700;
 	width: 100%;
+	font-family: AvenirBlack, sans-serif !important;
+	max-width: 350px;
+	line-height: 32px;
 }
 
 .cv-process-section-2-main-description {
 	color: #fff;
-	font-size: 18px;
+	font-size: 19px;
 	font-weight: 300;
 	width: 100%;
-	max-width: 400px;
+	line-height: 31px;
+	max-width: 338px;
 }
 
-.cv-process-section-2-parallax-container {
+.cv-process-section-2-parallax-1-container {
 	height: 100%;
 }
 
-.cv-process-section-2-parallax-container .react-parallax {
+.cv-process-section-2-parallax-1-container .react-parallax {
 	height: 100%;
+}
+
+.cv-process-section-2-parallax-1-container .react-parallax-bgimage {
+	height: auto !important;
+	width: 350% !important;
+	top: 0 !important;
+	left: 100% !important;
+}
+
+.cv-process-section-2-parallax-2-container {
+	height: 100%;
+}
+
+.cv-process-section-2-parallax-2-container .react-parallax {
+	height: 100%;
+}
+
+.cv-process-section-2-parallax-2-container .react-parallax-bgimage {
+	height: auto !important;
+	width: 350% !important;
+	top: -150px !important;
+	left: 99% !important;
 }
 
 .cv-process-section-3-parallax-container {
@@ -156,7 +188,7 @@
 	background-color: rgba(17, 28, 74, 0.72);
 	padding-top: 90px;
 	padding-right: 100px;
-	padding-bottom: 100px;
+	padding-bottom: 60px;
 	display: flex;
 	justify-content: flex-end;
 	align-items: flex-start;
@@ -188,18 +220,21 @@
 	border-left: 1px solid #ffffff;
 	text-align: center;
 	margin: auto;
-	height: 400px;
+	height: 450px;
 	position: absolute;
 	left: 45px;
 }
 
 .cv-process-section-3-main-title {
 	color: #ffffff;
-	font-size: 30px;
+	font-size: 28px;
 	font-weight: 700;
 	width: 100%;
-	max-width: 550px;
+	max-width: 370px;
 	margin-bottom: 50px;
+	margin-top: 10px;
+	font-family: AvenirBlack, sans-serif !important;
+	line-height: 38px;
 }
 
 .cv-process-section-3-main-subtitle {
@@ -211,8 +246,87 @@
 
 .cv-process-section-3-main-description {
 	color: #fff;
-	font-size: 18px;
+	font-size: 19px;
 	font-weight: 300;
 	width: 100%;
-	max-width: 450px;
+	line-height: 31px;
+	max-width: 390px;
+	margin-bottom: 40px;
+}
+
+.cw-proccess-three-button-container {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 30px 0;
+}
+
+@media (max-width: 1660px) {
+	.cv-process-section-2-parallax-1-container .react-parallax-bgimage {
+		height: auto !important;
+		width: 350% !important;
+		left: 91% !important;
+	}
+
+	.cv-process-section-2-parallax-2-container .react-parallax-bgimage {
+		height: auto !important;
+		width: 350% !important;
+		left: 99% !important;
+	}
+}
+
+@media (max-width: 1470px) {
+	.cv-process-section-2-parallax-1-container .react-parallax-bgimage {
+		height: auto !important;
+		width: 350% !important;
+		left: 91% !important;
+	}
+
+	.cv-process-section-2-parallax-2-container .react-parallax-bgimage {
+		height: auto !important;
+		width: 400% !important;
+		left: 130% !important;
+	}
+}
+
+@media (max-width: 1380px) {
+	.cv-process-section-2-parallax-1-container .react-parallax-bgimage {
+		height: auto !important;
+		width: 350% !important;
+		left: 110% !important;
+	}
+
+	.cv-process-section-2-parallax-2-container .react-parallax-bgimage {
+		height: auto !important;
+		width: 450% !important;
+		left: 140% !important;
+	}
+}
+
+@media (max-width: 1260px) {
+	.cv-process-section-2-parallax-1-container .react-parallax-bgimage {
+		height: auto !important;
+		width: 400% !important;
+		left: 110% !important;
+	}
+
+	.cv-process-section-2-parallax-2-container .react-parallax-bgimage {
+		height: auto !important;
+		width: 490% !important;
+		left: 140% !important;
+	}
+}
+
+@media (max-width: 1160px) {
+	.cv-process-section-2-parallax-1-container .react-parallax-bgimage {
+		height: auto !important;
+		width: 450% !important;
+		left: 110% !important;
+	}
+
+	.cv-process-section-2-parallax-2-container .react-parallax-bgimage {
+		height: auto !important;
+		width: 530% !important;
+		left: 140% !important;
+	}
 }

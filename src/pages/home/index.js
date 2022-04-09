@@ -23,44 +23,8 @@ export default function Home() {
 	return (
 		<>
 			<MetaDescription title={'Home | PE.com'} name={'description'} content={'Home | PE.com...'} />
-			{/* <video
-				autoPlay
-				loop
-				muted
-				style={{
-					position: 'absolute',
-					width: '100%',
-					left: '50%',
-					top: '50%',
-					height: '100%',
-					objectFit: 'cover',
-					transform: 'translate(-50%, -50%)',
-					zIndex: '-1',
-				}}>
-				<source src={PowerSlap} type='video/mp4' />
-			</video> */}
-			{/* <iframe
-				className='cw-home-banner-global-video-container'
-				width='1280'
-				height='720'
-				src='https://www.youtube.com/embed/0ucO9frQFmo?mute=1&autoplay=1&modestbranding=1&loop=1&rel=0&amp;controls=0&amp;showinfo=0&playlist=0ucO9frQFmo'
-				title='YouTube EP'
-				frameBorder='0'
-				allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-				allowFullScreen></iframe> */}
-
-			<MetaDescription title={'Home | PE.com'} name={'description'} content={'Home | PE.com...'} />
 
 			<div className='cw-home-banner-global-container'>
-				{/* 				<iframe
-					className='cw-home-banner-global-video-container'
-					width='1280'
-					height='720'
-					src='https://www.youtube.com/embed/0ucO9frQFmo?mute=1&autoplay=1&modestbranding=1&loop=1&rel=0&amp;controls=0&amp;showinfo=0&playlist=0ucO9frQFmo'
-					title='YouTube EP'
-					frameBorder='0'
-					allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-					allowFullScreen></iframe> */}
 				<video
 					autoPlay
 					loop

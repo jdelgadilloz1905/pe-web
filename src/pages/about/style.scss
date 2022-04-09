@@ -51,27 +51,31 @@
 
 .cv-about-section-1-main-title {
 	color: #ffffff;
-	font-size: 27px;
+	font-size: 29px;
 	font-weight: 700;
 	width: 100%;
-	max-width: 550px;
+	max-width: 450px;
 	margin-bottom: 50px;
+	font-family: AvenirBlack, sans-serif !important;
+	line-height: 35px;
 }
 
 .cv-about-section-1-main-subtitle {
 	color: #fff;
-	font-size: 24px;
+	font-size: 28px;
 	font-weight: 700;
 	width: 100%;
 	margin-bottom: 40px;
+	font-family: AvenirBlack, sans-serif !important;
 }
 
 .cv-about-section-1-main-description {
 	color: #fff;
-	font-size: 18px;
+	font-size: 19px;
 	font-weight: 300;
 	width: 100%;
 	max-width: 500px;
+	line-height: 30px;
 }
 
 .cv-about-section-2-main-container {
@@ -81,12 +85,14 @@
 .cv-about-section-2-inner-container {
 	background-color: rgba(17, 28, 74, 0.72);
 	padding-top: 90px;
-	padding-bottom: 100px;
+	padding-bottom: 80px;
 	display: flex;
-	justify-content: center;
+	justify-content: flex-end;
 	align-items: flex-start;
 	overflow: hidden;
 	position: relative;
+	padding-right: 80px;
+	padding-left: 10px;
 }
 
 .cv-about-section-2-inner-indicator-container {
@@ -123,15 +129,21 @@
 	font-size: 28px;
 	font-weight: 700;
 	width: 100%;
+	font-family: AvenirBlack, sans-serif !important;
+	margin-bottom: 35px;
 }
 
 .cv-about-section-2-main-description {
 	color: #fff;
-	font-size: 18px;
+	font-size: 21px;
 	font-weight: 300;
 	width: 100%;
 	max-width: 500px;
 	font-style: italic;
+	font-family: Didot, sans-serif !important;
+	letter-spacing: 0.5px;
+	line-height: 31px;
+	margin-bottom: 28px;
 }
 
 .cv-about-section-2-main-description-footer {
@@ -142,12 +154,15 @@
 	max-width: 500px;
 	font-style: italic;
 	text-align: right;
+	font-family: Didot, sans-serif !important;
+	padding: 0 40px;
 }
 
 .cv-about-section-2-parallax-container {
 	height: 100%;
 	background-image: url(../../assets/images/bg/about-section-2.png);
 	background-size: cover;
+	background-position: 70% 0;
 }
 
 .cv-about-section-2-parallax-container .react-parallax {
