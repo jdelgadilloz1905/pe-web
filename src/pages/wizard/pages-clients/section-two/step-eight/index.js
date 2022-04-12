@@ -104,17 +104,18 @@ export default function StepEight() {
 									</ScrollAnimation>
 								</div>
 
-								<div className='cw-wizard-stseight-form-container'>
+								<div className='cw-wizard-stseight-value-container'>
 									<ScrollAnimation
 										animateIn='animate__fadeInUp'
 										delay={3500}
 										animateOnce={true}>
-										<div className='cw-wizard-stseight-form-title-container'>
-											<h2 className='cw-wizard-stseight-form-rate'>
+										<div className='cw-wizard-stseight-value-title-container'>
+											<h2 className='cw-wizard-stseight-value-rate-title'>
 												How important is this question to you?
 											</h2>
 										</div>
-										<div className='cw-wizard-stseight-form-option-container-rate'>
+
+										<div className='cw-wizard-stseight-value-option-container'>
 											<NormalRate
 												className={''}
 												onChange={handleChangeRate}

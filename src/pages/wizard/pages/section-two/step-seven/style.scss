@@ -47,7 +47,7 @@
 .cw-wizard-stsseven-form-option-container {
 	width: 100%;
 	max-width: 350px;
-	padding: 50px 0;
+	padding: 70px 0 50px 0;
 }
 .cw-wizard-stsseven-form-option-container .ant-slider-rail {
 	background-color: #d8d8d8;
@@ -173,10 +173,10 @@
 	margin-right: 0px;
 }
 
-.cw-wizard-stsseven-value-option-container .ant-rate-star-second {
+.cw-wizard-stsseven-value-option-container .ant-rate-star-zero .ant-rate-star-second {
 	color: #9deaea;
 }
 
-.cw-wizard-stsseven-value-option-container .ant-rate-star-full {
+.cw-wizard-stsseven-value-option-container .ant-rate-star-full .ant-rate-star-second {
 	color: #fcaf17 !important;
 }
