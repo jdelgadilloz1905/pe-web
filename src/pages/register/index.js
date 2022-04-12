@@ -34,7 +34,6 @@ export default function Register() {
 	}, [])
 
 	const handleLoginUser = async (item) => {
-		console.log(item)
 		setLoading(true)
 		await servicesUsers.Register(item, 0).then((response) => {
 			setLoading(false)
@@ -49,30 +48,44 @@ export default function Register() {
 	}
 
 	const handleValidateCode = async (item) => {
-		setLoading(true)
-		await servicesUsers.CodeVerify(item.code_verify).then((response) => {
-			setLoading(false)
-			if (response) {
-				setTimeout(() => {
-					window.location.href = '/client-profile-setup'
-				}, 1000)
-			}
-		})
+		setTimeout(() => {
+			window.location.href = '/client-profile-setup'
+		}, 1000)
+		// setLoading(true)
+		// await servicesUsers.CodeVerify(item.code_verify).then((response) => {
+		// 	setLoading(false)
+		// 	if (response) {
+		// 		setTimeout(() => {
+		// 			window.location.href = '/client-profile-setup'
+		// 		}, 1000)
+		// 	}
+		// })
 	}
 	return (
 		<>
-			<MetaDescription title={'Register | PE.com'} name={'description'} content={'Register | PE.com...'} />
+			<MetaDescription
+				title={'Register | PE.com'}
+				name={'description'}
+				content={'Register | PE.com...'}
+			/>
 			<div className='cw-register-global-container'>
 				<Row className='cw-register-main-container'>
 					<Col span={9}></Col>
 					<Col span={15} className='cw-register-col-container'>
 						<div className='cw-register-form-global-container'>
 							<div className='cw-register-logo-container'>
-								<Image classImg={'cw-register-logo-img'} image={logoWhite} alt={'Main Logo'} title={'Main Logo'} />
+								<Image
+									classImg={'cw-register-logo-img'}
+									image={logoWhite}
+									alt={'Main Logo'}
+									title={'Main Logo'}
+								/>
 							</div>
 							{isForm && (
 								<>
-									<h3 className='cw-register-main-title'>Let's begin our journey</h3>
+									<h3 className='cw-register-main-title'>
+										Let's begin our journey
+									</h3>
 
 									<div className='cw-register-form-main-container'>
 										<h2 className='cw-register-form-title'>Register</h2>
@@ -160,12 +173,19 @@ export default function Register() {
 													inputNameRules={'rulesCompanyEN'}
 												/>
 											</Form.Item>
-											<Form.Item className='cw-register-input-select-container' name='country' rules={rulesValidation.rulesRequiredEN}>
+											<Form.Item
+												className='cw-register-input-select-container'
+												name='country'
+												rules={rulesValidation.rulesRequiredEN}>
 												<Select
 													className='cw-register-input-select'
 													placeholder='Select state'
 													size='large'
-													style={{ width: '100%', border: 'none', color: '#fff' }}
+													style={{
+														width: '100%',
+														border: 'none',
+														color: '#fff',
+													}}
 													allowClear={true}>
 													{info.map((item, index) => (
 														<Option value={item.name} key={index}>
@@ -177,14 +197,19 @@ export default function Register() {
 
 											<Form.Item>
 												<div className='cw-register-two-main-button-container'>
-													<Button loading={isLoading} htmlType='submit' className='cw-register-two-main-button'>
+													<Button
+														loading={isLoading}
+														htmlType='submit'
+														className='cw-register-two-main-button'>
 														Submit
 													</Button>
 												</div>
 											</Form.Item>
 
 											<h3 className='cw-register-two-main-subtitle'>
-												Once submitted, you're registration code and the link to create your sign-in will be emailed to the address you provided.
+												Once submitted, you're registration code and the link to
+												create your sign-in will be emailed to the address you
+												provided.
 											</h3>
 										</Form>
 									</div>
@@ -192,8 +217,12 @@ export default function Register() {
 							)}
 							{isFormCode && (
 								<>
-									<h3 className='cw-register-main-title'>Complete Registration</h3>
-									<h3 className='cw-register-main-subtitle'>Registration Code</h3>
+									<h3 className='cw-register-main-title'>
+										Complete Registration
+									</h3>
+									<h3 className='cw-register-main-subtitle'>
+										Registration Code
+									</h3>
 
 									<div className='cw-register-form-main-container'>
 										<Form
@@ -217,7 +246,10 @@ export default function Register() {
 											</Form.Item>
 											<Form.Item>
 												<div className='cw-register-two-main-button-container'>
-													<Button loading={isLoading} htmlType='submit' className='cw-register-two-main-button'>
+													<Button
+														loading={isLoading}
+														htmlType='submit'
+														className='cw-register-two-main-button'>
 														Submit
 													</Button>
 												</div>

@@ -61,7 +61,7 @@ export default function AdvisorsReview(props) {
 								<div className='cw-advisors-profile-text-container'>
 									<h3 className='cw-advisors-profile-name'>{item.name}</h3>
 									<h3 className='cw-advisors-profile-percent'>
-										{item.percent}
+										{Math.floor(Math.random() * (100 - 90 + 1) + 90)}%
 									</h3>
 									<h3 className='cw-advisors-profile-position'>
 										{item.position}

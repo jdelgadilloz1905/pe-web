@@ -99,46 +99,67 @@ const servicesUsers = {
 			step_eighteen,
 			step_nineteen,
 		}
+		let date = new Date().toDateString()
+		returnResponse = {
+			name: item.first_name,
+			last: item.last_name,
+			id: 598,
+			modo: 'direct',
+			email: item.email,
+			photo:
+				'https://static.wixstatic.com/media/2a9fd3_d5f6d6c89d40461ba134277f435fe9a8~mv2.jpg/v1/crop/x_0,y_5,w_221,h_221/fill/w_124,h_123,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/AdobeStock_206544404_Preview_edited.jpg',
+			last_login: date,
+			profile: profile,
+			company: item.company,
+			country: item.country,
+		}
 
-		await axios({
-			method: 'POST',
-			url: `${ENV_CORE}/api/users/register-user`,
-			data: data,
-		})
-			.then((response) => {
-				notification['success']({
-					message: `success:`,
-					description: `${response.data.comment}`,
-				})
-				returnResponse = response
-				//remuevo todas las variables del local storage }
-				localStorage.removeItem('step_one')
-				localStorage.removeItem('step_two')
-				localStorage.removeItem('step_three')
-				localStorage.removeItem('step_four')
-				localStorage.removeItem('step_five')
-				localStorage.removeItem('step_six')
-				localStorage.removeItem('step_seven')
-				localStorage.removeItem('step_eight')
-				localStorage.removeItem('step_nine')
-				localStorage.removeItem('step_ten')
-				localStorage.removeItem('step_eleven')
-				localStorage.removeItem('step_twelve')
-				localStorage.removeItem('step_thirteen')
-				localStorage.removeItem('step_fourteen')
-				localStorage.removeItem('step_fifteen')
-				localStorage.removeItem('step_sixteen')
-				localStorage.removeItem('step_sixteen2')
-				localStorage.removeItem('step_seventen')
-				localStorage.removeItem('step_eighteen')
-				localStorage.removeItem('step_nineteen')
-			})
-			.catch((error) => {
-				notification['error']({
-					message: `Error`,
-					description: `${error.response.data.comment}`,
-				})
-			})
+		// await axios({
+		// 	method: 'POST',
+		// 	url: `${ENV_CORE}/api/users/register-user`,
+		// 	data: data,
+		// })
+		// 	.then((response) => {
+		// 		notification['success']({
+		// 			message: `success:`,
+		// 			description: `${response.data.comment}`,
+		// 		})
+		// 		returnResponse = response
+		// 		//remuevo todas las variables del local storage }
+		// 		localStorage.removeItem('step_one')
+		// 		localStorage.removeItem('step_two')
+		// 		localStorage.removeItem('step_three')
+		// 		localStorage.removeItem('step_four')
+		// 		localStorage.removeItem('step_five')
+		// 		localStorage.removeItem('step_six')
+		// 		localStorage.removeItem('step_seven')
+		// 		localStorage.removeItem('step_eight')
+		// 		localStorage.removeItem('step_nine')
+		// 		localStorage.removeItem('step_ten')
+		// 		localStorage.removeItem('step_eleven')
+		// 		localStorage.removeItem('step_twelve')
+		// 		localStorage.removeItem('step_thirteen')
+		// 		localStorage.removeItem('step_fourteen')
+		// 		localStorage.removeItem('step_fifteen')
+		// 		localStorage.removeItem('step_sixteen')
+		// 		localStorage.removeItem('step_sixteen2')
+		// 		localStorage.removeItem('step_seventen')
+		// 		localStorage.removeItem('step_eighteen')
+		// 		localStorage.removeItem('step_nineteen')
+		// 	})
+		// 	.catch((error) => {
+		// 		notification['error']({
+		// 			message: `Error`,
+		// 			description: `${error.response.data.comment}`,
+		// 		})
+		// 	})
+
+		localStorage.setItem('userSession', JSON.stringify(returnResponse))
+		setGlobal(() => ({
+			userEmail: `${returnResponse.name} ${returnResponse.last}`,
+			userData: returnResponse,
+		}))
+
 		return returnResponse
 	},
 	async CodeVerify(codeVerify) {

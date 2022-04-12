@@ -59,17 +59,20 @@ export default function Register() {
 	}
 
 	const handleValidateCode = async (item) => {
-		setLoading(true)
-		await servicesUsers.CodeVerify(item.code_verify).then((response) => {
-			setLoading(false)
+		setTimeout(() => {
+			window.location.href = '/client-profile-detail'
+		}, 1000)
+		// setLoading(true)
+		// await servicesUsers.CodeVerify(item.code_verify).then((response) => {
+		// 	setLoading(false)
 
-			if (response) {
-				//lo envio a lcuestionario
-				setTimeout(() => {
-					window.location.href = '/client-profile-detail'
-				}, 1000)
-			}
-		})
+		// 	if (response) {
+		// 		//lo envio a lcuestionario
+		// 		setTimeout(() => {
+		// 			window.location.href = '/client-profile-detail'
+		// 		}, 1000)
+		// 	}
+		// })
 	}
 
 	return (
