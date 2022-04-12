@@ -41,54 +41,33 @@ export default function StepEleven() {
 
 	const handleChangeRadio = async (e) => {
 		setSelected(e.target.value)
-		await servicesAdvisor
-			.PushQuestion(isRateOne, e.target.value, isSection, isStep)
-			.then((response) => {
-				//..
-			})
+		await servicesAdvisor.PushQuestion(isRateOne, e.target.value, isSection, isStep).then((response) => {
+			//..
+		})
 	}
 	return (
 		<>
-			<MetaDescription
-				title={'Personal Preferences-3 | PE.com'}
-				name={'description'}
-				content={'Personal Preferences-3 | PE.com...'}
-			/>
+			<MetaDescription title={'Personal Preferences-3 | PE.com'} name={'description'} content={'Personal Preferences-3 | PE.com...'} />
 			<div className='cw-wizard-stseleven-advisor-global-container'>
 				<Row className='cw-wizard-stseleven-main-container'>
 					<Col span={10}>
-						<Sidebar animation={true} />
+						<Sidebar />
 					</Col>
 					<Col span={14}>
-						<ScrollAnimation
-							style={{ height: '100%' }}
-							animateIn='animate__slideInRight'
-							delay={300}
-							duration={2}
-							animateOnce={true}>
+						<ScrollAnimation style={{ height: '100%' }} animateIn='animate__slideInRight' delay={300} duration={2} animateOnce={true}>
 							<div className='cw-wizard-stseleven-form-global-container'>
 								<div className='cw-wizard-stseleven-form-main-title-container'>
 									<MainTitle
-										indicators={[
-											{ indicator: true },
-											{ indicator: true },
-											{ indicator: true },
-											{ indicator: false },
-										]}
+										indicators={[{ indicator: true }, { indicator: true }, { indicator: true }, { indicator: false }]}
 										section={'Section 3 of 5'}
 										title={'Personal Preferences'}
 										subtitle={'Question 3 of 4'}
 									/>
 								</div>
 								<div className='cw-wizard-stseleven-form-container'>
-									<ScrollAnimation
-										animateIn='animate__fadeInUp'
-										delay={3000}
-										animateOnce={true}>
+									<ScrollAnimation animateIn='animate__fadeInUp' delay={3000} animateOnce={true}>
 										<div className='cw-wizard-stseleven-form-title-container'>
-											<h2 className='cw-wizard-stseleven-form-title'>
-												When do you plan to retire?
-											</h2>
+											<h2 className='cw-wizard-stseleven-form-title'>When do you plan to retire?</h2>
 										</div>
 										<div className='cw-wizard-stseleven-form-option-container'>
 											<Radio.Group onChange={handleChangeRadio} value={isSelected}>
@@ -117,29 +96,17 @@ export default function StepEleven() {
 									</ScrollAnimation>
 								</div>
 								<div className='cw-wizard-stseleven-value-container'>
-									<ScrollAnimation
-										animateIn='animate__fadeInUp'
-										delay={3500}
-										animateOnce={true}>
+									<ScrollAnimation animateIn='animate__fadeInUp' delay={3500} animateOnce={true}>
 										<div className='cw-wizard-stseleven-value-title-container'>
-											<h2 className='cw-wizard-stseleven-value-rate-title'>
-												How important is this question to you?
-											</h2>
+											<h2 className='cw-wizard-stseleven-value-rate-title'>How important is this question to you?</h2>
 										</div>
 
 										<div className='cw-wizard-stseleven-value-option-container'>
-											<NormalRate
-												className={''}
-												onChange={handleChangeRate}
-												defaultValue={isRateOne}
-											/>
+											<NormalRate className={''} onChange={handleChangeRate} defaultValue={isRateOne} />
 										</div>
 									</ScrollAnimation>
 								</div>
-								<ScrollAnimation
-									animateIn='animate__fadeInUp'
-									delay={4000}
-									animateOnce={true}>
+								<ScrollAnimation animateIn='animate__fadeInUp' delay={4000} animateOnce={true}>
 									<div className='cw-wizard-stseleven-form-buttons-container'>
 										<Buttons previous={'/wizard/step-ten'} next={'/wizard/step-twelve'} />
 									</div>

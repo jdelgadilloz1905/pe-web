@@ -15,7 +15,7 @@ import SectionTwo from './components/SectionTwo'
 import SectionThree from './components/SectionThree'
 import PowerSlap from '../../components/Video/AdobeStockp.mov'
 
-import logoColor from '../../assets/images/logos/Professional-Exchange-Logo-3-Color.svg'
+import logoColor from '../../assets/images/logos/PE-logo-color.svg'
 
 import './style.sass'
 

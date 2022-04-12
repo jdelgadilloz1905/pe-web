@@ -47,87 +47,51 @@ export default function StepFive() {
 	}
 	return (
 		<>
-			<MetaDescription
-				title={'Specialty-3 | PE.com'}
-				name={'description'}
-				content={'Specialty-3 | PE.com...'}
-			/>
+			<MetaDescription title={'Specialty-3 | PE.com'} name={'description'} content={'Specialty-3 | PE.com...'} />
 			<div className='cw-wizard-stsfive-global-container'>
 				<Row className='cw-wizard-stsfive-main-container'>
 					<Col span={10}>
-						<Sidebar animation={true} />
+						<Sidebar />
 					</Col>
 					<Col span={14}>
-						<ScrollAnimation
-							style={{ height: '100%' }}
-							animateIn='animate__slideInRight'
-							delay={300}
-							duration={2}
-							animateOnce={true}>
+						<ScrollAnimation style={{ height: '100%' }} animateIn='animate__slideInRight' delay={300} duration={2} animateOnce={true}>
 							<div className='cw-wizard-stsfive-form-global-container'>
 								<div className='cw-wizard-stsfive-form-main-title-container'>
 									<MainTitle
-										indicators={[
-											{ indicator: true },
-											{ indicator: true },
-											{ indicator: true },
-											{ indicator: false },
-											{ indicator: false },
-											{ indicator: false },
-										]}
+										indicators={[{ indicator: true }, { indicator: true }, { indicator: true }, { indicator: false }, { indicator: false }, { indicator: false }]}
 										section={'Section 2 of 5'}
 										title={'Advisor speciality or skill'}
 										subtitle={'Question 3 of 6'}
 									/>
 								</div>
 								<div className='cw-wizard-stsfive-form-container'>
-									<ScrollAnimation
-										animateIn='animate__fadeInUp'
-										delay={3000}
-										animateOnce={true}>
+									<ScrollAnimation animateIn='animate__fadeInUp' delay={3000} animateOnce={true}>
 										<div className='cw-wizard-stsfive-form-title-container'>
-											<h2 className='cw-wizard-stsfive-form-title'>
-												What services do you offer?
-											</h2>
+											<h2 className='cw-wizard-stsfive-form-title'>What services do you offer?</h2>
 										</div>
 										<div className='cw-wizard-stsfive-form-option-container'>
-											<Checkbox.Group
-												onChange={handleChangeCheckbox}
-												defaultValue={isSelected}
-												value={isSelected}>
+											<Checkbox.Group onChange={handleChangeCheckbox} defaultValue={isSelected} value={isSelected}>
 												<Row>
 													<Col span={12}>
-														<Checkbox value='Estate planning'>
-															Estate planning
-														</Checkbox>
+														<Checkbox value='Estate planning'>Estate planning</Checkbox>
 													</Col>
 													<Col span={12}>
-														<Checkbox value='Retirement planning'>
-															Retirement planning
-														</Checkbox>
+														<Checkbox value='Retirement planning'>Retirement planning</Checkbox>
 													</Col>
 													<Col span={12}>
-														<Checkbox value='Education savins'>
-															Education savins
-														</Checkbox>
+														<Checkbox value='Education savins'>Education savins</Checkbox>
 													</Col>
 													<Col span={12}>
 														<Checkbox value='Tax plannings'>Tax plannings</Checkbox>
 													</Col>
 													<Col span={12}>
-														<Checkbox value='Portfolio management'>
-															Portfolio management
-														</Checkbox>
+														<Checkbox value='Portfolio management'>Portfolio management</Checkbox>
 													</Col>
 													<Col span={12}>
-														<Checkbox value='Insurance products'>
-															Insurance products
-														</Checkbox>
+														<Checkbox value='Insurance products'>Insurance products</Checkbox>
 													</Col>
 													<Col span={12}>
-														<Checkbox value='Trust and Will services'>
-															Trust and Will services
-														</Checkbox>
+														<Checkbox value='Trust and Will services'>Trust and Will services</Checkbox>
 													</Col>
 													<Col span={12}>
 														<Checkbox value='Real estate'>Real estate</Checkbox>
@@ -138,29 +102,17 @@ export default function StepFive() {
 									</ScrollAnimation>
 								</div>
 								<div className='cw-wizard-stsfive-value-container'>
-									<ScrollAnimation
-										animateIn='animate__fadeInUp'
-										delay={3500}
-										animateOnce={true}>
+									<ScrollAnimation animateIn='animate__fadeInUp' delay={3500} animateOnce={true}>
 										<div className='cw-wizard-stsfive-value-title-container'>
-											<h2 className='cw-wizard-stsfive-value-rate-title'>
-												How important is this question to you?
-											</h2>
+											<h2 className='cw-wizard-stsfive-value-rate-title'>How important is this question to you?</h2>
 										</div>
 
 										<div className='cw-wizard-stsfive-value-option-container'>
-											<NormalRate
-												className={''}
-												onChange={handleChangeRate}
-												defaultValue={isRateOne}
-											/>
+											<NormalRate className={''} onChange={handleChangeRate} defaultValue={isRateOne} />
 										</div>
 									</ScrollAnimation>
 								</div>
-								<ScrollAnimation
-									animateIn='animate__fadeInUp'
-									delay={4000}
-									animateOnce={true}>
+								<ScrollAnimation animateIn='animate__fadeInUp' delay={4000} animateOnce={true}>
 									<div className='cw-wizard-stsfive-form-buttons-container'>
 										<Buttons previous={'/client/step-four'} next={'/client/step-six'} />
 									</div>

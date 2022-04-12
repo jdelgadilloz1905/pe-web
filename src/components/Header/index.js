@@ -8,7 +8,7 @@ import DropdownMenu from './DropdownMenu'
 
 import Image from '../Image'
 
-import logoWhite from '../../assets/images/logos/wix-logo-white.png'
+import logoWhite from '../../assets/images/logos/PE-logo-white.svg'
 
 import './style.sass'
 

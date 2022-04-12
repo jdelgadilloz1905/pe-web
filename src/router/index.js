@@ -1,12 +1,7 @@
 /** @format */
 
-import React from 'react'
-import {
-	BrowserRouter as Router,
-	Switch,
-	Route,
-	useLocation,
-} from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { BrowserRouter as Router, Switch, Route, useLocation } from 'react-router-dom'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
 import Layout from './components/Layout'
@@ -86,10 +81,7 @@ function InnerRoutes() {
 
 	return (
 		<TransitionGroup>
-			<CSSTransition
-				key={location.pathname}
-				classNames={`${location.pathname.match(/wizard/) ? '' : 'fade'}`}
-				timeout={500}>
+			<CSSTransition key={location.pathname} classNames={`${location.pathname.match(/wizard/) || location.pathname.match(/client/) ? '' : 'fade'}`} timeout={500}>
 				<Switch>
 					<Route exact path='/' component={Home} />
 					<Route exact path='/process' component={Process} />
@@ -109,51 +101,15 @@ function InnerRoutes() {
 					<Route exact path='/wizard/step-eight' component={WizardStepEight} />
 					<Route exact path='/wizard/step-nine' component={WizardStepNine} />
 					<Route exact path='/wizard/step-ten' component={WizardStepTen} />
-					<Route
-						exact
-						path='/wizard/step-eleven'
-						component={WizardStepEleven}
-					/>
-					<Route
-						exact
-						path='/wizard/step-twelve'
-						component={WizardStepTwelve}
-					/>
-					<Route
-						exact
-						path='/wizard/step-thirteen'
-						component={WizardStepThirteen}
-					/>
-					<Route
-						exact
-						path='/wizard/step-fourteen'
-						component={WizardStepFourteen}
-					/>
-					<Route
-						exact
-						path='/wizard/step-fifteen'
-						component={WizardStepFifteen}
-					/>
-					<Route
-						exact
-						path='/wizard/step-sixteen'
-						component={WizardStepSixteen}
-					/>
-					<Route
-						exact
-						path='/wizard/step-seventeen'
-						component={WizardStepSeventeen}
-					/>
-					<Route
-						exact
-						path='/wizard/step-eighteen'
-						component={WizardStepEighteen}
-					/>
-					<Route
-						exact
-						path='/wizard/step-nineteen'
-						component={WizardStepNineteen}
-					/>
+					<Route exact path='/wizard/step-eleven' component={WizardStepEleven} />
+					<Route exact path='/wizard/step-twelve' component={WizardStepTwelve} />
+					<Route exact path='/wizard/step-thirteen' component={WizardStepThirteen} />
+					<Route exact path='/wizard/step-fourteen' component={WizardStepFourteen} />
+					<Route exact path='/wizard/step-fifteen' component={WizardStepFifteen} />
+					<Route exact path='/wizard/step-sixteen' component={WizardStepSixteen} />
+					<Route exact path='/wizard/step-seventeen' component={WizardStepSeventeen} />
+					<Route exact path='/wizard/step-eighteen' component={WizardStepEighteen} />
+					<Route exact path='/wizard/step-nineteen' component={WizardStepNineteen} />
 
 					<Route exact path='/client/step-one' component={ClientStepOne} />
 					<Route exact path='/client/step-two' component={ClientStepTwo} />
@@ -165,78 +121,22 @@ function InnerRoutes() {
 					<Route exact path='/client/step-eight' component={ClientStepEight} />
 					<Route exact path='/client/step-nine' component={ClientStepNine} />
 					<Route exact path='/client/step-ten' component={ClientStepTen} />
-					<Route
-						exact
-						path='/client/step-eleven'
-						component={ClientStepEleven}
-					/>
-					<Route
-						exact
-						path='/client/step-twelve'
-						component={ClientStepTwelve}
-					/>
-					<Route
-						exact
-						path='/client/step-thirteen'
-						component={ClientStepThirteen}
-					/>
-					<Route
-						exact
-						path='/client/step-fourteen'
-						component={ClientStepFourteen}
-					/>
-					<Route
-						exact
-						path='/client/step-fifteen'
-						component={ClientStepFifteen}
-					/>
-					<Route
-						exact
-						path='/client/step-sixteen'
-						component={ClientStepSixteen}
-					/>
-					<Route
-						exact
-						path='/client/step-sixteen2'
-						component={ClientStepSixteen2}
-					/>
-					<Route
-						exact
-						path='/client/step-seventeen'
-						component={ClientStepSeventeen}
-					/>
-					<Route
-						exact
-						path='/client/step-eighteen'
-						component={ClientStepEighteen}
-					/>
-					<Route
-						exact
-						path='/client/step-nineteen'
-						component={ClientStepNineteen}
-					/>
+					<Route exact path='/client/step-eleven' component={ClientStepEleven} />
+					<Route exact path='/client/step-twelve' component={ClientStepTwelve} />
+					<Route exact path='/client/step-thirteen' component={ClientStepThirteen} />
+					<Route exact path='/client/step-fourteen' component={ClientStepFourteen} />
+					<Route exact path='/client/step-fifteen' component={ClientStepFifteen} />
+					<Route exact path='/client/step-sixteen' component={ClientStepSixteen} />
+					<Route exact path='/client/step-sixteen2' component={ClientStepSixteen2} />
+					<Route exact path='/client/step-seventeen' component={ClientStepSeventeen} />
+					<Route exact path='/client/step-eighteen' component={ClientStepEighteen} />
+					<Route exact path='/client/step-nineteen' component={ClientStepNineteen} />
 
 					<Route exact path='/restore-password' component={RestorePassword} />
-					<Route
-						exact
-						path='/user-profile-detail'
-						component={ClientProfileDetail}
-					/>
-					<Route
-						exact
-						path='/user-register-code'
-						component={ClientRegisterCode}
-					/>
-					<Route
-						exact
-						path='/user-profile-setup'
-						component={ClientProfileSetup}
-					/>
-					<Route
-						exact
-						path='/user-survey-result'
-						component={ClientSurveyResults}
-					/>
+					<Route exact path='/user-profile-detail' component={ClientProfileDetail} />
+					<Route exact path='/user-register-code' component={ClientRegisterCode} />
+					<Route exact path='/user-profile-setup' component={ClientProfileSetup} />
+					<Route exact path='/user-survey-result' component={ClientSurveyResults} />
 					<Route exact path='/user-dashboard' component={ClientDashboard} />
 
 					<Route path='*' component={NotFound} />

@@ -18,6 +18,7 @@ import servicesAdvisor from '../../services'
 import './style.scss'
 
 export default function StepSeven() {
+	const [isToolTip, setToolTip] = useState(false)
 	const marks = {
 		0: '|',
 		5: '|',
@@ -34,6 +35,9 @@ export default function StepSeven() {
 	const [isSelected, setSelected] = useState(null)
 
 	useEffect(() => {
+		setTimeout(() => {
+			setToolTip(true)
+		}, 4000)
 		servicesAdvisor.GetQuestion(isStep).then((response) => {
 			if (response) {
 				setSelected(response.answers)
@@ -57,94 +61,49 @@ export default function StepSeven() {
 	}
 	return (
 		<>
-			<MetaDescription
-				title={'Specialty-5 | PE.com'}
-				name={'description'}
-				content={'Specialty-5 | PE.com...'}
-			/>
+			<MetaDescription title={'Specialty-5 | PE.com'} name={'description'} content={'Specialty-5 | PE.com...'} />
 			<div className='cw-wizard-stsseven-global-container'>
 				<Row className='cw-wizard-stsseven-main-container'>
 					<Col span={10}>
-						<Sidebar animation={true} />
+						<Sidebar />
 					</Col>
 					<Col span={14}>
-						<ScrollAnimation
-							style={{ height: '100%' }}
-							animateIn='animate__slideInRight'
-							delay={300}
-							duration={2}
-							animateOnce={true}>
+						<ScrollAnimation style={{ height: '100%' }} animateIn='animate__slideInRight' delay={300} duration={2} animateOnce={true}>
 							<div className='cw-wizard-stsseven-form-global-container'>
 								<div className='cw-wizard-stsseven-form-main-title-container'>
 									<MainTitle
-										indicators={[
-											{ indicator: true },
-											{ indicator: true },
-											{ indicator: true },
-											{ indicator: true },
-											{ indicator: true },
-											{ indicator: false },
-										]}
+										indicators={[{ indicator: true }, { indicator: true }, { indicator: true }, { indicator: true }, { indicator: true }, { indicator: false }]}
 										section={'Section 2 of 5'}
 										title={'Advisor speciality or skill'}
 										subtitle={'Question 5 of 6'}
 									/>
 								</div>
 								<div className='cw-wizard-stsseven-form-container'>
-									<ScrollAnimation
-										animateIn='animate__fadeInUp'
-										delay={3000}
-										animateOnce={true}>
+									<ScrollAnimation animateIn='animate__fadeInUp' delay={3000} animateOnce={true}>
 										<div className='cw-wizard-stsseven-form-title-container'>
-											<h2 className='cw-wizard-stsseven-form-title'>
-												How important is it that your advisor is a Certified Financial
-												Planner (CFP)?
-											</h2>
+											<h2 className='cw-wizard-stsseven-form-title'>How important is it that your advisor is a Certified Financial Planner (CFP)?</h2>
 										</div>
 										<div className='cw-wizard-stsseven-form-option-container'>
-											<Slider
-												marks={marks}
-												step={5}
-												defaultValue={0}
-												max={30}
-												onChange={handleChangeSlider}
-												value={isSelected}
-											/>
+											<Slider marks={marks} step={5} defaultValue={0} max={30} onChange={handleChangeSlider} value={isSelected} tooltipVisible={isToolTip} />
 											<div className='cw-wizard-stsseven-form-option-subtitle-container'>
-												<h2 className='cw-wizard-stsseven-form-option-subtitle'>
-													Not Important
-												</h2>
-												<h2 className='cw-wizard-stsseven-form-option-subtitle'>
-													Very Important
-												</h2>
+												<h2 className='cw-wizard-stsseven-form-option-subtitle'>Not Important</h2>
+												<h2 className='cw-wizard-stsseven-form-option-subtitle'>Very Important</h2>
 											</div>
 										</div>
 									</ScrollAnimation>
 								</div>
 								<div className='cw-wizard-stsseven-value-container'>
-									<ScrollAnimation
-										animateIn='animate__fadeInUp'
-										delay={3500}
-										animateOnce={true}>
+									<ScrollAnimation animateIn='animate__fadeInUp' delay={3500} animateOnce={true}>
 										<div className='cw-wizard-stsseven-value-container'>
-											<h2 className='cw-wizard-stsseven-value-rate-title'>
-												How important is this question to you?
-											</h2>
+											<h2 className='cw-wizard-stsseven-value-rate-title'>How important is this question to you?</h2>
 										</div>
 
 										<div className='cw-wizard-stsseven-value-option-container'>
-											<NormalRate
-												className={''}
-												onChange={handleChangeRate}
-												defaultValue={isRateOne}
-											/>
+											<NormalRate className={''} onChange={handleChangeRate} defaultValue={isRateOne} />
 										</div>
 									</ScrollAnimation>
 								</div>
-								<ScrollAnimation
-									animateIn='animate__fadeInUp'
-									delay={4000}
-									animateOnce={true}>
+								<ScrollAnimation animateIn='animate__fadeInUp' delay={4000} animateOnce={true}>
 									<div className='cw-wizard-stsseven-form-buttons-container'>
 										<Buttons previous={'/wizard/step-six'} next={'/wizard/step-eight'} />
 									</div>

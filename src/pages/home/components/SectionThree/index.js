@@ -10,7 +10,7 @@ import { Row, Col } from 'antd'
 
 import Image from '../../../../components/Image'
 
-import logoWhite from '../../../../assets/images/logos/wix-logo-white.png'
+import logoWhite from '../../../../assets/images/logos/PE-logo-white.svg'
 
 import backgroundImgLeft from '../../../../assets/images/bg/home-section-3-left.jpeg'
 import backgroundImgRight from '../../../../assets/images/bg/home-section-3-right.jpeg'

@@ -47,55 +47,30 @@ export default function StepSix() {
 	}
 	return (
 		<>
-			<MetaDescription
-				title={'Specialty-4 | PE.com'}
-				name={'description'}
-				content={'Specialty-4 | PE.com...'}
-			/>
+			<MetaDescription title={'Specialty-4 | PE.com'} name={'description'} content={'Specialty-4 | PE.com...'} />
 			<div className='cw-wizard-stssix-global-container'>
 				<Row className='cw-wizard-stssix-main-container'>
 					<Col span={10}>
-						<Sidebar animation={true} />
+						<Sidebar />
 					</Col>
 					<Col span={14}>
-						<ScrollAnimation
-							style={{ height: '100%' }}
-							animateIn='animate__slideInRight'
-							delay={300}
-							duration={2}
-							animateOnce={true}>
+						<ScrollAnimation style={{ height: '100%' }} animateIn='animate__slideInRight' delay={300} duration={2} animateOnce={true}>
 							<div className='cw-wizard-stssix-form-global-container'>
 								<div className='cw-wizard-stssix-form-main-title-container'>
 									<MainTitle
-										indicators={[
-											{ indicator: true },
-											{ indicator: true },
-											{ indicator: true },
-											{ indicator: true },
-											{ indicator: false },
-											{ indicator: false },
-										]}
+										indicators={[{ indicator: true }, { indicator: true }, { indicator: true }, { indicator: true }, { indicator: false }, { indicator: false }]}
 										section={'Section 2 of 5'}
 										title={'Advisor speciality or skill'}
 										subtitle={'Question 4 of 6'}
 									/>
 								</div>
 								<div className='cw-wizard-stssix-form-container'>
-									<ScrollAnimation
-										animateIn='animate__fadeInUp'
-										delay={3000}
-										animateOnce={true}>
+									<ScrollAnimation animateIn='animate__fadeInUp' delay={3000} animateOnce={true}>
 										<div className='cw-wizard-stssix-form-title-container'>
-											<h2 className='cw-wizard-stssix-form-title'>
-												Would you prefer your advisor to specialize with any of the
-												following?
-											</h2>
+											<h2 className='cw-wizard-stssix-form-title'>Would you prefer your advisor to specialize with any of the following?</h2>
 										</div>
 										<div className='cw-wizard-stssix-form-option-container'>
-											<Checkbox.Group
-												onChange={handleChangeCheckbox}
-												defaultValue={isSelected}
-												value={isSelected}>
+											<Checkbox.Group onChange={handleChangeCheckbox} defaultValue={isSelected} value={isSelected}>
 												<Row>
 													<Col span={12}>
 														<Checkbox value='Medical'>Medical professionals</Checkbox>
@@ -104,14 +79,10 @@ export default function StepSix() {
 														<Checkbox value='Empty'>Empty nesters</Checkbox>
 													</Col>
 													<Col span={12}>
-														<Checkbox value='Corporate'>
-															Corporate professionals
-														</Checkbox>
+														<Checkbox value='Corporate'>Corporate professionals</Checkbox>
 													</Col>
 													<Col span={12}>
-														<Checkbox value='Pre-retiree'>
-															Pre-retiree (5 years from retirement)
-														</Checkbox>
+														<Checkbox value='Pre-retiree'>Pre-retiree (5 years from retirement)</Checkbox>
 													</Col>
 													<Col span={12}>
 														<Checkbox value='Business'>Business owners</Checkbox>
@@ -126,9 +97,7 @@ export default function StepSix() {
 														<Checkbox value='Widower'>Widower</Checkbox>
 													</Col>
 													<Col span={12}>
-														<Checkbox value='Family'>
-															Family planning for college
-														</Checkbox>
+														<Checkbox value='Family'>Family planning for college</Checkbox>
 													</Col>
 												</Row>
 											</Checkbox.Group>
@@ -136,29 +105,17 @@ export default function StepSix() {
 									</ScrollAnimation>
 								</div>
 								<div className='cw-wizard-stssix-value-container'>
-									<ScrollAnimation
-										animateIn='animate__fadeInUp'
-										delay={3500}
-										animateOnce={true}>
+									<ScrollAnimation animateIn='animate__fadeInUp' delay={3500} animateOnce={true}>
 										<div className='cw-wizard-stssix-value-title-container'>
-											<h2 className='cw-wizard-stssix-value-rate-title'>
-												How important is this question to you?
-											</h2>
+											<h2 className='cw-wizard-stssix-value-rate-title'>How important is this question to you?</h2>
 										</div>
 
 										<div className='cw-wizard-stssix-value-option-container'>
-											<NormalRate
-												className={''}
-												onChange={handleChangeRate}
-												defaultValue={isRateOne}
-											/>
+											<NormalRate className={''} onChange={handleChangeRate} defaultValue={isRateOne} />
 										</div>
 									</ScrollAnimation>
 								</div>
-								<ScrollAnimation
-									animateIn='animate__fadeInUp'
-									delay={4000}
-									animateOnce={true}>
+								<ScrollAnimation animateIn='animate__fadeInUp' delay={4000} animateOnce={true}>
 									<div className='cw-wizard-stssix-form-buttons-container'>
 										<Buttons previous={'/client/step-five'} next={'/client/step-seven'} />
 									</div>

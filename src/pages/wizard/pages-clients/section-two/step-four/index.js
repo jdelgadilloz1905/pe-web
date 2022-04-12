@@ -41,56 +41,33 @@ export default function StepFour() {
 
 	const handleChangeRadio = async (e) => {
 		setSelected(e.target.value)
-		await servicesAdvisor
-			.PushQuestion(isRateOne, e.target.value, isSection, isStep)
-			.then((response) => {
-				//..
-			})
+		await servicesAdvisor.PushQuestion(isRateOne, e.target.value, isSection, isStep).then((response) => {
+			//..
+		})
 	}
 	return (
 		<>
-			<MetaDescription
-				title={'Specialty-2 | PE.com'}
-				name={'description'}
-				content={'Specialty-2 | PE.com...'}
-			/>
+			<MetaDescription title={'Specialty-2 | PE.com'} name={'description'} content={'Specialty-2 | PE.com...'} />
 			<div className='cw-wizard-stsfour-global-container'>
 				<Row className='cw-wizard-stsfour-main-container'>
 					<Col span={10}>
-						<Sidebar animation={true} />
+						<Sidebar />
 					</Col>
 					<Col span={14}>
-						<ScrollAnimation
-							style={{ height: '100%' }}
-							animateIn='animate__slideInRight'
-							delay={300}
-							duration={2}
-							animateOnce={true}>
+						<ScrollAnimation style={{ height: '100%' }} animateIn='animate__slideInRight' delay={300} duration={2} animateOnce={true}>
 							<div className='cw-wizard-stsfour-form-global-container'>
 								<div className='cw-wizard-stsfour-form-main-title-container'>
 									<MainTitle
-										indicators={[
-											{ indicator: true },
-											{ indicator: true },
-											{ indicator: false },
-											{ indicator: false },
-											{ indicator: false },
-											{ indicator: false },
-										]}
+										indicators={[{ indicator: true }, { indicator: true }, { indicator: false }, { indicator: false }, { indicator: false }, { indicator: false }]}
 										section={'Section 2 of 5'}
 										title={'Your specialty or skill'}
 										subtitle={'Question 2 of 6'}
 									/>
 								</div>
 								<div className='cw-wizard-stsfour-form-container'>
-									<ScrollAnimation
-										animateIn='animate__fadeInUp'
-										delay={3000}
-										animateOnce={true}>
+									<ScrollAnimation animateIn='animate__fadeInUp' delay={3000} animateOnce={true}>
 										<div className='cw-wizard-stsfour-form-title-container'>
-											<h2 className='cw-wizard-stsfour-form-title'>
-												Are you a Fiduciary?
-											</h2>
+											<h2 className='cw-wizard-stsfour-form-title'>Are you a Fiduciary?</h2>
 										</div>
 										<div className='cw-wizard-stsfour-form-option-container'>
 											<Radio.Group onChange={handleChangeRadio} value={isSelected}>
@@ -107,29 +84,17 @@ export default function StepFour() {
 									</ScrollAnimation>
 								</div>
 								<div className='cw-wizard-stsfour-value-container'>
-									<ScrollAnimation
-										animateIn='animate__fadeInUp'
-										delay={3500}
-										animateOnce={true}>
+									<ScrollAnimation animateIn='animate__fadeInUp' delay={3500} animateOnce={true}>
 										<div className='cw-wizard-stsfour-value-title-container'>
-											<h2 className='cw-wizard-stsfour-value-rate-title'>
-												How important is this question to you?
-											</h2>
+											<h2 className='cw-wizard-stsfour-value-rate-title'>How important is this question to you?</h2>
 										</div>
 
 										<div className='cw-wizard-stsfour-value-option-container'>
-											<NormalRate
-												className={''}
-												onChange={handleChangeRate}
-												defaultValue={isRateOne}
-											/>
+											<NormalRate className={''} onChange={handleChangeRate} defaultValue={isRateOne} />
 										</div>
 									</ScrollAnimation>
 								</div>
-								<ScrollAnimation
-									animateIn='animate__fadeInUp'
-									delay={4000}
-									animateOnce={true}>
+								<ScrollAnimation animateIn='animate__fadeInUp' delay={4000} animateOnce={true}>
 									<div className='cw-wizard-stsfour-form-buttons-container'>
 										<Buttons previous={'/client/step-three'} next={'/client/step-five'} />
 									</div>

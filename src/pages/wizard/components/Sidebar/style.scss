@@ -8,24 +8,25 @@
 .cw-wizard-sidebar-logo-container {
 	width: 100%;
 	max-width: 220px;
-	margin-bottom: 10px;
+	margin-bottom: 4px;
 }
 
 .cw-wizard-sidebar-logo-img {
 	width: 100%;
+	filter: drop-shadow(2px 1px 3px #262626);
 }
 
 .cw-wizard-sidebar-title-inner-container {
 	width: 100%;
 	max-width: 355px;
-	padding: 50px 50px 20px 20px;
+	padding: 20px;
 }
 
 .cw-wizard-sidebar-title {
-	font-size: 40px;
+	font-size: 36px;
 	color: white;
+	line-height: 40px;
 	font-weight: 600;
-	line-height: 50px;
 	text-shadow: rgb(0 0 0 / 40%) 0px 4px 5px;
 	font-family: AvenirHeavy, sans-serif !important;
 }
