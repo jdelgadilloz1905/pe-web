@@ -51,7 +51,7 @@ export default function Register() {
 			setLoading(false)
 			if (response) {
 				setTimeout(() => {
-					window.location.href = '/client-profile-setup'
+					window.location.href = '/user-profile-setup'
 				}, 1000)
 			}
 		})

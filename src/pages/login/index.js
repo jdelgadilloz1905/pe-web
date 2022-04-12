@@ -24,11 +24,11 @@ export default function Login() {
 			if (response !== undefined) {
 				if (response.profile === '1') {
 					setTimeout(() => {
-						window.location.href = '/client-profile-detail'
+						window.location.href = '/user-profile-detail'
 					}, 1000)
 				} else {
 					setTimeout(() => {
-						window.location.href = '/client-profile-setup'
+						window.location.href = '/user-profile-setup'
 					}, 1000)
 				}
 			}

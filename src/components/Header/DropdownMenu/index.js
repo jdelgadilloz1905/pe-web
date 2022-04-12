@@ -61,8 +61,8 @@ export default function DropdownMenu() {
 					<a
 						href={
 							isUserData.profile === '1'
-								? '/client-profile-detail'
-								: '/client-profile-setup'
+								? '/user-profile-detail'
+								: '/user-profile-setup'
 						}>
 						profile
 					</a>
