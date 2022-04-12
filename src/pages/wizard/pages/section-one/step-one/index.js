@@ -60,7 +60,7 @@ export default function StepOne() {
 					<Col span={14}>
 						<ScrollAnimation
 							style={{ height: '100%' }}
-							animateIn='animate__backInRight'
+							animateIn='animate__slideInRight'
 							delay={300}
 							duration={2}
 							animateOnce={true}>

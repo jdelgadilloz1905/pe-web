@@ -2,6 +2,8 @@
 
 import React from 'react'
 
+import { Link } from 'react-router-dom'
+
 import ScrollAnimation from 'react-animate-on-scroll'
 
 import Image from '../../../../components/Image'
@@ -18,12 +20,14 @@ export default function Sidebar(props) {
 					<div className='cw-wizard-sidebar-title-global-container'>
 						<div className='cw-wizard-sidebar-title-inner-container'>
 							<div className='cw-wizard-sidebar-logo-container'>
-								<Image
-									classImg={'cw-wizard-sidebar-logo-img'}
-									image={logoWhite}
-									alt={'Main Logo'}
-									title={'Main Logo'}
-								/>
+								<Link to='/'>
+									<Image
+										classImg={'cw-wizard-sidebar-logo-img'}
+										image={logoWhite}
+										alt={'Main Logo'}
+										title={'Main Logo'}
+									/>
+								</Link>
 							</div>
 							<h2 className='cw-wizard-sidebar-title'>
 								Let's match<br></br> you with the perfect advisor

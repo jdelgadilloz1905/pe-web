@@ -20,11 +20,12 @@ import './style.scss'
 export default function StepSeven() {
 	const marks = {
 		0: '|',
-		1: '|',
-		2: '|',
-		3: '|',
-		4: '|',
 		5: '|',
+		10: '|',
+		15: '|',
+		20: '|',
+		25: '|',
+		30: '|',
 	}
 
 	const [isRateOne, setRateOne] = useState(0)
@@ -43,20 +44,16 @@ export default function StepSeven() {
 
 	const handleChangeRate = async (value) => {
 		setRateOne(value)
-		await servicesAdvisor
-			.PushQuestion(value, isSelected, isSection, isStep)
-			.then((response) => {
-				//..
-			})
+		await servicesAdvisor.PushQuestion(value, isSelected, isSection, isStep).then((response) => {
+			//..
+		})
 	}
 
 	const handleChangeSlider = async (values) => {
 		setSelected(values)
-		await servicesAdvisor
-			.PushQuestion(isRateOne, values, isSection, isStep)
-			.then((response) => {
-				//..
-			})
+		await servicesAdvisor.PushQuestion(isRateOne, values, isSection, isStep).then((response) => {
+			//..
+		})
 	}
 	return (
 		<>
@@ -73,7 +70,7 @@ export default function StepSeven() {
 					<Col span={14}>
 						<ScrollAnimation
 							style={{ height: '100%' }}
-							animateIn='animate__backInRight'
+							animateIn='animate__slideInRight'
 							delay={300}
 							duration={2}
 							animateOnce={true}>
@@ -100,16 +97,16 @@ export default function StepSeven() {
 										animateOnce={true}>
 										<div className='cw-wizard-stsseven-form-title-container'>
 											<h2 className='cw-wizard-stsseven-form-title'>
-												How important is it that your advisor is a Certified
-												Financial Planner (CFP)?
+												How important is it that your advisor is a Certified Financial
+												Planner (CFP)?
 											</h2>
 										</div>
 										<div className='cw-wizard-stsseven-form-option-container'>
 											<Slider
 												marks={marks}
-												step={1}
+												step={5}
 												defaultValue={0}
-												max={5}
+												max={30}
 												onChange={handleChangeSlider}
 												value={isSelected}
 											/>
@@ -124,17 +121,18 @@ export default function StepSeven() {
 										</div>
 									</ScrollAnimation>
 								</div>
-								<div className='cw-wizard-stsseven-form-container'>
+								<div className='cw-wizard-stsseven-value-container'>
 									<ScrollAnimation
 										animateIn='animate__fadeInUp'
 										delay={3500}
 										animateOnce={true}>
-										<div className='cw-wizard-stsseven-form-title-container'>
-											<h2 className='cw-wizard-stsseven-form-rate'>
+										<div className='cw-wizard-stsseven-value-container'>
+											<h2 className='cw-wizard-stsseven-value-rate-title'>
 												How important is this question to you?
 											</h2>
 										</div>
-										<div className='cw-wizard-stsseven-form-option-container-rate'>
+
+										<div className='cw-wizard-stsseven-value-option-container'>
 											<NormalRate
 												className={''}
 												onChange={handleChangeRate}
@@ -148,10 +146,7 @@ export default function StepSeven() {
 									delay={4000}
 									animateOnce={true}>
 									<div className='cw-wizard-stsseven-form-buttons-container'>
-										<Buttons
-											previous={'/wizard/step-six'}
-											next={'/wizard/step-eight'}
-										/>
+										<Buttons previous={'/wizard/step-six'} next={'/wizard/step-eight'} />
 									</div>
 								</ScrollAnimation>
 							</div>

@@ -34,20 +34,16 @@ export default function StepFive() {
 
 	const handleChangeRate = async (value) => {
 		setRateOne(value)
-		await servicesAdvisor
-			.PushQuestion(value, isSelected, isSection, isStep)
-			.then((response) => {
-				//..
-			})
+		await servicesAdvisor.PushQuestion(value, isSelected, isSection, isStep).then((response) => {
+			//..
+		})
 	}
 
 	const handleChangeCheckbox = async (values) => {
 		setSelected(values)
-		await servicesAdvisor
-			.PushQuestion(isRateOne, values, isSection, isStep)
-			.then((response) => {
-				//..
-			})
+		await servicesAdvisor.PushQuestion(isRateOne, values, isSection, isStep).then((response) => {
+			//..
+		})
 	}
 	return (
 		<>
@@ -64,7 +60,7 @@ export default function StepFive() {
 					<Col span={14}>
 						<ScrollAnimation
 							style={{ height: '100%' }}
-							animateIn='animate__backInRight'
+							animateIn='animate__slideInRight'
 							delay={300}
 							duration={2}
 							animateOnce={true}>
@@ -116,9 +112,7 @@ export default function StepFive() {
 														</Checkbox>
 													</Col>
 													<Col span={12}>
-														<Checkbox value='Tax plannings'>
-															Tax plannings
-														</Checkbox>
+														<Checkbox value='Tax plannings'>Tax plannings</Checkbox>
 													</Col>
 													<Col span={12}>
 														<Checkbox value='Portfolio management'>
@@ -143,17 +137,18 @@ export default function StepFive() {
 										</div>
 									</ScrollAnimation>
 								</div>
-								<div className='cw-wizard-stsfive-form-container'>
+								<div className='cw-wizard-stsfive-value-container'>
 									<ScrollAnimation
 										animateIn='animate__fadeInUp'
 										delay={3500}
 										animateOnce={true}>
-										<div className='cw-wizard-stsfive-form-title-container'>
-											<h2 className='cw-wizard-stsfive-form-rate'>
+										<div className='cw-wizard-stsfive-value-title-container'>
+											<h2 className='cw-wizard-stsfive-value-rate-title'>
 												How important is this question to you?
 											</h2>
 										</div>
-										<div className='cw-wizard-stsfive-form-option-container-rate'>
+
+										<div className='cw-wizard-stsfive-value-option-container'>
 											<NormalRate
 												className={''}
 												onChange={handleChangeRate}
@@ -167,10 +162,7 @@ export default function StepFive() {
 									delay={4000}
 									animateOnce={true}>
 									<div className='cw-wizard-stsfive-form-buttons-container'>
-										<Buttons
-											previous={'/client/step-four'}
-											next={'/client/step-six'}
-										/>
+										<Buttons previous={'/client/step-four'} next={'/client/step-six'} />
 									</div>
 								</ScrollAnimation>
 							</div>

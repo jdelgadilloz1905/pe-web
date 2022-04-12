@@ -34,11 +34,9 @@ export default function StepFifteen() {
 
 	const handleChangeRate = async (value) => {
 		setRateOne(value)
-		await servicesAdvisor
-			.PushQuestion(value, isSelected, isSection, isStep)
-			.then((response) => {
-				//..
-			})
+		await servicesAdvisor.PushQuestion(value, isSelected, isSection, isStep).then((response) => {
+			//..
+		})
 	}
 
 	const handleChangeRadio = async (e) => {
@@ -64,7 +62,7 @@ export default function StepFifteen() {
 					<Col span={14}>
 						<ScrollAnimation
 							style={{ height: '100%' }}
-							animateIn='animate__backInRight'
+							animateIn='animate__slideInRight'
 							delay={300}
 							duration={2}
 							animateOnce={true}>
@@ -94,9 +92,7 @@ export default function StepFifteen() {
 											</h2>
 										</div>
 										<div className='cw-wizard-sfsfifteen-form-option-container'>
-											<Radio.Group
-												onChange={handleChangeRadio}
-												value={isSelected}>
+											<Radio.Group onChange={handleChangeRadio} value={isSelected}>
 												<Row>
 													<Col span={24}>
 														<Radio value='0-10'>0 to 10</Radio>
@@ -121,18 +117,18 @@ export default function StepFifteen() {
 										</div>
 									</ScrollAnimation>
 								</div>
-								<div className='cw-wizard-sfsfifteen-form-option-container'>
+								<div className='cw-wizard-sfsfifteen-value-container'>
 									<ScrollAnimation
 										animateIn='animate__fadeInUp'
 										delay={3500}
 										animateOnce={true}>
-										<div className='cw-wizard-sfsfifteen-form-title-container'>
-											<h2 className='cw-wizard-sfsfifteen-form-rate'>
+										<div className='cw-wizard-sfsfifteen-value-title-container'>
+											<h2 className='cw-wizard-sfsfifteen-value-rate-title'>
 												How important is this question to you?
 											</h2>
 										</div>
 
-										<div className='cw-wizard-sfsfifteen-form-option-container'>
+										<div className='cw-wizard-sfsfifteen-value-option-container'>
 											<NormalRate
 												className={''}
 												onChange={handleChangeRate}

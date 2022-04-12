@@ -44,20 +44,16 @@ export default function StepThree() {
 
 	const handleChangeRate = async (value) => {
 		setRateOne(value)
-		await servicesAdvisor
-			.PushQuestion(value, isSelected, isSection, isStep)
-			.then((response) => {
-				//..
-			})
+		await servicesAdvisor.PushQuestion(value, isSelected, isSection, isStep).then((response) => {
+			//..
+		})
 	}
 
 	const handleChangeSlider = async (values) => {
 		setSelected(values)
-		await servicesAdvisor
-			.PushQuestion(isRateOne, values, isSection, isStep)
-			.then((response) => {
-				//..
-			})
+		await servicesAdvisor.PushQuestion(isRateOne, values, isSection, isStep).then((response) => {
+			//..
+		})
 	}
 
 	return (
@@ -75,7 +71,7 @@ export default function StepThree() {
 					<Col span={14}>
 						<ScrollAnimation
 							style={{ height: '100%' }}
-							animateIn='animate__backInRight'
+							animateIn='animate__slideInRight'
 							delay={300}
 							duration={2}
 							animateOnce={true}>
@@ -102,8 +98,8 @@ export default function StepThree() {
 										animateOnce={true}>
 										<div className='cw-wizard-ststhree-form-title-container'>
 											<h2 className='cw-wizard-ststhree-form-title'>
-												How many years of work experience do you have as a
-												finacial advisor?
+												How many years of work experience do you have as a finacial
+												advisor?
 											</h2>
 										</div>
 										<div className='cw-wizard-ststhree-form-option-container'>
@@ -114,21 +110,23 @@ export default function StepThree() {
 												max={30}
 												onChange={handleChangeSlider}
 												value={isSelected}
+												tooltipVisible
 											/>
 										</div>
 									</ScrollAnimation>
 								</div>
-								<div className='cw-wizard-ststhree-form-container'>
+								<div className='cw-wizard-ststhree-value-container'>
 									<ScrollAnimation
 										animateIn='animate__fadeInUp'
 										delay={3500}
 										animateOnce={true}>
-										<div className='cw-wizard-ststhree-form-title-container'>
-											<h2 className='cw-wizard-ststhree-form-rate'>
+										<div className='cw-wizard-ststhree-value-title-container'>
+											<h2 className='cw-wizard-ststhree-value-rate-title'>
 												How important is this question to you?
 											</h2>
 										</div>
-										<div className='cw-wizard-ststhree-form-option-container-rate'>
+
+										<div className='cw-wizard-ststhree-value-option-container'>
 											<NormalRate
 												className={''}
 												onChange={handleChangeRate}
@@ -142,10 +140,7 @@ export default function StepThree() {
 									delay={4000}
 									animateOnce={true}>
 									<div className='cw-wizard-ststhree-form-buttons-container'>
-										<Buttons
-											previous={'/client/step-two'}
-											next={'/client/step-four'}
-										/>
+										<Buttons previous={'/client/step-two'} next={'/client/step-four'} />
 									</div>
 								</ScrollAnimation>
 							</div>

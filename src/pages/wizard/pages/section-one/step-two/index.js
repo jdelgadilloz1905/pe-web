@@ -34,11 +34,9 @@ export default function StepTwo() {
 
 	const handleChangeRate = async (value) => {
 		setRateOne(value)
-		await servicesAdvisor
-			.PushQuestion(value, isSelected, isSection, isStep)
-			.then((response) => {
-				//..
-			})
+		await servicesAdvisor.PushQuestion(value, isSelected, isSection, isStep).then((response) => {
+			//..
+		})
 	}
 
 	const handleChangeRadio = async (e) => {
@@ -64,7 +62,7 @@ export default function StepTwo() {
 					<Col span={14}>
 						<ScrollAnimation
 							style={{ height: '100%' }}
-							animateIn='animate__backInRight'
+							animateIn='animate__slideInRight'
 							delay={300}
 							duration={2}
 							animateOnce={true}>
@@ -84,14 +82,11 @@ export default function StepTwo() {
 										animateOnce={true}>
 										<div className='cw-wizard-ststwo-form-title-container'>
 											<h2 className='cw-wizard-ststwo-form-title'>
-												Would you prefer your advisor have an office in your
-												area?
+												Would you prefer your advisor have an office in your area?
 											</h2>
 										</div>
 										<div className='cw-wizard-ststwo-form-option-container'>
-											<Radio.Group
-												onChange={handleChangeRadio}
-												value={isSelected}>
+											<Radio.Group onChange={handleChangeRadio} value={isSelected}>
 												<Row>
 													<Col span={24}>
 														<Radio value='Yes'>Yes</Radio>
@@ -104,18 +99,18 @@ export default function StepTwo() {
 										</div>
 									</ScrollAnimation>
 								</div>
-								<div className='cw-wizard-ststwo-form-option-container'>
+								<div className='cw-wizard-ststwo-value-container'>
 									<ScrollAnimation
 										animateIn='animate__fadeInUp'
 										delay={3500}
 										animateOnce={true}>
-										<div className='cw-wizard-ststwo-form-title-container'>
-											<h2 className='cw-wizard-ststwo-form-rate'>
+										<div className='cw-wizard-ststwo-value-title-container'>
+											<h2 className='cw-wizard-ststwo-value-rate-title'>
 												How important is this question to you?
 											</h2>
 										</div>
 
-										<div className='cw-wizard-ststwo-form-option-container'>
+										<div className='cw-wizard-ststwo-value-option-container'>
 											<NormalRate
 												className={''}
 												onChange={handleChangeRate}

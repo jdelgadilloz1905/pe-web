@@ -14,7 +14,7 @@
 .cw-wizard-stssix-form-global-container {
 	background-color: rgba(17, 28, 74, 0.72);
 	height: 100%;
-	padding: 60px 100px;
+	padding: 60px 50px 60px 80px;
 }
 .cw-wizard-stssix-form-main-title-container {
 	width: 100%;
@@ -26,7 +26,7 @@
 }
 .cw-wizard-stssix-form-title-container {
 	width: 100%;
-	max-width: 450px;
+	max-width: 470px;
 	padding-bottom: 30px;
 }
 .cw-wizard-stssix-form-title {
@@ -48,12 +48,10 @@
 
 .cw-wizard-stssix-form-option-container {
 	width: 100%;
-	max-width: 390px;
+	max-width: 450px;
 }
 
-.cw-wizard-stssix-form-option-container
-	.ant-checkbox-wrapper:hover
-	.ant-checkbox-inner {
+.cw-wizard-stssix-form-option-container .ant-checkbox-wrapper:hover .ant-checkbox-inner {
 	background-color: transparent !important;
 }
 .cw-wizard-stssix-form-option-container .ant-checkbox-wrapper span {
@@ -61,38 +59,26 @@
 	color: white;
 	font-weight: 100;
 }
-.cw-wizard-stssix-form-option-container
-	.ant-checkbox-group
-	.ant-checkbox-inner {
+.cw-wizard-stssix-form-option-container .ant-checkbox-group .ant-checkbox-inner {
 	border-radius: 100%;
 	width: 20px;
 	height: 20px;
 	background-color: rgba(255, 255, 255, 0.2);
 }
 
-.cw-wizard-stssix-form-option-container
-	.ant-checkbox-group
-	.ant-checkbox-wrapper {
+.cw-wizard-stssix-form-option-container .ant-checkbox-group .ant-checkbox-wrapper {
 	padding-bottom: 15px;
 }
-.cw-wizard-stssix-form-option-container
-	.ant-checkbox-group
-	.ant-checkbox-wrapper:hover {
+.cw-wizard-stssix-form-option-container .ant-checkbox-group .ant-checkbox-wrapper:hover {
 	background-color: transparent;
 }
-.cw-wizard-stssix-form-option-container
-	.ant-checkbox-wrapper:hover
-	.ant-checkbox-inner {
+.cw-wizard-stssix-form-option-container .ant-checkbox-wrapper:hover .ant-checkbox-inner {
 	border: 1px solid #d9d9d9;
 }
-.cw-wizard-stssix-form-option-container
-	.ant-checkbox-checked
-	.ant-checkbox-inner {
+.cw-wizard-stssix-form-option-container .ant-checkbox-checked .ant-checkbox-inner {
 	border-color: #d9d9d9;
 }
-.cw-wizard-stssix-form-option-container
-	.ant-checkbox-checked
-	.ant-checkbox-inner::after {
+.cw-wizard-stssix-form-option-container .ant-checkbox-checked .ant-checkbox-inner::after {
 	top: 45%;
 	left: 30.5%;
 }
@@ -103,4 +89,36 @@
 	width: 100%;
 	max-width: 150px;
 	padding: 30px 0;
+}
+
+.cw-wizard-stssix-value-container {
+	width: 100%;
+	max-width: 160px;
+	text-align: center;
+	padding-top: 15px;
+}
+
+.cw-wizard-stssix-value-rate-title {
+	font-size: 15px;
+	color: #ffffff;
+	font-weight: 600;
+}
+
+.cw-wizard-stssix-value-option-container .ant-rate {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+}
+
+.cw-wizard-stssix-value-option-container .ant-rate-star {
+	font-size: 24px;
+	margin-right: 0px;
+}
+
+.cw-wizard-stssix-value-option-container .ant-rate-star-second {
+	color: #9deaea;
+}
+
+.cw-wizard-stssix-value-option-container .ant-rate-star-full {
+	color: #fcaf17 !important;
 }

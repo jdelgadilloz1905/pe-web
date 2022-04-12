@@ -34,11 +34,9 @@ export default function StepEleven() {
 
 	const handleChangeRate = async (value) => {
 		setRateOne(value)
-		await servicesAdvisor
-			.PushQuestion(value, isSelected, isSection, isStep)
-			.then((response) => {
-				//..
-			})
+		await servicesAdvisor.PushQuestion(value, isSelected, isSection, isStep).then((response) => {
+			//..
+		})
 	}
 
 	const handleChangeRadio = async (e) => {
@@ -64,7 +62,7 @@ export default function StepEleven() {
 					<Col span={14}>
 						<ScrollAnimation
 							style={{ height: '100%' }}
-							animateIn='animate__backInRight'
+							animateIn='animate__slideInRight'
 							delay={300}
 							duration={2}
 							animateOnce={true}>
@@ -93,9 +91,7 @@ export default function StepEleven() {
 											</h2>
 										</div>
 										<div className='cw-wizard-stseleven-form-option-container'>
-											<Radio.Group
-												onChange={handleChangeRadio}
-												value={isSelected}>
+											<Radio.Group onChange={handleChangeRadio} value={isSelected}>
 												<Row>
 													<Col span={24}>
 														<Radio value='1-4'>1-4 Years</Radio>
@@ -120,18 +116,18 @@ export default function StepEleven() {
 										</div>
 									</ScrollAnimation>
 								</div>
-								<div className='cw-wizard-stseleven-form-option-container'>
+								<div className='cw-wizard-stseleven-value-container'>
 									<ScrollAnimation
 										animateIn='animate__fadeInUp'
 										delay={3500}
 										animateOnce={true}>
-										<div className='cw-wizard-stseleven-form-title-container'>
-											<h2 className='cw-wizard-stseleven-form-rate'>
+										<div className='cw-wizard-stseleven-value-title-container'>
+											<h2 className='cw-wizard-stseleven-value-rate-title'>
 												How important is this question to you?
 											</h2>
 										</div>
 
-										<div className='cw-wizard-stseleven-form-option-container'>
+										<div className='cw-wizard-stseleven-value-option-container'>
 											<NormalRate
 												className={''}
 												onChange={handleChangeRate}
@@ -145,10 +141,7 @@ export default function StepEleven() {
 									delay={4000}
 									animateOnce={true}>
 									<div className='cw-wizard-stseleven-form-buttons-container'>
-										<Buttons
-											previous={'/wizard/step-ten'}
-											next={'/wizard/step-twelve'}
-										/>
+										<Buttons previous={'/wizard/step-ten'} next={'/wizard/step-twelve'} />
 									</div>
 								</ScrollAnimation>
 							</div>

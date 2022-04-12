@@ -8,13 +8,15 @@
 	background-size: cover;
 	overflow: hidden;
 }
+
+/* 
 .cw-wizard-ststhree-main-container {
 	min-height: calc(100vh);
 }
 .cw-wizard-ststhree-form-global-container {
 	background-color: rgba(17, 28, 74, 0.72);
 	height: 100%;
-	padding: 60px 100px;
+	padding: 60px 60px 60px 80px;
 }
 .cw-wizard-ststhree-form-main-title-container {
 	width: 100%;
@@ -26,13 +28,14 @@
 }
 .cw-wizard-ststhree-form-title-container {
 	width: 100%;
-	max-width: 400px;
+	max-width: 450px;
 	padding-bottom: 20px;
 }
 .cw-wizard-ststhree-form-title {
 	color: white;
 	margin-bottom: 0;
 	padding-top: 10px;
+	font-size: 22px;
 }
 .cw-wizard-ststhree-form-rate {
 	color: white;
@@ -46,7 +49,7 @@
 .cw-wizard-ststhree-form-option-container {
 	width: 100%;
 	max-width: 350px;
-	padding: 30px 0 0;
+	padding: 70px 0;
 }
 
 .cw-wizard-ststhree-form-option-container .ant-slider-rail {
@@ -91,15 +94,15 @@
 }
 .cw-wizard-ststhree-form-option-container .ant-slider-mark {
 	top: unset;
-	bottom: 50px;
+	bottom: 40px;
 }
 .cw-wizard-ststhree-form-option-container .ant-slider-mark-text-active {
 	color: #49d6d6 !important;
 	font-weight: 600 !important;
 }
 .cw-wizard-ststhree-form-option-container .ant-slider-mark-text {
-	color: white;
-	font-size: 15px;
+	color: #49d6d6;
+	font-size: 10px;
 	font-weight: 500;
 }
 .cw-wizard-ststhree-form-option-container .ant-slider-with-marks {
@@ -110,6 +113,27 @@
 	width: 100%;
 	max-width: 350px;
 }
+
+.ant-tooltip {
+	top: 340px !important;
+}
+
+.ant-tooltip .ant-tooltip-inner {
+	background-color: #ffffff52 !important;
+	color: #d8d8d8 !important;
+	padding: 4px 12px !important;
+	font-size: 19px !important;
+	font-weight: 600 !important;
+
+	box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.6);
+}
+
+.ant-tooltip .ant-tooltip-arrow-content {
+	background-color: #ffffff52 !important;
+	width: 10px;
+	height: 10px;
+}
+
 .cw-wizard-ststhree-form-buttons-container {
 	display: flex;
 	justify-content: space-between;
@@ -118,3 +142,35 @@
 	max-width: 150px;
 	padding: 30px 0;
 }
+
+.cw-wizard-ststhree-value-container {
+	width: 100%;
+	max-width: 160px;
+	text-align: center;
+	padding-top: 30px;
+}
+
+.cw-wizard-ststhree-value-rate-title {
+	font-size: 15px;
+	color: #ffffff;
+	font-weight: 600;
+}
+
+.cw-wizard-ststhree-value-option-container .ant-rate {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+}
+
+.cw-wizard-ststhree-value-option-container .ant-rate-star {
+	font-size: 24px;
+	margin-right: 0px;
+}
+
+.cw-wizard-ststhree-value-option-container .ant-rate-star-second {
+	color: #9deaea;
+}
+
+.cw-wizard-ststhree-value-option-container .ant-rate-star-full {
+	color: #fcaf17 !important;
+} */

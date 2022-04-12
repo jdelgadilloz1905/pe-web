@@ -34,20 +34,16 @@ export default function StepTwelve() {
 
 	const handleChangeRate = async (value) => {
 		setRateOne(value)
-		await servicesAdvisor
-			.PushQuestion(value, isSelected, isSection, isStep)
-			.then((response) => {
-				//..
-			})
+		await servicesAdvisor.PushQuestion(value, isSelected, isSection, isStep).then((response) => {
+			//..
+		})
 	}
 
 	const handleChangeCheckbox = async (values) => {
 		setSelected(values)
-		await servicesAdvisor
-			.PushQuestion(isRateOne, values, isSection, isStep)
-			.then((response) => {
-				//..
-			})
+		await servicesAdvisor.PushQuestion(isRateOne, values, isSection, isStep).then((response) => {
+			//..
+		})
 	}
 	return (
 		<>
@@ -64,7 +60,7 @@ export default function StepTwelve() {
 					<Col span={14}>
 						<ScrollAnimation
 							style={{ height: '100%' }}
-							animateIn='animate__backInRight'
+							animateIn='animate__slideInRight'
 							delay={300}
 							duration={2}
 							animateOnce={true}>
@@ -99,50 +95,43 @@ export default function StepTwelve() {
 												value={isSelected}>
 												<Row>
 													<Col span={12}>
-														<Checkbox value='Saving'>
-															Saving for retirement
-														</Checkbox>
+														<Checkbox value='Saving'>Saving for retirement</Checkbox>
 													</Col>
 													<Col span={12}>
 														<Checkbox value='Tax'>Tax Strategy</Checkbox>
 													</Col>
 													<Col span={12}>
-														<Checkbox value='Financial'>
-															Financial Security
-														</Checkbox>
+														<Checkbox value='Financial'>Financial Security</Checkbox>
 													</Col>
 													<Col span={12}>
 														<Checkbox value='Estate'>Estate Planning</Checkbox>
 													</Col>
 													<Col span={12}>
-														<Checkbox value='College'>
-															College Planning
-														</Checkbox>
+														<Checkbox value='College'>College Planning</Checkbox>
 													</Col>
 													<Col span={12}>
 														<Checkbox value='Other'>Other</Checkbox>
 													</Col>
 													<Col span={12}>
-														<Checkbox value='Wealth'>
-															Wealth Management
-														</Checkbox>
+														<Checkbox value='Wealth'>Wealth Management</Checkbox>
 													</Col>
 												</Row>
 											</Checkbox.Group>
 										</div>
 									</ScrollAnimation>
 								</div>
-								<div className='cw-wizard-ststwelve-form-container'>
+								<div className='cw-wizard-stseleven-value-container'>
 									<ScrollAnimation
 										animateIn='animate__fadeInUp'
 										delay={3500}
 										animateOnce={true}>
-										<div className='cw-wizard-ststwelve-form-title-container'>
-											<h2 className='cw-wizard-ststwelve-form-rate'>
+										<div className='cw-wizard-stseleven-value-title-container'>
+											<h2 className='cw-wizard-stseleven-value-rate-title'>
 												How important is this question to you?
 											</h2>
 										</div>
-										<div className='cw-wizard-ststwelve-form-option-container-rate'>
+
+										<div className='cw-wizard-stseleven-value-option-container'>
 											<NormalRate
 												className={''}
 												onChange={handleChangeRate}

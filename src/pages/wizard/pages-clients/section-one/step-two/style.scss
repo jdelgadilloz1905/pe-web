@@ -8,14 +8,14 @@
 	background-size: cover;
 	overflow: hidden;
 }
-
+/* 
 .cw-wizard-ststwo-main-container {
 	min-height: calc(100vh);
 }
 .cw-wizard-ststwo-form-global-container {
 	background-color: rgba(17, 28, 74, 0.72);
 	height: 100%;
-	padding: 60px 100px;
+	padding: 60px 60px 60px 80px;
 }
 .cw-wizard-ststwo-form-main-title-container {
 	width: 100%;
@@ -27,13 +27,14 @@
 }
 .cw-wizard-ststwo-form-title-container {
 	width: 100%;
-	max-width: 400px;
-	padding-bottom: 20px;
+	max-width: 470px;
+	padding-bottom: 25px;
+	padding-top: 15px;
 }
 .cw-wizard-ststwo-form-title {
 	color: white;
 	margin-bottom: 0;
-	padding-top: 10px;
+	font-size: 22px;
 }
 .cw-wizard-ststwo-form-rate {
 	color: white;
@@ -45,13 +46,11 @@
 	text-align: center;
 }
 
-.cw-wizard-ststwo-form-option-container
-	.ant-radio-wrapper:hover
-	.ant-radio-inner {
+.cw-wizard-ststwo-form-option-container .ant-radio-wrapper:hover .ant-radio-inner {
 	background-color: transparent !important;
 }
 .cw-wizard-ststwo-form-option-container .ant-radio-wrapper span {
-	font-size: 17px;
+	font-size: 18px;
 	color: white;
 	font-weight: 100;
 }
@@ -64,22 +63,16 @@
 .cw-wizard-ststwo-form-option-container .ant-radio-group .ant-radio-wrapper {
 	padding-bottom: 10px;
 }
-.cw-wizard-ststwo-form-option-container
-	.ant-radio-group
-	.ant-radio-wrapper:hover {
+.cw-wizard-ststwo-form-option-container .ant-radio-group .ant-radio-wrapper:hover {
 	background-color: transparent;
 }
-.cw-wizard-ststwo-form-option-container
-	.ant-radio-wrapper:hover
-	.ant-radio-inner {
+.cw-wizard-ststwo-form-option-container .ant-radio-wrapper:hover .ant-radio-inner {
 	border: 1px solid #d9d9d9;
 }
 .cw-wizard-ststwo-form-option-container .ant-radio-checked .ant-radio-inner {
 	border-color: #d9d9d9;
 }
-.cw-wizard-ststwo-form-option-container
-	.ant-radio-checked
-	.ant-radio-inner::after {
+.cw-wizard-ststwo-form-option-container .ant-radio-checked .ant-radio-inner::after {
 	top: 45%;
 	left: 30.5%;
 	width: 20px;
@@ -96,3 +89,36 @@
 	max-width: 150px;
 	padding: 30px 0;
 }
+
+.cw-wizard-ststwo-value-container {
+	width: 100%;
+	max-width: 160px;
+	text-align: center;
+	padding-top: 25px;
+}
+
+.cw-wizard-ststwo-value-rate-title {
+	font-size: 15px;
+	color: #ffffff;
+	font-weight: 600;
+}
+
+.cw-wizard-ststwo-value-option-container .ant-rate {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+}
+
+.cw-wizard-ststwo-value-option-container .ant-rate-star {
+	font-size: 24px;
+	margin-right: 0px;
+}
+
+.cw-wizard-ststwo-value-option-container .ant-rate-star-second {
+	color: #9deaea;
+}
+
+.cw-wizard-ststwo-value-option-container .ant-rate-star-full {
+	color: #fcaf17 !important;
+}
+ */

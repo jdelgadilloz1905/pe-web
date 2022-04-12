@@ -35,11 +35,9 @@ export default function StepEight() {
 
 	const handleChangeRate = async (value) => {
 		setRateOne(value)
-		await servicesAdvisor
-			.PushQuestion(value, isTextarea, isSection, isStep)
-			.then((response) => {
-				//..
-			})
+		await servicesAdvisor.PushQuestion(value, isTextarea, isSection, isStep).then((response) => {
+			//..
+		})
 	}
 
 	const handleChangeTextArea = async (e) => {
@@ -65,7 +63,7 @@ export default function StepEight() {
 					<Col span={14}>
 						<ScrollAnimation
 							style={{ height: '100%' }}
-							animateIn='animate__backInRight'
+							animateIn='animate__slideInRight'
 							delay={300}
 							duration={2}
 							animateOnce={true}>
@@ -92,8 +90,7 @@ export default function StepEight() {
 										animateOnce={true}>
 										<div className='cw-wizard-stseight-form-title-container'>
 											<h2 className='cw-wizard-stseight-form-title'>
-												Is there anything else you would like to know about an
-												advisor?
+												Is there anything else you would like to know about an advisor?
 											</h2>
 										</div>
 										<div className='cw-wizard-stseight-form-option-container'>
@@ -107,17 +104,18 @@ export default function StepEight() {
 									</ScrollAnimation>
 								</div>
 
-								<div className='cw-wizard-stseight-form-container'>
+								<div className='cw-wizard-stseight-value-container'>
 									<ScrollAnimation
 										animateIn='animate__fadeInUp'
 										delay={3500}
 										animateOnce={true}>
-										<div className='cw-wizard-stseight-form-title-container'>
-											<h2 className='cw-wizard-stseight-form-rate'>
+										<div className='cw-wizard-stseight-value-title-container'>
+											<h2 className='cw-wizard-stseight-value-rate-title'>
 												How important is this question to you?
 											</h2>
 										</div>
-										<div className='cw-wizard-stseight-form-option-container-rate'>
+
+										<div className='cw-wizard-stseight-value-option-container'>
 											<NormalRate
 												className={''}
 												onChange={handleChangeRate}
@@ -126,16 +124,12 @@ export default function StepEight() {
 										</div>
 									</ScrollAnimation>
 								</div>
-
 								<ScrollAnimation
 									animateIn='animate__fadeInUp'
 									delay={4000}
 									animateOnce={true}>
 									<div className='cw-wizard-stseight-form-buttons-container'>
-										<Buttons
-											previous={'/wizard/step-seven'}
-											next={'/wizard/step-nine'}
-										/>
+										<Buttons previous={'/wizard/step-seven'} next={'/wizard/step-nine'} />
 									</div>
 								</ScrollAnimation>
 							</div>

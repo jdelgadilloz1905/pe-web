@@ -35,11 +35,9 @@ export default function StepEight() {
 
 	const handleChangeRate = async (value) => {
 		setRateOne(value)
-		await servicesAdvisor
-			.PushQuestion(value, isTextarea, isSection, isStep)
-			.then((response) => {
-				//..
-			})
+		await servicesAdvisor.PushQuestion(value, isTextarea, isSection, isStep).then((response) => {
+			//..
+		})
 	}
 
 	const handleChangeTextArea = async (e) => {
@@ -65,7 +63,7 @@ export default function StepEight() {
 					<Col span={14}>
 						<ScrollAnimation
 							style={{ height: '100%' }}
-							animateIn='animate__backInRight'
+							animateIn='animate__slideInRight'
 							delay={300}
 							duration={2}
 							animateOnce={true}>
@@ -92,8 +90,7 @@ export default function StepEight() {
 										animateOnce={true}>
 										<div className='cw-wizard-stseight-form-title-container'>
 											<h2 className='cw-wizard-stseight-form-title'>
-												Is there anything else you would like to know about an
-												client?
+												Is there anything else you would like to know about an client?
 											</h2>
 										</div>
 										<div className='cw-wizard-stseight-form-option-container'>
@@ -132,10 +129,7 @@ export default function StepEight() {
 									delay={4000}
 									animateOnce={true}>
 									<div className='cw-wizard-stseight-form-buttons-container'>
-										<Buttons
-											previous={'/client/step-seven'}
-											next={'/client/step-nine'}
-										/>
+										<Buttons previous={'/client/step-seven'} next={'/client/step-nine'} />
 									</div>
 								</ScrollAnimation>
 							</div>

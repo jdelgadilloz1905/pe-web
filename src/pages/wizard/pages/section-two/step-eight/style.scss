@@ -14,7 +14,7 @@
 .cw-wizard-stseight-form-global-container {
 	background-color: rgba(17, 28, 74, 0.72);
 	height: 100%;
-	padding: 60px 100px;
+	padding: 60px 60px 60px 80px;
 }
 .cw-wizard-stseight-form-main-title-container {
 	width: 100%;
@@ -76,16 +76,34 @@
 	padding: 30px 0;
 }
 
-.cw-wizard-stseight-form-option-container-rate {
+.cw-wizard-stseight-value-container {
 	width: 100%;
-	max-width: 350px;
-}
-.cw-wizard-stseight-form-rate {
-	color: white;
-	margin-bottom: 0;
-	width: 40%;
-	font-size: 15px;
-	font-weight: bold;
-	padding-top: 30px;
+	max-width: 160px;
 	text-align: center;
+	padding-top: 30px;
+}
+
+.cw-wizard-stseight-value-rate-title {
+	font-size: 15px;
+	color: #ffffff;
+	font-weight: 600;
+}
+
+.cw-wizard-stseight-value-option-container .ant-rate {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+}
+
+.cw-wizard-stseight-value-option-container .ant-rate-star {
+	font-size: 24px;
+	margin-right: 0px;
+}
+
+.cw-wizard-stseight-value-option-container .ant-rate-star-second {
+	color: #9deaea;
+}
+
+.cw-wizard-stseight-value-option-container .ant-rate-star-full {
+	color: #fcaf17 !important;
 }

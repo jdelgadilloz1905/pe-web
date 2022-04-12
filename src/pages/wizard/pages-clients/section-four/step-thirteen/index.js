@@ -34,11 +34,9 @@ export default function StepThirteen() {
 
 	const handleChangeRate = async (value) => {
 		setRateOne(value)
-		await servicesAdvisor
-			.PushQuestion(value, isSelected, isSection, isStep)
-			.then((response) => {
-				//..
-			})
+		await servicesAdvisor.PushQuestion(value, isSelected, isSection, isStep).then((response) => {
+			//..
+		})
 	}
 
 	const handleChangeRadio = async (e) => {
@@ -64,7 +62,7 @@ export default function StepThirteen() {
 					<Col span={14}>
 						<ScrollAnimation
 							style={{ height: '100%' }}
-							animateIn='animate__backInRight'
+							animateIn='animate__slideInRight'
 							delay={300}
 							duration={2}
 							animateOnce={true}>
@@ -94,9 +92,7 @@ export default function StepThirteen() {
 											</h2>
 										</div>
 										<div className='cw-wizard-sfsthirteen-form-option-container'>
-											<Radio.Group
-												onChange={handleChangeRadio}
-												value={isSelected}>
+											<Radio.Group onChange={handleChangeRadio} value={isSelected}>
 												<Row>
 													<Col span={24}>
 														<Radio value='Yes'>Yes</Radio>
@@ -109,18 +105,18 @@ export default function StepThirteen() {
 										</div>
 									</ScrollAnimation>
 								</div>
-								<div className='cw-wizard-sfsthirteen-form-option-container'>
+								<div className='cw-wizard-sfsthirteen-value-container'>
 									<ScrollAnimation
 										animateIn='animate__fadeInUp'
 										delay={3500}
 										animateOnce={true}>
-										<div className='cw-wizard-sfsthirteen-form-title-container'>
-											<h2 className='cw-wizard-sfsthirteen-form-rate'>
+										<div className='cw-wizard-sfsthirteen-value-title-container'>
+											<h2 className='cw-wizard-sfsthirteen-value-rate-title'>
 												How important is this question to you?
 											</h2>
 										</div>
 
-										<div className='cw-wizard-sfsthirteen-form-option-container'>
+										<div className='cw-wizard-sfsthirteen-value-option-container'>
 											<NormalRate
 												className={''}
 												onChange={handleChangeRate}

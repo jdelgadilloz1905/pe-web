@@ -34,20 +34,16 @@ export default function StepSix() {
 
 	const handleChangeRate = async (value) => {
 		setRateOne(value)
-		await servicesAdvisor
-			.PushQuestion(value, isSelected, isSection, isStep)
-			.then((response) => {
-				//..
-			})
+		await servicesAdvisor.PushQuestion(value, isSelected, isSection, isStep).then((response) => {
+			//..
+		})
 	}
 
 	const handleChangeCheckbox = async (values) => {
 		setSelected(values)
-		await servicesAdvisor
-			.PushQuestion(isRateOne, values, isSection, isStep)
-			.then((response) => {
-				//..
-			})
+		await servicesAdvisor.PushQuestion(isRateOne, values, isSection, isStep).then((response) => {
+			//..
+		})
 	}
 	return (
 		<>
@@ -64,7 +60,7 @@ export default function StepSix() {
 					<Col span={14}>
 						<ScrollAnimation
 							style={{ height: '100%' }}
-							animateIn='animate__backInRight'
+							animateIn='animate__slideInRight'
 							delay={300}
 							duration={2}
 							animateOnce={true}>
@@ -91,8 +87,8 @@ export default function StepSix() {
 										animateOnce={true}>
 										<div className='cw-wizard-stssix-form-title-container'>
 											<h2 className='cw-wizard-stssix-form-title'>
-												Would you prefer your advisor to specialize with any of
-												the following?
+												Would you prefer your advisor to specialize with any of the
+												following?
 											</h2>
 										</div>
 										<div className='cw-wizard-stssix-form-option-container'>
@@ -102,9 +98,7 @@ export default function StepSix() {
 												value={isSelected}>
 												<Row>
 													<Col span={12}>
-														<Checkbox value='Medical'>
-															Medical professionals
-														</Checkbox>
+														<Checkbox value='Medical'>Medical professionals</Checkbox>
 													</Col>
 													<Col span={12}>
 														<Checkbox value='Empty'>Empty nesters</Checkbox>
@@ -115,9 +109,12 @@ export default function StepSix() {
 														</Checkbox>
 													</Col>
 													<Col span={12}>
-														<Checkbox value='Business'>
-															Business owners
+														<Checkbox value='Pre-retiree'>
+															Pre-retiree (5 years from retirement)
 														</Checkbox>
+													</Col>
+													<Col span={12}>
+														<Checkbox value='Business'>Business owners</Checkbox>
 													</Col>
 													<Col span={12}>
 														<Checkbox value='Retiree'>Retiree</Checkbox>
@@ -133,27 +130,23 @@ export default function StepSix() {
 															Family planning for college
 														</Checkbox>
 													</Col>
-													<Col span={12}>
-														<Checkbox value='Pre-retiree'>
-															Pre-retiree (5 years from retirement)
-														</Checkbox>
-													</Col>
 												</Row>
 											</Checkbox.Group>
 										</div>
 									</ScrollAnimation>
 								</div>
-								<div className='cw-wizard-stsfive-form-container'>
+								<div className='cw-wizard-stssix-value-container'>
 									<ScrollAnimation
 										animateIn='animate__fadeInUp'
 										delay={3500}
 										animateOnce={true}>
-										<div className='cw-wizard-stssix-form-title-container'>
-											<h2 className='cw-wizard-stssix-form-rate'>
+										<div className='cw-wizard-stssix-value-title-container'>
+											<h2 className='cw-wizard-stssix-value-rate-title'>
 												How important is this question to you?
 											</h2>
 										</div>
-										<div className='cw-wizard-stssix-form-option-container-rate'>
+
+										<div className='cw-wizard-stssix-value-option-container'>
 											<NormalRate
 												className={''}
 												onChange={handleChangeRate}
@@ -167,10 +160,7 @@ export default function StepSix() {
 									delay={4000}
 									animateOnce={true}>
 									<div className='cw-wizard-stssix-form-buttons-container'>
-										<Buttons
-											previous={'/client/step-five'}
-											next={'/client/step-seven'}
-										/>
+										<Buttons previous={'/client/step-five'} next={'/client/step-seven'} />
 									</div>
 								</ScrollAnimation>
 							</div>

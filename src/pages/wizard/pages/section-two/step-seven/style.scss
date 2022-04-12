@@ -14,7 +14,7 @@
 .cw-wizard-stsseven-form-global-container {
 	background-color: rgba(17, 28, 74, 0.72);
 	height: 100%;
-	padding: 60px 100px;
+	padding: 60px 60px 60px 80px;
 }
 .cw-wizard-stsseven-form-main-title-container {
 	width: 100%;
@@ -91,15 +91,15 @@
 }
 .cw-wizard-stsseven-form-option-container .ant-slider-mark {
 	top: unset;
-	bottom: 50px;
+	bottom: 40px;
 }
 .cw-wizard-stsseven-form-option-container .ant-slider-mark-text-active {
 	color: #49d6d6 !important;
 	font-weight: 600 !important;
 }
 .cw-wizard-stsseven-form-option-container .ant-slider-mark-text {
-	color: white;
-	font-size: 15px;
+	color: #49d6d6;
+	font-size: 10px;
 	font-weight: 500;
 }
 .cw-wizard-stsseven-form-option-container .ant-slider-with-marks {
@@ -112,9 +112,9 @@
 }
 .cw-wizard-stsseven-form-option-subtitle {
 	color: white;
-	font-size: 13px;
+	font-size: 14px;
 	margin-bottom: 0;
-	font-weight: 600;
+	font-family: AvenirHeavy, sans-serif !important;
 }
 .cw-wizard-stsseven-form-option-container-rate {
 	width: 100%;
@@ -127,4 +127,56 @@
 	width: 100%;
 	max-width: 150px;
 	padding: 30px 0;
+}
+
+.ant-tooltip {
+	top: 340px !important;
+}
+
+.ant-tooltip .ant-tooltip-inner {
+	background-color: #ffffff52 !important;
+	color: #d8d8d8 !important;
+	padding: 4px 12px !important;
+	font-size: 19px !important;
+	font-weight: 600 !important;
+
+	box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.6);
+}
+
+.ant-tooltip .ant-tooltip-arrow-content {
+	background-color: #ffffff52 !important;
+	width: 10px;
+	height: 10px;
+}
+
+.cw-wizard-stsseven-value-container {
+	width: 100%;
+	max-width: 160px;
+	text-align: center;
+	padding-top: 30px;
+}
+
+.cw-wizard-stsseven-value-rate-title {
+	font-size: 15px;
+	color: #ffffff;
+	font-weight: 600;
+}
+
+.cw-wizard-stsseven-value-option-container .ant-rate {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+}
+
+.cw-wizard-stsseven-value-option-container .ant-rate-star {
+	font-size: 24px;
+	margin-right: 0px;
+}
+
+.cw-wizard-stsseven-value-option-container .ant-rate-star-second {
+	color: #9deaea;
+}
+
+.cw-wizard-stsseven-value-option-container .ant-rate-star-full {
+	color: #fcaf17 !important;
 }

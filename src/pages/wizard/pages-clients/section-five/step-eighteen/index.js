@@ -34,11 +34,9 @@ export default function StepEighteen() {
 
 	const handleChangeRate = async (value) => {
 		setRateOne(value)
-		await servicesAdvisor
-			.PushQuestion(value, isSelected, isSection, isStep)
-			.then((response) => {
-				//..
-			})
+		await servicesAdvisor.PushQuestion(value, isSelected, isSection, isStep).then((response) => {
+			//..
+		})
 	}
 
 	const handleChangeRadio = async (e) => {
@@ -64,7 +62,7 @@ export default function StepEighteen() {
 					<Col span={14}>
 						<ScrollAnimation
 							style={{ height: '100%' }}
-							animateIn='animate__backInRight'
+							animateIn='animate__slideInRight'
 							delay={300}
 							duration={2}
 							animateOnce={true}>
@@ -92,9 +90,7 @@ export default function StepEighteen() {
 											</h2>
 										</div>
 										<div className='cw-wizard-sfseighteen-form-option-container'>
-											<Radio.Group
-												onChange={handleChangeRadio}
-												value={isSelected}>
+											<Radio.Group onChange={handleChangeRadio} value={isSelected}>
 												<Row>
 													<Col span={24}>
 														<Radio value='Personal'>
@@ -114,18 +110,18 @@ export default function StepEighteen() {
 												</Row>
 											</Radio.Group>
 										</div>
-										<div className='cw-wizard-sfseighteen-form-option-container'>
+										<div className='cw-wizard-sfseighteen-value-container'>
 											<ScrollAnimation
 												animateIn='animate__fadeInUp'
 												delay={3500}
 												animateOnce={true}>
-												<div className='cw-wizard-sfseighteen-form-title-container'>
-													<h2 className='cw-wizard-sfseighteen-form-rate'>
+												<div className='cw-wizard-sfseighteen-value-title-container'>
+													<h2 className='cw-wizard-sfseighteen-value-rate-title'>
 														How important is this question to you?
 													</h2>
 												</div>
 
-												<div className='cw-wizard-sfseighteen-form-option-container'>
+												<div className='cw-wizard-sfseighteen-value-option-container'>
 													<NormalRate
 														className={''}
 														onChange={handleChangeRate}

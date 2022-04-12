@@ -34,11 +34,9 @@ export default function StepFour() {
 
 	const handleChangeRate = async (value) => {
 		setRateOne(value)
-		await servicesAdvisor
-			.PushQuestion(value, isSelected, isSection, isStep)
-			.then((response) => {
-				//..
-			})
+		await servicesAdvisor.PushQuestion(value, isSelected, isSection, isStep).then((response) => {
+			//..
+		})
 	}
 
 	const handleChangeRadio = async (e) => {
@@ -64,7 +62,7 @@ export default function StepFour() {
 					<Col span={14}>
 						<ScrollAnimation
 							style={{ height: '100%' }}
-							animateIn='animate__backInRight'
+							animateIn='animate__slideInRight'
 							delay={300}
 							duration={2}
 							animateOnce={true}>
@@ -95,9 +93,7 @@ export default function StepFour() {
 											</h2>
 										</div>
 										<div className='cw-wizard-stsfour-form-option-container'>
-											<Radio.Group
-												onChange={handleChangeRadio}
-												value={isSelected}>
+											<Radio.Group onChange={handleChangeRadio} value={isSelected}>
 												<Row>
 													<Col span={24}>
 														<Radio value='Yes'>Yes</Radio>
@@ -110,17 +106,18 @@ export default function StepFour() {
 										</div>
 									</ScrollAnimation>
 								</div>
-								<div className='cw-wizard-stsfour-form-container'>
+								<div className='cw-wizard-stsfour-value-container'>
 									<ScrollAnimation
 										animateIn='animate__fadeInUp'
 										delay={3500}
 										animateOnce={true}>
-										<div className='cw-wizard-stsfour-form-title-container'>
-											<h2 className='cw-wizard-stsfour-form-rate'>
+										<div className='cw-wizard-stsfour-value-title-container'>
+											<h2 className='cw-wizard-stsfour-value-rate-title'>
 												How important is this question to you?
 											</h2>
 										</div>
-										<div className='cw-wizard-stsfour-form-option-container-rate'>
+
+										<div className='cw-wizard-stsfour-value-option-container'>
 											<NormalRate
 												className={''}
 												onChange={handleChangeRate}
@@ -134,10 +131,7 @@ export default function StepFour() {
 									delay={4000}
 									animateOnce={true}>
 									<div className='cw-wizard-stsfour-form-buttons-container'>
-										<Buttons
-											previous={'/client/step-three'}
-											next={'/client/step-five'}
-										/>
+										<Buttons previous={'/client/step-three'} next={'/client/step-five'} />
 									</div>
 								</ScrollAnimation>
 							</div>

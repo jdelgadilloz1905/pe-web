@@ -34,11 +34,9 @@ export default function StepNineteen() {
 
 	const handleChangeRate = async (value) => {
 		setRateOne(value)
-		await servicesAdvisor
-			.PushQuestion(value, isSelected, isSection, isStep)
-			.then((response) => {
-				//..
-			})
+		await servicesAdvisor.PushQuestion(value, isSelected, isSection, isStep).then((response) => {
+			//..
+		})
 	}
 
 	const handleChangeRadio = async (e) => {
@@ -64,7 +62,7 @@ export default function StepNineteen() {
 					<Col span={14}>
 						<ScrollAnimation
 							style={{ height: '100%' }}
-							animateIn='animate__backInRight'
+							animateIn='animate__slideInRight'
 							delay={300}
 							duration={2}
 							animateOnce={true}>
@@ -92,9 +90,7 @@ export default function StepNineteen() {
 											</h2>
 										</div>
 										<div className='cw-wizard-sfsnineteen-form-option-container'>
-											<Radio.Group
-												onChange={handleChangeRadio}
-												value={isSelected}>
+											<Radio.Group onChange={handleChangeRadio} value={isSelected}>
 												<Row>
 													<Col span={24}>
 														<Radio value='Yes'>Yes</Radio>
@@ -107,18 +103,18 @@ export default function StepNineteen() {
 										</div>
 									</ScrollAnimation>
 								</div>
-								<div className='cw-wizard-sfsnineteen-form-option-container'>
+								<div className='cw-wizard-sfsnineteen-value-container'>
 									<ScrollAnimation
 										animateIn='animate__fadeInUp'
 										delay={3500}
 										animateOnce={true}>
-										<div className='cw-wizard-sfsnineteen-form-title-container'>
-											<h2 className='cw-wizard-sfsnineteen-form-rate'>
+										<div className='cw-wizard-sfsnineteen-value-title-container'>
+											<h2 className='cw-wizard-sfsnineteen-value-rate-title'>
 												How important is this question to you?
 											</h2>
 										</div>
 
-										<div className='cw-wizard-sfsnineteen-form-option-container'>
+										<div className='cw-wizard-sfsnineteen-value-option-container'>
 											<NormalRate
 												className={''}
 												onChange={handleChangeRate}
@@ -132,10 +128,7 @@ export default function StepNineteen() {
 									delay={4000}
 									animateOnce={true}>
 									<div className='cw-wizard-sfsnineteen-form-buttons-container'>
-										<Buttons
-											previous={'/client/step-eighteen'}
-											next={'/register-two'}
-										/>
+										<Buttons previous={'/client/step-eighteen'} next={'/register-two'} />
 									</div>
 								</ScrollAnimation>
 							</div>

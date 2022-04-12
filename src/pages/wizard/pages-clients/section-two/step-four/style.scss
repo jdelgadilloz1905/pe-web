@@ -15,13 +15,8 @@
 .cw-wizard-stsfour-form-global-container {
 	background-color: rgba(17, 28, 74, 0.72);
 	height: 100%;
-	padding: 60px 100px;
 }
 .cw-wizard-stsfour-form-main-title-container {
-	width: 100%;
-	max-width: 500px;
-}
-.cw-wizard-stsfour-form-container {
 	width: 100%;
 	max-width: 500px;
 }
@@ -53,9 +48,7 @@
 	padding-top: 10px;
 }
 
-.cw-wizard-stsfour-form-option-container
-	.ant-radio-wrapper:hover
-	.ant-radio-inner {
+.cw-wizard-stsfour-form-option-container .ant-radio-wrapper:hover .ant-radio-inner {
 	background-color: transparent !important;
 }
 .cw-wizard-stsfour-form-option-container .ant-radio-wrapper span {
@@ -73,22 +66,16 @@
 .cw-wizard-stsfour-form-option-container .ant-radio-group .ant-radio-wrapper {
 	padding-bottom: 10px;
 }
-.cw-wizard-stsfour-form-option-container
-	.ant-radio-group
-	.ant-radio-wrapper:hover {
+.cw-wizard-stsfour-form-option-container .ant-radio-group .ant-radio-wrapper:hover {
 	background-color: transparent;
 }
-.cw-wizard-stsfour-form-option-container
-	.ant-radio-wrapper:hover
-	.ant-radio-inner {
+.cw-wizard-stsfour-form-option-container .ant-radio-wrapper:hover .ant-radio-inner {
 	border: 1px solid #d9d9d9;
 }
 .cw-wizard-stsfour-form-option-container .ant-radio-checked .ant-radio-inner {
 	border-color: #d9d9d9;
 }
-.cw-wizard-stsfour-form-option-container
-	.ant-radio-checked
-	.ant-radio-inner::after {
+.cw-wizard-stsfour-form-option-container .ant-radio-checked .ant-radio-inner::after {
 	top: 45%;
 	left: 30.5%;
 	width: 20px;

@@ -14,7 +14,7 @@
 .cw-wizard-stseleven-form-global-container {
 	background-color: rgba(17, 28, 74, 0.72);
 	height: 100%;
-	padding: 60px 100px;
+	padding: 60px 60px 60px 80px;
 }
 .cw-wizard-stseleven-form-main-title-container {
 	width: 100%;
@@ -35,9 +35,7 @@
 	padding-top: 10px;
 	font-size: 22px;
 }
-.cw-wizard-stseleven-form-option-container
-	.ant-radio-wrapper:hover
-	.ant-radio-inner {
+.cw-wizard-stseleven-form-option-container .ant-radio-wrapper:hover .ant-radio-inner {
 	background-color: transparent !important;
 }
 .cw-wizard-stseleven-form-option-container .ant-radio-wrapper span {
@@ -54,22 +52,16 @@
 .cw-wizard-stseleven-form-option-container .ant-radio-group .ant-radio-wrapper {
 	padding-bottom: 10px;
 }
-.cw-wizard-stseleven-form-option-container
-	.ant-radio-group
-	.ant-radio-wrapper:hover {
+.cw-wizard-stseleven-form-option-container .ant-radio-group .ant-radio-wrapper:hover {
 	background-color: transparent;
 }
-.cw-wizard-stseleven-form-option-container
-	.ant-radio-wrapper:hover
-	.ant-radio-inner {
+.cw-wizard-stseleven-form-option-container .ant-radio-wrapper:hover .ant-radio-inner {
 	border: 1px solid #d9d9d9;
 }
 .cw-wizard-stseleven-form-option-container .ant-radio-checked .ant-radio-inner {
 	border-color: #d9d9d9;
 }
-.cw-wizard-stseleven-form-option-container
-	.ant-radio-checked
-	.ant-radio-inner::after {
+.cw-wizard-stseleven-form-option-container .ant-radio-checked .ant-radio-inner::after {
 	top: 45%;
 	left: 30.5%;
 	width: 20px;
@@ -93,4 +85,36 @@
 	font-weight: bold;
 	padding-top: 10px;
 	text-align: center;
+}
+
+.cw-wizard-stseleven-value-container {
+	width: 100%;
+	max-width: 160px;
+	text-align: center;
+	padding-top: 25px;
+}
+
+.cw-wizard-stseleven-value-rate-title {
+	font-size: 15px;
+	color: #ffffff;
+	font-weight: 600;
+}
+
+.cw-wizard-stseleven-value-option-container .ant-rate {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+}
+
+.cw-wizard-stseleven-value-option-container .ant-rate-star {
+	font-size: 24px;
+	margin-right: 0px;
+}
+
+.cw-wizard-stseleven-value-option-container .ant-rate-star-second {
+	color: #9deaea;
+}
+
+.cw-wizard-stseleven-value-option-container .ant-rate-star-full {
+	color: #fcaf17 !important;
 }

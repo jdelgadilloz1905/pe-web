@@ -8,13 +8,14 @@
 	background-size: cover;
 	overflow: hidden;
 }
+
 .cw-wizard-sfsfourteen-main-container {
 	min-height: calc(100vh);
 }
 .cw-wizard-sfsfourteen-form-global-container {
 	background-color: rgba(17, 28, 74, 0.72);
 	height: 100%;
-	padding: 60px 100px;
+	padding: 60px 60px 60px 80px;
 }
 .cw-wizard-sfsfourteen-form-main-title-container {
 	width: 100%;
@@ -26,20 +27,30 @@
 }
 .cw-wizard-sfsfourteen-form-title-container {
 	width: 100%;
-	max-width: 400px;
-	padding-bottom: 20px;
+	max-width: 470px;
+	padding-bottom: 25px;
+	padding-top: 15px;
 }
 .cw-wizard-sfsfourteen-form-title {
 	color: white;
 	margin-bottom: 0;
-	padding-top: 10px;
 	font-size: 22px;
 }
+.cw-wizard-sfsfourteen-form-rate {
+	color: white;
+	margin-bottom: 0;
+	width: 40%;
+	font-size: 15px;
+	font-weight: bold;
+	padding-top: 10px;
+	text-align: center;
+}
+
 .cw-wizard-sfsfourteen-form-option-container .ant-radio-wrapper:hover .ant-radio-inner {
 	background-color: transparent !important;
 }
 .cw-wizard-sfsfourteen-form-option-container .ant-radio-wrapper span {
-	font-size: 17px;
+	font-size: 18px;
 	color: white;
 	font-weight: 100;
 }
@@ -58,10 +69,10 @@
 .cw-wizard-sfsfourteen-form-option-container .ant-radio-wrapper:hover .ant-radio-inner {
 	border: 1px solid #d9d9d9;
 }
-.cw-wizard-sfsfourteen-form-option-container .ant-radio-radiocked .ant-radio-inner {
+.cw-wizard-sfsfourteen-form-option-container .ant-radio-checked .ant-radio-inner {
 	border-color: #d9d9d9;
 }
-.cw-wizard-sfsfourteen-form-option-container .ant-radio-radiocked .ant-radio-inner::after {
+.cw-wizard-sfsfourteen-form-option-container .ant-radio-checked .ant-radio-inner::after {
 	top: 45%;
 	left: 30.5%;
 	width: 20px;
@@ -69,6 +80,7 @@
 	margin-top: -9px;
 	margin-left: -6px;
 }
+
 .cw-wizard-sfsfourteen-form-buttons-container {
 	display: flex;
 	justify-content: space-between;
@@ -77,12 +89,35 @@
 	max-width: 150px;
 	padding: 30px 0;
 }
-.cw-wizard-sfsfourteen-form-rate {
-	color: white;
-	margin-bottom: 0;
-	width: 40%;
-	font-size: 15px;
-	font-weight: bold;
-	padding-top: 10px;
+
+.cw-wizard-sfsfourteen-value-container {
+	width: 100%;
+	max-width: 160px;
 	text-align: center;
+	padding-top: 25px;
+}
+
+.cw-wizard-sfsfourteen-value-rate-title {
+	font-size: 15px;
+	color: #ffffff;
+	font-weight: 600;
+}
+
+.cw-wizard-sfsfourteen-value-option-container .ant-rate {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+}
+
+.cw-wizard-sfsfourteen-value-option-container .ant-rate-star {
+	font-size: 24px;
+	margin-right: 0px;
+}
+
+.cw-wizard-sfsfourteen-value-option-container .ant-rate-star-second {
+	color: #9deaea;
+}
+
+.cw-wizard-sfsfourteen-value-option-container .ant-rate-star-full {
+	color: #fcaf17 !important;
 }
