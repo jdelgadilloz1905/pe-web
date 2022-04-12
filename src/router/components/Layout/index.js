@@ -18,12 +18,12 @@ const Layout = (props) => {
 	return (
 		<>
 			{!window.location.pathname.match(/wizard/) &&
-				!window.location.pathname.match(/wiz-welcome/) &&
+				!window.location.pathname.match(/client/) &&
 				!window.location.pathname.match(/wiz-welcome/) && <Header />}
 			{props.children}
 			{!window.location.pathname.match(/wizard/) &&
 				!window.location.pathname.match(/wiz-welcome/) &&
-				!window.location.pathname.match(/wiz-welcome/) && <Footer />}
+				!window.location.pathname.match(/client/) && <Footer />}
 		</>
 	)
 }
