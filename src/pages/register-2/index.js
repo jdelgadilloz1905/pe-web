@@ -13,9 +13,6 @@ import { info } from './data.js'
 import logoWhite from '../../assets/images/logos/wix-logo-white.png'
 
 import servicesUsers from './services'
-
-import { rulesValidation } from '../../components/Inputs/Normal/rules'
-
 import './style.scss'
 
 export default function Register() {
@@ -59,20 +56,17 @@ export default function Register() {
 	}
 
 	const handleValidateCode = async (item) => {
-		setTimeout(() => {
-			window.location.href = '/client-profile-detail'
-		}, 1000)
-		// setLoading(true)
-		// await servicesUsers.CodeVerify(item.code_verify).then((response) => {
-		// 	setLoading(false)
+		setLoading(true)
+		await servicesUsers.CodeVerify(item.code_verify).then((response) => {
+			setLoading(false)
 
-		// 	if (response) {
-		// 		//lo envio a lcuestionario
-		// 		setTimeout(() => {
-		// 			window.location.href = '/client-profile-detail'
-		// 		}, 1000)
-		// 	}
-		// })
+			if (response) {
+				//lo envio a lcuestionario
+				setTimeout(() => {
+					window.location.href = '/client-profile-detail'
+				}, 1000)
+			}
+		})
 	}
 
 	return (
@@ -118,6 +112,7 @@ export default function Register() {
 												phone: '',
 												zid_code: '',
 												company: '',
+												country: '',
 											}}
 											onFinish={handleLoginUser}>
 											<Form.Item>
@@ -193,25 +188,24 @@ export default function Register() {
 												/>
 											</Form.Item>
 											<Form.Item
-												className='cw-register-input-select-container'
 												name='country'
-												rules={rulesValidation.rulesRequiredEN}>
-												<Select
-													className='cw-register-input-select'
-													placeholder='Select state'
-													size='large'
-													style={{
-														width: '100%',
-														border: 'none',
-														color: '#fff',
-													}}
-													allowClear={true}>
-													{info.map((item, index) => (
-														<Option value={item.name} key={index}>
-															{item.name}
-														</Option>
-													))}
-												</Select>
+												rules={[
+													{ required: true, message: 'state is required' },
+												]}>
+												<div className='cw-register-input'>
+													<Select
+														className='cw-register-two-select-container'
+														placeholder='Select state'
+														size='large'
+														style={{ width: '100%', border: 'none' }}
+														allowClear={true}>
+														{info.map((item, index) => (
+															<Option value={item.name} key={index}>
+																{item.name}
+															</Option>
+														))}
+													</Select>
+												</div>
 											</Form.Item>
 											<Form.Item>
 												<div className='cw-register-two-main-button-container'>
