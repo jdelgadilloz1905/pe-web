@@ -139,8 +139,8 @@ export const rulesValidation = {
 			message: 'Enter your Phone',
 		},
 		{
-			min: 11,
-			message: 'Minimum 11 characters!',
+			min: 10,
+			message: 'Minimum 10 characters!',
 		},
 	],
 	rulesSpacer: [

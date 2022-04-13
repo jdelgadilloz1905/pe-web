@@ -187,11 +187,7 @@ export default function Register() {
 													inputNameRules={'rulesCompanyEN'}
 												/>
 											</Form.Item>
-											<Form.Item
-												name='country'
-												rules={[
-													{ required: true, message: 'state is required' },
-												]}>
+											<Form.Item name='country'>
 												<div className='cw-register-input'>
 													<Select
 														className='cw-register-two-select-container'

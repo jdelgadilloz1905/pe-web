@@ -102,11 +102,11 @@ export const rulesValidationMask = {
 		},
 		() => ({
 			validator(_, value) {
-				if (value?.replace(/[+()_/\s/]/g, '').length === 11) {
+				if (value?.replace(/[+()_/\s/]/g, '').length === 10) {
 					return Promise.resolve()
 				} else if (
 					value?.replace(/[+()_/\s/]/g, '').length > 0 &&
-					value?.replace(/[+()_/\s/]/g, '').length < 11
+					value?.replace(/[+()_/\s/]/g, '').length < 10
 				) {
 					return Promise.reject(new Error('Incomplete number'))
 				} else return Promise.reject()
