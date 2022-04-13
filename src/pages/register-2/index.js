@@ -71,34 +71,22 @@ export default function Register() {
 
 	return (
 		<>
-			<MetaDescription
-				title={'Register | PE.com'}
-				name={'description'}
-				content={'Register | PE.com...'}
-			/>
+			<MetaDescription title={'Register | PE.com'} name={'description'} content={'Register | PE.com...'} />
 			<div className='cw-register-two-global-container'>
 				<Row className='cw-register-two-main-container'>
 					<Col span={9}></Col>
 					<Col span={15} className='cw-register-two-col-container'>
 						<div className='cw-register-two-form-global-container'>
 							<div className='cw-register-two-logo-container'>
-								<Image
-									classImg={'cw-register-two-logo-img'}
-									image={logoWhite}
-									alt={'Main Logo'}
-									title={'Main Logo'}
-								/>
+								<Image classImg={'cw-register-two-logo-img'} image={logoWhite} alt={'Main Logo'} title={'Main Logo'} />
 							</div>
 
 							{isForm && (
 								<>
-									<h3 className='cw-register-two-main-title'>
-										By professionals, for professionals.
-									</h3>
+									<h3 className='cw-register-two-main-title'>By professionals, for professionals.</h3>
 									<h3 className='cw-register-two-main-subtitle'>
-										People are looking for advisors that match their preferences
-										and you are looking for clients that fit your expertise. We
-										can help you connect with them so let's get started!
+										People are looking for advisors that match their preferences and you are looking for clients that fit your expertise. We can help you connect with
+										them so let's get started!
 									</h3>
 
 									<div className='cw-register-two-form-main-container'>
@@ -194,7 +182,11 @@ export default function Register() {
 														placeholder='Select state'
 														size='large'
 														style={{ width: '100%', border: 'none' }}
-														allowClear={true}>
+														allowClear={false}
+														showSearch
+														optionFilterProp='children'
+														filterOption={(input, option) => option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
+														filterSort={(optionA, optionB) => optionA.children.toLowerCase().localeCompare(optionB.children.toLowerCase())}>
 														{info.map((item, index) => (
 															<Option value={item.name} key={index}>
 																{item.name}
@@ -205,10 +197,7 @@ export default function Register() {
 											</Form.Item>
 											<Form.Item>
 												<div className='cw-register-two-main-button-container'>
-													<Button
-														loading={isLoading}
-														htmlType='submit'
-														className='cw-register-two-main-button'>
+													<Button loading={isLoading} htmlType='submit' className='cw-register-two-main-button'>
 														Submit
 													</Button>
 												</div>
@@ -221,20 +210,14 @@ export default function Register() {
 								<>
 									<h3 className='cw-register-two-main-title'>Thank you.</h3>
 									<h3 className='cw-register-two-main-subtitle'>
-										Once approved, your registration code and the link to create
-										your sign-in will be sent to the email you provided.
+										Once approved, your registration code and the link to create your sign-in will be sent to the email you provided.
 									</h3>
 
-									<h4 className='cw-register-two-main-underlined'>
-										Please send me the code again
-									</h4>
+									<h4 className='cw-register-two-main-underlined'>Please send me the code again</h4>
 
 									<div className='cw-register-two-form-main-container'>
 										<div className='cw-register-two-main-button-container'>
-											<Button
-												onClick={() => handleInserCodigo()}
-												htmlType='submit'
-												className='cw-register-two-main-button'>
+											<Button onClick={() => handleInserCodigo()} htmlType='submit' className='cw-register-two-main-button'>
 												Complete registration
 											</Button>
 										</div>
@@ -243,12 +226,8 @@ export default function Register() {
 							)}
 							{isFormCode && (
 								<>
-									<h3 className='cw-register-two-main-title'>
-										Complete Registration
-									</h3>
-									<h3 className='cw-register-two-main-subtitle'>
-										Registration Code
-									</h3>
+									<h3 className='cw-register-two-main-title'>Complete Registration</h3>
+									<h3 className='cw-register-two-main-subtitle'>Registration Code</h3>
 
 									<div className='cw-register-two-form-main-container'>
 										<Form
@@ -272,10 +251,7 @@ export default function Register() {
 											</Form.Item>
 											<Form.Item>
 												<div className='cw-register-two-main-button-container'>
-													<Button
-														loading={isLoading}
-														htmlType='submit'
-														className='cw-register-two-main-button'>
+													<Button loading={isLoading} htmlType='submit' className='cw-register-two-main-button'>
 														Submit
 													</Button>
 												</div>

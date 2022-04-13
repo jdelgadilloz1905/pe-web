@@ -133,8 +133,7 @@
 	padding: 2px 0 !important;
 }
 
-.cw-register-input-select.ant-select:not(.ant-select-customize-input)
-	.ant-select-selector {
+.cw-register-input-select.ant-select:not(.ant-select-customize-input) .ant-select-selector {
 	background-color: transparent !important;
 	border: none !important;
 	padding: 0 !important;
@@ -207,4 +206,9 @@
 	text-align: left;
 	color: white !important;
 	font-size: 14px !important;
+}
+
+.cw-register-two-select-container .ant-select-single.ant-select-lg:not(.ant-select-customize-input):not(.ant-select-customize-input) .ant-select-selection-search-input {
+	top: -10px;
+	position: relative;
 }

@@ -79,7 +79,7 @@ export default function StepFive() {
 														<Checkbox value='Retirement planning'>Retirement planning</Checkbox>
 													</Col>
 													<Col span={12}>
-														<Checkbox value='Education savins'>Education savins</Checkbox>
+														<Checkbox value='Education savings'>Education savings</Checkbox>
 													</Col>
 													<Col span={12}>
 														<Checkbox value='Tax plannings'>Tax plannings</Checkbox>

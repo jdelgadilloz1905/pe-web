@@ -67,7 +67,7 @@ export default function StepSix() {
 								<div className='cw-wizard-stssix-form-container'>
 									<ScrollAnimation animateIn='animate__fadeInUp' delay={3000} animateOnce={true}>
 										<div className='cw-wizard-stssix-form-title-container'>
-											<h2 className='cw-wizard-stssix-form-title'>Would you prefer your advisor to specialize with any of the following?</h2>
+											<h2 className='cw-wizard-stssix-form-title'>Do you specialize with any of the following?</h2>
 										</div>
 										<div className='cw-wizard-stssix-form-option-container'>
 											<Checkbox.Group onChange={handleChangeCheckbox} defaultValue={isSelected} value={isSelected}>

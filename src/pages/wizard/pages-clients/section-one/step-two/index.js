@@ -67,7 +67,7 @@ export default function StepTwo() {
 								<div className='cw-wizard-ststwo-form-container'>
 									<ScrollAnimation animateIn='animate__fadeInUp' delay={3000} animateOnce={true}>
 										<div className='cw-wizard-ststwo-form-title-container'>
-											<h2 className='cw-wizard-ststwo-form-title'>Would you prefer your advisor have an office in your area?</h2>
+											<h2 className='cw-wizard-ststwo-form-title'>Would you prefer your client live in your area?</h2>
 										</div>
 										<div className='cw-wizard-ststwo-form-option-container'>
 											<Radio.Group onChange={handleChangeRadio} value={isSelected}>

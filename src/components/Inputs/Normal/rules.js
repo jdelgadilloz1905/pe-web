@@ -86,8 +86,8 @@ export const rulesValidation = {
 			message: 'Enter your zid code',
 		},
 		{
-			min: 4,
-			message: 'Minimum 4 characters!',
+			min: 5,
+			message: 'Minimum 5 numbers!',
 		},
 	],
 
@@ -192,11 +192,7 @@ export const rulesValidation = {
 		},
 		({ getFieldValue }) => ({
 			validator(rule, value) {
-				if (
-					!value ||
-					getFieldValue('password') === value ||
-					getFieldValue('regPassword') === value
-				) {
+				if (!value || getFieldValue('password') === value || getFieldValue('regPassword') === value) {
 					return Promise.resolve()
 				}
 				return Promise.reject('The two passwords you entered do not match!')
