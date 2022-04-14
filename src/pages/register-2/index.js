@@ -94,13 +94,13 @@ export default function Register() {
 											name='cw-register-two-main-form'
 											form={formMainForm}
 											initialValues={{
-												first_name: '',
-												last_name: '',
-												email: '',
-												phone: '',
-												zid_code: '',
-												company: '',
-												country: '',
+												first_name: 'Test Name',
+												last_name: 'Test Last Name',
+												email: 'examplePE@gmail.com',
+												phone: '2354567786',
+												zid_code: '10354',
+												company: 'Example Company',
+												country: 'Alabama',
 											}}
 											onFinish={handleLoginUser}>
 											<Form.Item>
@@ -184,6 +184,7 @@ export default function Register() {
 														style={{ width: '100%', border: 'none' }}
 														allowClear={false}
 														showSearch
+														defaultValue={{ value: 'Alabama' }}
 														optionFilterProp='children'
 														filterOption={(input, option) => option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
 														filterSort={(optionA, optionB) => optionA.children.toLowerCase().localeCompare(optionB.children.toLowerCase())}>
