@@ -1,7 +1,9 @@
 /** @format */
 
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+
+import { Link } from 'react-scroll'
 
 import { Parallax } from 'react-parallax'
 import ScrollAnimation from 'react-animate-on-scroll'
@@ -43,14 +45,16 @@ export default function SectionThree() {
 					</div>
 					<ScrollAnimation animateIn='animate__fadeInUp' delay={700} animateOnce={true}>
 						<div className='cw-section-three-button-container'>
-							<Link to={'/wiz-welcome/step-one'} className='cw-section-three-button'>
+							<NavLink to={'/wiz-welcome/step-one'} className='cw-section-three-button'>
 								Connect with a professional
-							</Link>
+							</NavLink>
 						</div>
 					</ScrollAnimation>
 					<ScrollAnimation animateIn='animate__fadeInUp' delay={900} animateOnce={true}>
 						<div className='cw-section-three-main-logo-container'>
-							<Image classImg={'cw-section-three-main-logo-img'} image={logoWhite} alt={'Main Logo'} title={'Main Logo'} />
+							<Link to='navbar-init-scroll' spy={true} smooth={true} offset={0} duration={500}>
+								<Image classImg={'cw-section-three-main-logo-img'} image={logoWhite} alt={'Main Logo'} title={'Main Logo'} />
+							</Link>
 						</div>
 					</ScrollAnimation>
 				</div>

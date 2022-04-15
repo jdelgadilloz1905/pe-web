@@ -4,13 +4,7 @@ import React, { useState } from 'react'
 
 import { Row, Col, Upload, Progress, Modal } from 'antd'
 
-import {
-	EditOutlined,
-	BellFilled,
-	RiseOutlined,
-	ThunderboltFilled,
-	CameraOutlined,
-} from '@ant-design/icons'
+import { EditOutlined, BellFilled, RiseOutlined, ThunderboltFilled, CameraOutlined } from '@ant-design/icons'
 
 import serviceImage from './services'
 
@@ -66,6 +60,7 @@ export default function ClientInfo(props) {
 				serviceImage.sendImage(isDatosUser.id, response)
 			}
 		})
+		console.log('on error...', onError)
 	}
 
 	return (
@@ -96,24 +91,11 @@ export default function ClientInfo(props) {
 							</Upload>
 							{isProgress > 0 ? <Progress percent={isProgress} /> : null}
 
-							<Modal
-								wrapClassName='est-upload-image-camera-modal-container'
-								visible={isPreviewModal}
-								title='Preview'
-								footer={null}
-								onCancel={() => setPreviewModal(false)}>
-								{isPreviewImg && (
-									<img
-										alt='visionCloud'
-										style={{ width: '100%' }}
-										src={isPreviewImg}
-									/>
-								)}
+							<Modal wrapClassName='est-upload-image-camera-modal-container' visible={isPreviewModal} title='Preview' footer={null} onCancel={() => setPreviewModal(false)}>
+								{isPreviewImg && <img alt='visionCloud' style={{ width: '100%' }} src={isPreviewImg} />}
 							</Modal>
 							<div className='cw-client-info-user-title-main-container'>
-								<h3 className='cw-client-info-user-title'>
-									Hill {isDatosUser.name}
-								</h3>
+								<h3 className='cw-client-info-user-title'>Hill {isDatosUser.name}</h3>
 								<div className='cw-client-info-user-subtitle-container'>
 									<EditOutlined className='cw-client-info-user-profile-icon' />
 									<h4 className='cw-client-info-user-subtitle'>Edit Profile</h4>
@@ -131,25 +113,19 @@ export default function ClientInfo(props) {
 										</div>
 										<BellFilled className='cw-client-info-user-icon' />
 									</div>
-									<h4 className='cw-client-info-action-title'>
-										You have 3 advisor matches to review
-									</h4>
+									<h4 className='cw-client-info-action-title'>You have 3 advisor matches to review</h4>
 								</div>
 							</Col>
 							<Col span={8} className='cw-client-info-user-col-container'>
 								<div className='cw-client-info-user-icon-title-container'>
 									<RiseOutlined className='cw-client-info-user-icon' />
-									<h4 className='cw-client-info-action-title'>
-										Review your financial health
-									</h4>
+									<h4 className='cw-client-info-action-title'>Review your financial health</h4>
 								</div>
 							</Col>
 							<Col span={8} className='cw-client-info-user-col-container'>
 								<div className='cw-client-info-user-icon-title-container'>
 									<ThunderboltFilled className='cw-client-info-user-icon' />
-									<h4 className='cw-client-info-action-title'>
-										You have action items to review
-									</h4>
+									<h4 className='cw-client-info-action-title'>You have action items to review</h4>
 								</div>
 							</Col>
 						</Row>

@@ -3,8 +3,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-import { Link } from 'react-router-dom'
-
 import './style.sass'
 
 export default function Footer() {
@@ -42,9 +40,9 @@ export default function Footer() {
 				<div className='cw-footer-faq-copy-container'>
 					<h3 className='cw-footer-faq-text'>
 						If you have any questions or need assistance, email us{' '}
-						<Link to='/' className='cw-footer-faq-link'>
+						<a className='cw-footer-faq-link' href='mailto: abc@example.com'>
 							here
-						</Link>
+						</a>
 					</h3>
 					<h3 className='cw-footer-copy-text'>Copyright © 2022 Professional Exchange Inc.</h3>
 				</div>

@@ -1,23 +1,15 @@
 /** @format */
 import React, { useState } from 'react'
 
+import { Link } from 'react-router-dom'
+
 import { Menu, Dropdown } from 'antd'
-import {
-	UserOutlined,
-	SettingOutlined,
-	PoweroffOutlined,
-	SendOutlined,
-	UnlockOutlined,
-} from '@ant-design/icons'
+import { UserOutlined, SettingOutlined, PoweroffOutlined, SendOutlined, UnlockOutlined } from '@ant-design/icons'
 
 import './style.scss'
 
 export default function DropdownMenu() {
-	const [isUserData] = useState(
-		localStorage.getItem('userSession') !== undefined
-			? localStorage.getItem('userSession')
-			: null
-	)
+	const [isUserData] = useState(localStorage.getItem('userSession') !== undefined ? localStorage.getItem('userSession') : null)
 
 	const handleCloseSesion = () => {
 		localStorage.removeItem('userSession')
@@ -43,13 +35,14 @@ export default function DropdownMenu() {
 		localStorage.removeItem('step_nineteen')
 		window.location.href = '/'
 	}
+
 	const menu = (
 		<Menu className='cw-dropmenu-global-conatiner'>
 			<Menu.Item key='0' icon={<SendOutlined />}>
-				<a href='/login'>Login</a>
+				<Link to='/login'>Login</Link>
 			</Menu.Item>
 			<Menu.Item key='1' icon={<UnlockOutlined />}>
-				<a href='/restore-password'>Forgot Password</a>
+				<Link to='/restore-password'>Forgot Password</Link>
 			</Menu.Item>
 		</Menu>
 	)
@@ -57,21 +50,9 @@ export default function DropdownMenu() {
 	const menu1 = (
 		<Menu className='cw-dropmenu-global-conatiner'>
 			<Menu.Item key='2' icon={<SettingOutlined />}>
-				{isUserData && (
-					<a
-						href={
-							isUserData.profile === '1'
-								? '/user-profile-detail'
-								: '/user-profile-setup'
-						}>
-						profile
-					</a>
-				)}
+				{isUserData && <a href={isUserData.profile === '1' ? '/user-profile-detail' : '/user-profile-setup'}>profile</a>}
 			</Menu.Item>
-			<Menu.Item
-				key='3'
-				icon={<PoweroffOutlined />}
-				onClick={() => handleCloseSesion()}>
+			<Menu.Item key='3' icon={<PoweroffOutlined />} onClick={() => handleCloseSesion()}>
 				Sign off
 			</Menu.Item>
 		</Menu>
@@ -79,9 +60,9 @@ export default function DropdownMenu() {
 
 	return (
 		<Dropdown overlay={isUserData ? menu1 : menu} trigger={['click']}>
-			<a className='ant-dropdown-link' onClick={(e) => e.preventDefault()}>
+			<span className='ant-dropdown-link' onClick={(e) => e.preventDefault()}>
 				<UserOutlined className='cw-dropmenu-icon' />
-			</a>
+			</span>
 		</Dropdown>
 	)
 }

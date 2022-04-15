@@ -6,8 +6,6 @@ import ScrollAnimation from 'react-animate-on-scroll'
 
 import Image from '../../../../components/Image'
 
-import { BugOutlined } from '@ant-design/icons'
-
 import logoLeave from '../../../../assets/images/icons/Leaves.svg'
 
 import './style.sass'

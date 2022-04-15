@@ -4,18 +4,11 @@ import axios from 'axios'
 
 import notification from 'antd/lib/notification'
 
-import {
-	ENV_CORE,
-	ENV_UPLOAD_IMAGE,
-} from '../../../../components/Hooks/Variables/Enviroment'
+import { ENV_CORE, ENV_UPLOAD_IMAGE } from '../../../../components/Hooks/Variables/Enviroment'
 
 const serviceImage = {
 	async uploadImage(dataSend, config) {
 		let returnResponse
-		let data = {
-			dataSend,
-			config,
-		}
 
 		await axios({
 			method: 'POST',

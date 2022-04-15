@@ -120,6 +120,7 @@ const Layout = (props) => {
 		setTimeout(() => {
 			document.body.style.overflow = 'auto'
 		}, 600)
+		window.scrollTo(0, 0)
 	}, [location.pathname])
 
 	return (

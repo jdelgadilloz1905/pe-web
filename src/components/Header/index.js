@@ -4,6 +4,8 @@ import React from 'react'
 
 import { NavLink } from 'react-router-dom'
 
+import { Element } from 'react-scroll'
+
 import DropdownMenu from './DropdownMenu'
 
 import Image from '../Image'
@@ -17,9 +19,11 @@ export default function Header() {
 		<>
 			<div className='cw-header-global-container'>
 				<div className='cw-header-main-container'>
-					<NavLink to='/'>
-						<Image classImg={'cw-header-main-logo-img'} image={logoWhite} alt={'Main Logo'} title={'Main Logo'} />
-					</NavLink>
+					<Element name='navbar-init-scroll'>
+						<NavLink to='/'>
+							<Image classImg={'cw-header-main-logo-img'} image={logoWhite} alt={'Main Logo'} title={'Main Logo'} />
+						</NavLink>
+					</Element>
 					<div className='cw-header-menu-global-container'>
 						<div className='cw-header-menu-text-container'>
 							<NavLink exact to='/' activeClassName='cw-header-link-is-active' className='cw-header-menu-text'>
