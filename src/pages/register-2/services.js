@@ -10,63 +10,6 @@ import { ENV_CORE } from '../../components/Hooks/Variables/Enviroment'
 
 const servicesUsers = {
 	async Register(item, profile) {
-		// const step_one = localStorage.getItem('step_one')
-		// 	? localStorage.getItem('step_one')
-		// 	: ''
-		// const step_two = localStorage.getItem('step_two')
-		// 	? localStorage.getItem('step_two')
-		// 	: ''
-		// const step_three = localStorage.getItem('step_three')
-		// 	? localStorage.getItem('step_three')
-		// 	: ''
-		// const step_four = localStorage.getItem('step_four')
-		// 	? localStorage.getItem('step_four')
-		// 	: ''
-		// const step_five = localStorage.getItem('step_five')
-		// 	? localStorage.getItem('step_five')
-		// 	: ''
-		// const step_six = localStorage.getItem('step_six')
-		// 	? localStorage.getItem('step_six')
-		// 	: ''
-		// const step_seven = localStorage.getItem('step_seven')
-		// 	? localStorage.getItem('step_seven')
-		// 	: ''
-		// const step_eight = localStorage.getItem('step_eight')
-		// 	? localStorage.getItem('step_eight')
-		// 	: ''
-		// const step_nine = localStorage.getItem('step_nine')
-		// 	? localStorage.getItem('step_nine')
-		// 	: ''
-		// const step_ten = localStorage.getItem('step_ten')
-		// 	? localStorage.getItem('step_ten')
-		// 	: ''
-		// const step_eleven = localStorage.getItem('step_eleven')
-		// 	? localStorage.getItem('step_eleven')
-		// 	: ''
-		// const step_twelve = localStorage.getItem('step_twelve')
-		// 	? localStorage.getItem('step_twelve')
-		// 	: ''
-		// const step_thirteen = localStorage.getItem('step_thirteen')
-		// 	? localStorage.getItem('step_thirteen')
-		// 	: ''
-		// const step_fourteen = localStorage.getItem('step_fourteen')
-		// 	? localStorage.getItem('step_fourteen')
-		// 	: ''
-		// const step_fifteen = localStorage.getItem('step_fifteen')
-		// 	? localStorage.getItem('step_fifteen')
-		// 	: ''
-		// const step_sixteen = localStorage.getItem('step_sixteen')
-		// 	? localStorage.getItem('step_sixteen')
-		// 	: ''
-		// const step_seventen = localStorage.getItem('step_seventen')
-		// 	? localStorage.getItem('step_seventen')
-		// 	: ''
-		// const step_eighteen = localStorage.getItem('step_eighteen')
-		// 	? localStorage.getItem('step_eighteen')
-		// 	: ''
-		// const step_nineteen = localStorage.getItem('step_nineteen')
-		// 	? localStorage.getItem('step_nineteen')
-		// 	: ''
 		let returnResponse
 		let data = {
 			name: item.first_name,
