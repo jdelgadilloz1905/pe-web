@@ -18,18 +18,15 @@ const servicesAdvisor = {
 		localStorage.setItem(isStep, JSON.stringify(data))
 		return data
 	},
-	async GetQuestion(isStep){
+	async GetQuestion(isStep) {
 		let step = localStorage.getItem(isStep)
-		
-		
-		if(!step || step !== null){
-			
+
+		if (!step || step !== null) {
 			return JSON.parse(step)
-		}else{
-			
+		} else {
 			return null
 		}
-	}
+	},
 }
 
 export default servicesAdvisor

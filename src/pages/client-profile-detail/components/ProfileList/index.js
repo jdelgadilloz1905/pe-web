@@ -16,7 +16,10 @@ export default function ProfileList(props) {
 					<div>
 						<h3 className='cw-profile-list-main-title'>{props.info.name}</h3>
 						<h3 className='cw-profile-list-main-subtitle'>
-							Total AUM: <span className='cw-profile-list-main-description'>{props.info.amount}</span>
+							Total AUM:{' '}
+							<span className='cw-profile-list-main-description'>
+								{props.info.amount}
+							</span>
 						</h3>
 					</div>
 				</Col>
@@ -24,7 +27,10 @@ export default function ProfileList(props) {
 					<Col span={8}>
 						<div className='cw-profile-list-alt-column-container'>
 							<h3 className='cw-profile-list-main-subtitle'>
-								Number of Prospects: <span className='cw-profile-list-main-description'>{props.info.quantity}</span>
+								Number of Prospects:{' '}
+								<span className='cw-profile-list-main-description'>
+									{props.info.quantity}
+								</span>
 							</h3>
 						</div>
 					</Col>

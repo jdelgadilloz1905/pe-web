@@ -19,23 +19,40 @@ import './style.scss'
 
 export default function MainProfile() {
 	const [isDatosUser, setDatosUser] = useState(null)
-	useEffect(() => {
-		servicesProfile.GetDatosUser().then((response) => {
-			if (response) {
-				setDatosUser(response)
-			}
-		})
-	}, [isDatosUser])
+	const [isUserActive, setUsertActive] = useState(null)
+	const [isUserProspect, setUsertProspect] = useState(null)
 
-	if (!isDatosUser) {
+	useEffect(() => {
+		const getInfoContract = async () => {
+			await servicesProfile.GetDatosUserAdvisor().then((response) => {
+				if (response) {
+					setDatosUser(response)
+				}
+			})
+
+			await servicesProfile.GetContractClient('active').then((response) => {
+				if (response) {
+					setUsertActive(response.data.result)
+				}
+			})
+			await servicesProfile.GetContractClient('prospect').then((response) => {
+				if (response) {
+					setUsertProspect(response.data.result)
+				}
+			})
+		}
+		getInfoContract()
+	}, [])
+
+	if (!isDatosUser && !isUserActive && !isUserProspect) {
 		return <Loading />
 	} else {
 		return (
 			<div className='cv-profile-global-background'>
 				<MetaDescription
-					title={'Wix - Profile'}
+					title={'PE - Profile'}
 					name={'description'}
-					content={'Wix - Profile'}
+					content={'PE - Profile'}
 				/>
 				<div className='cw-profile-navbar-spacer'></div>
 				<div className='cv-profile-container-1'>
@@ -44,7 +61,7 @@ export default function MainProfile() {
 					</div>
 					<div className='cv-profile-list-inner-container'>
 						<ProfileList
-							data={data.active_clients}
+							data={isUserActive}
 							info={{
 								name: 'Active Clients',
 								amount: '$51,318',
@@ -65,7 +82,7 @@ export default function MainProfile() {
 				</div>
 				<div className='cv-profile-list-2-inner-container'>
 					<ProfileList
-						data={data.prospects}
+						data={isUserProspect}
 						alt_list={true}
 						info={{
 							name: 'Prospects',
