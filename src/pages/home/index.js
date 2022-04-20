@@ -55,7 +55,7 @@ export default function Home() {
 					</ScrollAnimation>
 					<ScrollAnimation animateIn='animate__fadeInUp' delay={1500} animateOnce={true}>
 						<div className='cw-home-banner-button-container'>
-							<Link to={'/client/step-one'} className='cw-home-banner-first-button'>
+							<Link to={'/register-two'} className='cw-home-banner-first-button'>
 								Join as a professional
 							</Link>
 							<Link to={'/wiz-welcome/step-one'} className='cw-home-banner-second-button'>

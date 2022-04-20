@@ -128,7 +128,7 @@ export default function StepNineteen() {
 									delay={4000}
 									animateOnce={true}>
 									<div className='cw-wizard-sfsnineteen-form-buttons-container'>
-										<Buttons previous={'/client/step-eighteen'} next={'/register-two'} />
+										<Buttons previous={'/client/step-eighteen'} next={'/user-profile-detail'} />
 									</div>
 								</ScrollAnimation>
 							</div>
