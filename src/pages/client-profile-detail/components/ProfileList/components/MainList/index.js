@@ -2,6 +2,8 @@
 
 import React from 'react'
 
+import moment from 'moment'
+
 import { Row, Col } from 'antd'
 
 import Loading from '../../../../../../components/Loading'
@@ -16,7 +18,7 @@ export default function MainList(props) {
 			decimalSeparator: ',',
 			symbol: '$',
 		}
-
+		value = parseFloat(value)
 		const fixedDecimals = (num, fixed) => {
 			fixed = fixed || 0
 			fixed = Math.pow(10, fixed)
@@ -43,10 +45,7 @@ export default function MainList(props) {
 
 		const [currency, decimal] = value.split('.')
 
-		return `${currency.replace(
-			/\B(?=(\d{3})+(?!\d))/g,
-			options.thousandsSeparator
-		)}${options.decimalSeparator}${decimal}`
+		return `$ ${currency.replace(/\B(?=(\d{3})+(?!\d))/g, options.thousandsSeparator)}${options.decimalSeparator}${decimal}`
 	}
 
 	const formatPrice2 = (item) => {
@@ -68,44 +67,30 @@ export default function MainList(props) {
 							<Col span={4}>
 								<div className='cw-profile-list-result-number-container'>
 									<div className='cw-profile-list-result-number'>
-										<span className='cw-profile-list-result-number-title'>
-											{index + 1}
-										</span>
+										<span className='cw-profile-list-result-number-title'>{index + 1}</span>
 									</div>
 									<h4 className='cw-profile-list-result-title'>
-										<span className='cw-profile-list-result-title-elipsis'>
-											{item.name}
-										</span>
+										<span className='cw-profile-list-result-title-elipsis'>{item.name1}</span>
 									</h4>
 								</div>
 							</Col>
 							<Col span={4}>
-								<h4 className='cw-profile-list-result-title-alt'>
-									{item.date_added}
-								</h4>
+								<h4 className='cw-profile-list-result-title-alt'>{moment(item.date_added).format('MM-DD-YYYY')}</h4>
 							</Col>
 							<Col span={4}>
-								<h4 className='cw-profile-list-result-title-alt'>{item.aum}</h4>
+								<h4 className='cw-profile-list-result-title-alt'>{formatPrice(item.aum)}</h4>
 							</Col>
 							<Col span={4}>
-								<h4 className='cw-profile-list-result-title-alt'>
-									{item.wellness_score}
-								</h4>
+								<h4 className='cw-profile-list-result-title-alt'>{item.wellness_score}</h4>
 							</Col>
 							{props.alt_list ? (
 								<Col span={4}>
-									<h3 className='cw-profile-list-result-subtitle-alt'>
-										Estate Planning:
-									</h3>
-									<h4 className='cw-profile-list-result-title-alt-2'>
-										{item.date_action}
-									</h4>
+									<h3 className='cw-profile-list-result-subtitle-alt'>Estate Planning:</h3>
+									<h4 className='cw-profile-list-result-title-alt-2'>{moment(item.date_action).format('MM-DD-YYYY')}</h4>
 								</Col>
 							) : (
 								<Col span={4}>
-									<h4 className='cw-profile-list-result-title-alt'>
-										{item.date_action}
-									</h4>
+									<h4 className='cw-profile-list-result-title-alt'>{moment(item.date_action).format('MM-DD-YYYY')}</h4>
 								</Col>
 							)}
 							<Col span={4}>

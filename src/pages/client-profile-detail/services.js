@@ -29,9 +29,9 @@ const servicesProfile = {
 		localStorage.removeItem('step_seventen')
 		localStorage.removeItem('step_eighteen')
 		localStorage.removeItem('step_nineteen')
-
 		return 'ok'
 	},
+
 	async GetDatosUserAdvisor() {
 		return JSON.parse(localStorage.getItem('userSession'))
 	},
@@ -49,6 +49,7 @@ const servicesProfile = {
 			data: data,
 		})
 			.then((response) => {
+				console.log('res...', response)
 				returnResponse = response
 			})
 			.catch((error) => {
