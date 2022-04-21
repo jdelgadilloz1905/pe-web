@@ -49,7 +49,6 @@ const servicesProfile = {
 			data: data,
 		})
 			.then((response) => {
-				console.log('res...', response)
 				returnResponse = response
 			})
 			.catch((error) => {
