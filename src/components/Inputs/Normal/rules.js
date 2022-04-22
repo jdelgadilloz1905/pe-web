@@ -118,7 +118,7 @@ export const rulesValidation = {
 			message: 'Enter name company',
 		},
 		{
-			min: 5,
+			min: 3,
 			message: 'Minimum 5 characters!',
 		},
 	],

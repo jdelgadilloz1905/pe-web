@@ -20,21 +20,12 @@ export default function ProfileInfo(props) {
 				<Row className='cw-profile-info-user-inner-container'>
 					<Col span={8}>
 						<div className='cw-profile-info-container'>
-							<Image
-								classImg={'cw-profile-info-image'}
-								image={'https://dummyimage.com/500x500/ddd/fff'}
-								alt={'profile image'}
-								title={'profile image'}
-							/>
+							<Image classImg={'cw-profile-info-image'} image={'https://dummyimage.com/500x500/ddd/fff'} alt={'profile image'} title={'profile image'} />
 							<div className='cw-profile-info-user-title-main-container'>
-								<h3 className='cw-profile-info-user-title'>
-									Hill {isDatosUser.name}
-								</h3>
+								<h3 className='cw-profile-info-user-title'>Hill {isDatosUser.name}</h3>
 								<div className='cw-profile-info-user-subtitle-container'>
 									<EditOutlined className='cw-profile-info-user-icon' />
-									<h4 className='cw-profile-info-user-subtitle'>
-										Edit Profile
-									</h4>
+									<h4 className='cw-profile-info-user-subtitle'>Edit Profile</h4>
 								</div>
 							</div>
 						</div>
@@ -47,9 +38,7 @@ export default function ProfileInfo(props) {
 										<h4 className='cw-profile-info-details-title'>Clients</h4>
 										<h2 className='cw-profile-info-details-subtitle'>
 											$51M
-											<span className='cw-profile-info-details-description'>
-												AUM
-											</span>
+											<span className='cw-profile-info-details-description'>AUM</span>
 										</h2>
 									</div>
 								</div>
@@ -60,9 +49,7 @@ export default function ProfileInfo(props) {
 										<h4 className='cw-profile-info-details-title'>Prospects</h4>
 										<h2 className='cw-profile-info-details-subtitle'>
 											$20M
-											<span className='cw-profile-info-details-description'>
-												AUM
-											</span>
+											<span className='cw-profile-info-details-description'>AUM</span>
 										</h2>
 									</div>
 								</div>
@@ -78,7 +65,6 @@ export default function ProfileInfo(props) {
 												</div>
 												<BellFilled className='cw-profile-info-user-bell-icon' />
 											</div>
-											<h4 className='cw-profile-info-action-title'>Review</h4>
 										</div>
 									</div>
 								</div>
@@ -87,12 +73,7 @@ export default function ProfileInfo(props) {
 								<div>
 									<div>
 										<h4 className='cw-profile-info-details-title'>Calendar</h4>
-										<Image
-											classImg={'cw-profile-calendar-icon'}
-											image={Calendar}
-											alt={'Calendar Icon'}
-											title={'Calendar Icon'}
-										/>
+										<Image classImg={'cw-profile-calendar-icon'} image={Calendar} alt={'Calendar Icon'} title={'Calendar Icon'} />
 									</div>
 								</div>
 							</Col>

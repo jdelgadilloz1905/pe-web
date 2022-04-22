@@ -61,7 +61,14 @@ export default function MainProfile() {
 								info={{
 									name: 'Active Clients',
 									amount: '$51,318',
-									titles: ['Client Name', 'Date Added', 'AUM', 'Wellness Score', 'Next Action', 'Notes'],
+									titles: [
+										{ name: 'Client Name', rows: 6 },
+										{ name: 'Date Added', rows: 3 },
+										{ name: 'AUM', rows: 4 },
+										{ name: 'Wellness Score', rows: 4 },
+										{ name: 'Next Action', rows: 3 },
+										{ name: 'Notes', rows: 3 },
+									],
 								}}
 							/>
 						)}
@@ -79,7 +86,14 @@ export default function MainProfile() {
 								name: 'Prospects',
 								quantity: 5,
 								amount: '$20,594,945',
-								titles: ['Client Name', 'Last Update', 'Potential AUM', 'Status', 'Matched Attributes', 'Notes'],
+								titles: [
+									{ name: 'Client Name', rows: 6 },
+									{ name: 'Last Update', rows: 3 },
+									{ name: 'Potential AUM', rows: 4 },
+									{ name: 'Status', rows: 4 },
+									{ name: 'Next Action', rows: 3 },
+									{ name: 'Notes', rows: 3 },
+								],
 							}}
 						/>
 					)}

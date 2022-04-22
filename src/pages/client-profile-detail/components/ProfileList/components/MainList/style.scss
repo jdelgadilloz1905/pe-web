@@ -24,8 +24,9 @@
 	align-items: center;
 	color: #fff;
 	font-weight: 600;
-	font-size: 30px;
+	font-size: 25px;
 	margin-right: 15px;
+	line-height: 15px;
 }
 
 .cw-profile-list-result-number-title {
@@ -49,7 +50,9 @@
 	overflow: hidden;
 	white-space: nowrap;
 	width: 100%;
-	max-width: 130px;
+	max-width: 300px;
+	text-transform: capitalize;
+	font-weight: bold;
 }
 
 .cw-profile-list-result-title-alt {

@@ -8,7 +8,9 @@
 	border-radius: 5px !important;
 }
 
-.cw-dropmenu-icon {
+.cw-dropmenu-icon,
+.cw-dropmenu-icon:hover,
+.cw-dropmenu-icon:active {
 	border: 1px solid #dddd;
 	border-radius: 100%;
 	padding: 5px;
@@ -16,14 +18,18 @@
 	color: white !important;
 	font-size: 14px;
 	transition: 0.3s ease;
+	cursor: pointer;
 }
 
-.cw-dropmenu-icon:hover,
-.cw-dropmenu-icon:active {
-	border-color: rgba(34, 57, 131, 0.4);
-	color: rgba(34, 57, 131, 0.4) !important;
-	background-color: #b8c1e4;
+.cw-dropmenu-icon-logged {
+	border: 1px solid #dddd;
+	border-radius: 100%;
+	padding: 5px;
+	color: rgba(34, 57, 131, 0.9) !important;
+	font-size: 14px;
 	transition: 0.3s ease;
+	background-color: #fff;
+	cursor: pointer;
 }
 
 .cw-dropmenu-global-conatiner .ant-dropdown-menu-item {

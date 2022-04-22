@@ -32,8 +32,8 @@ export default function ProfileList(props) {
 			</Row>
 			<Row>
 				{props.info.titles.map((item, index) => (
-					<Col span={4} key={index}>
-						<h4 className='cw-profile-list-headers-result-title'>{item}</h4>
+					<Col span={item.rows} key={index}>
+						<h4 className='cw-profile-list-headers-result-title'>{item.name}</h4>
 					</Col>
 				))}
 			</Row>

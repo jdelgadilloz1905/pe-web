@@ -86,8 +86,8 @@ export default function Register() {
 								<>
 									<h3 className='cw-register-two-main-title'>By professionals, for professionals.</h3>
 									<h3 className='cw-register-two-main-subtitle'>
-										People are looking for advisors that match their preferences and you are looking for clients that fit your expertise. We can help you connect with
-										them so let's get started!
+										People are looking for advisors that match their preferences and you are looking for clients that fit your expertise. We can help you connect with them so let's get
+										started!
 									</h3>
 
 									<div className='cw-register-two-form-main-container'>
@@ -95,12 +95,12 @@ export default function Register() {
 											name='cw-register-two-main-form'
 											form={formMainForm}
 											initialValues={{
-												first_name: 'Test Name',
-												last_name: 'Test Last Name',
-												email: 'examplePE@gmail.com',
+												first_name: 'Jhon',
+												last_name: 'Doe',
+												email: 'pe_web_email@gmail.com',
 												phone: '2354567786',
 												zid_code: '10354',
-												company: 'Example Company',
+												company: 'Healtcare Solutions',
 												country: 'Alabama',
 											}}
 											onFinish={handleLoginUser}>
@@ -211,9 +211,7 @@ export default function Register() {
 							{isFormComplete && (
 								<>
 									<h3 className='cw-register-two-main-title'>Thank you.</h3>
-									<h3 className='cw-register-two-main-subtitle'>
-										Once approved, your registration code and the link to create your sign-in will be sent to the email you provided.
-									</h3>
+									<h3 className='cw-register-two-main-subtitle'>Once approved, your registration code and the link to create your sign-in will be sent to the email you provided.</h3>
 
 									<h4 className='cw-register-two-main-underlined'>Please send me the code again</h4>
 

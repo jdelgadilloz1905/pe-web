@@ -61,7 +61,7 @@ export default function DropdownMenu() {
 	return (
 		<Dropdown overlay={isUserData ? menu1 : menu} trigger={['click']}>
 			<span className='ant-dropdown-link' onClick={(e) => e.preventDefault()}>
-				<UserOutlined className='cw-dropmenu-icon' />
+				<UserOutlined className={isUserData ? 'cw-dropmenu-icon-logged' : 'cw-dropmenu-icon'} />
 			</span>
 		</Dropdown>
 	)

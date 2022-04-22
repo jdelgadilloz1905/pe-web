@@ -64,7 +64,7 @@ export default function MainList(props) {
 				{props.data.map((item, index) => (
 					<div className='cw-profile-list-result-main-container' key={index}>
 						<Row>
-							<Col span={4}>
+							<Col span={6}>
 								<div className='cw-profile-list-result-number-container'>
 									<div className='cw-profile-list-result-number'>
 										<span className='cw-profile-list-result-number-title'>{index + 1}</span>
@@ -74,7 +74,7 @@ export default function MainList(props) {
 									</h4>
 								</div>
 							</Col>
-							<Col span={4}>
+							<Col span={3}>
 								<h4 className='cw-profile-list-result-title-alt'>{moment(item.date_added).format('MM-DD-YYYY')}</h4>
 							</Col>
 							<Col span={4}>
@@ -84,16 +84,15 @@ export default function MainList(props) {
 								<h4 className='cw-profile-list-result-title-alt'>{item.wellness_score}</h4>
 							</Col>
 							{props.alt_list ? (
-								<Col span={4}>
-									<h3 className='cw-profile-list-result-subtitle-alt'>Estate Planning:</h3>
-									<h4 className='cw-profile-list-result-title-alt-2'>{moment(item.date_action).format('MM-DD-YYYY')}</h4>
+								<Col span={3}>
+									<h4 className='cw-profile-list-result-title-alt'>{moment(item.date_action).format('MM-DD-YYYY')}</h4>
 								</Col>
 							) : (
-								<Col span={4}>
+								<Col span={3}>
 									<h4 className='cw-profile-list-result-title-alt'>{moment(item.date_action).format('MM-DD-YYYY')}</h4>
 								</Col>
 							)}
-							<Col span={4}>
+							<Col span={3}>
 								<h4 className='cw-profile-list-result-title'>{item.notes}</h4>
 							</Col>
 						</Row>
