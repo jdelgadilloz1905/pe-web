@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect } from 'react'
 
+import { useHistory } from 'react-router-dom'
+
 import { Row, Col, Form, Button, Select } from 'antd'
 
 import { useGlobal, setGlobal } from 'reactn'
@@ -17,6 +19,7 @@ import servicesUsers from './services'
 import './style.scss'
 
 export default function Register() {
+	const history = useHistory()
 	const [formMainForm] = Form.useForm()
 	const [formCodeverify] = Form.useForm()
 	const [isLoading, setLoading] = useState(false)
@@ -25,6 +28,7 @@ export default function Register() {
 	const { Option } = Select
 
 	useEffect(() => {
+		if (localStorage.getItem('userSession')) return (window.location.href = '/')
 		setGlobal({
 			UserForm: true,
 			UserCode: false,
@@ -58,29 +62,18 @@ export default function Register() {
 	}
 	return (
 		<>
-			<MetaDescription
-				title={'Register | PE.com'}
-				name={'description'}
-				content={'Register | PE.com...'}
-			/>
+			<MetaDescription title={'Register | PE.com'} name={'description'} content={'Register | PE.com...'} />
 			<div className='cw-register-global-container'>
 				<Row className='cw-register-main-container'>
 					<Col span={9}></Col>
 					<Col span={15} className='cw-register-col-container'>
 						<div className='cw-register-form-global-container'>
 							<div className='cw-register-logo-container'>
-								<Image
-									classImg={'cw-register-logo-img'}
-									image={logoWhite}
-									alt={'Main Logo'}
-									title={'Main Logo'}
-								/>
+								<Image classImg={'cw-register-logo-img'} image={logoWhite} alt={'Main Logo'} title={'Main Logo'} />
 							</div>
 							{isForm && (
 								<>
-									<h3 className='cw-register-main-title'>
-										Let's begin our journey
-									</h3>
+									<h3 className='cw-register-main-title'>Let's begin our journey</h3>
 
 									<div className='cw-register-form-main-container'>
 										<h2 className='cw-register-form-title'>Register</h2>
@@ -169,12 +162,7 @@ export default function Register() {
 											</Form.Item>
 											<Form.Item name='country'>
 												<div className='cw-register-input'>
-													<Select
-														className='cw-register-select-container'
-														placeholder='Select state'
-														size='large'
-														style={{ width: '100%', border: 'none' }}
-														allowClear={true}>
+													<Select className='cw-register-select-container' placeholder='Select state' size='large' style={{ width: '100%', border: 'none' }} allowClear={true}>
 														{info.map((item, index) => (
 															<Option value={item.name} key={index}>
 																{item.name}
@@ -186,19 +174,14 @@ export default function Register() {
 
 											<Form.Item>
 												<div className='cw-register-two-main-button-container'>
-													<Button
-														loading={isLoading}
-														htmlType='submit'
-														className='cw-register-two-main-button'>
+													<Button loading={isLoading} htmlType='submit' className='cw-register-two-main-button'>
 														Submit
 													</Button>
 												</div>
 											</Form.Item>
 
 											<h3 className='cw-register-two-main-subtitle'>
-												Once submitted, you're registration code and the link to
-												create your sign-in will be emailed to the address you
-												provided.
+												Once submitted, you're registration code and the link to create your sign-in will be emailed to the address you provided.
 											</h3>
 										</Form>
 									</div>
@@ -206,12 +189,8 @@ export default function Register() {
 							)}
 							{isFormCode && (
 								<>
-									<h3 className='cw-register-main-title'>
-										Complete Registration
-									</h3>
-									<h3 className='cw-register-main-subtitle'>
-										Registration Code
-									</h3>
+									<h3 className='cw-register-main-title'>Complete Registration</h3>
+									<h3 className='cw-register-main-subtitle'>Registration Code</h3>
 
 									<div className='cw-register-form-main-container'>
 										<Form
@@ -235,10 +214,7 @@ export default function Register() {
 											</Form.Item>
 											<Form.Item>
 												<div className='cw-register-two-main-button-container'>
-													<Button
-														loading={isLoading}
-														htmlType='submit'
-														className='cw-register-two-main-button'>
+													<Button loading={isLoading} htmlType='submit' className='cw-register-two-main-button'>
 														Submit
 													</Button>
 												</div>

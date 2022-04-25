@@ -4,7 +4,7 @@ import axios from 'axios'
 
 import { setGlobal } from 'reactn'
 
-import notification from 'antd/lib/notification'
+import { notification, Button } from 'antd'
 
 import { ENV_CORE } from '../../components/Hooks/Variables/Enviroment'
 
@@ -73,9 +73,22 @@ const servicesUsers = {
 				// localStorage.removeItem('step_nineteen')
 			})
 			.catch((error) => {
-				notification['error']({
-					message: `Error`,
-					description: `${error.response.data.comment}`,
+				notification['info']({
+					description: (
+						<section>
+							<div>
+								<div>
+									<h1 className='cw-notification-service-title'>Advice:</h1>
+									<p className='cw-notification-service-subtitle'>{error.response.data.comment}</p>
+									<p className='cw-notification-service-description'>Do u need to Log In?</p>
+									<Button onClick={() => (window.location.href = '/login')} className='cw-notification-service-button'>
+										Click Here
+									</Button>
+								</div>
+							</div>
+						</section>
+					),
+					duration: 1000,
 				})
 			})
 		return returnResponse

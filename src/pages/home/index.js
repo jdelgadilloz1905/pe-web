@@ -1,6 +1,6 @@
 /** @format */
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { Link } from 'react-router-dom'
 
@@ -20,6 +20,11 @@ import logoColor from '../../assets/images/logos/PE-logo-color.svg'
 import './style.sass'
 
 export default function Home() {
+	const [isloggedIn, setLoggedIn] = useState({ link: '/register-two', title: 'Join as a professional' })
+	useEffect(() => {
+		if (localStorage.getItem('userSession')) setLoggedIn({ link: '/user-profile-detail', title: 'Go to User Detail' })
+	}, [])
+
 	return (
 		<>
 			<MetaDescription title={'Home | PE.com'} name={'description'} content={'Home | PE.com...'} />
@@ -55,8 +60,8 @@ export default function Home() {
 					</ScrollAnimation>
 					<ScrollAnimation animateIn='animate__fadeInUp' delay={1500} animateOnce={true}>
 						<div className='cw-home-banner-button-container'>
-							<Link to={'/register-two'} className='cw-home-banner-first-button'>
-								Join as a professional
+							<Link to={isloggedIn.link} className='cw-home-banner-first-button'>
+								{isloggedIn.title}
 							</Link>
 							<Link to={'/wiz-welcome/step-one'} className='cw-home-banner-second-button'>
 								Connect with a professional

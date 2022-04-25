@@ -212,3 +212,42 @@
 	top: -10px;
 	position: relative;
 }
+
+.cw-notification-service-button {
+	transition: 0.3s ease !important;
+	border: 1px solid #ffffff !important;
+	box-shadow: 5.66px 5.66px 15px -1px rgb(17 28 74 / 68%) !important;
+	background: rgba(34, 57, 131, 0.4) !important;
+	font-size: 15px !important;
+	color: white !important;
+	padding: 10px !important;
+	border-radius: 40px !important;
+	height: unset !important;
+	width: 100% !important;
+	max-width: 200px !important;
+	text-align: center !important;
+	font-family: avenirLight, sans-serif !important;
+	-webkit-font-smoothing: antialiased;
+	letter-spacing: 0.4px;
+	margin-bottom: 10px;
+}
+
+.cw-notification-service-button:hover,
+.cw-notification-service-button:focus,
+.cw-notification-service-button:active {
+	transition: 0.3s ease !important;
+	background-color: #fcaf17 !important;
+}
+
+.cw-notification-service-title {
+	color: #058342;
+}
+
+.cw-notification-service-subtitle {
+	font-style: italic;
+}
+
+.cw-notification-service-description {
+	font-weight: 900;
+	font-size: 15px;
+}

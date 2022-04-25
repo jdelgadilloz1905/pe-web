@@ -25,6 +25,7 @@ export default function Register() {
 	const { Option } = Select
 
 	useEffect(() => {
+		if (localStorage.getItem('userSession')) return (window.location.href = '/')
 		setGlobal({
 			UserForm: true,
 			UserComplete: false,
