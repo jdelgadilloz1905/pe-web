@@ -88,7 +88,7 @@ const servicesUsers = {
 							</div>
 						</section>
 					),
-					duration: 1000,
+					duration: 10,
 				})
 			})
 		return returnResponse
