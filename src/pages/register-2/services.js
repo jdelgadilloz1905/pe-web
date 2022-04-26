@@ -80,7 +80,7 @@ const servicesUsers = {
 								<div>
 									<h1 className='cw-notification-service-title'>Advice:</h1>
 									<p className='cw-notification-service-subtitle'>{error.response.data.comment}</p>
-									<p className='cw-notification-service-description'>Do u need to Log In?</p>
+									<p className='cw-notification-service-description'>Do you need to Log In?</p>
 									<Button onClick={() => (window.location.href = '/login')} className='cw-notification-service-button'>
 										Click Here
 									</Button>
