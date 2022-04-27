@@ -20,9 +20,9 @@ import logoColor from '../../assets/images/logos/PE-logo-color.svg'
 import './style.sass'
 
 export default function Home() {
-	const [isloggedIn, setLoggedIn] = useState({ link: '/register-two', title: 'Join as a professional' })
+	const [isloggedIn, setLoggedIn] = useState({ status: false, link: '/register-two', title: 'Join as a professional' })
 	useEffect(() => {
-		if (localStorage.getItem('userSession')) setLoggedIn({ link: '/user-profile-detail', title: 'Go to User Detail' })
+		if (localStorage.getItem('userSession')) setLoggedIn({ status: true, link: '/user-profile-detail', title: 'Go to User Detail' })
 	}, [])
 
 	return (
@@ -67,6 +67,13 @@ export default function Home() {
 								Connect with a professional
 							</Link>
 						</div>
+						{!isloggedIn.status && (
+							<div className='cw-home-banner-button-container-2'>
+								<Link to={'/login'} className='cw-home-banner-third-button'>
+									Sign In
+								</Link>
+							</div>
+						)}
 					</ScrollAnimation>
 				</div>
 			</div>

@@ -4,69 +4,31 @@ import axios from 'axios'
 
 import { setGlobal } from 'reactn'
 
-import notification from 'antd/lib/notification'
+import { notification, Button } from 'antd'
 
 import { ENV_CORE } from '../../components/Hooks/Variables/Enviroment'
 
 const servicesUsers = {
 	async Register(item, profile) {
-		const step_one = localStorage.getItem('step_one')
-			? localStorage.getItem('step_one')
-			: ''
-		const step_two = localStorage.getItem('step_two')
-			? localStorage.getItem('step_two')
-			: ''
-		const step_three = localStorage.getItem('step_three')
-			? localStorage.getItem('step_three')
-			: ''
-		const step_four = localStorage.getItem('step_four')
-			? localStorage.getItem('step_four')
-			: ''
-		const step_five = localStorage.getItem('step_five')
-			? localStorage.getItem('step_five')
-			: ''
-		const step_six = localStorage.getItem('step_six')
-			? localStorage.getItem('step_six')
-			: ''
-		const step_seven = localStorage.getItem('step_seven')
-			? localStorage.getItem('step_seven')
-			: ''
-		const step_eight = localStorage.getItem('step_eight')
-			? localStorage.getItem('step_eight')
-			: ''
-		const step_nine = localStorage.getItem('step_nine')
-			? localStorage.getItem('step_nine')
-			: ''
-		const step_ten = localStorage.getItem('step_ten')
-			? localStorage.getItem('step_ten')
-			: ''
-		const step_eleven = localStorage.getItem('step_eleven')
-			? localStorage.getItem('step_eleven')
-			: ''
-		const step_twelve = localStorage.getItem('step_twelve')
-			? localStorage.getItem('step_twelve')
-			: ''
-		const step_thirteen = localStorage.getItem('step_thirteen')
-			? localStorage.getItem('step_thirteen')
-			: ''
-		const step_fourteen = localStorage.getItem('step_fourteen')
-			? localStorage.getItem('step_fourteen')
-			: ''
-		const step_fifteen = localStorage.getItem('step_fifteen')
-			? localStorage.getItem('step_fifteen')
-			: ''
-		const step_sixteen = localStorage.getItem('step_sixteen')
-			? localStorage.getItem('step_sixteen')
-			: ''
-		const step_seventen = localStorage.getItem('step_seventen')
-			? localStorage.getItem('step_seventen')
-			: ''
-		const step_eighteen = localStorage.getItem('step_eighteen')
-			? localStorage.getItem('step_eighteen')
-			: ''
-		const step_nineteen = localStorage.getItem('step_nineteen')
-			? localStorage.getItem('step_nineteen')
-			: ''
+		const step_one = localStorage.getItem('step_one') ? localStorage.getItem('step_one') : ''
+		const step_two = localStorage.getItem('step_two') ? localStorage.getItem('step_two') : ''
+		const step_three = localStorage.getItem('step_three') ? localStorage.getItem('step_three') : ''
+		const step_four = localStorage.getItem('step_four') ? localStorage.getItem('step_four') : ''
+		const step_five = localStorage.getItem('step_five') ? localStorage.getItem('step_five') : ''
+		const step_six = localStorage.getItem('step_six') ? localStorage.getItem('step_six') : ''
+		const step_seven = localStorage.getItem('step_seven') ? localStorage.getItem('step_seven') : ''
+		const step_eight = localStorage.getItem('step_eight') ? localStorage.getItem('step_eight') : ''
+		const step_nine = localStorage.getItem('step_nine') ? localStorage.getItem('step_nine') : ''
+		const step_ten = localStorage.getItem('step_ten') ? localStorage.getItem('step_ten') : ''
+		const step_eleven = localStorage.getItem('step_eleven') ? localStorage.getItem('step_eleven') : ''
+		const step_twelve = localStorage.getItem('step_twelve') ? localStorage.getItem('step_twelve') : ''
+		const step_thirteen = localStorage.getItem('step_thirteen') ? localStorage.getItem('step_thirteen') : ''
+		const step_fourteen = localStorage.getItem('step_fourteen') ? localStorage.getItem('step_fourteen') : ''
+		const step_fifteen = localStorage.getItem('step_fifteen') ? localStorage.getItem('step_fifteen') : ''
+		const step_sixteen = localStorage.getItem('step_sixteen') ? localStorage.getItem('step_sixteen') : ''
+		const step_seventen = localStorage.getItem('step_seventen') ? localStorage.getItem('step_seventen') : ''
+		const step_eighteen = localStorage.getItem('step_eighteen') ? localStorage.getItem('step_eighteen') : ''
+		const step_nineteen = localStorage.getItem('step_nineteen') ? localStorage.getItem('step_nineteen') : ''
 
 		let returnResponse
 		let data = {
@@ -134,9 +96,22 @@ const servicesUsers = {
 				localStorage.removeItem('step_nineteen')
 			})
 			.catch((error) => {
-				notification['error']({
-					message: `Error`,
-					description: `${error.response.data.comment}`,
+				notification['info']({
+					description: (
+						<section>
+							<div>
+								<div>
+									<h1 className='cw-notification-service-title'>Advice:</h1>
+									<p className='cw-notification-service-subtitle'>{error.response.data.comment}</p>
+									<p className='cw-notification-service-description'>Do you need to Log In?</p>
+									<Button onClick={() => (window.location.href = '/login')} className='cw-notification-service-button'>
+										Click Here
+									</Button>
+								</div>
+							</div>
+						</section>
+					),
+					duration: 10,
 				})
 			})
 		return returnResponse

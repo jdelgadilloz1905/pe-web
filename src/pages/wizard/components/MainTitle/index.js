@@ -19,8 +19,9 @@ export default function MainTitle(props) {
 					<Indicators indicators={props.indicators} />
 				</div>
 			</ScrollAnimation>
-
-			<hr className='cw-main-title-section-spacer'></hr>
+			<ScrollAnimation animateIn='animate__fadeInDown' delay={2500} animateOnce={true}>
+				<hr className='cw-main-title-section-spacer'></hr>
+			</ScrollAnimation>
 		</>
 	)
 }
