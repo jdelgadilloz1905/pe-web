@@ -145,6 +145,7 @@ const servicesUsers = {
 					country: response.data.result.country,
 				}
 				localStorage.setItem('userSession', JSON.stringify(returnResponse))
+				localStorage.setItem('type', JSON.stringify(response.data.result.profile))
 				setGlobal(() => ({
 					userEmail: `${returnResponse.name} ${returnResponse.last}`,
 					userData: returnResponse,

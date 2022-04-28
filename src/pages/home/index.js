@@ -20,9 +20,11 @@ import logoColor from '../../assets/images/logos/PE-logo-color.svg'
 import './style.sass'
 
 export default function Home() {
-	const [isloggedIn, setLoggedIn] = useState({ status: false, link: '/register-two', title: 'Join as a professional' })
+	const [isloggedIn, setLoggedIn] = useState(null)
+	const [isType] = useState(localStorage.getItem('type'))
 	useEffect(() => {
-		if (localStorage.getItem('userSession')) setLoggedIn({ status: true, link: '/user-profile-detail', title: 'Go to User Detail' })
+		const isUserLogin = localStorage.getItem('userSession')
+		if (isUserLogin) setLoggedIn(isUserLogin)
 	}, [])
 
 	return (
@@ -59,20 +61,41 @@ export default function Home() {
 						</div>
 					</ScrollAnimation>
 					<ScrollAnimation animateIn='animate__fadeInUp' delay={1500} animateOnce={true}>
-						<div className='cw-home-banner-button-container'>
-							<Link to={'/client/step-one'} className='cw-home-banner-first-button'>
-								'Join as a professional'
-							</Link>
-							<Link to={'/wiz-welcome/step-one'} className='cw-home-banner-second-button'>
-								Connect with a professional
-							</Link>
-						</div>
-						{!isloggedIn.status && (
-							<div className='cw-home-banner-button-container-2'>
-								<Link to={'/login'} className='cw-home-banner-third-button'>
-									Sign In
-								</Link>
-							</div>
+						{!isloggedIn ? (
+							<>
+								{isType ? (
+									<div className='cw-home-banner-button-container-2'>
+										<Link to={'/login'} className='cw-home-banner-third-button'>
+											Sign In
+										</Link>
+									</div>
+								) : (
+									<div className='cw-home-banner-button-container'>
+										<Link to={'/register-two'} className='cw-home-banner-first-button'>
+											Join as a professional
+										</Link>
+										<Link to={'/wiz-welcome/step-one'} className='cw-home-banner-second-button'>
+											Connect with a professional
+										</Link>
+									</div>
+								)}
+							</>
+						) : (
+							<>
+								{isType === '1' ? (
+									<div className='cw-home-banner-button-container-2'>
+										<Link to={'/user-profile-detail'} className='cw-home-banner-third-button'>
+											Go to User Dashboard
+										</Link>
+									</div>
+								) : (
+									<div className='cw-home-banner-button-container-2'>
+										<Link to={'/user-profile-setup'} className='cw-home-banner-third-button'>
+											Go to Client Profile
+										</Link>
+									</div>
+								)}
+							</>
 						)}
 					</ScrollAnimation>
 				</div>
