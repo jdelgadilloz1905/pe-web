@@ -86,6 +86,10 @@ export default function StepFour() {
 										<div className='cw-wizard-stsfour-form-option-container'>
 											<div className='cw-wizard-stsfour-form-option-container'>
 												<Slider marks={marks} step={5} defaultValue={0} max={30} onChange={handleChangeSlider} value={isSelected} tooltipVisible={isToolTip} />
+												<div className='cw-wizard-stsseven-form-option-subtitle-container'>
+													<h2 className='cw-wizard-stsseven-form-option-subtitle'>Not Important</h2>
+													<h2 className='cw-wizard-stsseven-form-option-subtitle'>Very Important</h2>
+												</div>
 											</div>
 											{/* <div className='cw-wizard-stsfour-form-option-subtitle-container'>
 												<h2 className='cw-wizard-stsfour-form-option-subtitle'>

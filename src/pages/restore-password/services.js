@@ -60,16 +60,18 @@ const servicesRestorePass = {
 			data: data,
 		})
 			.then((response) => {
-				notification['success']({
-					message: `success:`,
-					description: `${response.data.comment}`,
-				})
-				returnResponse = response
+				if (response) {
+					notification['success']({
+						message: `success:`,
+						description: `${response.data.comment}`,
+					})
+					returnResponse = response
+				}
 			})
 			.catch((error) => {
 				notification['error']({
 					message: `Error`,
-					description: `${error.response.data.comment}`,
+					description: `${error?.response.data.comment}`,
 				})
 			})
 		return returnResponse
