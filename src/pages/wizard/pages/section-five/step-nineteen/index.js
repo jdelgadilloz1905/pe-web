@@ -65,7 +65,7 @@ export default function StepNineteen() {
 									/>
 								</div>
 								<div className='cw-wizard-sfsnineteen-form-container'>
-									<ScrollAnimation animateIn='animate__slideInRight' delay={3000} animateOnce={true}>
+									<ScrollAnimation animateIn='animate__fadeInUp' delay={3000} animateOnce={true}>
 										<div className='cw-wizard-sfsnineteen-form-title-container'>
 											<h2 className='cw-wizard-sfsnineteen-form-title'>Is socially responsible investing important to you?</h2>
 										</div>

@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 
 import ScrollAnimation from 'react-animate-on-scroll'
 
-import { Row, Col, Slider } from 'antd'
+import { Row, Col, Slider, Form } from 'antd'
 
 import MetaDescription from '../../../../../components/MetaDescription'
 import NormalRate from '../../../../../components/Rate'
@@ -84,7 +84,12 @@ export default function StepSeven() {
 											<h2 className='cw-wizard-stsseven-form-title'>How important is it that your advisor is a Certified Financial Planner (CFP)?</h2>
 										</div>
 										<div className='cw-wizard-stsseven-form-option-container'>
-											<Slider marks={marks} step={5} defaultValue={0} max={30} onChange={handleChangeSlider} value={isSelected} tooltipVisible={isToolTip} />
+											<Form initialValues={{ slider_question: 0 }}>
+												<Form.Item name='slider_question'>
+													<Slider marks={marks} step={5} max={30} onChange={handleChangeSlider} value={isSelected} tooltipVisible={isToolTip} />
+												</Form.Item>
+											</Form>
+
 											<div className='cw-wizard-stsseven-form-option-subtitle-container'>
 												<h2 className='cw-wizard-stsseven-form-option-subtitle'>Not Important</h2>
 												<h2 className='cw-wizard-stsseven-form-option-subtitle'>Very Important</h2>
