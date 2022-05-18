@@ -128,9 +128,9 @@ export default function Register() {
 												<Input
 													className={'cw-register-input'}
 													inputName={'zid_code'}
-													inputNameLabel={'Zid Code'}
+													inputNameLabel={'Zip Code'}
 													inputNameRule={true}
-													inputNameMessage={'Enter your zid code'}
+													inputNameMessage={'Enter your zip code'}
 													inputNameType={'text'}
 													inputNameIcon={''}
 													inputNameRules={'rulesZidEN'}

@@ -106,6 +106,7 @@
 	color: #fff;
 	font-size: 16px;
 	margin-left: 5px;
+	padding-right: 20px;
 }
 
 .cw-bell-icon-container {
@@ -175,4 +176,9 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+.cw-client-info-user-inner-container .ant-upload.ant-upload-select-picture-card {
+	border-radius: 100%;
+	background-color: #b1b1b1;
 }

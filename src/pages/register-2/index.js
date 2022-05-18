@@ -92,10 +92,7 @@ export default function Register() {
 									</h3>
 
 									<div className='cw-register-two-form-main-container'>
-										<Form
-											name='cw-register-two-main-form'
-											form={formMainForm}
-											initialValues={{
+										{/* 														initialValues={{
 												first_name: 'Jhon',
 												last_name: 'Doe',
 												email: 'pe_web_email@gmail.com',
@@ -103,8 +100,8 @@ export default function Register() {
 												zid_code: '10354',
 												company: 'Healtcare Solutions',
 												country: 'Alabama',
-											}}
-											onFinish={handleLoginUser}>
+											}} */}
+										<Form name='cw-register-two-main-form' form={formMainForm} onFinish={handleLoginUser}>
 											<Form.Item>
 												<Input
 													className={'cw-register-two-input'}
@@ -145,9 +142,9 @@ export default function Register() {
 												<Input
 													className={'cw-register-two-input'}
 													inputName={'zid_code'}
-													inputNameLabel={'Zid Code'}
+													inputNameLabel={'Zip Code'}
 													inputNameRule={true}
-													inputNameMessage={'Enter your zid code'}
+													inputNameMessage={'Enter your zip code'}
 													inputNameType={'text'}
 													inputNameIcon={''}
 													inputNameRules={'rulesZidEN'}
@@ -186,7 +183,6 @@ export default function Register() {
 														style={{ width: '100%', border: 'none' }}
 														allowClear={false}
 														showSearch
-														defaultValue={{ value: 'Alabama' }}
 														optionFilterProp='children'
 														filterOption={(input, option) => option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
 														filterSort={(optionA, optionB) => optionA.children.toLowerCase().localeCompare(optionB.children.toLowerCase())}>

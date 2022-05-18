@@ -13,14 +13,7 @@ import './style.scss'
 export default function ClientInfo(props) {
 	const [isDatosUser] = useState(props.dataUser)
 	const [isPreviewImg, setPreviewImg] = useState(`${props.dataUser.photo}`)
-	const [isFileList, setFileList] = useState([
-		{
-			uid: '-1',
-			name: `${props.dataUser.name}`,
-			status: 'done',
-			url: `${props.dataUser.photo}`,
-		},
-	])
+	const [isFileList, setFileList] = useState([])
 	const [isProgress, setProgress] = useState(0)
 	const [isPreviewModal, setPreviewModal] = useState(false)
 

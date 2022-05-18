@@ -34,46 +34,34 @@ export default function AdvisorsReview(props) {
 						</div>
 					</Col>
 					<Col span={6} className='cw-advisors-left-title-container'>
-						<h2 className='cw-advisors-left-title'>
-							Here are the top 3 advisors that best match your preferences.
-						</h2>
+						<h2 className='cw-advisors-left-title'>Here are the top 3 advisors that best match your preferences.</h2>
 					</Col>
 					{isDataAdvisors.map((item, index) => (
 						<Col span={6} key={index}>
 							<div className='cw-advisors-map-container'>
 								<div className='cw-advisors-profile-pic-container'>
 									<div className='cw-advisors-profile-number-title-container'>
-										<h3 className='cw-advisors-profile-number-title'>
-											{index + 1}
-										</h3>
+										<h3 className='cw-advisors-profile-number-title'>{index + 1}</h3>
 									</div>
-									<Image
-										classImg={'cw-advisors-profile'}
-										image={
-											item.photo === ''
-												? 'https://dummyimage.com/500x500/ddd/fff'
-												: item.photo
-										}
-										alt={'Profile Picture'}
-										title={'Profile Picture'}
-									/>
+									<div className='cw-advisors-profile-image-container'>
+										<Image
+											classImg={'cw-advisors-profile'}
+											image={item.photo === '' ? 'https://dummyimage.com/500x500/ddd/fff' : item.photo}
+											alt={'Profile Picture'}
+											title={'Profile Picture'}
+										/>
+									</div>
 								</div>
 								<div className='cw-advisors-profile-text-container'>
 									<h3 className='cw-advisors-profile-name'>{item.name}</h3>
-									<h3 className='cw-advisors-profile-percent'>
-										{Math.floor(Math.random() * (100 - 90 + 1) + 90)}%
-									</h3>
-									<h3 className='cw-advisors-profile-position'>
-										{item.position}
-									</h3>
+									<h3 className='cw-advisors-profile-percent'>{Math.floor(Math.random() * (100 - 90 + 1) + 90)}%</h3>
+									<h3 className='cw-advisors-profile-position'>{item.position}</h3>
 									<h3 className='cw-advisors-profile-title'>{item.company}</h3>
 									<h3 className='cw-advisors-profile-state'>{item.country}</h3>
 								</div>
 
 								<div className='cw-advisors-review-button-container'>
-									<Button className='cw-advisors-review-button'>
-										View Profile
-									</Button>
+									<Button className='cw-advisors-review-button'>View Profile</Button>
 								</div>
 							</div>
 						</Col>

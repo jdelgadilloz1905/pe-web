@@ -2,6 +2,8 @@
 
 import React, { useState } from 'react'
 
+import { Link } from 'react-router-dom'
+
 import { Row, Col } from 'antd'
 
 import { EditOutlined, BellFilled } from '@ant-design/icons'
@@ -23,10 +25,12 @@ export default function ProfileInfo(props) {
 							<Image classImg={'cw-profile-info-image'} image={'https://dummyimage.com/500x500/ddd/fff'} alt={'profile image'} title={'profile image'} />
 							<div className='cw-profile-info-user-title-main-container'>
 								<h3 className='cw-profile-info-user-title'>Hill {isDatosUser.name}</h3>
-								<div className='cw-profile-info-user-subtitle-container'>
-									<EditOutlined className='cw-profile-info-user-icon' />
-									<h4 className='cw-profile-info-user-subtitle'>Edit Profile</h4>
-								</div>
+								<Link to='/user-profile-setup'>
+									<div className='cw-profile-info-user-subtitle-container'>
+										<EditOutlined className='cw-profile-info-user-icon' />
+										<h4 className='cw-profile-info-user-subtitle'>Edit Profile</h4>
+									</div>
+								</Link>
 							</div>
 						</div>
 					</Col>
