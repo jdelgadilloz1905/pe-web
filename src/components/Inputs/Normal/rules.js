@@ -25,8 +25,8 @@ export const rulesValidation = {
 			message: 'Please enter a value',
 		},
 		{
-			min: 3,
-			message: 'Minimum 3 characters!',
+			min: 1,
+			message: 'Minimum 1 character!',
 		},
 		{
 			max: 32,
@@ -40,8 +40,8 @@ export const rulesValidation = {
 			message: 'Please enter a value',
 		},
 		{
-			min: 2,
-			message: 'Minimum 3 characters!',
+			min: 1,
+			message: 'Minimum 1 character!',
 		},
 		{
 			max: 50,
@@ -76,8 +76,8 @@ export const rulesValidation = {
 			message: 'Required fields',
 		},
 		{
-			min: 4,
-			message: 'Minimum 4 characters!',
+			min: 1,
+			message: 'Minimum 1 character!',
 		},
 	],
 	rulesZidEN: [
@@ -108,8 +108,8 @@ export const rulesValidation = {
 			message: 'Enter your name',
 		},
 		{
-			min: 3,
-			message: 'Minimum 3 characters!',
+			min: 1,
+			message: 'Minimum 1 character!',
 		},
 	],
 	rulesCompanyEN: [
@@ -118,8 +118,8 @@ export const rulesValidation = {
 			message: 'Enter name company',
 		},
 		{
-			min: 3,
-			message: 'Minimum 5 characters!',
+			min: 1,
+			message: 'Minimum 1 character!',
 		},
 	],
 
@@ -129,8 +129,8 @@ export const rulesValidation = {
 			message: 'Enter your last name',
 		},
 		{
-			min: 3,
-			message: 'Minimum 3 characters!',
+			min: 1,
+			message: 'Minimum 1 character!',
 		},
 	],
 	rulesPhoneEN: [
