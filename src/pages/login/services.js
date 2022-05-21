@@ -21,6 +21,7 @@ const servicesLogin = {
 			data: data,
 		})
 			.then((response) => {
+				console.log('data login...', response)
 				notification['success']({
 					message: `Congratulations.`,
 					description: `You have successfully logged in.`,
@@ -36,6 +37,7 @@ const servicesLogin = {
 					profile: response.data.result.profile,
 					country: response.data.result.country,
 					company: response.data.result.company,
+					password_expiry_date: response.data.result.password_expiry_date,
 				}
 				localStorage.setItem('userSession', JSON.stringify(returnResponse))
 				localStorage.setItem('type', JSON.stringify(response.data.result.profile))

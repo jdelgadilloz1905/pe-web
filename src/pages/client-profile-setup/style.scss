@@ -177,3 +177,53 @@
 	background-color: #fcaf17 !important;
 	font-weight: 600;
 }
+
+.pe-update-password-icons-container {
+	margin-top: 10px;
+	cursor: pointer;
+}
+
+.pe-update-password-icons-title {
+	color: #ffffff;
+}
+
+.pe-update-password-icons-inner-container {
+	display: flex;
+	align-items: center;
+	border: 1px solid #ffffff;
+	height: 100%;
+	width: 100%;
+	max-width: 138px;
+}
+
+.pe-update-password-icon {
+	color: #ffffff !important;
+	font-size: 25px;
+	margin-top: 3px;
+	padding: 0 5px;
+}
+
+.pe-update-password-icons-asterisk {
+	margin-bottom: 0;
+	color: #ffffff;
+	font-size: 35px;
+	line-height: 22px;
+	margin-right: 2px;
+	margin-left: 2px;
+	margin-top: 15px;
+}
+
+.pe-update-password-icons-inner-icon-container {
+	border-right: 1px solid #ffffff;
+}
+
+.pe-profile-input-field {
+	border-radius: 10px !important;
+	font-size: 10px;
+	width: 100%;
+	max-width: 300px;
+}
+
+.pe-profile-input-field::placeholder {
+	font-size: 13px;
+}

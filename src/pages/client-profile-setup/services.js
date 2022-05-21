@@ -1,10 +1,10 @@
 /** @format */
 
-// import axios from 'axios'
+import axios from 'axios'
 
-// import notification from 'antd/lib/notification'
+import notification from 'antd/lib/notification'
 
-// import { ENV_CORE } from '../../components/Hooks/Variables/Enviroment'
+import { ENV_CORE } from '../../components/Hooks/Variables/Enviroment'
 
 const servicesProfile = {
 	async CloseSession() {
@@ -34,6 +34,36 @@ const servicesProfile = {
 	},
 	async GetDatosUser() {
 		return JSON.parse(localStorage.getItem('userSession'))
+	},
+	async UpdatePassword(item) {
+		let returnResponse
+
+		await axios({
+			method: 'POST',
+			url: `${ENV_CORE}/api/users/update-password`,
+			data: item,
+		})
+			.then((response) => {
+				if (response.data.statusCode === 200) {
+					notification['success']({
+						message: `Congratulations.`,
+						description: `${response.data.mensaje}`,
+					})
+					returnResponse = true
+				} else {
+					notification['error']({
+						message: `Error.`,
+						description: `An error has occurred updating your password, please try again.`,
+					})
+				}
+			})
+			.catch((error) => {
+				notification['error']({
+					message: `Error`,
+					description: `${error.response.data.comment}`,
+				})
+			})
+		return returnResponse
 	},
 }
 

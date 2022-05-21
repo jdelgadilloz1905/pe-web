@@ -2,6 +2,8 @@
 
 import React, { useState } from 'react'
 
+import { Link } from 'react-router-dom'
+
 import { Row, Col, Upload, Progress, Modal } from 'antd'
 
 import { EditOutlined, BellFilled, RiseOutlined, ThunderboltFilled, CameraOutlined } from '@ant-design/icons'
@@ -89,10 +91,12 @@ export default function ClientInfo(props) {
 							</Modal>
 							<div className='cw-client-info-user-title-main-container'>
 								<h3 className='cw-client-info-user-title'>Hill {isDatosUser.name}</h3>
-								<div className='cw-client-info-user-subtitle-container'>
-									<EditOutlined className='cw-client-info-user-profile-icon' />
-									<h4 className='cw-client-info-user-subtitle'>Edit Profile</h4>
-								</div>
+								<Link to='/user-profile-setup'>
+									<div className='cw-client-info-user-subtitle-container'>
+										<EditOutlined className='cw-client-info-user-profile-icon' />
+										<h4 className='cw-client-info-user-subtitle'>Edit Profile</h4>
+									</div>
+								</Link>
 							</div>
 						</div>
 					</Col>

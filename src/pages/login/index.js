@@ -41,24 +41,13 @@ export default function Login() {
 
 	return (
 		<>
-			<MetaDescription
-				title={'Login | PE.com'}
-				name={'description'}
-				content={'Login | PE.com...'}
-			/>
+			<MetaDescription title={'Login | PE.com'} name={'description'} content={'Login | PE.com...'} />
 			<div className='cv-login-global-background'>
 				<div className='cv-login-section-1-main-container'>
 					<div className='cv-login-section-1-inner-container'>
 						<div className='cv-login-section-1-container'>
-							<Image
-								classImg={'cv-login-section-1-img'}
-								image={logoWhite}
-								alt={'Main Logo'}
-								title={'Main Logo'}
-							/>
-							<h4 className='cv-login-section-1-main-title'>
-								Please login in into our services:
-							</h4>
+							<Image classImg={'cv-login-section-1-img'} image={logoWhite} alt={'Main Logo'} title={'Main Logo'} />
+							<h4 className='cv-login-section-1-main-title'>Please login in into our services:</h4>
 							<Form
 								name='cw_form'
 								onFinish={handleSendForm}
@@ -93,19 +82,14 @@ export default function Login() {
 								</Form.Item>
 
 								<Form.Item>
-									<Button
-										loading={isLoading}
-										htmlType='submit'
-										className='cv-login-main-button'>
+									<Button loading={isLoading} htmlType='submit' className='cv-login-main-button'>
 										Submit
 									</Button>
 								</Form.Item>
 							</Form>
 							<h4 className='cv-login-lost-password-title'>
 								If you have forgotten your email or password{' '}
-								<span
-									className='cv-login-lost-password-subtitle'
-									onClick={() => handleRecoverPassword()}>
+								<span className='cv-login-lost-password-subtitle' onClick={() => handleRecoverPassword()}>
 									click here
 								</span>
 							</h4>
