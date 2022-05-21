@@ -39,6 +39,7 @@ export default function ProfileSetup() {
 		setLoading(true)
 		await servicesProfile.UpdatePassword(data).then((response) => {
 			if (response) {
+				setDatosUser(response)
 				setVisible(false)
 			}
 		})

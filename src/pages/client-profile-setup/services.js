@@ -43,13 +43,32 @@ const servicesProfile = {
 			url: `${ENV_CORE}/api/users/update-password`,
 			data: item,
 		})
-			.then((response) => {
+			.then(async (response) => {
 				if (response.data.statusCode === 200) {
 					notification['success']({
 						message: `Congratulations.`,
 						description: `${response.data.mensaje}`,
 					})
-					returnResponse = true
+					await axios({
+						method: 'POST',
+						url: `${ENV_CORE}/api/users/user-data`,
+						data: item,
+					}).then(async (response) => {
+						returnResponse = {
+							name: response.data.name,
+							last: response.data.last,
+							id: response.data.id,
+							modo: response.data.modo,
+							email: response.data.email,
+							photo: response.data.photo,
+							last_login: response.data.last_login,
+							profile: response.data.profile,
+							country: response.data.country,
+							company: response.data.company,
+							password_expiry_date: response.data.password_expiry_date,
+						}
+						localStorage.setItem('userSession', JSON.stringify(returnResponse))
+					})
 				} else {
 					notification['error']({
 						message: `Error.`,
