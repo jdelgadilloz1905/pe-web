@@ -37,6 +37,8 @@ const servicesLogin = {
 					profile: response.data.result.profile,
 					country: response.data.result.country,
 					company: response.data.result.company,
+					phone: response.data.result.phone,
+					bio_text: response.data.result.bio_text,
 					password_expiry_date: response.data.result.password_expiry_date,
 				}
 				localStorage.setItem('userSession', JSON.stringify(returnResponse))

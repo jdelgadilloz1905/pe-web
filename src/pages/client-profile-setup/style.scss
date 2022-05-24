@@ -240,3 +240,40 @@
 .cw-client-info-user-subtitle {
 	cursor: pointer;
 }
+
+.pe-profile-input-field-select-container {
+	width: 100%;
+	max-width: 300px;
+	margin: auto;
+}
+
+.pe-profile-input-field-select-container .ant-select-selection-item {
+	color: rgba(0, 0, 0, 0.85);
+}
+
+.pe-profile-input-field-select-container .ant-select-selector {
+	border-radius: 10px !important;
+}
+
+.pe-profile-input-field-text textarea.ant-input {
+	border-radius: 10px;
+}
+
+.cw-user-profile-setup-bio-container {
+	border: 1px solid rgba(255, 255, 255, 0.8);
+	margin-left: 30px;
+	width: 100%;
+	max-width: 670px !important;
+	border-radius: 10px;
+	height: 200px;
+	margin-bottom: 20px;
+	padding: 10px;
+}
+
+.cw-user-profile-setup-bio-title {
+	color: #ffffff;
+}
+
+.cw-user-profile-setup-bio-subtitle {
+	color: #ffffff;
+}

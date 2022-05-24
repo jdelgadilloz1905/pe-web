@@ -4,9 +4,19 @@ import React, { useState, useEffect } from 'react'
 
 import moment from 'moment'
 
-import { Row, Col, Button, notification, Modal, Form, Upload, Progress } from 'antd'
+import { Row, Col, Button, notification, Modal, Form, Upload, Progress, Select, Input } from 'antd'
 
-import { StarFilled, ThunderboltFilled, RiseOutlined, BellFilled, MailOutlined, BankFilled, EditOutlined, LockOutlined, CameraOutlined } from '@ant-design/icons'
+import {
+	StarFilled,
+	ThunderboltFilled,
+	RiseOutlined,
+	BellFilled,
+	MailOutlined,
+	BankFilled,
+	EditOutlined,
+	LockOutlined,
+	CameraOutlined,
+} from '@ant-design/icons'
 
 import Loading from '../../components/Loading'
 
@@ -20,11 +30,14 @@ import servicesProfile from './services'
 
 import serviceImage from '../client-dashboard/components/ClientInfo/services'
 
+import { info } from './data.js'
+
 import './style.scss'
 
 export default function ProfileSetup() {
 	const [isPreviewImg, setPreviewImg] = useState(null)
 	const [passwordForm] = Form.useForm()
+	const [editProfileForm] = Form.useForm()
 	const [isDatosUser, setDatosUser] = useState(JSON.parse(localStorage.getItem('userSession')))
 	const [isVisible, setVisible] = useState(false)
 	const [isLoading, setLoading] = useState(false)
@@ -33,6 +46,11 @@ export default function ProfileSetup() {
 	const [isFileList, setFileList] = useState([])
 	const [isProgress, setProgress] = useState(0)
 	const [isPreviewModal, setPreviewModal] = useState(false)
+	const [isEditProfileModal, setEditProfileModal] = useState(false)
+	const [isEditProfileInfo, setEditProfileModalInfo] = useState(false)
+
+	const { Option } = Select
+	const { TextArea } = Input
 
 	const handleOnChangeImage = ({ fileList }) => {
 		setFileList(fileList)
@@ -55,10 +73,15 @@ export default function ProfileSetup() {
 			newPassword: item.password,
 		}
 		setLoading(true)
-		await servicesProfile.UpdatePassword(data).then((response) => {
+		await servicesProfile.UpdatePassword(data).then(async (response) => {
 			if (response) {
-				setDatosUser(response)
-				setVisible(false)
+				await servicesProfile.GetUserProfile({ id: isDatosUser.id }).then((response) => {
+					if (response) {
+						setDatosUser(response)
+						setVisible(false)
+						passwordForm.resetFields()
+					}
+				})
 			}
 		})
 		setLoading(false)
@@ -131,7 +154,10 @@ export default function ProfileSetup() {
 						<div>
 							<div>
 								<h1 className='cw-notification-service-title'>Advice:</h1>
-								<p className='cw-notification-service-subtitle'>Do you seen what you don't have change your password, for security purposes, we recomend update it.</p>
+								<p className='cw-notification-service-subtitle'>
+									Do you seen what you don't have change your password, for security purposes, we recomend
+									update it.
+								</p>
 								<p className='cw-notification-service-description'>Do you want to make new one?</p>
 								<Button onClick={() => handleVisibleModal()} className='cw-notification-service-button'>
 									Update Password
@@ -161,12 +187,49 @@ export default function ProfileSetup() {
 		else return 'https://dummyimage.com/120x120/fdfdfd.png&text=Please+Upload+Image'
 	}
 
+	const handleEditModal = () => {
+		setEditProfileModal(true)
+		editProfileForm.setFieldsValue({
+			name: isDatosUser.name,
+			last: isDatosUser.last,
+			email: isDatosUser.email,
+			company: isDatosUser.company,
+			country: isDatosUser.country,
+			phone: isDatosUser.phone,
+			bio_text: isDatosUser.bio_text,
+		})
+	}
+
+	const handleUpdateProfile = async (item) => {
+		const data = {
+			...item,
+			id: isDatosUser.id,
+		}
+		setLoading(true)
+		await servicesProfile.UpdateUserProfile(data).then(async (response) => {
+			if (response) {
+				await servicesProfile.GetUserProfile({ id: isDatosUser.id }).then((response) => {
+					if (response) {
+						setDatosUser(response)
+						setEditProfileModal(false)
+						editProfileForm.resetFields()
+					}
+				})
+			}
+		})
+		setLoading(false)
+	}
+
 	if (!isDatosUser) {
 		return <Loading />
 	} else {
 		return (
 			<>
-				<MetaDescription title={'Profile SetUp | Wix.com'} name={'description'} content={'Profile SetUp | Wix.com...'} />
+				<MetaDescription
+					title={'Profile SetUp | Wix.com'}
+					name={'description'}
+					content={'Profile SetUp | Wix.com...'}
+				/>
 				<div className='cw-profile-setup-global-background'>
 					<div className='cw-profile-setup-main-container'>
 						<div className='cw-profile-setup-container'>
@@ -175,13 +238,27 @@ export default function ProfileSetup() {
 									{isDatosUser && isDatosUser.photo && isDatosUser.photo !== '' ? (
 										<>
 											<div className='cw-profile-pic-container' onClick={() => handleModalPreviewImage()}>
-												<Image classImg={'cw-client-info-image'} image={`${handlePhotoUser()}`} alt={'profile image'} title={'profile image'} />
+												<Image
+													classImg={'cw-client-info-image'}
+													image={`${handlePhotoUser()}`}
+													alt={'profile image'}
+													title={'profile image'}
+												/>
 											</div>
-											<Modal wrapClassName='est-upload-image-camera-modal-container' visible={isPreviewProfile} title='Preview' footer={null} onCancel={() => setPreviewProfile(false)}>
-												{isPreviewProfileImage && <img alt='visionCloud' style={{ width: '100%' }} src={isPreviewProfileImage} />}
+											<Modal
+												wrapClassName='est-upload-image-camera-modal-container'
+												visible={isPreviewProfile}
+												title='Preview'
+												footer={null}
+												onCancel={() => setPreviewProfile(false)}>
+												{isPreviewProfileImage && (
+													<img alt='visionCloud' style={{ width: '100%' }} src={isPreviewProfileImage} />
+												)}
 												<br />
 												<br />
-												<Button onClick={() => handleRemoveImageProfile()} className='cw-notification-service-button'>
+												<Button
+													onClick={() => handleRemoveImageProfile()}
+													className='cw-notification-service-button'>
 													Delete Image
 												</Button>
 											</Modal>
@@ -216,7 +293,9 @@ export default function ProfileSetup() {
 										<h6 className='cw-profile-name-title'>Hi {isDatosUser.name} </h6>
 										<div className='cw-client-info-user-subtitle-container'>
 											<EditOutlined className='cw-client-info-user-profile-icon' />
-											<h4 className='cw-client-info-user-subtitle'>Edit Profile</h4>
+											<h4 className='cw-client-info-user-subtitle' onClick={() => handleEditModal()}>
+												Edit Profile
+											</h4>
 										</div>
 										<div className='pe-update-password-icons-container' onClick={() => handleVisibleModal()}>
 											<h3 className='pe-update-password-icons-title'>Change Password</h3>
@@ -231,7 +310,10 @@ export default function ProfileSetup() {
 												<h3 className='pe-update-password-icons-asterisk'>*</h3>
 											</div>
 										</div>
-										<Button htmlType='submit' className='cw-profile-setup-first-button' onClick={() => handleProfileClient()}>
+										<Button
+											htmlType='submit'
+											className='cw-profile-setup-first-button'
+											onClick={() => handleProfileClient()}>
 											Your Dashboard
 										</Button>
 									</div>
@@ -240,15 +322,21 @@ export default function ProfileSetup() {
 									<Row>
 										<Col span={8} className='cw-profile-setup-col-container'>
 											<StarFilled className='cw-profile-setup-icon' />
-											<h4 className='cw-profile-setup-title'>Review or change your survey answers and ratings.</h4>
+											<h4 className='cw-profile-setup-title'>
+												Review or change your survey answers and ratings.
+											</h4>
 										</Col>
 										<Col span={8} className='cw-profile-setup-col-container'>
 											<RiseOutlined className='cw-profile-setup-icon' />
-											<h4 className='cw-profile-setup-title'>Setup or change your financial health preferences.</h4>
+											<h4 className='cw-profile-setup-title'>
+												Setup or change your financial health preferences.
+											</h4>
 										</Col>
 										<Col span={8} className='cw-profile-setup-col-container'>
 											<ThunderboltFilled className='cw-profile-setup-icon' />
-											<h4 className='cw-profile-setup-title'>Setup or change your action items preferences.</h4>
+											<h4 className='cw-profile-setup-title'>
+												Setup or change your action items preferences.
+											</h4>
 										</Col>
 										<Col span={8} className='cw-profile-setup-col-container'>
 											<div className='cw-profile-setup-bell-icon-container'>
@@ -261,14 +349,23 @@ export default function ProfileSetup() {
 										</Col>
 										<Col span={8} className='cw-profile-setup-col-container'>
 											<MailOutlined className='cw-profile-setup-icon' />
-											<h4 className='cw-profile-setup-title'>Setup or change your communication preferences.</h4>
+											<h4 className='cw-profile-setup-title'>
+												Setup or change your communication preferences.
+											</h4>
 										</Col>
 										<Col span={8} className='cw-profile-setup-col-container'>
 											<BankFilled className='cw-profile-setup-icon' />
-											<h4 className='cw-profile-setup-title'>Setup or change your communication preferences.</h4>
+											<h4 className='cw-profile-setup-title'>
+												Setup or change your communication preferences.
+											</h4>
 										</Col>
-										<Col span={24} className='cw-profile-setup-button-container'>
-											Personal Bio *
+										<Col span={24} className='cw-user-profile-setup-bio-container'>
+											<h4 className='cw-user-profile-setup-bio-title'>Personal Bio *</h4>
+											<h3 className='cw-user-profile-setup-bio-subtitle'>
+												{isDatosUser?.bio_text
+													? isDatosUser.bio_text
+													: 'You need to edit your profile for edit bio'}
+											</h3>
 										</Col>
 									</Row>
 								</Col>
@@ -276,7 +373,12 @@ export default function ProfileSetup() {
 						</div>
 					</div>
 				</div>
-				<Modal wrapClassName='est-upload-image-camera-modal-container' visible={isVisible} title='Update Password' footer={null} onCancel={() => setVisible(false)}>
+				<Modal
+					wrapClassName='est-upload-image-camera-modal-container'
+					visible={isVisible}
+					title='Update Password'
+					footer={null}
+					onCancel={() => setVisible(false)}>
 					<h3>Please update you password:</h3>
 					<br />
 					<Form onFinish={handleUpdatePassword} form={passwordForm}>
@@ -306,6 +408,100 @@ export default function ProfileSetup() {
 							Submit
 						</Button>
 					</Form>
+				</Modal>
+				<Modal
+					wrapClassName='est-upload-image-camera-modal-container'
+					visible={isEditProfileModal}
+					title='Edit Profile Info'
+					footer={null}
+					onCancel={() => setEditProfileModal(false)}
+					destroyOnClose={true}>
+					{isEditProfileModal && (
+						<Form onFinish={handleUpdateProfile} form={editProfileForm}>
+							<InputNormal
+								className={'pe-profile-input-field'}
+								inputName={'name'}
+								inputNameLabel={'First name'}
+								inputNameRule={true}
+								inputNameMessage={'Please input your Name'}
+								inputNameType={'text'}
+								inputNameRules={'rulesNameRequiredEN'}
+							/>
+							<InputNormal
+								className={'pe-profile-input-field'}
+								inputName={'last'}
+								inputNameLabel={'Last Name'}
+								inputNameRule={true}
+								inputNameMessage={'Please input your Last Name'}
+								inputNameType={'text'}
+								inputNameRules={'rulesNameRequiredEN'}
+							/>
+
+							<InputNormal
+								className={'pe-profile-input-field'}
+								inputName={'email'}
+								inputNameLabel={'Email'}
+								inputNameRule={true}
+								inputNameMessage={'Enter your e-mail'}
+								inputNameType={'text'}
+								inputNameIcon={''}
+								inputNameRules={'rulesEmailEN'}
+							/>
+
+							<InputNormal
+								className={'pe-profile-input-field'}
+								inputName={'company'}
+								inputNameLabel={'Company'}
+								inputNameRule={true}
+								inputNameMessage={'Enter your company'}
+								inputNameType={'text'}
+								inputNameIcon={''}
+								inputNameRules={'rulesCompanyEN'}
+							/>
+
+							<InputNormal
+								className={'pe-profile-input-field'}
+								inputName={'phone'}
+								inputNameLabel={'Phone'}
+								inputNameRule={true}
+								inputNameMessage={'Enter your phone'}
+								inputNameType={'text'}
+								inputNameIcon={''}
+								inputNameRules={'rulesPhoneEN'}
+							/>
+							<div className='pe-profile-input-field-select-container'>
+								<Form.Item name='country'>
+									<Select
+										className='pe-profile-input-field-select'
+										placeholder='Select state'
+										defaultValue={{ value: isDatosUser.country, label: isDatosUser.country }}
+										size='large'
+										style={{ width: '100%', border: 'none' }}
+										allowClear={false}
+										showSearch
+										optionFilterProp='children'
+										filterOption={(input, option) =>
+											option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+										}
+										filterSort={(optionA, optionB) =>
+											optionA.children.toLowerCase().localeCompare(optionB.children.toLowerCase())
+										}>
+										{info.map((item, index) => (
+											<Option value={item.name} key={index}>
+												{item.name}
+											</Option>
+										))}
+									</Select>
+								</Form.Item>
+								<Form.Item name='bio_text' className='pe-profile-input-field-text'>
+									<TextArea rows={6} placeholder='Bio info:' />
+								</Form.Item>
+							</div>
+							<Button loading={isLoading} htmlType='submit' className='cw-notification-service-button'>
+								Update
+							</Button>
+						</Form>
+					)}
 				</Modal>
 			</>
 		)
