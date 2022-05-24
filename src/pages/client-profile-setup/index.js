@@ -4,9 +4,9 @@ import React, { useState, useEffect } from 'react'
 
 import moment from 'moment'
 
-import { Row, Col, Button, notification, Modal, Form } from 'antd'
+import { Row, Col, Button, notification, Modal, Form, Upload, Progress } from 'antd'
 
-import { StarFilled, ThunderboltFilled, RiseOutlined, BellFilled, MailOutlined, BankFilled, EditOutlined, LockOutlined } from '@ant-design/icons'
+import { StarFilled, ThunderboltFilled, RiseOutlined, BellFilled, MailOutlined, BankFilled, EditOutlined, LockOutlined, CameraOutlined } from '@ant-design/icons'
 
 import Loading from '../../components/Loading'
 
@@ -18,13 +18,31 @@ import Image from '../../components/Image'
 
 import servicesProfile from './services'
 
+import serviceImage from '../client-dashboard/components/ClientInfo/services'
+
 import './style.scss'
 
 export default function ProfileSetup() {
+	const [isPreviewImg, setPreviewImg] = useState(null)
 	const [passwordForm] = Form.useForm()
 	const [isDatosUser, setDatosUser] = useState(JSON.parse(localStorage.getItem('userSession')))
 	const [isVisible, setVisible] = useState(false)
 	const [isLoading, setLoading] = useState(false)
+	const [isPreviewProfile, setPreviewProfile] = useState(false)
+	const [isPreviewProfileImage, setPreviewProfileImage] = useState(false)
+	const [isFileList, setFileList] = useState([])
+	const [isProgress, setProgress] = useState(0)
+	const [isPreviewModal, setPreviewModal] = useState(false)
+
+	const handleOnChangeImage = ({ fileList }) => {
+		setFileList(fileList)
+	}
+
+	const handleImageDelete = async (item) => {
+		//rops.deleteItemImage(item)
+		console.log('successfully removed')
+		setFileList([])
+	}
 
 	const handleVisibleModal = () => {
 		notification.close(1)
@@ -51,6 +69,57 @@ export default function ProfileSetup() {
 		const date2 = moment(isDatosUser.password_expiry_date)
 		const days = date1.diff(date2, 'days')
 		return days
+	}
+
+	const handleModalPreviewImage = () => {
+		setPreviewProfile(true)
+		setPreviewProfileImage(isDatosUser.photo)
+	}
+
+	const handlePreview = async (item) => {
+		setPreviewModal(true)
+
+		//setPreviewImg(item.thumbUrl)
+	}
+
+	const handleRemoveImageProfile = () => {
+		let data = { ...isDatosUser }
+		data.photo = null
+		setDatosUser(data)
+		setPreviewProfile(false)
+	}
+
+	/* 	const handleModalRemoveImage = () => {
+		props.handleRemoveImageProfile()
+		setPreviewProfile(false)
+	} */
+
+	const handleUploadImage = async (options) => {
+		const { onSuccess, onError, file, onProgress } = options
+		const data = new FormData()
+		data.append('imagen[]', file)
+		const config = {
+			headers: { 'Content-Type': 'multipart/form-data' },
+			onUploadProgress: (event) => {
+				const percent = Math.floor((event.loaded / event.total) * 100)
+				setProgress(percent)
+				if (percent === 100) {
+					setTimeout(() => setProgress(0), 1000)
+				}
+				onProgress({ percent: (event.loaded / event.total) * 100 })
+			},
+		}
+		onSuccess('Ok')
+		await serviceImage.uploadImage(data, config).then((response) => {
+			if (response) {
+				setPreviewImg(response)
+				serviceImage.sendImage(isDatosUser.id, response)
+				let data = { ...isDatosUser }
+				data.photo = response
+				setDatosUser(data)
+			}
+		})
+		console.log('on error...', onError)
 	}
 
 	useEffect(() => {
@@ -103,14 +172,51 @@ export default function ProfileSetup() {
 						<div className='cw-profile-setup-container'>
 							<Row className='cw-profile-setup-inner-container'>
 								<Col span={8} className='cw-profile-col-container'>
-									<div className='cw-profile-pic-container'>
-										<Image classImg={'cw-client-info-image'} image={`${handlePhotoUser()}`} alt={'profile image'} title={'profile image'} />
-									</div>
+									{isDatosUser && isDatosUser.photo && isDatosUser.photo !== '' ? (
+										<>
+											<div className='cw-profile-pic-container' onClick={() => handleModalPreviewImage()}>
+												<Image classImg={'cw-client-info-image'} image={`${handlePhotoUser()}`} alt={'profile image'} title={'profile image'} />
+											</div>
+											<Modal wrapClassName='est-upload-image-camera-modal-container' visible={isPreviewProfile} title='Preview' footer={null} onCancel={() => setPreviewProfile(false)}>
+												{isPreviewProfileImage && <img alt='visionCloud' style={{ width: '100%' }} src={isPreviewProfileImage} />}
+												<br />
+												<br />
+												<Button onClick={() => handleRemoveImageProfile()} className='cw-notification-service-button'>
+													Delete Image
+												</Button>
+											</Modal>
+										</>
+									) : (
+										<>
+											<Upload
+												accept='image/*'
+												customRequest={handleUploadImage}
+												onChange={handleOnChangeImage}
+												onPreview={handlePreview}
+												onRemove={handleImageDelete}
+												fileList={isFileList}
+												listType='picture-card'
+												className='image-upload-grid'>
+												{isFileList.length >= 1 ? null : (
+													<div className='est-upload-image-camera-text-global-container'>
+														<div className='est-upload-image-camera-icon-container'>
+															<div className='cw-profile-inner-container'>
+																<CameraOutlined className='cw-profile-pic-icon' />
+																<h6 className='cw-profile-pic-title'>Add Photo</h6>
+															</div>
+														</div>
+													</div>
+												)}
+											</Upload>
+
+											{isProgress > 0 ? <Progress percent={isProgress} /> : null}
+										</>
+									)}
 									<div className='cw-profile-name-container'>
 										<h6 className='cw-profile-name-title'>Hi {isDatosUser.name} </h6>
 										<div className='cw-client-info-user-subtitle-container'>
 											<EditOutlined className='cw-client-info-user-profile-icon' />
-											<h4 className='cw-client-info-user-subtitle'>Edit</h4>
+											<h4 className='cw-client-info-user-subtitle'>Edit Profile</h4>
 										</div>
 										<div className='pe-update-password-icons-container' onClick={() => handleVisibleModal()}>
 											<h3 className='pe-update-password-icons-title'>Change Password</h3>

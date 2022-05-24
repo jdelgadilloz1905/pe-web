@@ -227,3 +227,16 @@
 .pe-profile-input-field::placeholder {
 	font-size: 13px;
 }
+
+.cw-profile-setup-inner-container .ant-upload.ant-upload-select-picture-card {
+	border-radius: 100%;
+	background-color: #b1b1b1;
+}
+
+.cw-profile-setup-inner-container .image-upload-grid {
+	text-align: right;
+}
+
+.cw-client-info-user-subtitle {
+	cursor: pointer;
+}
