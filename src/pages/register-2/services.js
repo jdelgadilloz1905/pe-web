@@ -42,7 +42,7 @@ const servicesUsers = {
 
 		await axios({
 			method: 'POST',
-			url: `${ENV_CORE}/api/users/register-user`,
+			url: `${ENV_CORE}/api/users/register-user-profesional`,
 			data: data,
 		})
 			.then((response) => {
@@ -73,23 +73,39 @@ const servicesUsers = {
 				// localStorage.removeItem('step_nineteen')
 			})
 			.catch((error) => {
-				notification['info']({
-					description: (
-						<section>
-							<div>
+				if (error && error.response.data.status === 409) {
+					notification['info']({
+						description: (
+							<section>
 								<div>
-									<h1 className='cw-notification-service-title'>Advice:</h1>
-									<p className='cw-notification-service-subtitle'>{error.response.data.comment}</p>
-									<p className='cw-notification-service-description'>Do you need to Log In?</p>
-									<Button onClick={() => (window.location.href = '/login')} className='cw-notification-service-button'>
-										Click Here
-									</Button>
+									<div>
+										<h1 className='cw-notification-service-title'>Advice:</h1>
+										<p className='cw-notification-service-subtitle'>{error.response.data.comment}</p>
+										<p className='cw-notification-service-description'>Do you need to Log In?</p>
+										<Button onClick={() => (window.location.href = '/login')} className='cw-notification-service-button'>
+											Click Here
+										</Button>
+									</div>
 								</div>
-							</div>
-						</section>
-					),
-					duration: 10,
-				})
+							</section>
+						),
+						duration: 10,
+					})
+				} else {
+					notification['info']({
+						description: (
+							<section>
+								<div>
+									<div>
+										<h1 className='cw-notification-service-title'>Advice:</h1>
+										<p className='cw-notification-service-subtitle'>an error has ocurred please try again or contact support...</p>
+									</div>
+								</div>
+							</section>
+						),
+						duration: 10,
+					})
+				}
 			})
 		return returnResponse
 	},
