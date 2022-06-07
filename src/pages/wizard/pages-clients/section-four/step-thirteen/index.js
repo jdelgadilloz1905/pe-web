@@ -67,7 +67,7 @@ export default function StepThirteen() {
 								<div className='cw-wizard-sfsthirteen-form-container'>
 									<ScrollAnimation animateIn='animate__fadeInUp' delay={3000} animateOnce={true}>
 										<div className='cw-wizard-sfsthirteen-form-title-container'>
-											<h2 className='cw-wizard-sfsthirteen-form-title'>Do you prefer a client own their own home?</h2>
+											<h2 className='cw-wizard-sfsthirteen-form-title'>Do you prefer a client own their current home?</h2>
 										</div>
 										<div className='cw-wizard-sfsthirteen-form-option-container'>
 											<Radio.Group onChange={handleChangeRadio} value={isSelected}>

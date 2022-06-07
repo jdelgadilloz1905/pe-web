@@ -18,6 +18,7 @@ import servicesAdvisor from '../../services'
 import './style.scss'
 
 export default function StepFour() {
+	const [fourStepForm] = Form.useForm()
 	const [isToolTip, setToolTip] = useState(false)
 	const marks = {
 		0: '|',
@@ -42,6 +43,9 @@ export default function StepFour() {
 			if (response) {
 				setSelected(response.answers)
 				setRateOne(response.rate)
+				fourStepForm.setFieldsValue({
+					slider_question: response.answers,
+				})
 			}
 		})
 	}, [isStep])
@@ -85,7 +89,7 @@ export default function StepFour() {
 										</div>
 										<div className='cw-wizard-stsfour-form-option-container'>
 											<div className='cw-wizard-stsfour-form-option-container'>
-												<Form initialValues={{ slider_question: 0 }}>
+												<Form initialValues={{ slider_question: isSelected ? isSelected : 0 }} form={fourStepForm}>
 													<Form.Item name='slider_question'>
 														<Slider marks={marks} step={5} max={30} onChange={handleChangeSlider} value={isSelected} tooltipVisible={isToolTip} />
 													</Form.Item>

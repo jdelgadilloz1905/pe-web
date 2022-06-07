@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 
 import ScrollAnimation from 'react-animate-on-scroll'
 
-import { Row, Col, Checkbox } from 'antd'
+import { Row, Col, Checkbox, Radio } from 'antd'
 
 import MetaDescription from '../../../../../components/MetaDescription'
 import NormalRate from '../../../../../components/Rate'
@@ -40,8 +40,8 @@ export default function StepTen() {
 	}
 
 	const handleChangeCheckbox = async (values) => {
-		setSelected(values)
-		await servicesAdvisor.PushQuestion(isRateOne, values, isSection, isStep).then((response) => {
+		setSelected(values.target.value)
+		await servicesAdvisor.PushQuestion(isRateOne, values.target.value, isSection, isStep).then((response) => {
 			//..
 		})
 	}
@@ -70,21 +70,19 @@ export default function StepTen() {
 											<h2 className='cw-wizard-ststen-form-title'>What is your level of investment knowledge?</h2>
 										</div>
 										<div className='cw-wizard-ststen-form-option-container'>
-											<Checkbox.Group onChange={handleChangeCheckbox} defaultValue={isSelected} value={isSelected}>
+											<Radio.Group onChange={handleChangeCheckbox} defaultValue={isSelected} value={isSelected}>
 												<Row>
 													<Col span={24}>
-														<Checkbox value='Low'>I am new to investing</Checkbox>
+														<Radio value='Low'>I am new to investing</Radio>
 													</Col>
 													<Col span={24}>
-														<Checkbox value='Moderate'>Somewhat knowledgeable: I prefer an advisor who will guide and educate my decisions.</Checkbox>
+														<Radio value='Moderate'>Somewhat knowledgeable: I prefer an advisor who will guide and educate my decisions.</Radio>
 													</Col>
 													<Col span={24}>
-														<Checkbox value='High'>
-															Seasoned investor: I stay up to date and educated with the market and feel confident in my investment decisions.
-														</Checkbox>
+														<Radio value='High'>Seasoned investor: I stay up to date and educated with the market and feel confident in my investment decisions.</Radio>
 													</Col>
 												</Row>
-											</Checkbox.Group>
+											</Radio.Group>
 										</div>
 									</ScrollAnimation>
 								</div>

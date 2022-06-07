@@ -18,6 +18,7 @@ import servicesAdvisor from '../../services'
 import './style.scss'
 
 export default function StepThree() {
+	const [oneStepForm] = Form.useForm()
 	const [isToolTip, setToolTip] = useState(false)
 	const marks = {
 		0: '|',
@@ -42,9 +43,12 @@ export default function StepThree() {
 			if (response) {
 				setSelected(response.answers)
 				setRateOne(response.rate)
+				oneStepForm.setFieldsValue({
+					slider_question: response.answers,
+				})
 			}
 		})
-	}, [isStep])
+	}, [isStep, setSelected])
 
 	const handleChangeRate = async (value) => {
 		setRateOne(value)
@@ -85,7 +89,7 @@ export default function StepThree() {
 											<h2 className='cw-wizard-ststhree-form-title'>How many years of work experience would you prefer your advisor to have?</h2>
 										</div>
 										<div className='cw-wizard-ststhree-form-option-container'>
-											<Form initialValues={{ slider_question: 0 }}>
+											<Form initialValues={{ slider_question: isSelected ? isSelected : 0 }} form={oneStepForm}>
 												<Form.Item name='slider_question'>
 													<Slider marks={marks} step={5} max={30} onChange={handleChangeSlider} value={isSelected} tooltipVisible={isToolTip} />
 												</Form.Item>

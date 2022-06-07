@@ -6,17 +6,7 @@ import moment from 'moment'
 
 import { Row, Col, Button, notification, Modal, Form, Upload, Progress, Select, Input } from 'antd'
 
-import {
-	StarFilled,
-	ThunderboltFilled,
-	RiseOutlined,
-	BellFilled,
-	MailOutlined,
-	BankFilled,
-	EditOutlined,
-	LockOutlined,
-	CameraOutlined,
-} from '@ant-design/icons'
+import { StarFilled, ThunderboltFilled, RiseOutlined, BellFilled, MailOutlined, BankFilled, EditOutlined, LockOutlined, CameraOutlined } from '@ant-design/icons'
 
 import Loading from '../../components/Loading'
 
@@ -48,6 +38,8 @@ export default function ProfileSetup() {
 	const [isPreviewModal, setPreviewModal] = useState(false)
 	const [isEditProfileModal, setEditProfileModal] = useState(false)
 	const [isEditProfileInfo, setEditProfileModalInfo] = useState(false)
+
+	const [isEditType, setEditType] = useState(null)
 
 	const { Option } = Select
 	const { TextArea } = Input
@@ -154,10 +146,7 @@ export default function ProfileSetup() {
 						<div>
 							<div>
 								<h1 className='cw-notification-service-title'>Advice:</h1>
-								<p className='cw-notification-service-subtitle'>
-									Do you seen what you don't have change your password, for security purposes, we recomend
-									update it.
-								</p>
+								<p className='cw-notification-service-subtitle'>Do you seen what you don't have change your password, for security purposes, we recomend update it.</p>
 								<p className='cw-notification-service-description'>Do you want to make new one?</p>
 								<Button onClick={() => handleVisibleModal()} className='cw-notification-service-button'>
 									Update Password
@@ -187,8 +176,9 @@ export default function ProfileSetup() {
 		else return 'https://dummyimage.com/120x120/fdfdfd.png&text=Please+Upload+Image'
 	}
 
-	const handleEditModal = () => {
+	const handleEditModal = (data) => {
 		setEditProfileModal(true)
+		setEditType(data)
 		editProfileForm.setFieldsValue({
 			name: isDatosUser.name,
 			last: isDatosUser.last,
@@ -201,10 +191,35 @@ export default function ProfileSetup() {
 	}
 
 	const handleUpdateProfile = async (item) => {
+		if (isEditType === 'basic') {
+			item.email = isDatosUser.email
+			item.phone = isDatosUser.phone
+			item.company = isDatosUser.company
+			item.country = isDatosUser.country
+			item.bio_text = isDatosUser.profile === '1' ? item.bio_text : null
+		}
+
+		if (isEditType === 'basic-2') {
+			item.name = isDatosUser.name
+			item.last = isDatosUser.last
+			item.company = isDatosUser.company
+			item.country = isDatosUser.country
+			item.bio_text = isDatosUser.profile === '1' ? isDatosUser.bio_text : null
+		}
+
+		if (isEditType === 'company') {
+			item.name = isDatosUser.name
+			item.last = isDatosUser.last
+			item.email = isDatosUser.email
+			item.phone = isDatosUser.phone
+			item.bio_text = isDatosUser.profile === '1' ? isDatosUser.bio_text : null
+		}
+
 		const data = {
 			...item,
 			id: isDatosUser.id,
 		}
+
 		setLoading(true)
 		await servicesProfile.UpdateUserProfile(data).then(async (response) => {
 			if (response) {
@@ -225,11 +240,7 @@ export default function ProfileSetup() {
 	} else {
 		return (
 			<>
-				<MetaDescription
-					title={'Profile SetUp | Wix.com'}
-					name={'description'}
-					content={'Profile SetUp | Wix.com...'}
-				/>
+				<MetaDescription title={'Profile SetUp | Wix.com'} name={'description'} content={'Profile SetUp | Wix.com...'} />
 				<div className='cw-profile-setup-global-background'>
 					<div className='cw-profile-setup-main-container'>
 						<div className='cw-profile-setup-container'>
@@ -238,27 +249,13 @@ export default function ProfileSetup() {
 									{isDatosUser && isDatosUser.photo && isDatosUser.photo !== '' ? (
 										<>
 											<div className='cw-profile-pic-container' onClick={() => handleModalPreviewImage()}>
-												<Image
-													classImg={'cw-client-info-image'}
-													image={`${handlePhotoUser()}`}
-													alt={'profile image'}
-													title={'profile image'}
-												/>
+												<Image classImg={'cw-client-info-image'} image={`${handlePhotoUser()}`} alt={'profile image'} title={'profile image'} />
 											</div>
-											<Modal
-												wrapClassName='est-upload-image-camera-modal-container'
-												visible={isPreviewProfile}
-												title='Preview'
-												footer={null}
-												onCancel={() => setPreviewProfile(false)}>
-												{isPreviewProfileImage && (
-													<img alt='visionCloud' style={{ width: '100%' }} src={isPreviewProfileImage} />
-												)}
+											<Modal wrapClassName='est-upload-image-camera-modal-container' visible={isPreviewProfile} title='Preview' footer={null} onCancel={() => setPreviewProfile(false)}>
+												{isPreviewProfileImage && <img alt='visionCloud' style={{ width: '100%' }} src={isPreviewProfileImage} />}
 												<br />
 												<br />
-												<Button
-													onClick={() => handleRemoveImageProfile()}
-													className='cw-notification-service-button'>
+												<Button onClick={() => handleRemoveImageProfile()} className='cw-notification-service-button'>
 													Delete Image
 												</Button>
 											</Modal>
@@ -290,15 +287,14 @@ export default function ProfileSetup() {
 										</>
 									)}
 									<div className='cw-profile-name-container'>
-										<h6 className='cw-profile-name-title'>Hi {isDatosUser.name} </h6>
-										<div className='cw-client-info-user-subtitle-container'>
-											<EditOutlined className='cw-client-info-user-profile-icon' />
-											<h4 className='cw-client-info-user-subtitle' onClick={() => handleEditModal()}>
-												Edit Profile
-											</h4>
-										</div>
+										<h6 className='cw-profile-name-title'>
+											Hi {isDatosUser.name} {isDatosUser.last}
+											<span className='cw-client-info-user-subtitle' onClick={() => handleEditModal('basic')}>
+												<EditOutlined className='cw-client-info-user-profile-icon' />
+											</span>
+										</h6>
 										<div className='pe-update-password-icons-container' onClick={() => handleVisibleModal()}>
-											<h3 className='pe-update-password-icons-title'>Change Password</h3>
+											<h3 className='pe-update-password-icons-title'>Change Password:</h3>
 											<div className='pe-update-password-icons-inner-container'>
 												<div className='pe-update-password-icons-inner-icon-container'>
 													<LockOutlined className='pe-update-password-icon' />
@@ -310,10 +306,7 @@ export default function ProfileSetup() {
 												<h3 className='pe-update-password-icons-asterisk'>*</h3>
 											</div>
 										</div>
-										<Button
-											htmlType='submit'
-											className='cw-profile-setup-first-button'
-											onClick={() => handleProfileClient()}>
+										<Button htmlType='submit' className='cw-profile-setup-first-button' onClick={() => handleProfileClient()}>
 											Your Dashboard
 										</Button>
 									</div>
@@ -322,21 +315,15 @@ export default function ProfileSetup() {
 									<Row>
 										<Col span={8} className='cw-profile-setup-col-container'>
 											<StarFilled className='cw-profile-setup-icon' />
-											<h4 className='cw-profile-setup-title'>
-												Review or change your survey answers and ratings.
-											</h4>
+											<h4 className='cw-profile-setup-title'>Review or change your survey answers and ratings.</h4>
 										</Col>
 										<Col span={8} className='cw-profile-setup-col-container'>
 											<RiseOutlined className='cw-profile-setup-icon' />
-											<h4 className='cw-profile-setup-title'>
-												Setup or change your financial health preferences.
-											</h4>
+											<h4 className='cw-profile-setup-title'>Setup or change your financial health preferences.</h4>
 										</Col>
 										<Col span={8} className='cw-profile-setup-col-container'>
 											<ThunderboltFilled className='cw-profile-setup-icon' />
-											<h4 className='cw-profile-setup-title'>
-												Setup or change your action items preferences.
-											</h4>
+											<h4 className='cw-profile-setup-title'>Setup or change your action items preferences.</h4>
 										</Col>
 										<Col span={8} className='cw-profile-setup-col-container'>
 											<div className='cw-profile-setup-bell-icon-container'>
@@ -347,25 +334,17 @@ export default function ProfileSetup() {
 											</div>
 											<h4 className='cw-profile-setup-title'>Setup or change your alert preferences.</h4>
 										</Col>
-										<Col span={8} className='cw-profile-setup-col-container'>
+										<Col span={8} className='cw-profile-setup-col-container' onClick={() => handleEditModal('basic-2')}>
 											<MailOutlined className='cw-profile-setup-icon' />
-											<h4 className='cw-profile-setup-title'>
-												Setup or change your communication preferences.
-											</h4>
+											<h4 className='cw-profile-setup-title'>Setup or change your phone and email preferences.</h4>
 										</Col>
-										<Col span={8} className='cw-profile-setup-col-container'>
+										<Col span={8} className='cw-profile-setup-col-container' onClick={() => handleEditModal('company')}>
 											<BankFilled className='cw-profile-setup-icon' />
-											<h4 className='cw-profile-setup-title'>
-												Setup or change your communication preferences.
-											</h4>
+											<h4 className='cw-profile-setup-title'>Setup or change your communication preferences.</h4>
 										</Col>
 										<Col span={24} className='cw-user-profile-setup-bio-container'>
 											<h4 className='cw-user-profile-setup-bio-title'>Personal Bio *</h4>
-											<h3 className='cw-user-profile-setup-bio-subtitle'>
-												{isDatosUser?.bio_text
-													? isDatosUser.bio_text
-													: 'You need to edit your profile for edit bio'}
-											</h3>
+											<h3 className='cw-user-profile-setup-bio-subtitle'>{isDatosUser?.bio_text ? isDatosUser.bio_text : 'You need to edit your profile for edit bio'}</h3>
 										</Col>
 									</Row>
 								</Col>
@@ -373,12 +352,7 @@ export default function ProfileSetup() {
 						</div>
 					</div>
 				</div>
-				<Modal
-					wrapClassName='est-upload-image-camera-modal-container'
-					visible={isVisible}
-					title='Update Password'
-					footer={null}
-					onCancel={() => setVisible(false)}>
+				<Modal wrapClassName='est-upload-image-camera-modal-container' visible={isVisible} title='Update Password' footer={null} onCancel={() => setVisible(false)}>
 					<h3>Please update you password:</h3>
 					<br />
 					<Form onFinish={handleUpdatePassword} form={passwordForm}>
@@ -418,84 +392,91 @@ export default function ProfileSetup() {
 					destroyOnClose={true}>
 					{isEditProfileModal && (
 						<Form onFinish={handleUpdateProfile} form={editProfileForm}>
-							<InputNormal
-								className={'pe-profile-input-field'}
-								inputName={'name'}
-								inputNameLabel={'First name'}
-								inputNameRule={true}
-								inputNameMessage={'Please input your Name'}
-								inputNameType={'text'}
-								inputNameRules={'rulesNameRequiredEN'}
-							/>
-							<InputNormal
-								className={'pe-profile-input-field'}
-								inputName={'last'}
-								inputNameLabel={'Last Name'}
-								inputNameRule={true}
-								inputNameMessage={'Please input your Last Name'}
-								inputNameType={'text'}
-								inputNameRules={'rulesNameRequiredEN'}
-							/>
-
-							<InputNormal
-								className={'pe-profile-input-field'}
-								inputName={'email'}
-								inputNameLabel={'Email'}
-								inputNameRule={true}
-								inputNameMessage={'Enter your e-mail'}
-								inputNameType={'text'}
-								inputNameIcon={''}
-								inputNameRules={'rulesEmailEN'}
-							/>
-
-							<InputNormal
-								className={'pe-profile-input-field'}
-								inputName={'company'}
-								inputNameLabel={'Company'}
-								inputNameRule={true}
-								inputNameMessage={'Enter your company'}
-								inputNameType={'text'}
-								inputNameIcon={''}
-								inputNameRules={'rulesCompanyEN'}
-							/>
-
-							<InputNormal
-								className={'pe-profile-input-field'}
-								inputName={'phone'}
-								inputNameLabel={'Phone'}
-								inputNameRule={true}
-								inputNameMessage={'Enter your phone'}
-								inputNameType={'text'}
-								inputNameIcon={''}
-								inputNameRules={'rulesPhoneEN'}
-							/>
+							{isEditType && isEditType === 'basic' && (
+								<>
+									<InputNormal
+										className={'pe-profile-input-field'}
+										inputName={'name'}
+										inputNameLabel={'First name'}
+										inputNameRule={true}
+										inputNameMessage={'Please input your Name'}
+										inputNameType={'text'}
+										inputNameRules={'rulesNameRequiredEN'}
+									/>
+									<InputNormal
+										className={'pe-profile-input-field'}
+										inputName={'last'}
+										inputNameLabel={'Last Name'}
+										inputNameRule={true}
+										inputNameMessage={'Please input your Last Name'}
+										inputNameType={'text'}
+										inputNameRules={'rulesNameRequiredEN'}
+									/>
+								</>
+							)}
+							{isEditType && isEditType === 'basic-2' && (
+								<>
+									<InputNormal
+										className={'pe-profile-input-field'}
+										inputName={'email'}
+										inputNameLabel={'Email'}
+										inputNameRule={true}
+										inputNameMessage={'Enter your e-mail'}
+										inputNameType={'text'}
+										inputNameIcon={''}
+										inputNameRules={'rulesEmailEN'}
+									/>
+									<InputNormal
+										className={'pe-profile-input-field'}
+										inputName={'phone'}
+										inputNameLabel={'Phone'}
+										inputNameRule={true}
+										inputNameMessage={'Enter your phone'}
+										inputNameType={'text'}
+										inputNameIcon={''}
+										inputNameRules={'rulesPhoneEN'}
+									/>
+								</>
+							)}
 							<div className='pe-profile-input-field-select-container'>
-								<Form.Item name='country'>
-									<Select
-										className='pe-profile-input-field-select'
-										placeholder='Select state'
-										defaultValue={{ value: isDatosUser.country, label: isDatosUser.country }}
-										size='large'
-										style={{ width: '100%', border: 'none' }}
-										allowClear={false}
-										showSearch
-										optionFilterProp='children'
-										filterOption={(input, option) =>
-											option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-										}
-										filterSort={(optionA, optionB) =>
-											optionA.children.toLowerCase().localeCompare(optionB.children.toLowerCase())
-										}>
-										{info.map((item, index) => (
-											<Option value={item.name} key={index}>
-												{item.name}
-											</Option>
-										))}
-									</Select>
-								</Form.Item>
-								<Form.Item name='bio_text' className='pe-profile-input-field-text'>
-									<TextArea rows={6} placeholder='Bio info:' />
-								</Form.Item>
+								{isEditType && isEditType === 'company' && (
+									<>
+										<InputNormal
+											className={'pe-profile-input-field'}
+											inputName={'company'}
+											inputNameLabel={'Company'}
+											inputNameRule={true}
+											inputNameMessage={'Enter your company'}
+											inputNameType={'text'}
+											inputNameIcon={''}
+											inputNameRules={'rulesCompanyEN'}
+										/>
+										<Form.Item name='country'>
+											<Select
+												className='pe-profile-input-field-select'
+												placeholder='Select state'
+												defaultValue={{ value: isDatosUser.country, label: isDatosUser.country }}
+												size='large'
+												style={{ width: '100%', border: 'none' }}
+												allowClear={false}
+												showSearch
+												optionFilterProp='children'
+												filterOption={(input, option) => option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
+												filterSort={(optionA, optionB) => optionA.children.toLowerCase().localeCompare(optionB.children.toLowerCase())}>
+												{info.map((item, index) => (
+													<Option value={item.name} key={index}>
+														{item.name}
+													</Option>
+												))}
+											</Select>
+										</Form.Item>
+									</>
+								)}
+								{isEditType && isEditType === 'basic' && isDatosUser.profile === '1' && (
+									<Form.Item name='bio_text' className='pe-profile-input-field-text'>
+										<TextArea rows={6} placeholder='Bio info:' />
+									</Form.Item>
+								)}
 							</div>
 							<Button loading={isLoading} htmlType='submit' className='cw-notification-service-button'>
 								Update

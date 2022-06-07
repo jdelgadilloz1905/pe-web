@@ -61,13 +61,13 @@
 
 .cw-profile-pic-icon {
 	color: #ffffff !important;
-	font-size: 60px !important;
+	font-size: 40px !important;
 }
 
 .cw-profile-pic-title {
 	color: #ffffff;
 	margin-bottom: 0;
-	font-size: 15px;
+	font-size: 14px;
 	font-weight: 700;
 }
 
@@ -120,6 +120,7 @@
 
 .cw-profile-setup-icon {
 	font-size: 40px;
+	transition: 0.3s ease;
 }
 
 .cw-profile-setup-title {
@@ -127,6 +128,19 @@
 	margin-bottom: 0;
 	font-size: 16px;
 	padding-left: 10px;
+	transition: 0.3s ease;
+}
+
+.cw-profile-setup-col-container:hover .cw-profile-setup-icon {
+	color: #fcaf17 !important;
+	cursor: pointer;
+	transition: 0.3s ease;
+}
+
+.cw-profile-setup-col-container:hover .cw-profile-setup-title {
+	color: #fcaf17 !important;
+	cursor: pointer;
+	transition: 0.3s ease;
 }
 
 .cw-profile-setup-bell-icon-container {
@@ -193,7 +207,9 @@
 	border: 1px solid #ffffff;
 	height: 100%;
 	width: 100%;
-	max-width: 138px;
+	max-width: 150px;
+	border-radius: 10px;
+	box-shadow: 5.66px 5.66px 15px -1px rgb(17 28 74 / 68%) !important;
 }
 
 .pe-update-password-icon {
@@ -215,6 +231,7 @@
 
 .pe-update-password-icons-inner-icon-container {
 	border-right: 1px solid #ffffff;
+	margin-right: 6px;
 }
 
 .pe-profile-input-field {

@@ -162,7 +162,16 @@ export default function Register() {
 											</Form.Item>
 											<Form.Item name='country'>
 												<div className='cw-register-input'>
-													<Select className='cw-register-select-container' placeholder='Select state' size='large' style={{ width: '100%', border: 'none' }} allowClear={true}>
+													<Select
+														className='cw-register-two-select-container'
+														placeholder='Select state'
+														size='large'
+														style={{ width: '100%', border: 'none' }}
+														allowClear={false}
+														showSearch
+														optionFilterProp='children'
+														filterOption={(input, option) => option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
+														filterSort={(optionA, optionB) => optionA.children.toLowerCase().localeCompare(optionB.children.toLowerCase())}>
 														{info.map((item, index) => (
 															<Option value={item.name} key={index}>
 																{item.name}
@@ -180,9 +189,7 @@ export default function Register() {
 												</div>
 											</Form.Item>
 
-											<h3 className='cw-register-two-main-subtitle'>
-												Once submitted, you're registration code and the link to create your sign-in will be emailed to the address you provided.
-											</h3>
+											<h3 className='cw-register-two-main-subtitle'>Once submitted, your registration code and link to create your sign-in will be emailed to the address you provided.</h3>
 										</Form>
 									</div>
 								</>

@@ -126,7 +126,9 @@ export default function ClientInfo(props) {
 								{isPreviewImg && <img alt='visionCloud' style={{ width: '100%' }} src={isPreviewImg} />}
 							</Modal>
 							<div className='cw-client-info-user-title-main-container'>
-								<h3 className='cw-client-info-user-title'>Hill {props.dataUser.name}</h3>
+								<h3 className='cw-client-info-user-title'>
+									{props.dataUser.name} {props.dataUser.last}
+								</h3>
 								<Link to='/user-profile-setup'>
 									<div className='cw-client-info-user-subtitle-container'>
 										<EditOutlined className='cw-client-info-user-profile-icon' />

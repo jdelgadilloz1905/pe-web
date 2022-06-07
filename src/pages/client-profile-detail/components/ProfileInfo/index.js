@@ -24,7 +24,9 @@ export default function ProfileInfo(props) {
 						<div className='cw-profile-info-container'>
 							<Image classImg={'cw-profile-info-image'} image={'https://dummyimage.com/500x500/ddd/fff'} alt={'profile image'} title={'profile image'} />
 							<div className='cw-profile-info-user-title-main-container'>
-								<h3 className='cw-profile-info-user-title'>Hill {isDatosUser.name}</h3>
+								<h3 className='cw-profile-info-user-title'>
+									{isDatosUser.name} {isDatosUser.last}
+								</h3>
 								<Link to='/user-profile-setup'>
 									<div className='cw-profile-info-user-subtitle-container'>
 										<EditOutlined className='cw-profile-info-user-icon' />

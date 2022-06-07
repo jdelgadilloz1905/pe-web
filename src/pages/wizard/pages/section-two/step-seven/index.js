@@ -18,6 +18,7 @@ import servicesAdvisor from '../../services'
 import './style.scss'
 
 export default function StepSeven() {
+	const [sevenStepForm] = Form.useForm()
 	const [isToolTip, setToolTip] = useState(false)
 	const marks = {
 		0: '|',
@@ -42,6 +43,9 @@ export default function StepSeven() {
 			if (response) {
 				setSelected(response.answers)
 				setRateOne(response.rate)
+				sevenStepForm.setFieldsValue({
+					slider_question: response.answers,
+				})
 			}
 		})
 	}, [isStep])
@@ -84,7 +88,7 @@ export default function StepSeven() {
 											<h2 className='cw-wizard-stsseven-form-title'>How important is it that your advisor is a Certified Financial Planner (CFP)?</h2>
 										</div>
 										<div className='cw-wizard-stsseven-form-option-container'>
-											<Form initialValues={{ slider_question: 0 }}>
+											<Form initialValues={{ slider_question: isSelected ? isSelected : 0 }} form={sevenStepForm}>
 												<Form.Item name='slider_question'>
 													<Slider marks={marks} step={5} max={30} onChange={handleChangeSlider} value={isSelected} tooltipVisible={isToolTip} />
 												</Form.Item>

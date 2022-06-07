@@ -52,43 +52,46 @@
 	text-align: center;
 }
 
-.cw-wizard-ststen-form-option-container .ant-checkbox-wrapper:hover .ant-checkbox-inner {
+.cw-wizard-ststen-form-option-container .ant-radio-wrapper:hover .ant-radio-inner {
 	background-color: transparent !important;
 }
 
-.cw-wizard-ststen-form-option-container .ant-checkbox-wrapper span {
+.cw-wizard-ststen-form-option-container .ant-radio-wrapper span {
 	font-size: 18px;
 	color: white;
 	font-weight: 100;
 	line-height: 20px;
 }
 
-.cw-wizard-ststen-form-option-container .ant-checkbox-group .ant-checkbox-inner {
+.cw-wizard-ststen-form-option-container .ant-radio-group .ant-radio-inner {
 	border-radius: 100%;
 	width: 20px;
 	height: 20px;
 	background-color: rgba(255, 255, 255, 0.2);
 }
 
-.cw-wizard-ststen-form-option-container .ant-checkbox-group .ant-checkbox-wrapper {
+.cw-wizard-ststen-form-option-container .ant-radio-group .ant-radio-wrapper {
 	padding-bottom: 15px;
 }
 
-.cw-wizard-ststen-form-option-container .ant-checkbox-group .ant-checkbox-wrapper:hover {
+.cw-wizard-ststen-form-option-container .ant-radio-group .ant-radio-wrapper:hover {
 	background-color: transparent;
 }
 
-.cw-wizard-ststen-form-option-container .ant-checkbox-wrapper:hover .ant-checkbox-inner {
+.cw-wizard-ststen-form-option-container .ant-radio-wrapper:hover .ant-radio-inner {
 	border: 1px solid #d9d9d9;
 }
 
-.cw-wizard-ststen-form-option-container .ant-checkbox-checked .ant-checkbox-inner {
+.cw-wizard-ststen-form-option-container .ant-radio-checked .ant-radio-inner {
 	border-color: #d9d9d9;
 }
 
-.cw-wizard-ststen-form-option-container .ant-checkbox-checked .ant-checkbox-inner::after {
-	top: 45%;
-	left: 30.5%;
+.cw-wizard-ststen-form-option-container .ant-radio-checked .ant-radio-inner::after {
+	top: 42%;
+	left: 43.5%;
+	background-color: #ffffff;
+	width: 18px;
+	height: 18px;
 }
 
 .cw-wizard-ststen-form-buttons-container {

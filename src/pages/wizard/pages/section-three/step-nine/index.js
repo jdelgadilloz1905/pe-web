@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 
 import ScrollAnimation from 'react-animate-on-scroll'
 
-import { Row, Col, Checkbox } from 'antd'
+import { Row, Col, Checkbox, Radio } from 'antd'
 
 import MetaDescription from '../../../../../components/MetaDescription'
 import NormalRate from '../../../../../components/Rate'
@@ -40,11 +40,13 @@ export default function StepNine() {
 	}
 
 	const handleChangeCheckbox = async (values) => {
-		setSelected(values)
-		await servicesAdvisor.PushQuestion(isRateOne, values, isSection, isStep).then((response) => {
+		console.log('values....', values.target.value)
+		setSelected(values.target.value)
+		await servicesAdvisor.PushQuestion(isRateOne, values.target.value, isSection, isStep).then((response) => {
 			//..
 		})
 	}
+
 	return (
 		<>
 			<MetaDescription title={'Personal Preferences-1 | PE.com'} name={'description'} content={'Personal Preferences-1 | PE.com...'} />
@@ -70,25 +72,25 @@ export default function StepNine() {
 											<h2 className='cw-wizard-stsnine-form-title'>What is your level of Risk Tolerance for investing?</h2>
 										</div>
 										<div className='cw-wizard-stsnine-form-option-container'>
-											<Checkbox.Group onChange={handleChangeCheckbox} defaultValue={isSelected} value={isSelected}>
+											<Radio.Group onChange={handleChangeCheckbox} defaultValue={isSelected} value={isSelected}>
 												<Row>
 													<Col span={24}>
-														<Checkbox value='Very low'>Very conservative: no risk</Checkbox>
+														<Radio value='Very low'>Very conservative: no risk</Radio>
 													</Col>
 													<Col span={24}>
-														<Checkbox value='Low'>Somewhat conservative: small amount of risk</Checkbox>
+														<Radio value='Low'>Somewhat conservative: small amount of risk</Radio>
 													</Col>
 													<Col span={24}>
-														<Checkbox value='Moderate'>Moderate: some risk</Checkbox>
+														<Radio value='Moderate'>Moderate: some risk</Radio>
 													</Col>
 													<Col span={24}>
-														<Checkbox value='High'>Somewhat aggressive: large amount of risk</Checkbox>
+														<Radio value='High'>Somewhat aggressive: large amount of risk</Radio>
 													</Col>
 													<Col span={24}>
-														<Checkbox value='Very high'>Very aggressive: maximum amount of risk</Checkbox>
+														<Radio value='Very high'>Very aggressive: maximum amount of risk</Radio>
 													</Col>
 												</Row>
-											</Checkbox.Group>
+											</Radio.Group>
 										</div>
 									</ScrollAnimation>
 								</div>
