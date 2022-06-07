@@ -219,13 +219,13 @@
 
 .pe-profile-input-field {
 	border-radius: 10px !important;
-	font-size: 10px;
+	font-size: 16px !important;
 	width: 100%;
 	max-width: 300px;
 }
 
 .pe-profile-input-field::placeholder {
-	font-size: 13px;
+	font-size: 16px;
 }
 
 .cw-profile-setup-inner-container .ant-upload.ant-upload-select-picture-card {
@@ -257,6 +257,10 @@
 
 .pe-profile-input-field-text textarea.ant-input {
 	border-radius: 10px;
+}
+
+.pe-profile-input-field-text textarea::placeholder {
+	font-size: 16px;
 }
 
 .cw-user-profile-setup-bio-container {
