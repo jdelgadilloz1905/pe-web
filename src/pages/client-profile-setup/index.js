@@ -139,26 +139,27 @@ export default function ProfileSetup() {
 
 	useEffect(() => {
 		handleCalculateDate()
-		if (handleCalculateDate() === 0) {
-			notification['info']({
-				description: (
-					<section>
+		/* 		if (handleCalculateDate() === 0) { */
+		notification['info']({
+			description: (
+				<section>
+					<div>
 						<div>
-							<div>
-								<h1 className='cw-notification-service-title'>Advice:</h1>
-								<p className='cw-notification-service-subtitle'>Do you seen what you don't have change your password, for security purposes, we recomend update it.</p>
-								<p className='cw-notification-service-description'>Do you want to make new one?</p>
-								<Button onClick={() => handleVisibleModal()} className='cw-notification-service-button'>
-									Update Password
-								</Button>
-							</div>
+							<h1 className='cw-notification-service-title'>Alert:</h1>
+							{/* 	<p className='cw-notification-service-subtitle'>Do you seen what you don't have change your password, for security purposes, we recomend update it.</p> */}
+							<p className='cw-notification-service-description'>Please create a new password.</p>
+							<Button onClick={() => handleVisibleModal()} className='cw-notification-service-button'>
+								Update Password
+							</Button>
 						</div>
-					</section>
-				),
-				key: 1,
-				duration: 10,
-			})
-		}
+					</div>
+				</section>
+			),
+			key: 1,
+			duration: 10000000,
+			onClose: () => setVisible(true),
+		})
+		/* 		} */
 	}, [])
 
 	const handleProfileClient = () => {
@@ -342,10 +343,12 @@ export default function ProfileSetup() {
 											<BankFilled className='cw-profile-setup-icon' />
 											<h4 className='cw-profile-setup-title'>Setup or change your communication preferences.</h4>
 										</Col>
-										<Col span={24} className='cw-user-profile-setup-bio-container'>
-											<h4 className='cw-user-profile-setup-bio-title'>Personal Bio *</h4>
-											<h3 className='cw-user-profile-setup-bio-subtitle'>{isDatosUser?.bio_text ? isDatosUser.bio_text : 'You need to edit your profile for edit bio'}</h3>
-										</Col>
+										{isDatosUser.profile === '1' && (
+											<Col span={24} className='cw-user-profile-setup-bio-container'>
+												<h4 className='cw-user-profile-setup-bio-title'>Personal Bio *</h4>
+												<h3 className='cw-user-profile-setup-bio-subtitle'>{isDatosUser?.bio_text ? isDatosUser.bio_text : 'You need to edit your profile for edit bio'}</h3>
+											</Col>
+										)}
 									</Row>
 								</Col>
 							</Row>

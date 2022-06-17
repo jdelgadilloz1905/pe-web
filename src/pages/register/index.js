@@ -37,6 +37,7 @@ export default function Register() {
 
 	const handleLoginUser = async (item) => {
 		setLoading(true)
+		if (!item.company) item.company = ''
 		await servicesUsers.Register(item, 0).then((response) => {
 			setLoading(false)
 
@@ -157,7 +158,7 @@ export default function Register() {
 													inputNameMessage={'Enter your company'}
 													inputNameType={'text'}
 													inputNameIcon={''}
-													inputNameRules={'rulesCompanyEN'}
+													//inputNameRules={'rulesCompanyEN'}
 												/>
 											</Form.Item>
 											<Form.Item name='country'>
