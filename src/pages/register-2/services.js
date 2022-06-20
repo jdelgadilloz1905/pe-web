@@ -11,12 +11,17 @@ import { ENV_CORE } from '../../components/Hooks/Variables/Enviroment'
 const servicesUsers = {
 	async Register(item, profile) {
 		let returnResponse
+		console.log('item....', item)
 		let data = {
 			name: item.first_name,
 			last: item.last_name,
 			email: item.email,
 			zid_code: item.zid_code,
 			phone: item.phone,
+			crd_number: item.crd_number,
+			financial_planner: item.financial_planner,
+			fiduciary_status: item.fiduciary_status,
+			company: item.company,
 			modo: 'direct',
 			profile: profile,
 			// step_one,
@@ -39,7 +44,7 @@ const servicesUsers = {
 			// step_eighteen,
 			// step_nineteen,
 		}
-
+		console.log('data register...', data)
 		await axios({
 			method: 'POST',
 			url: `${ENV_CORE}/api/users/register-user-profesional`,

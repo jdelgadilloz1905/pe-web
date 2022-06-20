@@ -181,7 +181,6 @@ export default function Register() {
 													</Select>
 												</div>
 											</Form.Item>
-
 											<Form.Item>
 												<div className='cw-register-two-main-button-container'>
 													<Button loading={isLoading} htmlType='submit' className='cw-register-two-main-button'>
@@ -189,7 +188,6 @@ export default function Register() {
 													</Button>
 												</div>
 											</Form.Item>
-
 											<h3 className='cw-register-two-main-subtitle'>Once submitted, your registration code and link to create your sign-in will be emailed to the address you provided.</h3>
 										</Form>
 									</div>

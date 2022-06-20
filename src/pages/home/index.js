@@ -85,13 +85,13 @@ export default function Home() {
 								{isType === '1' ? (
 									<div className='cw-home-banner-button-container-2'>
 										<Link to={'/user-profile-detail'} className='cw-home-banner-third-button'>
-											Go to User Dashboard
+											Go to Dashboard
 										</Link>
 									</div>
 								) : (
 									<div className='cw-home-banner-button-container-2'>
 										<Link to={'/user-profile-setup'} className='cw-home-banner-third-button'>
-											Go to Client Profile
+											Go to Panel
 										</Link>
 									</div>
 								)}

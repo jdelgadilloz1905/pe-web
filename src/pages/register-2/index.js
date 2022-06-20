@@ -91,8 +91,7 @@ export default function Register() {
 										started!
 									</h3>
 
-									<div className='cw-register-two-form-main-container'>
-										{/* 														initialValues={{
+									{/* 														initialValues={{
 												first_name: 'Jhon',
 												last_name: 'Doe',
 												email: 'pe_web_email@gmail.com',
@@ -101,7 +100,8 @@ export default function Register() {
 												company: 'Healtcare Solutions',
 												country: 'Alabama',
 											}} */}
-										<Form name='cw-register-two-main-form' form={formMainForm} onFinish={handleLoginUser}>
+									<Form name='cw-register-two-main-form' form={formMainForm} onFinish={handleLoginUser}>
+										<div className='cw-register-two-form-main-container'>
 											<Form.Item>
 												<Input
 													className={'cw-register-two-input'}
@@ -174,35 +174,61 @@ export default function Register() {
 													inputNameRules={'rulesCompanyEN'}
 												/>
 											</Form.Item>
-											<Form.Item name='country'>
-												<div className='cw-register-input'>
-													<Select
-														className='cw-register-two-select-container'
-														placeholder='Select state'
-														size='large'
-														style={{ width: '100%', border: 'none' }}
-														allowClear={false}
-														showSearch
-														optionFilterProp='children'
-														filterOption={(input, option) => option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
-														filterSort={(optionA, optionB) => optionA.children.toLowerCase().localeCompare(optionB.children.toLowerCase())}>
-														{info.map((item, index) => (
-															<Option value={item.name} key={index}>
-																{item.name}
-															</Option>
-														))}
-													</Select>
-												</div>
-											</Form.Item>
 											<Form.Item>
-												<div className='cw-register-two-main-button-container'>
-													<Button loading={isLoading} htmlType='submit' className='cw-register-two-main-button'>
-														Submit
-													</Button>
-												</div>
+												<Input
+													className={'cw-register-input'}
+													inputName={'crd_number'}
+													inputNameLabel={'CRD number'}
+													inputNameRule={true}
+													inputNameMessage={'Enter your CRD'}
+													inputNameType={'text'}
+													inputNameIcon={''}
+													inputNameRules={'rulesRequiredEN'}
+												/>
 											</Form.Item>
-										</Form>
-									</div>
+										</div>
+										<Form.Item name='country' rules={[{ required: true, message: 'Please select an option!' }]}>
+											<Select
+												className='cw-edit-profile-field-selector'
+												placeholder='Select state'
+												size='large'
+												style={{ width: '100%', border: 'none' }}
+												allowClear={false}
+												showSearch
+												optionFilterProp='children'
+												filterOption={(input, option) => option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
+												filterSort={(optionA, optionB) => optionA.children.toLowerCase().localeCompare(optionB.children.toLowerCase())}>
+												{info.map((item, index) => (
+													<Option value={item.name} key={index}>
+														{item.name}
+													</Option>
+												))}
+											</Select>
+										</Form.Item>
+										<h3 className='cw-register-input-title-label'>Are you a Certified Financial Planner?</h3>
+
+										<Form.Item name='financial_planner' rules={[{ required: true, message: 'Please select value!' }]}>
+											<Select className='cw-edit-profile-field-selector' placeholder='Certified Financial Planner' size='large' style={{ width: '100%', border: 'none' }} allowClear>
+												<Option value='yes'>Yes</Option>
+												<Option value='no'>No</Option>
+											</Select>
+										</Form.Item>
+
+										<h3 className='cw-register-input-title-label'>Are you a Fiduciary?</h3>
+										<Form.Item name='fiduciary_status' rules={[{ required: true, message: 'Please select value!' }]}>
+											<Select className='cw-edit-profile-field-selector' placeholder='Fiduciary' size='large' style={{ width: '100%', border: 'none' }} allowClear>
+												<Option value={'yes'}>Yes</Option>
+												<Option value={'no'}>No</Option>
+											</Select>
+										</Form.Item>
+										<Form.Item>
+											<div className='cw-register-two-main-button-container'>
+												<Button loading={isLoading} htmlType='submit' className='cw-register-two-main-button'>
+													Submit
+												</Button>
+											</div>
+										</Form.Item>
+									</Form>
 								</>
 							)}
 							{isFormComplete && (

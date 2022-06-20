@@ -341,7 +341,7 @@ export default function ProfileSetup() {
 										</Col>
 										<Col span={8} className='cw-profile-setup-col-container' onClick={() => handleEditModal('company')}>
 											<BankFilled className='cw-profile-setup-icon' />
-											<h4 className='cw-profile-setup-title'>Setup or change your communication preferences.</h4>
+											<h4 className='cw-profile-setup-title'>Setup or change your company and state preferences.</h4>
 										</Col>
 										{isDatosUser.profile === '1' && (
 											<Col span={24} className='cw-user-profile-setup-bio-container'>
