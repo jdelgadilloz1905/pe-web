@@ -29,7 +29,11 @@ export default function Home() {
 
 	return (
 		<>
-			<MetaDescription title={'Home | PE.com'} name={'description'} content={'Home | PE.com...'} />
+			<MetaDescription
+				title={'Home | PE.com'}
+				name={'description'}
+				content={'Home | PE.com...'}
+			/>
 
 			<div className='cw-home-banner-global-container'>
 				<video
@@ -52,7 +56,12 @@ export default function Home() {
 				<div className='cw-home-banner-main-container'>
 					<div className='cw-home-banner-logo-container'>
 						<ScrollAnimation animateIn='animate__fadeInDown' delay={500} animateOnce={true}>
-							<Image classImg={'cw-home-banner-logo-img'} image={logoColor} alt={'Main Logo'} title={'Main Logo'} />
+							<Image
+								classImg={'cw-home-banner-logo-img'}
+								image={logoColor}
+								alt={'Main Logo'}
+								title={'Main Logo'}
+							/>
 						</ScrollAnimation>
 					</div>
 					<ScrollAnimation animateIn='animate__fadeInUp' delay={1000} animateOnce={true}>
@@ -74,7 +83,9 @@ export default function Home() {
 										<Link to={'/register-two'} className='cw-home-banner-first-button'>
 											Join as a professional
 										</Link>
-										<Link to={'/wiz-welcome/step-one'} className='cw-home-banner-second-button'>
+										<Link
+											to={'/wiz-welcome/step-one'}
+											className='cw-home-banner-second-button'>
 											Connect with a professional
 										</Link>
 									</div>
@@ -82,16 +93,12 @@ export default function Home() {
 							</>
 						) : (
 							<>
-								{isType === '1' ? (
+								{isType && (
 									<div className='cw-home-banner-button-container-2'>
-										<Link to={'/user-profile-detail'} className='cw-home-banner-third-button'>
+										<Link
+											to={'/user-profile-detail'}
+											className='cw-home-banner-third-button'>
 											Go to Dashboard
-										</Link>
-									</div>
-								) : (
-									<div className='cw-home-banner-button-container-2'>
-										<Link to={'/user-profile-setup'} className='cw-home-banner-third-button'>
-											Go to Panel
 										</Link>
 									</div>
 								)}
