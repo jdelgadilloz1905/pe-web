@@ -41,66 +41,78 @@ export default function StepThirteen() {
 
 	const handleChangeRadio = async (e) => {
 		setSelected(e.target.value)
-		await servicesAdvisor.PushQuestion(isRateOne, e.target.value, isSection, isStep).then((response) => {
-			//..
-		})
+		await servicesAdvisor
+			.PushQuestion(isRateOne, e.target.value, isSection, isStep)
+			.then((response) => {
+				//..
+			})
 	}
 	return (
 		<>
-			<MetaDescription title={'Personal Information-1 | PE.com'} name={'description'} content={'Personal Information-1 | PE.com...'} />
+			<MetaDescription
+				title={'Personal Information-1 | PE.com'}
+				name={'description'}
+				content={'Personal Information-1 | PE.com...'}
+			/>
 			<div className='cw-wizard-sfsthirteen-advisor-global-container'>
 				<Row className='cw-wizard-sfsthirteen-main-container'>
 					<Col span={10}>
 						<Sidebar />
 					</Col>
 					<Col span={14}>
-						<ScrollAnimation style={{ height: '100%' }} animateIn='animate__slideInRight' delay={300} duration={2} animateOnce={true}>
-							<div className='cw-wizard-sfsthirteen-form-global-container'>
-								<div className='cw-wizard-sfsthirteen-form-main-title-container'>
-									<MainTitle
-										indicators={[{ indicator: true }, { indicator: false }, { indicator: false }, { indicator: false }]}
-										section={'Section 4 of 5'}
-										title={'Personal Information'}
-										subtitle={'Question 1 of 4'}
+						<div className='cw-wizard-sfsthirteen-form-global-container'>
+							<div className='cw-wizard-sfsthirteen-form-main-title-container'>
+								<MainTitle
+									indicators={[
+										{ indicator: true },
+										{ indicator: false },
+										{ indicator: false },
+										{ indicator: false },
+									]}
+									section={'Section 4 of 5'}
+									title={'Personal Information'}
+									subtitle={'Question 1 of 4'}
+								/>
+							</div>
+							<div className='cw-wizard-sfsthirteen-form-container'>
+								<div className='cw-wizard-sfsthirteen-form-title-container'>
+									<h2 className='cw-wizard-sfsthirteen-form-title'>
+										Do you own your current home?
+									</h2>
+								</div>
+								<div className='cw-wizard-sfsthirteen-form-option-container'>
+									<Radio.Group onChange={handleChangeRadio} value={isSelected}>
+										<Row>
+											<Col span={24}>
+												<Radio value='Yes'>Yes</Radio>
+											</Col>
+											<Col span={24}>
+												<Radio value='No'>No</Radio>
+											</Col>
+										</Row>
+									</Radio.Group>
+								</div>
+							</div>
+							<div className='cw-wizard-sfsthirteen-value-container'>
+								<div className='cw-wizard-sfsthirteen-value-title-container'>
+									<h2 className='cw-wizard-sfsthirteen-value-rate-title'>
+										How important is this question to you?
+									</h2>
+								</div>
+
+								<div className='cw-wizard-sfsthirteen-value-option-container'>
+									<NormalRate
+										className={''}
+										onChange={handleChangeRate}
+										defaultValue={isRateOne}
 									/>
 								</div>
-								<div className='cw-wizard-sfsthirteen-form-container'>
-									<ScrollAnimation animateIn='animate__fadeInUp' delay={3000} animateOnce={true}>
-										<div className='cw-wizard-sfsthirteen-form-title-container'>
-											<h2 className='cw-wizard-sfsthirteen-form-title'>Do you own your current home?</h2>
-										</div>
-										<div className='cw-wizard-sfsthirteen-form-option-container'>
-											<Radio.Group onChange={handleChangeRadio} value={isSelected}>
-												<Row>
-													<Col span={24}>
-														<Radio value='Yes'>Yes</Radio>
-													</Col>
-													<Col span={24}>
-														<Radio value='No'>No</Radio>
-													</Col>
-												</Row>
-											</Radio.Group>
-										</div>
-									</ScrollAnimation>
-								</div>
-								<div className='cw-wizard-sfsthirteen-value-container'>
-									<ScrollAnimation animateIn='animate__fadeInUp' delay={3500} animateOnce={true}>
-										<div className='cw-wizard-sfsthirteen-value-title-container'>
-											<h2 className='cw-wizard-sfsthirteen-value-rate-title'>How important is this question to you?</h2>
-										</div>
-
-										<div className='cw-wizard-sfsthirteen-value-option-container'>
-											<NormalRate className={''} onChange={handleChangeRate} defaultValue={isRateOne} />
-										</div>
-									</ScrollAnimation>
-								</div>
-								<ScrollAnimation animateIn='animate__fadeInUp' delay={3000} animateOnce={true}>
-									<div className='cw-wizard-sfsthirteen-form-buttons-container'>
-										<Buttons previous={'/wizard/step-twelve'} next={'/wizard/step-fourteen'} />
-									</div>
-								</ScrollAnimation>
 							</div>
-						</ScrollAnimation>
+
+							<div className='cw-wizard-sfsthirteen-form-buttons-container'>
+								<Buttons previous={'/wizard/step-twelve'} next={'/wizard/step-fourteen'} />
+							</div>
+						</div>
 					</Col>
 				</Row>
 			</div>

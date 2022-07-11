@@ -66,59 +66,85 @@ export default function StepThree() {
 
 	return (
 		<>
-			<MetaDescription title={'Specialty-1 | PE.com'} name={'description'} content={'Specialty-1 | PE.com...'} />
+			<MetaDescription
+				title={'Specialty-1 | PE.com'}
+				name={'description'}
+				content={'Specialty-1 | PE.com...'}
+			/>
 			<div className='cw-wizard-ststhree-global-container'>
 				<Row className='cw-wizard-ststhree-main-container'>
 					<Col span={10}>
 						<Sidebar />
 					</Col>
 					<Col span={14}>
-						<ScrollAnimation style={{ height: '100%' }} animateIn='animate__slideInRight' delay={300} duration={2} animateOnce={true}>
-							<div className='cw-wizard-ststhree-form-global-container'>
-								<div className='cw-wizard-ststhree-form-main-title-container'>
-									<MainTitle
-										indicators={[{ indicator: true }, { indicator: false }, { indicator: false }, { indicator: false }, { indicator: false }, { indicator: false }]}
-										section={'Section 2 of 5'}
-										title={'Advisor speciality or skill'}
-										subtitle={'Question 1 of 6'}
+						<div className='cw-wizard-ststhree-form-global-container'>
+							<div className='cw-wizard-ststhree-form-main-title-container'>
+								<MainTitle
+									indicators={[
+										{ indicator: true },
+										{ indicator: false },
+										{ indicator: false },
+										{ indicator: false },
+										{ indicator: false },
+										{ indicator: false },
+									]}
+									section={'Section 2 of 5'}
+									title={'Advisor speciality or skill'}
+									subtitle={'Question 1 of 6'}
+								/>
+							</div>
+							<div className='cw-wizard-ststhree-form-container'>
+								<div className='cw-wizard-ststhree-form-title-container'>
+									<h2 className='cw-wizard-ststhree-form-title'>
+										How many years of work experience would you prefer your advisor to
+										have?
+									</h2>
+								</div>
+								<div className='cw-wizard-ststhree-form-option-container'>
+									<Form
+										initialValues={{ slider_question: isSelected ? isSelected : 0 }}
+										form={oneStepForm}>
+										<Form.Item name='slider_question'>
+											<Slider
+												marks={marks}
+												step={5}
+												max={30}
+												onChange={handleChangeSlider}
+												value={isSelected}
+												tooltipVisible={isToolTip}
+											/>
+										</Form.Item>
+									</Form>
+									<div className='cw-wizard-stsseven-form-option-subtitle-container'>
+										<h2 className='cw-wizard-stsseven-form-option-subtitle'>
+											Not Important
+										</h2>
+										<h2 className='cw-wizard-stsseven-form-option-subtitle'>
+											Very Important
+										</h2>
+									</div>
+								</div>
+							</div>
+							<div className='cw-wizard-ststhree-value-container'>
+								<div className='cw-wizard-ststhree-value-title-container'>
+									<h2 className='cw-wizard-ststhree-value-rate-title'>
+										How important is this question to you?
+									</h2>
+								</div>
+
+								<div className='cw-wizard-ststhree-value-option-container'>
+									<NormalRate
+										className={''}
+										onChange={handleChangeRate}
+										defaultValue={isRateOne}
 									/>
 								</div>
-								<div className='cw-wizard-ststhree-form-container'>
-									<ScrollAnimation animateIn='animate__fadeInUp' delay={3000} animateOnce={true}>
-										<div className='cw-wizard-ststhree-form-title-container'>
-											<h2 className='cw-wizard-ststhree-form-title'>How many years of work experience would you prefer your advisor to have?</h2>
-										</div>
-										<div className='cw-wizard-ststhree-form-option-container'>
-											<Form initialValues={{ slider_question: isSelected ? isSelected : 0 }} form={oneStepForm}>
-												<Form.Item name='slider_question'>
-													<Slider marks={marks} step={5} max={30} onChange={handleChangeSlider} value={isSelected} tooltipVisible={isToolTip} />
-												</Form.Item>
-											</Form>
-											<div className='cw-wizard-stsseven-form-option-subtitle-container'>
-												<h2 className='cw-wizard-stsseven-form-option-subtitle'>Not Important</h2>
-												<h2 className='cw-wizard-stsseven-form-option-subtitle'>Very Important</h2>
-											</div>
-										</div>
-									</ScrollAnimation>
-								</div>
-								<div className='cw-wizard-ststhree-value-container'>
-									<ScrollAnimation animateIn='animate__fadeInUp' delay={3500} animateOnce={true}>
-										<div className='cw-wizard-ststhree-value-title-container'>
-											<h2 className='cw-wizard-ststhree-value-rate-title'>How important is this question to you?</h2>
-										</div>
-
-										<div className='cw-wizard-ststhree-value-option-container'>
-											<NormalRate className={''} onChange={handleChangeRate} defaultValue={isRateOne} />
-										</div>
-									</ScrollAnimation>
-								</div>
-								<ScrollAnimation animateIn='animate__fadeInUp' delay={4000} animateOnce={true}>
-									<div className='cw-wizard-ststhree-form-buttons-container'>
-										<Buttons previous={'/wizard/step-two'} next={'/wizard/step-four'} />
-									</div>
-								</ScrollAnimation>
 							</div>
-						</ScrollAnimation>
+
+							<div className='cw-wizard-ststhree-form-buttons-container'>
+								<Buttons previous={'/wizard/step-two'} next={'/wizard/step-four'} />
+							</div>
+						</div>
 					</Col>
 				</Row>
 			</div>

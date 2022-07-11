@@ -42,76 +42,97 @@ export default function StepNine() {
 	const handleChangeCheckbox = async (values) => {
 		console.log('values....', values.target.value)
 		setSelected(values.target.value)
-		await servicesAdvisor.PushQuestion(isRateOne, values.target.value, isSection, isStep).then((response) => {
-			//..
-		})
+		await servicesAdvisor
+			.PushQuestion(isRateOne, values.target.value, isSection, isStep)
+			.then((response) => {
+				//..
+			})
 	}
 
 	return (
 		<>
-			<MetaDescription title={'Personal Preferences-1 | PE.com'} name={'description'} content={'Personal Preferences-1 | PE.com...'} />
+			<MetaDescription
+				title={'Personal Preferences-1 | PE.com'}
+				name={'description'}
+				content={'Personal Preferences-1 | PE.com...'}
+			/>
 			<div className='cw-wizard-stsnine-advisor-global-container'>
 				<Row className='cw-wizard-stsnine-main-container'>
 					<Col span={10}>
 						<Sidebar />
 					</Col>
 					<Col span={14}>
-						<ScrollAnimation style={{ height: '100%' }} animateIn='animate__slideInRight' delay={300} duration={2} animateOnce={true}>
-							<div className='cw-wizard-stsnine-form-global-container'>
-								<div className='cw-wizard-stsnine-form-main-title-container'>
-									<MainTitle
-										indicators={[{ indicator: true }, { indicator: false }, { indicator: false }, { indicator: false }]}
-										section={'Section 3 of 5'}
-										title={'Personal Preferences'}
-										subtitle={'Question 1 of 4'}
+						<div className='cw-wizard-stsnine-form-global-container'>
+							<div className='cw-wizard-stsnine-form-main-title-container'>
+								<MainTitle
+									indicators={[
+										{ indicator: true },
+										{ indicator: false },
+										{ indicator: false },
+										{ indicator: false },
+									]}
+									section={'Section 3 of 5'}
+									title={'Personal Preferences'}
+									subtitle={'Question 1 of 4'}
+								/>
+							</div>
+							<div className='cw-wizard-stsnine-form-container'>
+								<div className='cw-wizard-stsnine-form-title-container'>
+									<h2 className='cw-wizard-stsnine-form-title'>
+										What is your level of Risk Tolerance for investing?
+									</h2>
+								</div>
+								<div className='cw-wizard-stsnine-form-option-container'>
+									<Radio.Group
+										onChange={handleChangeCheckbox}
+										defaultValue={isSelected}
+										value={isSelected}>
+										<Row>
+											<Col span={24}>
+												<Radio value='Very low'>Very conservative: no risk</Radio>
+											</Col>
+											<Col span={24}>
+												<Radio value='Low'>
+													Somewhat conservative: small amount of risk
+												</Radio>
+											</Col>
+											<Col span={24}>
+												<Radio value='Moderate'>Moderate: some risk</Radio>
+											</Col>
+											<Col span={24}>
+												<Radio value='High'>
+													Somewhat aggressive: large amount of risk
+												</Radio>
+											</Col>
+											<Col span={24}>
+												<Radio value='Very high'>
+													Very aggressive: maximum amount of risk
+												</Radio>
+											</Col>
+										</Row>
+									</Radio.Group>
+								</div>
+							</div>
+							<div className='cw-wizard-stsnine-value-container'>
+								<div className='cw-wizard-stsnine-value-title-container'>
+									<h2 className='cw-wizard-stsnine-value-rate-title'>
+										How important is this question to you?
+									</h2>
+								</div>
+
+								<div className='cw-wizard-stsnine-value-option-container'>
+									<NormalRate
+										className={''}
+										onChange={handleChangeRate}
+										defaultValue={isRateOne}
 									/>
 								</div>
-								<div className='cw-wizard-stsnine-form-container'>
-									<ScrollAnimation animateIn='animate__fadeInUp' delay={3000} animateOnce={true}>
-										<div className='cw-wizard-stsnine-form-title-container'>
-											<h2 className='cw-wizard-stsnine-form-title'>What is your level of Risk Tolerance for investing?</h2>
-										</div>
-										<div className='cw-wizard-stsnine-form-option-container'>
-											<Radio.Group onChange={handleChangeCheckbox} defaultValue={isSelected} value={isSelected}>
-												<Row>
-													<Col span={24}>
-														<Radio value='Very low'>Very conservative: no risk</Radio>
-													</Col>
-													<Col span={24}>
-														<Radio value='Low'>Somewhat conservative: small amount of risk</Radio>
-													</Col>
-													<Col span={24}>
-														<Radio value='Moderate'>Moderate: some risk</Radio>
-													</Col>
-													<Col span={24}>
-														<Radio value='High'>Somewhat aggressive: large amount of risk</Radio>
-													</Col>
-													<Col span={24}>
-														<Radio value='Very high'>Very aggressive: maximum amount of risk</Radio>
-													</Col>
-												</Row>
-											</Radio.Group>
-										</div>
-									</ScrollAnimation>
-								</div>
-								<div className='cw-wizard-stsnine-value-container'>
-									<ScrollAnimation animateIn='animate__fadeInUp' delay={3500} animateOnce={true}>
-										<div className='cw-wizard-stsnine-value-title-container'>
-											<h2 className='cw-wizard-stsnine-value-rate-title'>How important is this question to you?</h2>
-										</div>
-
-										<div className='cw-wizard-stsnine-value-option-container'>
-											<NormalRate className={''} onChange={handleChangeRate} defaultValue={isRateOne} />
-										</div>
-									</ScrollAnimation>
-								</div>
-								<ScrollAnimation animateIn='animate__fadeInUp' delay={3000} animateOnce={true}>
-									<div className='cw-wizard-stsnine-form-buttons-container'>
-										<Buttons previous={'/wizard/step-eight'} next={'/wizard/step-ten'} />
-									</div>
-								</ScrollAnimation>
 							</div>
-						</ScrollAnimation>
+
+							<div className='cw-wizard-stsnine-form-buttons-container'>
+								<Buttons previous={'/wizard/step-eight'} next={'/wizard/step-ten'} />
+							</div>
+						</div>
 					</Col>
 				</Row>
 			</div>

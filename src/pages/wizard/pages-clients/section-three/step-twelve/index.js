@@ -2,8 +2,6 @@
 
 import React, { useState, useEffect } from 'react'
 
-import ScrollAnimation from 'react-animate-on-scroll'
-
 import { Row, Col, Checkbox } from 'antd'
 
 import MetaDescription from '../../../../../components/MetaDescription'
@@ -58,101 +56,77 @@ export default function StepTwelve() {
 						<Sidebar />
 					</Col>
 					<Col span={14}>
-						<ScrollAnimation
-							style={{ height: '100%' }}
-							animateIn='animate__slideInRight'
-							delay={300}
-							duration={2}
-							animateOnce={true}>
-							<div className='cw-wizard-ststwelve-form-global-container'>
-								<div className='cw-wizard-ststwelve-form-main-title-container'>
-									<MainTitle
-										indicators={[
-											{ indicator: true },
-											{ indicator: true },
-											{ indicator: true },
-											{ indicator: true },
-										]}
-										section={'Section 3 of 5'}
-										title={'Personal Preferences'}
-										subtitle={'Question 4 of 4'}
+						<div className='cw-wizard-ststwelve-form-global-container'>
+							<div className='cw-wizard-ststwelve-form-main-title-container'>
+								<MainTitle
+									indicators={[
+										{ indicator: true },
+										{ indicator: true },
+										{ indicator: true },
+										{ indicator: true },
+									]}
+									section={'Section 3 of 5'}
+									title={'Personal Preferences'}
+									subtitle={'Question 4 of 4'}
+								/>
+							</div>
+							<div className='cw-wizard-ststwelve-form-container'>
+								<div className='cw-wizard-ststwelve-form-title-container'>
+									<h2 className='cw-wizard-ststwelve-form-title'>
+										What financial goals do you prefer in a client?
+									</h2>
+								</div>
+								<div className='cw-wizard-ststwelve-form-option-container'>
+									<Checkbox.Group
+										onChange={handleChangeCheckbox}
+										defaultValue={isSelected}
+										value={isSelected}>
+										<Row>
+											<Col span={12}>
+												<Checkbox value='Saving'>Saving for retirement</Checkbox>
+											</Col>
+											<Col span={12}>
+												<Checkbox value='Tax'>Tax Strategy</Checkbox>
+											</Col>
+											<Col span={12}>
+												<Checkbox value='Financial'>Financial Security</Checkbox>
+											</Col>
+											<Col span={12}>
+												<Checkbox value='Estate'>Estate Planning</Checkbox>
+											</Col>
+											<Col span={12}>
+												<Checkbox value='College'>College Planning</Checkbox>
+											</Col>
+											<Col span={12}>
+												<Checkbox value='Other'>Other</Checkbox>
+											</Col>
+											<Col span={12}>
+												<Checkbox value='Wealth'>Wealth Management</Checkbox>
+											</Col>
+										</Row>
+									</Checkbox.Group>
+								</div>
+							</div>
+							<div className='cw-wizard-stseleven-value-container'>
+								<div className='cw-wizard-stseleven-value-title-container'>
+									<h2 className='cw-wizard-stseleven-value-rate-title'>
+										How important is this question to you?
+									</h2>
+								</div>
+
+								<div className='cw-wizard-stseleven-value-option-container'>
+									<NormalRate
+										className={''}
+										onChange={handleChangeRate}
+										defaultValue={isRateOne}
 									/>
 								</div>
-								<div className='cw-wizard-ststwelve-form-container'>
-									<ScrollAnimation
-										animateIn='animate__fadeInUp'
-										delay={3000}
-										animateOnce={true}>
-										<div className='cw-wizard-ststwelve-form-title-container'>
-											<h2 className='cw-wizard-ststwelve-form-title'>
-												What financial goals do you prefer in a client?
-											</h2>
-										</div>
-										<div className='cw-wizard-ststwelve-form-option-container'>
-											<Checkbox.Group
-												onChange={handleChangeCheckbox}
-												defaultValue={isSelected}
-												value={isSelected}>
-												<Row>
-													<Col span={12}>
-														<Checkbox value='Saving'>Saving for retirement</Checkbox>
-													</Col>
-													<Col span={12}>
-														<Checkbox value='Tax'>Tax Strategy</Checkbox>
-													</Col>
-													<Col span={12}>
-														<Checkbox value='Financial'>Financial Security</Checkbox>
-													</Col>
-													<Col span={12}>
-														<Checkbox value='Estate'>Estate Planning</Checkbox>
-													</Col>
-													<Col span={12}>
-														<Checkbox value='College'>College Planning</Checkbox>
-													</Col>
-													<Col span={12}>
-														<Checkbox value='Other'>Other</Checkbox>
-													</Col>
-													<Col span={12}>
-														<Checkbox value='Wealth'>Wealth Management</Checkbox>
-													</Col>
-												</Row>
-											</Checkbox.Group>
-										</div>
-									</ScrollAnimation>
-								</div>
-								<div className='cw-wizard-stseleven-value-container'>
-									<ScrollAnimation
-										animateIn='animate__fadeInUp'
-										delay={3500}
-										animateOnce={true}>
-										<div className='cw-wizard-stseleven-value-title-container'>
-											<h2 className='cw-wizard-stseleven-value-rate-title'>
-												How important is this question to you?
-											</h2>
-										</div>
-
-										<div className='cw-wizard-stseleven-value-option-container'>
-											<NormalRate
-												className={''}
-												onChange={handleChangeRate}
-												defaultValue={isRateOne}
-											/>
-										</div>
-									</ScrollAnimation>
-								</div>
-								<ScrollAnimation
-									animateIn='animate__fadeInUp'
-									delay={4000}
-									animateOnce={true}>
-									<div className='cw-wizard-ststwelve-form-buttons-container'>
-										<Buttons
-											previous={'/client/step-eleven'}
-											next={'/client/step-thirteen'}
-										/>
-									</div>
-								</ScrollAnimation>
 							</div>
-						</ScrollAnimation>
+
+							<div className='cw-wizard-ststwelve-form-buttons-container'>
+								<Buttons previous={'/client/step-eleven'} next={'/client/step-thirteen'} />
+							</div>
+						</div>
 					</Col>
 				</Row>
 			</div>

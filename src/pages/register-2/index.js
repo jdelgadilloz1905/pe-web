@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 
-import { Row, Col, Form, Button, Select } from 'antd'
+import { Row, Col, Form, Button, Select, Modal } from 'antd'
 
 import { useGlobal, setGlobal } from 'reactn'
 
@@ -18,11 +18,14 @@ import './style.scss'
 export default function Register() {
 	const [formMainForm] = Form.useForm()
 	const [formCodeverify] = Form.useForm()
+	const [formResend] = Form.useForm()
 	const [isLoading, setLoading] = useState(false)
 	const [isForm] = useGlobal('UserForm')
 	const [isFormComplete] = useGlobal('UserComplete')
 	const [isFormCode] = useGlobal('UserCode')
 	const { Option } = Select
+	const [isVisible, setVisible] = useState(false)
+	const [isLoadingResend, setLoadingResend] = useState(false)
 
 	useEffect(() => {
 		if (localStorage.getItem('userSession')) return (window.location.href = '/')
@@ -71,26 +74,64 @@ export default function Register() {
 		})
 	}
 
+	const handleResendCodeStatus = () => {
+		setGlobal({
+			UserForm: false,
+			UserComplete: false,
+			UserCode: true,
+		})
+	}
+
+	const handleResendCode = async (item) => {
+		setLoadingResend(true)
+		await servicesUsers.ResendCodeRegister(item)
+		setVisible(false)
+		setLoadingResend(false)
+	}
+
+	const handleRegisterBack = () => {
+		setGlobal({
+			UserForm: true,
+			UserComplete: false,
+			UserCode: false,
+		})
+	}
+
 	return (
 		<>
-			<MetaDescription title={'Register | PE.com'} name={'description'} content={'Register | PE.com...'} />
+			<MetaDescription
+				title={'Register | PE.com'}
+				name={'description'}
+				content={'Register | PE.com...'}
+			/>
 			<div className='cw-register-two-global-container'>
 				<Row className='cw-register-two-main-container'>
 					<Col span={9}></Col>
 					<Col span={15} className='cw-register-two-col-container'>
 						<div className='cw-register-two-form-global-container'>
 							<div className='cw-register-two-logo-container'>
-								<Image classImg={'cw-register-two-logo-img'} image={logoWhite} alt={'Main Logo'} title={'Main Logo'} />
+								<Image
+									classImg={'cw-register-two-logo-img'}
+									image={logoWhite}
+									alt={'Main Logo'}
+									title={'Main Logo'}
+								/>
 							</div>
-
 							{isForm && (
 								<>
-									<h3 className='cw-register-two-main-title'>By professionals, for professionals.</h3>
-									<h3 className='cw-register-two-main-subtitle'>
-										People are looking for advisors that match their preferences and you are looking for clients that fit your expertise. We can help you connect with them so let's get
-										started!
+									<h3 className='cw-register-two-main-title'>
+										By professionals, for professionals.
 									</h3>
-
+									<h3 className='cw-register-two-main-subtitle'>
+										People are looking for advisors that match their preferences and you
+										are looking for clients that fit your expertise. We can help you
+										connect with them so let's get started!
+									</h3>
+									<h4
+										onClick={() => handleResendCodeStatus(true)}
+										className='cw-register-two-main-underlined-resend-code'>
+										Already have a code? click here
+									</h4>
 									{/* 														initialValues={{
 												first_name: 'Jhon',
 												last_name: 'Doe',
@@ -100,7 +141,10 @@ export default function Register() {
 												company: 'Healtcare Solutions',
 												country: 'Alabama',
 											}} */}
-									<Form name='cw-register-two-main-form' form={formMainForm} onFinish={handleLoginUser}>
+									<Form
+										name='cw-register-two-main-form'
+										form={formMainForm}
+										onFinish={handleLoginUser}>
 										<div className='cw-register-two-form-main-container'>
 											<Form.Item>
 												<Input
@@ -187,7 +231,9 @@ export default function Register() {
 												/>
 											</Form.Item>
 										</div>
-										<Form.Item name='country' rules={[{ required: true, message: 'Please select an option!' }]}>
+										<Form.Item
+											name='country'
+											rules={[{ required: true, message: 'Please select an option!' }]}>
 											<Select
 												className='cw-edit-profile-field-selector'
 												placeholder='Select state'
@@ -196,8 +242,15 @@ export default function Register() {
 												allowClear={false}
 												showSearch
 												optionFilterProp='children'
-												filterOption={(input, option) => option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
-												filterSort={(optionA, optionB) => optionA.children.toLowerCase().localeCompare(optionB.children.toLowerCase())}>
+												filterOption={(input, option) =>
+													option.children.toLowerCase().indexOf(input.toLowerCase()) >=
+													0
+												}
+												filterSort={(optionA, optionB) =>
+													optionA.children
+														.toLowerCase()
+														.localeCompare(optionB.children.toLowerCase())
+												}>
 												{info.map((item, index) => (
 													<Option value={item.name} key={index}>
 														{item.name}
@@ -205,25 +258,46 @@ export default function Register() {
 												))}
 											</Select>
 										</Form.Item>
-										<h3 className='cw-register-input-title-label'>Are you a Certified Financial Planner?</h3>
+										<h3 className='cw-register-input-title-label'>
+											Are you a Certified Financial Planner?
+										</h3>
 
-										<Form.Item name='financial_planner' rules={[{ required: true, message: 'Please select value!' }]}>
-											<Select className='cw-edit-profile-field-selector' placeholder='Certified Financial Planner' size='large' style={{ width: '100%', border: 'none' }} allowClear>
+										<Form.Item
+											name='financial_planner'
+											rules={[{ required: true, message: 'Please select value!' }]}>
+											<Select
+												className='cw-edit-profile-field-selector'
+												placeholder='Certified Financial Planner'
+												size='large'
+												style={{ width: '100%', border: 'none' }}
+												allowClear>
 												<Option value='yes'>Yes</Option>
 												<Option value='no'>No</Option>
 											</Select>
 										</Form.Item>
 
-										<h3 className='cw-register-input-title-label'>Are you a Fiduciary?</h3>
-										<Form.Item name='fiduciary_status' rules={[{ required: true, message: 'Please select value!' }]}>
-											<Select className='cw-edit-profile-field-selector' placeholder='Fiduciary' size='large' style={{ width: '100%', border: 'none' }} allowClear>
+										<h3 className='cw-register-input-title-label'>
+											Are you a Fiduciary?
+										</h3>
+										<Form.Item
+											name='fiduciary_status'
+											rules={[{ required: true, message: 'Please select value!' }]}>
+											<Select
+												className='cw-edit-profile-field-selector'
+												placeholder='Fiduciary'
+												size='large'
+												style={{ width: '100%', border: 'none' }}
+												allowClear>
 												<Option value={'yes'}>Yes</Option>
 												<Option value={'no'}>No</Option>
 											</Select>
 										</Form.Item>
 										<Form.Item>
 											<div className='cw-register-two-main-button-container'>
-												<Button loading={isLoading} htmlType='submit' className='cw-register-two-main-button'>
+												<Button
+													loading={isLoading}
+													htmlType='submit'
+													className='cw-register-two-main-button'>
 													Submit
 												</Button>
 											</div>
@@ -234,13 +308,29 @@ export default function Register() {
 							{isFormComplete && (
 								<>
 									<h3 className='cw-register-two-main-title'>Thank you.</h3>
-									<h3 className='cw-register-two-main-subtitle'>Once approved, your registration code and the link to create your sign-in will be sent to the email you provided.</h3>
+									<h3 className='cw-register-two-main-subtitle'>
+										Once approved, your registration code and the link to create your
+										sign-in will be sent to the email you provided.
+									</h3>
 
-									<h4 className='cw-register-two-main-underlined'>Please send me the code again</h4>
+									<h4
+										onClick={() => handleRegisterBack()}
+										className='cw-register-two-main-underlined-resend-code'>
+										Back
+									</h4>
+
+									<h4
+										onClick={() => setVisible(true)}
+										className='cw-register-two-main-underlined-resend-code'>
+										Please send me the code again
+									</h4>
 
 									<div className='cw-register-two-form-main-container'>
 										<div className='cw-register-two-main-button-container'>
-											<Button onClick={() => handleInserCodigo()} htmlType='submit' className='cw-register-two-main-button'>
+											<Button
+												onClick={() => handleInserCodigo()}
+												htmlType='submit'
+												className='cw-register-two-main-button'>
 												Complete registration
 											</Button>
 										</div>
@@ -274,12 +364,25 @@ export default function Register() {
 											</Form.Item>
 											<Form.Item>
 												<div className='cw-register-two-main-button-container'>
-													<Button loading={isLoading} htmlType='submit' className='cw-register-two-main-button'>
+													<Button
+														loading={isLoading}
+														htmlType='submit'
+														className='cw-register-two-main-button'>
 														Submit
 													</Button>
 												</div>
 											</Form.Item>
 										</Form>
+										<h4
+											onClick={() => handleRegisterBack()}
+											className='cw-register-two-main-underlined-resend-code'>
+											Back
+										</h4>
+										<h4
+											onClick={() => setVisible(true)}
+											className='cw-register-two-main-underlined-resend-code'>
+											Please send me the code again
+										</h4>
 									</div>
 								</>
 							)}
@@ -287,6 +390,46 @@ export default function Register() {
 					</Col>
 				</Row>
 			</div>
+			<Modal
+				width={450}
+				wrapClassName='est-upload-image-camera-modal-container'
+				visible={isVisible}
+				title='Preview'
+				footer={null}
+				onCancel={() => setVisible(false)}>
+				<Form
+					name='cw-register-two-main-form'
+					form={formResend}
+					initialValues={{
+						email: '',
+					}}
+					onFinish={handleResendCode}>
+					<h4>Please enter your email:</h4>
+					<br />
+					<Form.Item>
+						<Input
+							className={'cw-register-two-input-email-resend'}
+							inputName={'email'}
+							inputNameLabel={'Enter your registration code here'}
+							inputNameRule={true}
+							inputNameMessage={'invalid code'}
+							inputNameType={'text'}
+							inputNameIcon={''}
+							inputNameRules={'rulesEmailEN'}
+						/>
+					</Form.Item>
+					<Form.Item>
+						<div className='cw-register-two-main-button-container'>
+							<Button
+								loading={isLoadingResend}
+								htmlType='submit'
+								className='cw-notification-service-button'>
+								Resend
+							</Button>
+						</div>
+					</Form.Item>
+				</Form>
+			</Modal>
 		</>
 	)
 }

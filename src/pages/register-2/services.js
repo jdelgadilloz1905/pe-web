@@ -85,9 +85,15 @@ const servicesUsers = {
 								<div>
 									<div>
 										<h1 className='cw-notification-service-title'>Advice:</h1>
-										<p className='cw-notification-service-subtitle'>{error.response.data.comment}</p>
-										<p className='cw-notification-service-description'>Do you need to Log In?</p>
-										<Button onClick={() => (window.location.href = '/login')} className='cw-notification-service-button'>
+										<p className='cw-notification-service-subtitle'>
+											{error.response.data.comment}
+										</p>
+										<p className='cw-notification-service-description'>
+											Do you need to Log In?
+										</p>
+										<Button
+											onClick={() => (window.location.href = '/login')}
+											className='cw-notification-service-button'>
 											Click Here
 										</Button>
 									</div>
@@ -103,7 +109,9 @@ const servicesUsers = {
 								<div>
 									<div>
 										<h1 className='cw-notification-service-title'>Advice:</h1>
-										<p className='cw-notification-service-subtitle'>an error has ocurred please try again or contact support...</p>
+										<p className='cw-notification-service-subtitle'>
+											an error has ocurred please try again or contact support...
+										</p>
 									</div>
 								</div>
 							</section>
@@ -154,6 +162,32 @@ const servicesUsers = {
 				notification['error']({
 					message: `Error`,
 					description: `${error.response.data.comment}`,
+				})
+			})
+		return returnResponse
+	},
+	async ResendCodeRegister(item) {
+		let returnResponse
+
+		const email = item.email
+		await axios({
+			method: 'POST',
+			url: `${ENV_CORE}/api/users/code-forwarding`,
+			data: {
+				email,
+			},
+		})
+			.then((response) => {
+				notification['success']({
+					message: `success:`,
+					description: `${response.data.comment}`,
+				})
+				returnResponse = response
+			})
+			.catch(() => {
+				notification['error']({
+					message: `Error`,
+					description: `An error has ocurred resending back your code.`,
 				})
 			})
 		return returnResponse

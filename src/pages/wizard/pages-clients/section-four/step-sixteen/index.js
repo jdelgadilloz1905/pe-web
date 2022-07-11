@@ -41,78 +41,91 @@ export default function StepSixteen() {
 
 	const handleChangeRadio = async (e) => {
 		setSelected(e.target.value)
-		await servicesAdvisor.PushQuestion(isRateOne, e.target.value, isSection, isStep).then((response) => {
-			//..
-		})
+		await servicesAdvisor
+			.PushQuestion(isRateOne, e.target.value, isSection, isStep)
+			.then((response) => {
+				//..
+			})
 	}
 	return (
 		<>
-			<MetaDescription title={'Personal Information-4 | PE.com'} name={'description'} content={'Personal Information-4 | PE.com...'} />
+			<MetaDescription
+				title={'Personal Information-4 | PE.com'}
+				name={'description'}
+				content={'Personal Information-4 | PE.com...'}
+			/>
 			<div className='cw-wizard-client-sfssixteen-global-container'>
 				<Row className='cw-wizard-sfssixteen-main-container'>
 					<Col span={10}>
 						<Sidebar />
 					</Col>
 					<Col span={14}>
-						<ScrollAnimation style={{ height: '100%' }} animateIn='animate__slideInRight' delay={300} duration={2} animateOnce={true}>
-							<div className='cw-wizard-sfssixteen-form-global-container'>
-								<div className='cw-wizard-sfssixteen-form-main-title-container'>
-									<MainTitle
-										indicators={[{ indicator: true }, { indicator: true }, { indicator: true }, { indicator: true }, { indicator: false }]}
-										section={'Section 4 of 5'}
-										title={'Personal Information'}
-										subtitle={'Question 4 of 5'}
+						<div className='cw-wizard-sfssixteen-form-global-container'>
+							<div className='cw-wizard-sfssixteen-form-main-title-container'>
+								<MainTitle
+									indicators={[
+										{ indicator: true },
+										{ indicator: true },
+										{ indicator: true },
+										{ indicator: true },
+										{ indicator: false },
+									]}
+									section={'Section 4 of 5'}
+									title={'Personal Information'}
+									subtitle={'Question 4 of 5'}
+								/>
+							</div>
+							<div className='cw-wizard-sfssixteen-form-container'>
+								<div className='cw-wizard-sfssixteen-form-title-container'>
+									<h2 className='cw-wizard-sfssixteen-form-title'>
+										What household income would you prefer in a Client?
+									</h2>
+								</div>
+								<div className='cw-wizard-sfssixteen-form-option-container'>
+									<Radio.Group onChange={handleChangeRadio} value={isSelected}>
+										<Row>
+											<Col span={24}>
+												<Radio value='0-100000'>$0 – $100,000</Radio>
+											</Col>
+											<Col span={24}>
+												<Radio value='100000-250000'>$100,000 – $250,000</Radio>
+											</Col>
+											<Col span={24}>
+												<Radio value='250000-500000'>$250,000 – $500,000</Radio>
+											</Col>
+											<Col span={24}>
+												<Radio value='500000-1000000'>$500,000 – $1,000,000</Radio>
+											</Col>
+											<Col span={24}>
+												<Radio value='1000000-5000000'>$1,000,000 – $5,000,000</Radio>
+											</Col>
+											<Col span={24}>
+												<Radio value='5000000+'>$5,000,000 and up</Radio>
+											</Col>
+										</Row>
+									</Radio.Group>
+								</div>
+							</div>
+							<div className='cw-wizard-sfssixteen-value-container'>
+								<div className='cw-wizard-sfssixteen-value-title-container'>
+									<h2 className='cw-wizard-sfssixteen-value-rate-title'>
+										How important is this question to you?
+									</h2>
+								</div>
+
+								<div className='cw-wizard-sfssixteen-value-option-container'>
+									<NormalRate
+										className={''}
+										onChange={handleChangeRate}
+										defaultValue={isRateOne}
 									/>
 								</div>
-								<div className='cw-wizard-sfssixteen-form-container'>
-									<ScrollAnimation animateIn='animate__fadeInUp' delay={3000} animateOnce={true}>
-										<div className='cw-wizard-sfssixteen-form-title-container'>
-											<h2 className='cw-wizard-sfssixteen-form-title'>What household income would you prefer in a Client?</h2>
-										</div>
-										<div className='cw-wizard-sfssixteen-form-option-container'>
-											<Radio.Group onChange={handleChangeRadio} value={isSelected}>
-												<Row>
-													<Col span={24}>
-														<Radio value='0-100000'>$0 – $100,000</Radio>
-													</Col>
-													<Col span={24}>
-														<Radio value='100000-250000'>$100,000 – $250,000</Radio>
-													</Col>
-													<Col span={24}>
-														<Radio value='250000-500000'>$250,000 – $500,000</Radio>
-													</Col>
-													<Col span={24}>
-														<Radio value='500000-1000000'>$500,000 – $1,000,000</Radio>
-													</Col>
-													<Col span={24}>
-														<Radio value='1000000-5000000'>$1,000,000 – $5,000,000</Radio>
-													</Col>
-													<Col span={24}>
-														<Radio value='5000000+'>$5,000,000 and up</Radio>
-													</Col>
-												</Row>
-											</Radio.Group>
-										</div>
-									</ScrollAnimation>
-								</div>
-								<div className='cw-wizard-sfssixteen-value-container'>
-									<ScrollAnimation animateIn='animate__fadeInUp' delay={3500} animateOnce={true}>
-										<div className='cw-wizard-sfssixteen-value-title-container'>
-											<h2 className='cw-wizard-sfssixteen-value-rate-title'>How important is this question to you?</h2>
-										</div>
-
-										<div className='cw-wizard-sfssixteen-value-option-container'>
-											<NormalRate className={''} onChange={handleChangeRate} defaultValue={isRateOne} />
-										</div>
-									</ScrollAnimation>
-								</div>
-								<ScrollAnimation animateIn='animate__fadeInUp' delay={4000} animateOnce={true}>
-									<div className='cw-wizard-sfssixteen-form-buttons-container'>
-										<Buttons previous={'/client/step-fifteen'} next={'/client/step-sixteen2'} />
-									</div>
-								</ScrollAnimation>
 							</div>
-						</ScrollAnimation>
+
+							<div className='cw-wizard-sfssixteen-form-buttons-container'>
+								<Buttons previous={'/client/step-fifteen'} next={'/client/step-sixteen2'} />
+							</div>
+						</div>
 					</Col>
 				</Row>
 			</div>

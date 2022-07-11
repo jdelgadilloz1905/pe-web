@@ -208,7 +208,9 @@
 	font-size: 14px !important;
 }
 
-.cw-register-two-select-container .ant-select-single.ant-select-lg:not(.ant-select-customize-input):not(.ant-select-customize-input) .ant-select-selection-search-input {
+.cw-register-two-select-container
+	.ant-select-single.ant-select-lg:not(.ant-select-customize-input):not(.ant-select-customize-input)
+	.ant-select-selection-search-input {
 	top: -10px;
 	position: relative;
 }
@@ -289,4 +291,15 @@
 
 .cw-edit-profile-field-selector .ant-select-arrow {
 	color: #ffffff;
+}
+
+.cw-register-two-main-underlined-resend-code {
+	color: white;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.cw-register-two-input-email-resend {
+	border-radius: 8px !important;
+	font-size: 15px !important;
 }

@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 
 import { useHistory } from 'react-router-dom'
 
-import { Row, Col, Form, Button, Select } from 'antd'
+import { Row, Col, Form, Button, Select, Modal } from 'antd'
 
 import { useGlobal, setGlobal } from 'reactn'
 
@@ -22,10 +22,13 @@ export default function Register() {
 	const history = useHistory()
 	const [formMainForm] = Form.useForm()
 	const [formCodeverify] = Form.useForm()
+	const [formResend] = Form.useForm()
 	const [isLoading, setLoading] = useState(false)
 	const [isForm] = useGlobal('UserForm')
 	const [isFormCode] = useGlobal('UserCode')
 	const { Option } = Select
+	const [isVisible, setVisible] = useState(false)
+	const [isLoadingResend, setLoadingResend] = useState(false)
 
 	useEffect(() => {
 		if (localStorage.getItem('userSession')) return (window.location.href = '/')
@@ -50,6 +53,14 @@ export default function Register() {
 		})
 	}
 
+	const handleResendCodeStatus = () => {
+		setGlobal({
+			UserForm: false,
+			UserComplete: false,
+			UserCode: true,
+		})
+	}
+
 	const handleValidateCode = async (item) => {
 		setLoading(true)
 		await servicesUsers.CodeVerify(item.code_verify).then((response) => {
@@ -61,16 +72,41 @@ export default function Register() {
 			}
 		})
 	}
+
+	const handleResendCode = async (item) => {
+		setLoadingResend(true)
+		await servicesUsers.ResendCodeRegister(item)
+		setVisible(false)
+		setLoadingResend(false)
+	}
+
+	const handleRegisterBack = () => {
+		setGlobal({
+			UserForm: true,
+			UserComplete: false,
+			UserCode: false,
+		})
+	}
+
 	return (
 		<>
-			<MetaDescription title={'Register | PE.com'} name={'description'} content={'Register | PE.com...'} />
+			<MetaDescription
+				title={'Register | PE.com'}
+				name={'description'}
+				content={'Register | PE.com...'}
+			/>
 			<div className='cw-register-global-container'>
 				<Row className='cw-register-main-container'>
 					<Col span={9}></Col>
 					<Col span={15} className='cw-register-col-container'>
 						<div className='cw-register-form-global-container'>
 							<div className='cw-register-logo-container'>
-								<Image classImg={'cw-register-logo-img'} image={logoWhite} alt={'Main Logo'} title={'Main Logo'} />
+								<Image
+									classImg={'cw-register-logo-img'}
+									image={logoWhite}
+									alt={'Main Logo'}
+									title={'Main Logo'}
+								/>
 							</div>
 							{isForm && (
 								<>
@@ -78,6 +114,7 @@ export default function Register() {
 
 									<div className='cw-register-form-main-container'>
 										<h2 className='cw-register-form-title'>Register</h2>
+
 										<Form
 											name='cw-register-main-form'
 											form={formMainForm}
@@ -171,8 +208,16 @@ export default function Register() {
 														allowClear={false}
 														showSearch
 														optionFilterProp='children'
-														filterOption={(input, option) => option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
-														filterSort={(optionA, optionB) => optionA.children.toLowerCase().localeCompare(optionB.children.toLowerCase())}>
+														filterOption={(input, option) =>
+															option.children
+																.toLowerCase()
+																.indexOf(input.toLowerCase()) >= 0
+														}
+														filterSort={(optionA, optionB) =>
+															optionA.children
+																.toLowerCase()
+																.localeCompare(optionB.children.toLowerCase())
+														}>
 														{info.map((item, index) => (
 															<Option value={item.name} key={index}>
 																{item.name}
@@ -183,12 +228,23 @@ export default function Register() {
 											</Form.Item>
 											<Form.Item>
 												<div className='cw-register-two-main-button-container'>
-													<Button loading={isLoading} htmlType='submit' className='cw-register-two-main-button'>
+													<Button
+														loading={isLoading}
+														htmlType='submit'
+														className='cw-register-two-main-button'>
 														Submit
 													</Button>
 												</div>
 											</Form.Item>
-											<h3 className='cw-register-two-main-subtitle'>Once submitted, your registration code and link to create your sign-in will be emailed to the address you provided.</h3>
+											<h3 className='cw-register-two-main-subtitle'>
+												Once submitted, your registration code and link to create your
+												sign-in will be emailed to the address you provided.
+											</h3>
+											<h4
+												onClick={() => handleResendCodeStatus(true)}
+												className='cw-register-two-main-underlined-resend-code'>
+												Already have a code? click here
+											</h4>
 										</Form>
 									</div>
 								</>
@@ -220,12 +276,27 @@ export default function Register() {
 											</Form.Item>
 											<Form.Item>
 												<div className='cw-register-two-main-button-container'>
-													<Button loading={isLoading} htmlType='submit' className='cw-register-two-main-button'>
+													<Button
+														loading={isLoading}
+														htmlType='submit'
+														className='cw-register-two-main-button'>
 														Submit
 													</Button>
 												</div>
 											</Form.Item>
 										</Form>
+									</div>
+									<div className='cw-register-two-main-underlined-resend-code-container'>
+										<h4
+											onClick={() => handleRegisterBack()}
+											className='cw-register-two-main-underlined-resend-code'>
+											Back
+										</h4>
+										<h4
+											onClick={() => setVisible(true)}
+											className='cw-register-two-main-underlined-resend-code'>
+											Please send me the code again
+										</h4>
 									</div>
 								</>
 							)}
@@ -233,6 +304,46 @@ export default function Register() {
 					</Col>
 				</Row>
 			</div>
+			<Modal
+				width={450}
+				wrapClassName='est-upload-image-camera-modal-container'
+				visible={isVisible}
+				title='Preview'
+				footer={null}
+				onCancel={() => setVisible(false)}>
+				<Form
+					name='cw-register-two-main-form'
+					form={formResend}
+					initialValues={{
+						email: '',
+					}}
+					onFinish={handleResendCode}>
+					<h4>Please enter your email:</h4>
+					<br />
+					<Form.Item>
+						<Input
+							className={'cw-register-two-input-email-resend'}
+							inputName={'email'}
+							inputNameLabel={'Enter your registration code here'}
+							inputNameRule={true}
+							inputNameMessage={'invalid code'}
+							inputNameType={'text'}
+							inputNameIcon={''}
+							inputNameRules={'rulesEmailEN'}
+						/>
+					</Form.Item>
+					<Form.Item>
+						<div className='cw-register-two-main-button-container'>
+							<Button
+								loading={isLoadingResend}
+								htmlType='submit'
+								className='cw-notification-service-button'>
+								Resend
+							</Button>
+						</div>
+					</Form.Item>
+				</Form>
+			</Modal>
 		</>
 	)
 }

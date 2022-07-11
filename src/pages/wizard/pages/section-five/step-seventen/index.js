@@ -60,90 +60,63 @@ export default function StepSeventeen() {
 						<Sidebar />
 					</Col>
 					<Col span={14}>
-						<ScrollAnimation
-							style={{ height: '100%' }}
-							animateIn='animate__slideInRight'
-							delay={300}
-							duration={2}
-							animateOnce={true}>
-							<div className='cw-wizard-sfsseventeen-form-global-container'>
-								<div className='cw-wizard-sfsseventeen-form-main-title-container'>
-									<MainTitle
-										indicators={[
-											{ indicator: true },
-											{ indicator: false },
-											{ indicator: false },
-										]}
-										section={'Section 5 of 5'}
-										title={'Organization Preferences'}
-										subtitle={'Question 1 of 3'}
+						<div className='cw-wizard-sfsseventeen-form-global-container'>
+							<div className='cw-wizard-sfsseventeen-form-main-title-container'>
+								<MainTitle
+									indicators={[
+										{ indicator: true },
+										{ indicator: false },
+										{ indicator: false },
+									]}
+									section={'Section 5 of 5'}
+									title={'Organization Preferences'}
+									subtitle={'Question 1 of 3'}
+								/>
+							</div>
+							<div className='cw-wizard-sfsseventeen-form-container'>
+								<div className='cw-wizard-sfsseventeen-form-title-container'>
+									<h2 className='cw-wizard-sfsseventeen-form-title'>
+										What type of fee structure would you prefer?
+									</h2>
+								</div>
+								<div className='cw-wizard-sfsseventeen-form-option-container'>
+									<Radio.Group onChange={handleChangeRadio} value={isSelected}>
+										<Row>
+											<Col span={24}>
+												<Radio value='Commission'>Commission</Radio>
+											</Col>
+											<Col span={24}>
+												<Radio value='Management'>Aset under management fee</Radio>
+											</Col>
+											<Col span={24}>
+												<Radio value='Hourly'>Hourly fee</Radio>
+											</Col>
+											<Col span={24}>
+												<Radio value='Annual'>Annual retainer</Radio>
+											</Col>
+										</Row>
+									</Radio.Group>
+								</div>
+							</div>
+							<div className='cw-wizard-sfsseventeen-value-container'>
+								<div className='cw-wizard-sfsseventeen-value-title-container'>
+									<h2 className='cw-wizard-sfsseventeen-value-rate-title'>
+										How important is this question to you?
+									</h2>
+								</div>
+
+								<div className='cw-wizard-sfsseventeen-value-option-container'>
+									<NormalRate
+										className={''}
+										onChange={handleChangeRate}
+										defaultValue={isRateOne}
 									/>
 								</div>
-								<div className='cw-wizard-sfsseventeen-form-container'>
-									<ScrollAnimation
-										animateIn='animate__fadeInUp'
-										delay={3000}
-										animateOnce={true}>
-										<div className='cw-wizard-sfsseventeen-form-title-container'>
-											<h2 className='cw-wizard-sfsseventeen-form-title'>
-												What type of fee structure would you prefer?
-											</h2>
-										</div>
-										<div className='cw-wizard-sfsseventeen-form-option-container'>
-											<Radio.Group onChange={handleChangeRadio} value={isSelected}>
-												<Row>
-													<Col span={24}>
-														<Radio value='Commission'>Commission</Radio>
-													</Col>
-													<Col span={24}>
-														<Radio value='Management'>
-															Aset under management fee
-														</Radio>
-													</Col>
-													<Col span={24}>
-														<Radio value='Hourly'>Hourly fee</Radio>
-													</Col>
-													<Col span={24}>
-														<Radio value='Annual'>Annual retainer</Radio>
-													</Col>
-												</Row>
-											</Radio.Group>
-										</div>
-									</ScrollAnimation>
-								</div>
-								<div className='cw-wizard-sfsseventeen-value-container'>
-									<ScrollAnimation
-										animateIn='animate__fadeInUp'
-										delay={3500}
-										animateOnce={true}>
-										<div className='cw-wizard-sfsseventeen-value-title-container'>
-											<h2 className='cw-wizard-sfsseventeen-value-rate-title'>
-												How important is this question to you?
-											</h2>
-										</div>
-
-										<div className='cw-wizard-sfsseventeen-value-option-container'>
-											<NormalRate
-												className={''}
-												onChange={handleChangeRate}
-												defaultValue={isRateOne}
-											/>
-										</div>
-									</ScrollAnimation>
-								</div>
-								<ScrollAnimation
-									animateIn='animate__fadeInUp'
-									delay={4000}
-									animateOnce={true}>
-									<div className='cw-wizard-sfsseventeen-form-buttons-container'>
-										<Buttons
-											previous={'/wizard/step-sixteen'}
-											next={'/wizard/step-eighteen'}
-										/>
-									</div>
-								</ScrollAnimation>
 							</div>
-						</ScrollAnimation>
+							<div className='cw-wizard-sfsseventeen-form-buttons-container'>
+								<Buttons previous={'/wizard/step-sixteen'} next={'/wizard/step-eighteen'} />
+							</div>
+						</div>
 					</Col>
 				</Row>
 			</div>

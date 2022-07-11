@@ -65,57 +65,79 @@ export default function StepOne() {
 		setIndeterminate(false)
 		setCheckAll(item.target.checked)
 		console.log('plain options...', plainOptions)
-		servicesAdvisor.PushQuestion(isRateOne, item.target.checked ? plainOptions : [], isSection, isStep)
+		servicesAdvisor.PushQuestion(
+			isRateOne,
+			item.target.checked ? plainOptions : [],
+			isSection,
+			isStep
+		)
 	}
 
 	return (
 		<>
-			<MetaDescription title={'Communication-1 | PE.com'} name={'description'} content={'Communication-1 | PE.com...'} />
+			<MetaDescription
+				title={'Communication-1 | PE.com'}
+				name={'description'}
+				content={'Communication-1 | PE.com...'}
+			/>
 			<div className='cw-wizard-stsone-advisor-global-container'>
 				<Row className='cw-wizard-stsone-main-container'>
 					<Col span={10}>
 						<Sidebar animation={true} />
 					</Col>
 					<Col span={14}>
-						<ScrollAnimation style={{ height: '100%' }} animateIn='animate__slideInRight' delay={300} duration={2} animateOnce={true}>
-							<div className='cw-wizard-stsone-form-global-container'>
-								<div className='cw-wizard-stsone-form-main-title-container'>
-									<MainTitle indicators={[{ indicator: true }, { indicator: false }]} section={'Section 1 of 5'} title={'Communication with your advisor'} subtitle={'Question 1 of 2'} />
-								</div>
-								<div className='cw-wizard-stsone-form-container'>
-									<ScrollAnimation animateIn='animate__fadeInUp' delay={3000} animateOnce={true}>
-										<div className='cw-wizard-stsone-form-title-container'>
-											<h2 className='cw-wizard-stsone-form-title'>What is your preferred method of communicating with your advisor?</h2>
-										</div>
-
-										<div className='cw-wizard-stsone-form-option-container'>
-											<CheckboxGroup options={plainOptions} value={checkedList} onChange={handleChangeCheckbox} />
-											<Col span={12} className='cw-wizard-stone-form-all-checkbox'>
-												<Checkbox indeterminate={indeterminate} onChange={(data) => handleAllOptions(data)} checked={checkAll}>
-													All of the previous options
-												</Checkbox>
-											</Col>
-										</div>
-									</ScrollAnimation>
-								</div>
-								<div className='cw-wizard-stsone-value-container'>
-									<ScrollAnimation animateIn='animate__fadeInUp' delay={3500} animateOnce={true}>
-										<div className='cw-wizard-stsone-value-title-container'>
-											<h2 className='cw-wizard-stsone-value-rate-title'>How important is this question to you?</h2>
-										</div>
-
-										<div className='cw-wizard-stsone-value-option-container'>
-											<NormalRate className={''} onChange={handleChangeRate} defaultValue={isRateOne} />
-										</div>
-									</ScrollAnimation>
-								</div>
-								<ScrollAnimation animateIn='animate__fadeInUp' delay={4000} animateOnce={true}>
-									<div className='cw-wizard-stsone-form-buttons-container'>
-										<Buttons previous={'/'} next={'/wizard/step-two'} />
-									</div>
-								</ScrollAnimation>
+						<div className='cw-wizard-stsone-form-global-container'>
+							<div className='cw-wizard-stsone-form-main-title-container'>
+								<MainTitle
+									indicators={[{ indicator: true }, { indicator: false }]}
+									section={'Section 1 of 5'}
+									title={'Communication with your advisor'}
+									subtitle={'Question 1 of 2'}
+								/>
 							</div>
-						</ScrollAnimation>
+							<div className='cw-wizard-stsone-form-container'>
+								<div className='cw-wizard-stsone-form-title-container'>
+									<h2 className='cw-wizard-stsone-form-title'>
+										What is your preferred method of communicating with your advisor?
+									</h2>
+								</div>
+
+								<div className='cw-wizard-stsone-form-option-container'>
+									<CheckboxGroup
+										options={plainOptions}
+										value={checkedList}
+										onChange={handleChangeCheckbox}
+									/>
+									<Col span={12} className='cw-wizard-stone-form-all-checkbox'>
+										<Checkbox
+											indeterminate={indeterminate}
+											onChange={(data) => handleAllOptions(data)}
+											checked={checkAll}>
+											All of the previous options
+										</Checkbox>
+									</Col>
+								</div>
+							</div>
+							<div className='cw-wizard-stsone-value-container'>
+								<div className='cw-wizard-stsone-value-title-container'>
+									<h2 className='cw-wizard-stsone-value-rate-title'>
+										How important is this question to you?
+									</h2>
+								</div>
+
+								<div className='cw-wizard-stsone-value-option-container'>
+									<NormalRate
+										className={''}
+										onChange={handleChangeRate}
+										defaultValue={isRateOne}
+									/>
+								</div>
+							</div>
+
+							<div className='cw-wizard-stsone-form-buttons-container'>
+								<Buttons previous={'/'} next={'/wizard/step-two'} />
+							</div>
+						</div>
 					</Col>
 				</Row>
 			</div>
