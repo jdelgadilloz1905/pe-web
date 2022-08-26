@@ -2,8 +2,6 @@
 
 import React, { useState, useEffect } from 'react'
 
-import ScrollAnimation from 'react-animate-on-scroll'
-
 import { Row, Col, Checkbox } from 'antd'
 
 import MetaDescription from '../../../../../components/MetaDescription'
@@ -35,7 +33,7 @@ export default function StepOne() {
 				setSelected(response.answers)
 				setRateOne(response.rate)
 				setCheckedList(response.answers)
-				if (response.answers.length == plainOptions.length) {
+				if (response?.answers?.length == plainOptions?.length) {
 					setCheckAll(true)
 				}
 			}

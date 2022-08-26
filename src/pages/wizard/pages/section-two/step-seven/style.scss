@@ -84,7 +84,9 @@
 .cw-wizard-stsseven-form-option-container .ant-slider-handle.ant-tooltip-open {
 	border-color: white !important;
 }
-.cw-wizard-stsseven-form-option-container .ant-slider:hover .ant-slider-handle:not(.ant-tooltip-open) {
+.cw-wizard-stsseven-form-option-container
+	.ant-slider:hover
+	.ant-slider-handle:not(.ant-tooltip-open) {
 	border-color: white !important;
 }
 .cw-wizard-stsseven-form-option-container .ant-slider-mark {
@@ -172,7 +174,7 @@
 }
 
 .cw-wizard-stsseven-value-option-container .ant-rate-star-zero .ant-rate-star-second {
-	color: #9deaea;
+	color: #ffffff;
 }
 
 .cw-wizard-stsseven-value-option-container .ant-rate-star-full .ant-rate-star-second {

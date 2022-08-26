@@ -115,14 +115,14 @@ export default function StepThree() {
 											/>
 										</Form.Item>
 									</Form>
-									<div className='cw-wizard-stsseven-form-option-subtitle-container'>
+									{/* 	<div className='cw-wizard-stsseven-form-option-subtitle-container'>
 										<h2 className='cw-wizard-stsseven-form-option-subtitle'>
 											Not Important
 										</h2>
 										<h2 className='cw-wizard-stsseven-form-option-subtitle'>
 											Very Important
 										</h2>
-									</div>
+									</div> */}
 								</div>
 							</div>
 							<div className='cw-wizard-ststhree-value-container'>

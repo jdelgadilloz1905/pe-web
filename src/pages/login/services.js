@@ -27,31 +27,31 @@ const servicesLogin = {
 					description: `You have successfully logged in.`,
 				})
 				returnResponse = {
-					name: response.data.result.name,
-					last: response.data.result.last,
-					id: response.data.result.id,
-					modo: response.data.result.modo,
-					email: response.data.result.email,
-					photo: response.data.result.photo,
-					last_login: response.data.result.last_login,
-					profile: response.data.result.profile,
-					country: response.data.result.country,
-					company: response.data.result.company,
-					phone: response.data.result.phone,
-					bio_text: response.data.result.bio_text,
-					password_expiry_date: response.data.result.password_expiry_date,
+					name: response?.data?.result?.name,
+					last: response?.data?.result?.last,
+					id: response?.data?.result?.id,
+					modo: response?.data?.result?.modo,
+					email: response?.data?.result?.email,
+					photo: response?.data?.result?.photo,
+					last_login: response?.data?.result?.last_login,
+					profile: response?.data?.result?.profile,
+					country: response?.data?.result?.country,
+					company: response?.data?.result?.company,
+					phone: response?.data?.result?.phone,
+					bio_text: response?.data?.result?.bio_text,
+					password_expiry_date: response?.data?.result?.password_expiry_date,
 				}
 				localStorage.setItem('userSession', JSON.stringify(returnResponse))
-				localStorage.setItem('type', JSON.stringify(response.data.result.profile))
+				localStorage.setItem('type', JSON.stringify(response?.data?.result?.profile))
 				setGlobal(() => ({
-					userEmail: `${returnResponse.name} ${returnResponse.last}`,
+					userEmail: `${returnResponse?.name} ${returnResponse?.last}`,
 					userData: returnResponse,
 				}))
 			})
 			.catch((error) => {
 				notification['error']({
 					message: `Error`,
-					description: `${error.response.data.comment}`,
+					description: `${error?.response?.data?.comment}`,
 				})
 			})
 		return returnResponse

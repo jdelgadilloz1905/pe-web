@@ -2,9 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 
-import ScrollAnimation from 'react-animate-on-scroll'
-
-import { Row, Col, Slider, Form } from 'antd'
+import { Row, Col, Radio, Form } from 'antd'
 
 import MetaDescription from '../../../../../components/MetaDescription'
 import NormalRate from '../../../../../components/Rate'
@@ -57,11 +55,20 @@ export default function StepSeven() {
 		})
 	}
 
-	const handleChangeSlider = async (values) => {
+	/* 	const handleChangeSlider = async (values) => {
 		setSelected(values)
 		await servicesAdvisor.PushQuestion(isRateOne, values, isSection, isStep).then((response) => {
 			//..
 		})
+	}
+ */
+	const handleChangeRadio = async (e) => {
+		setSelected(e.target.value)
+		await servicesAdvisor
+			.PushQuestion(isRateOne, e.target.value, isSection, isStep)
+			.then((response) => {
+				//..
+			})
 	}
 	return (
 		<>
@@ -99,8 +106,19 @@ export default function StepSeven() {
 										(CFP)?
 									</h2>
 								</div>
-								<div className='cw-wizard-stsseven-form-option-container'>
-									<Form
+								<div className='cw-wizard-stsfour-form-option-container'>
+									<Radio.Group onChange={handleChangeRadio} value={isSelected}>
+										<Row>
+											<Col span={24}>
+												<Radio value={0}>Not Important</Radio>
+											</Col>
+											<Col span={24}>
+												<Radio value={1}>Very Important</Radio>
+											</Col>
+										</Row>
+									</Radio.Group>
+								</div>
+								{/* <Form
 										initialValues={{ slider_question: isSelected ? isSelected : 0 }}
 										form={sevenStepForm}>
 										<Form.Item name='slider_question'>
@@ -122,10 +140,9 @@ export default function StepSeven() {
 										<h2 className='cw-wizard-stsseven-form-option-subtitle'>
 											Very Important
 										</h2>
-									</div>
-								</div>
+									</div> */}
 							</div>
-							<div className='cw-wizard-stsseven-value-container'>
+							{/* 		<div className='cw-wizard-stsseven-value-container'>
 								<div className='cw-wizard-stsseven-value-container'>
 									<h2 className='cw-wizard-stsseven-value-rate-title'>
 										How important is this question to you?
@@ -139,7 +156,7 @@ export default function StepSeven() {
 										defaultValue={isRateOne}
 									/>
 								</div>
-							</div>
+							</div> */}
 
 							<div className='cw-wizard-stsseven-form-buttons-container'>
 								<Buttons previous={'/wizard/step-six'} next={'/wizard/step-eight'} />

@@ -2,9 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 
-import ScrollAnimation from 'react-animate-on-scroll'
-
-import { Row, Col, Slider, Form } from 'antd'
+import { Row, Col, Radio, Form } from 'antd'
 
 import MetaDescription from '../../../../../components/MetaDescription'
 import NormalRate from '../../../../../components/Rate'
@@ -57,12 +55,22 @@ export default function StepFour() {
 		})
 	}
 
-	const handleChangeSlider = async (values) => {
+	/* 	const handleChangeSlider = async (values) => {
 		setSelected(values)
 		await servicesAdvisor.PushQuestion(isRateOne, values, isSection, isStep).then((response) => {
 			//..
 		})
+	} */
+
+	const handleChangeRadio = async (e) => {
+		setSelected(e.target.value)
+		await servicesAdvisor
+			.PushQuestion(isRateOne, e.target.value, isSection, isStep)
+			.then((response) => {
+				//..
+			})
 	}
+
 	return (
 		<>
 			<MetaDescription
@@ -99,8 +107,17 @@ export default function StepFour() {
 									</h2>
 								</div>
 								<div className='cw-wizard-stsfour-form-option-container'>
-									<div className='cw-wizard-stsfour-form-option-container'>
-										<Form
+									<Radio.Group onChange={handleChangeRadio} value={isSelected}>
+										<Row>
+											<Col span={24}>
+												<Radio value={0}>Not Important</Radio>
+											</Col>
+											<Col span={24}>
+												<Radio value={1}>Very Important</Radio>
+											</Col>
+										</Row>
+									</Radio.Group>
+									{/* 	<Form
 											initialValues={{ slider_question: isSelected ? isSelected : 0 }}
 											form={fourStepForm}>
 											<Form.Item name='slider_question'>
@@ -113,17 +130,17 @@ export default function StepFour() {
 													tooltipVisible={isToolTip}
 												/>
 											</Form.Item>
-										</Form>
-										<div className='cw-wizard-stsseven-form-option-subtitle-container'>
+										</Form> */}
+									{/* 	<div className='cw-wizard-stsseven-form-option-subtitle-container'>
 											<h2 className='cw-wizard-stsseven-form-option-subtitle'>
 												Not Important
 											</h2>
 											<h2 className='cw-wizard-stsseven-form-option-subtitle'>
 												Very Important
 											</h2>
-										</div>
-									</div>
-									{/* <div className='cw-wizard-stsfour-form-option-subtitle-container'>
+										</div> */}
+								</div>
+								{/* <div className='cw-wizard-stsfour-form-option-subtitle-container'>
 												<h2 className='cw-wizard-stsfour-form-option-subtitle'>
 													Not Important
 												</h2>
@@ -131,9 +148,8 @@ export default function StepFour() {
 													Very Important
 												</h2>
 											</div> */}
-								</div>
 							</div>
-							<div className='cw-wizard-stsfour-value-container'>
+							{/* 						<div className='cw-wizard-stsfour-value-container'>
 								<div className='cw-wizard-stsfour-value-title-container'>
 									<h2 className='cw-wizard-stsfour-value-rate-title'>
 										How important is this question to you?
@@ -147,7 +163,7 @@ export default function StepFour() {
 										defaultValue={isRateOne}
 									/>
 								</div>
-							</div>
+							</div> */}
 
 							<div className='cw-wizard-stsfour-form-buttons-container'>
 								<Buttons previous={'/wizard/step-three'} next={'/wizard/step-five'} />

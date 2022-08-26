@@ -18,16 +18,16 @@ export default function Buttons(props) {
 		}
 	}, [location.pathname])
 	return (
-		<>
-			<Link to={props.previous} className='cw-wizard-button'>
+		<div className='cw-wizard-button-main-container'>
+			<Link to={props.previous} className='cw-wizard-button-left'>
 				Back
 			</Link>
 			<div className='cw-wizard-button-icon-container'>
 				<img className='cw-wizard-button-icon' src={isAmimationGif} alt='PE gif' />
 			</div>
-			<Link to={props.next} className='cw-wizard-button'>
+			<Link to={props.next} className='cw-wizard-button-right'>
 				Next
 			</Link>
-		</>
+		</div>
 	)
 }
